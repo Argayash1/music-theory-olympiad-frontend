@@ -1,0 +1,133 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.cta {
+  // border: 2px solid var(--main-cta-border-color);
+  border-radius: 16px;
+  border: none;
+  width: 190px;
+  height: 32px;
+  color: #fff;
+  @include main-text-font(16, 500, 1.25);
+
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 7px 0;
+  margin: 0;
+  background: #ff5e3a;
+  backdrop-filter: blur(6px);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  @media screen and (max-width: 1169px) {
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    line-height: 130%; /* 18.2px */
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 45px;
+    padding-top: 10px;
+    line-height: 125%;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    color: #fff;
+    background: #fcbe13;
+  }
+
+  &:active {
+    background: #e3b32e;
+  }
+
+  &_border_grey {
+    // border: 2px solid #62767c;
+
+    &:hover {
+      color: #fff;
+      background: #62767c;
+    }
+
+    &:active {
+      background-color: #4d5e63;
+    }
+
+    @media screen and (max-width: 1169px) {
+      width: 157px;
+    }
+  }
+
+  &_type_link {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &_type_button {
+    cursor: pointer;
+    width: 255px;
+
+    @media screen and (max-width: 1169px) {
+      width: 217px;
+    }
+
+    @media screen and (max-width: 546px) {
+      margin: 15px;
+      width: 270px;
+    }
+  }
+
+  &_type_pay {
+    background-color: #ffbb4d;
+  }
+
+  &_place_main {
+    @media screen and (max-width: 712px) {
+      display: none;
+    }
+  }
+
+  &_place_full-union-member {
+    width: 255px;
+
+    @media screen and (max-width: 1169px) {
+      width: 217px;
+      height: 35px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    @media screen and (max-width: 622px) {
+      width: 270px;
+      height: 45px;
+      padding-top: 11.5px;
+      margin-left: 15px;
+      align-self: center;
+    }
+  }
+
+  &_place_projects {
+    @media screen and (max-width: 1169px) {
+      width: 190px;
+    }
+    @media screen and (max-width: 900px) {
+      width: 217px;
+      height: 35px;
+      padding-top: 7px;
+    }
+
+    @media screen and (max-width: 622px) {
+      width: 100%;
+      height: 45px;
+      padding-top: 11.5px;
+    }
+  }
+
+  &_place_full-project {
+    @media screen and (max-width: 546px) {
+      margin-left: 0;
+    }
+  }
+}
