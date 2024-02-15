@@ -6,7 +6,7 @@ export const MainMenu = () => {
   const menuListItems = menuItems.map((item, index) => <li key={index}>{item}</li>);
 
   return (
-    <nav>
+    <nav className={styles.root}>
       <ul className={styles.list}>{menuListItems}</ul>
     </nav>
   );

@@ -1,17 +1,13 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .cta {
-  // border: 2px solid var(--main-cta-border-color);
   border-radius: 16px;
   border: none;
-  width: 190px;
-  height: 32px;
-  color: #fff;
-  @include main-text-font(16, 500, 1.25);
+  @include main-text-font(16, 400, 1.25, #fff);
 
   display: inline-block;
   box-sizing: border-box;
-  padding: 7px 0;
+  padding: 6px 24px;
   margin: 0;
   background: #ff5e3a;
   backdrop-filter: blur(6px);
@@ -81,6 +77,7 @@
 
   &_type_pay {
     background-color: #ffbb4d;
+    font-weight: 600;
   }
 
   &_place_main {

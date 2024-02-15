@@ -1,0 +1,12 @@
+@mixin section-flex-container($top, $right, $bottom, $left: null) {
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 auto;
+  padding: $top + px $right + px $bottom + px;
+
+  @if $left != null {
+    padding-left: $left + px;
+  }
+}
