@@ -1,0 +1,13 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  @include main-text-font(30, 50, 1);
+  margin: 0 0 18px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.rootWithPadding {
+  padding-left: 70px;
+  padding-right: 70px;
+}

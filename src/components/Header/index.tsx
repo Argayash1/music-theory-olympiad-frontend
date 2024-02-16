@@ -4,7 +4,7 @@ import { MainMenu, HeaderButtons, Logo } from '../../components';
 
 export const Header = () => {
   return (
-    <header className={styles.root}>
+    <header className={styles.root} id='header'>
       <Logo />
       <MainMenu />
       <HeaderButtons />

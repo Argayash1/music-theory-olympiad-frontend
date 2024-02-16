@@ -19,7 +19,11 @@
   font-weight: 600;
 }
 
-.rootTypeBrandBunner {
+.rootFontWeightMiddle {
+  font-weight: 500;
+}
+
+.rootSizeBig {
   width: 276px;
   height: 50px;
   box-sizing: border-box;
@@ -27,6 +31,9 @@
   border-radius: 24px;
   font-size: 20px;
   line-height: 1.2;
+}
+
+.rootTypeBrandBunner {
   position: relative;
 
   &::after {
@@ -40,4 +47,18 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+
+.rootTypeDownload {
+  width: 276px;
+  height: 50px;
+  padding: 15px 0;
+  box-sizing: border-box;
+  border-radius: 0%;
+  border: 2px solid #ffbb4d;
+  background-color: #fff;
+  color: #ffbb4d;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
 }

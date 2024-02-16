@@ -1,0 +1,27 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25.5px;
+}
+
+.listItem {
+  padding: 0 70px 19.5px;
+  border-bottom: 3px solid #fff;
+  box-sizing: border-box;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.paragraph {
+  @include main-text-font(20, 400, 1.4);
+  margin: 0;
+  padding: 0;
+}

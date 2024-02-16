@@ -7,7 +7,7 @@ import AdminPannel from './pages/AdminPannel';
 function App() {
   return (
     <div className={styles.page}>
-      <div className={styles.content}>
+      <div className={styles.content} id='start'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/admin' element={<AdminPannel />} />

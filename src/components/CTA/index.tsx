@@ -16,14 +16,16 @@ type CTAProps = {
 };
 
 export const CTA = ({ linkText = 'Участвовать', path, place, type, onClick }: CTAProps) => {
-  const ctaLinkClassName = clsx(
-    styles.root,
-    type === 'pay' && styles.rootTypePay,
-    type === 'brand-bunner' && styles.rootTypeBrandBunner,
-  );
+  const ctaClassName = clsx(styles.root, {
+    [styles.rootTypeBrandBunner]: type === 'brand-bunner',
+    [styles.rootSizeBig]: type === 'brand-bunner' || linkText === 'Оплатить картой',
+    [styles.rootTypePay]: type === 'pay',
+    [styles.rootTypeDownload]: type === 'dowmload',
+    [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
+  });
 
   return (
-    <a href={path} className={ctaLinkClassName}>
+    <a href={path} className={ctaClassName}>
       {linkText}
     </a>
   );
