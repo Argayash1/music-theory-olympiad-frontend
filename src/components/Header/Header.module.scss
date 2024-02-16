@@ -2,8 +2,10 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .root {
-  @include section-flex-container(0, 69, 0 70);
+  @include section-flex-container(0, 69, 0, 70);
+
   height: 75px;
   border-bottom: 2px solid #d6d6d6;
   justify-content: space-between;
+  position: fixed;
 }

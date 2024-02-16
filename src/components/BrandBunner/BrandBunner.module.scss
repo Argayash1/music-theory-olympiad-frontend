@@ -1,0 +1,37 @@
+@import '../../assets/styles/mixins/section-flex-container';
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  @include section-flex-container(0, 130, 0, 70);
+  flex-direction: column;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 767px 377px;
+  grid-template-rows: 186px 91px 50px;
+  gap: 42px 96px;
+}
+
+.pageTitle {
+  @include main-text-font(50, 500, 1.1);
+  width: 767px;
+  margin: 21px 0 0;
+  padding: 0;
+}
+
+.pageTitleSpan {
+  color: #ffbb4d;
+  border-bottom: 3px solid #ffbb4d;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -7.5px;
+    right: 0;
+    border-bottom: 3px solid #ffbb4d;
+    width: 90%;
+    transform: rotate(-2deg);
+  }
+}

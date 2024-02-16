@@ -4,8 +4,20 @@
   margin-top: 6px;
   background-color: #ffbb4d;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 50%;
   padding: 5.66px;
   font-size: 0;
   display: inline-block;
+}
+
+.rootTypeBrandBunner {
+  width: 377px;
+  height: 383px;
+  grid-row: 1/4;
+  grid-column: 2/3;
+  padding: 0;
+  background: none;
+  border-radius: 0%;
 }

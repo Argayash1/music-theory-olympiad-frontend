@@ -1,6 +1,5 @@
 import React from 'react';
-import './CTA.scss';
-import { handleScrollToTop } from '../../utils/utils';
+import styles from './CTA.module.scss';
 import clsx from 'clsx';
 
 export enum ButtonTypeEnum {
@@ -16,30 +15,16 @@ type CTAProps = {
   onClick?: () => void;
 };
 
-export const CTA = ({ linkText = 'Подробнее', path, place, type, onClick }: CTAProps) => {
-  const ctaButtonClassName = clsx('cta', 'cta_type_button', place === 'full-project' && 'cta_place_full-project');
-
+export const CTA = ({ linkText = 'Участвовать', path, place, type, onClick }: CTAProps) => {
   const ctaLinkClassName = clsx(
-    'cta',
-    'cta_type_link',
-    linkText !== 'Подробнее' && 'cta_border_grey',
-    place === 'main' && 'cta_place_main',
-    path && path === '/scores' && 'cta_place_full-union-member',
-    place === 'projects' && 'cta_place_projects',
-    type === 'pay' && 'cta_type_pay',
+    styles.root,
+    type === 'pay' && styles.rootTypePay,
+    type === 'brand-bunner' && styles.rootTypeBrandBunner,
   );
 
   return (
-    <>
-      {!path ? (
-        <button className={ctaButtonClassName} type={ButtonTypeEnum.BUTTON} onClick={onClick}>
-          Поделиться
-        </button>
-      ) : (
-        <a href={path} className={ctaLinkClassName} onClick={handleScrollToTop}>
-          {linkText}
-        </a>
-      )}
-    </>
+    <a href={path} className={ctaLinkClassName}>
+      {linkText}
+    </a>
   );
 };

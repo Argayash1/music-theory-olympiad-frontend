@@ -4,11 +4,16 @@
   font-family: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
+}
 
-  &__content {
-    min-width: 320px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+.content {
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
 }

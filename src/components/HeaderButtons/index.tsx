@@ -6,10 +6,7 @@ export const HeaderButtons = () => {
   return (
     <ul className={styles.root}>
       <li>
-        <CTA
-          linkText='Участвовать'
-          path='https://docs.google.com/forms/d/e/1FAIpQLSf9TSakRFx8GSTfv1A53a4aQjkR-CW6NDznfeEhQQ-mgn8VOw/viewform'
-        />
+        <CTA path='https://docs.google.com/forms/d/e/1FAIpQLSf9TSakRFx8GSTfv1A53a4aQjkR-CW6NDznfeEhQQ-mgn8VOw/viewform' />
       </li>
       <li>
         <CTA

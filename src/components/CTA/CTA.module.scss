@@ -1,0 +1,43 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  @include main-text-font(16, 400, 1.25, #fff);
+
+  border-radius: 16px;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 6px 24px;
+  margin: 0;
+  background: #ff5e3a;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.rootTypePay {
+  background-color: #ffbb4d;
+  font-weight: 600;
+}
+
+.rootTypeBrandBunner {
+  width: 276px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px 0;
+  border-radius: 24px;
+  font-size: 20px;
+  line-height: 1.2;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    right: -212px;
+    bottom: -1px;
+    background-image: url('../../assets/icons/brand-bunner-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
