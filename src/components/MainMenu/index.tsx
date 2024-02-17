@@ -5,7 +5,9 @@ import styles from './MainMenu.module.scss';
 export const MainMenu = () => {
   const menuListItems = menuItems.map((item, index) => (
     <li key={index}>
-      <a href={`#${item.path}`}>{item.name}</a>
+      <a href={`#${item.path}`} className={styles.link}>
+        {item.name}
+      </a>
     </li>
   ));
 

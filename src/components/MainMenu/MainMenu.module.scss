@@ -1,16 +1,20 @@
+@import '../../assets/styles/mixins/main-text-font';
+
 .root {
   margin-top: 29px;
-  margin-left: 160px;
+  margin-left: 175px;
 }
 
 .list {
+  @include main-text-font(16, 400, 1.2);
   list-style: none;
   display: flex;
   gap: 22px;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 400;
-  scroll-behavior: smooth;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
 }

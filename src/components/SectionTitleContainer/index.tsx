@@ -9,10 +9,8 @@ type SectionTitleContainerProps = {
 export const SectionTitleContainer = ({ text }: SectionTitleContainerProps) => {
   return (
     <div className={styles.root}>
+      <button className={styles.button} onClick={handleScrollToTop}></button>
       <h2 className={styles.title}>{text}</h2>
-      <a href='#start' className={styles.button}>
-        a
-      </a>
     </div>
   );
 };

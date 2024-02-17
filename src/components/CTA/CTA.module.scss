@@ -11,7 +11,6 @@
   padding: 6px 24px;
   margin: 0;
   background: #ff5e3a;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .rootTypePay {
@@ -61,4 +60,34 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rootTypeLearn {
+  background-color: transparent;
+  padding: 0;
+  align-self: end;
+
+  &::after {
+    content: '';
+    margin-left: 10px;
+    width: 12px;
+    height: 11px;
+    background-image: url('../../assets/icons/adverts-cta-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block; /* или display: block; */
+  }
+}
+
+.icon {
+  width: 10px;
+  height: 15px;
+  background-image: url('../../assets/icons/about-mus-olymp-download-icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
 }

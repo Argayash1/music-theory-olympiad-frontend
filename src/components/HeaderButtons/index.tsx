@@ -1,19 +1,16 @@
 import React from 'react';
 import styles from './HeaderButtons.module.scss';
 import { CTA } from '../../components';
+import { PARTICIPATION_URL, PAYMENT_URL } from '../../utils/constants';
 
 export const HeaderButtons = () => {
   return (
     <ul className={styles.root}>
       <li>
-        <CTA path='https://docs.google.com/forms/d/e/1FAIpQLSf9TSakRFx8GSTfv1A53a4aQjkR-CW6NDznfeEhQQ-mgn8VOw/viewform' />
+        <CTA path={PARTICIPATION_URL} />
       </li>
       <li>
-        <CTA
-          linkText='Оплата'
-          path='https://rrc-ural.ru/konkursy/item/1412-iv-vserossijskaya-olimpiada-po-muzykalno-teoreticheskim-predmetam-im-z-a-vizelya'
-          type='pay'
-        />
+        <CTA linkText='Оплата' path={PAYMENT_URL} type='pay' />
       </li>
     </ul>
   );

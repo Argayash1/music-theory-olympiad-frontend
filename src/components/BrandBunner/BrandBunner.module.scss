@@ -24,6 +24,8 @@
   color: #ffbb4d;
   border-bottom: 3px solid #ffbb4d;
   position: relative;
+  display: inline-block;
+  line-height: 1.01;
 
   &::after {
     content: '';

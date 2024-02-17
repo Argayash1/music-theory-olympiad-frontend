@@ -2,9 +2,8 @@
 
 .root {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  margin-bottom: 22px;
 }
 
 .title {
@@ -23,4 +22,7 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  align-self: end;
+  margin: 0;
+  padding: 0;
 }

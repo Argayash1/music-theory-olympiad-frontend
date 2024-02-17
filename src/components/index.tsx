@@ -14,4 +14,7 @@ export * from './OlympDataCardsContainer';
 export * from './OlympDataCardTitle';
 export * from './TopicAndParticipants';
 export * from './Contacts';
-export * from './Announcements';
+export * from './Adverts';
+export * from './AdvertCard';
+export * from './AdvertCardList';
+export * from './SliderNextButton';

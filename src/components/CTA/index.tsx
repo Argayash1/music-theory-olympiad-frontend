@@ -20,13 +20,22 @@ export const CTA = ({ linkText = 'Участвовать', path, place, type, on
     [styles.rootTypeBrandBunner]: type === 'brand-bunner',
     [styles.rootSizeBig]: type === 'brand-bunner' || linkText === 'Оплатить картой',
     [styles.rootTypePay]: type === 'pay',
-    [styles.rootTypeDownload]: type === 'dowmload',
+    [styles.rootTypeDownload]: type === 'download',
+    [styles.rootTypeLearn]: type === 'learn',
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
   });
 
   return (
-    <a href={path} className={ctaClassName}>
-      {linkText}
-    </a>
+    <>
+      {type === 'download' ? (
+        <a href={path} className={ctaClassName} download>
+          {linkText} <div className={styles.icon}></div>
+        </a>
+      ) : (
+        <a href={path} className={ctaClassName}>
+          {linkText}
+        </a>
+      )}
+    </>
   );
 };

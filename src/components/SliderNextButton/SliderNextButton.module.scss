@@ -1,0 +1,18 @@
+.root {
+  width: 18px;
+  height: 34px;
+  background-color: transparent;
+  background-image: url('../../assets/icons/adverts-slider-arrow.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.rootTypeLeft {
+  transform: rotate(180deg);
+}

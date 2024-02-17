@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from './Announcements.module.scss';
-import { SectionTitleContainer } from '../SectionTitleContainer';
+import styles from './Adverts.module.scss';
+import { SectionTitleContainer, AdvertCardList } from '../../components';
 
-export const Announcements = () => {
+export const Adverts = () => {
   return (
     <section className={styles.root} id='announcements'>
       <SectionTitleContainer text='Объявления' />
+      <AdvertCardList />
     </section>
   );
 };
