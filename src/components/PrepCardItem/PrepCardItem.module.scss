@@ -1,0 +1,12 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+}
+
+.title {
+  @include main-text-font(20, 500, 1.1);
+  margin: 0;
+  padding: 0 0 5px;
+  width: 240px;
+  border-bottom: 2px solid #d6d6d6;
+}

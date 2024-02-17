@@ -23,6 +23,7 @@ export const CTA = ({ linkText = 'Участвовать', path, place, type, on
     [styles.rootTypeDownload]: type === 'download',
     [styles.rootTypeLearn]: type === 'learn',
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
+    [styles.rootSizeMiddle]: linkText === 'Скачать ноты' || linkText === 'Скачать таблицу',
   });
 
   return (

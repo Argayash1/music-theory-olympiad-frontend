@@ -18,3 +18,7 @@ export * from './Adverts';
 export * from './AdvertCard';
 export * from './AdvertCardList';
 export * from './SliderNextButton';
+export * from './PrepMaterials';
+export * from './PrepAccordionMenu';
+export * from './PrepCard';
+export * from './PrepCardItem';

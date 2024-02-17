@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import { AboutMusOlymp, Adverts, BrandBunner } from '../../components';
+import { AboutMusOlymp, Adverts, BrandBunner, PrepMaterials } from '../../components';
 
 export const Main = () => {
   return (
@@ -8,6 +8,7 @@ export const Main = () => {
       <BrandBunner />
       <AboutMusOlymp />
       <Adverts />
+      <PrepMaterials />
     </main>
   );
 };
