@@ -1,6 +1,10 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 16px;
 }
 
 .title {

@@ -22,3 +22,4 @@ export * from './PrepMaterials';
 export * from './PrepAccordionMenu';
 export * from './PrepCard';
 export * from './PrepCardItem';
+export * from './PrepCardItemContent';

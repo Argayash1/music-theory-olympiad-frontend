@@ -1,0 +1,57 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  margin-top: 35px;
+  padding: 0;
+  font-size: 0;
+}
+
+.rootTypeList {
+  list-style: none;
+  margin-right: 0;
+  margin-bottom: 77px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.rootTypeImage {
+  width: 240px;
+  height: 321px;
+  border-radius: 24px;
+  border: 2px solid #d6d6d6;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.button {
+  margin: 0 0 8px;
+  padding: 0;
+  background-color: #ff5e3a;
+  background-image: url('../../assets/icons/prep-materials-play-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+}
+
+.text {
+  @include main-text-font(16, 400, 1.37);
+  margin: 0;
+  padding: 0;
+}
+
+.tableImage {
+  width: 240px;
+  height: 182px;
+  border-radius: 24px;
+  border: 2px solid #d6d6d6;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 19px;
+  display: inline-block;
+}
