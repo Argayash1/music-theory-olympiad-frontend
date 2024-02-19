@@ -1,0 +1,8 @@
+@import '../../assets/styles/mixins/section-flex-container';
+
+.root {
+  @include section-flex-container(0, 70, 144, 70);
+  flex-direction: column;
+  margin-top: 101.14px;
+  z-index: 3;
+}

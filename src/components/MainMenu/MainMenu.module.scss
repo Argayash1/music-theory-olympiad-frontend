@@ -5,6 +5,10 @@
   margin-left: 175px;
 }
 
+.rootTypeFooter {
+  margin: 0;
+}
+
 .list {
   @include main-text-font(16, 400, 1.2);
   list-style: none;
@@ -14,7 +18,18 @@
   padding: 0;
 }
 
+.listTypeFooter {
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  gap: 20px;
+}
+
 .link {
   text-decoration: none;
   color: #000;
+}
+
+.linkTypeFooter {
+  color: #fff;
 }

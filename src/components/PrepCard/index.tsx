@@ -6,27 +6,28 @@ import { ItemDataType, PrepCardItem } from '../PrepCardItem';
 
 type PrepMaterialCardProps = {
   title: string;
+  isOpen: boolean;
+  onClick: () => void;
 };
 
-export const PrepCard = ({ title }: PrepMaterialCardProps) => {
-  const [isItemOpen, setIsItemOpen] = React.useState<boolean>(false);
+export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
   const accordionItemRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    if (isItemOpen && accordionItemRef.current) {
+    if (isOpen && accordionItemRef.current) {
       accordionItemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  }, [isItemOpen]);
+  }, [isOpen]);
 
   const prepCardItem = Object.values(prepCardItemData).slice(2) as ItemDataType[];
 
   return (
-    <article className={clsx(styles.root, isItemOpen && styles.rootIsOpened)} ref={accordionItemRef}>
-      <button className={styles.button} onClick={() => setIsItemOpen(!isItemOpen)}>
+    <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
+      <button className={styles.button} onClick={onClick}>
         <h3 className={styles.title}>{title}</h3>
-        <span className={clsx(styles.titleIcon, isItemOpen && styles.titleIconRotated)}>+</span>
+        <span className={clsx(styles.titleIcon, isOpen && styles.titleIconRotated)}>+</span>
       </button>
-      <ul className={clsx(styles.itemList, isItemOpen && styles.itemListIsOpened)}>
+      <ul className={clsx(styles.itemList, isOpen && styles.itemListIsOpened)}>
         {prepCardData.map((item, index) => (
           <li key={index} className={styles.itemListElement}>
             <PrepCardItem {...item} itemData={prepCardItem[index]} />

@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins/section-flex-container';
+
+.root {
+  height: 771px;
+  background-color: #fff6d6;
+  margin-top: -64px;
+  padding-top: 64px;
+  box-sizing: border-box;
+}
+
+.container {
+  @include section-flex-container(70, 70, 0);
+  flex-direction: column;
+}
+
+.list {
+  margin: 32.86px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 48px;
+  align-self: center;
+}

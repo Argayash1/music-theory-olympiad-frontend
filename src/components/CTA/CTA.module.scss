@@ -86,6 +86,16 @@
   width: 240px;
 }
 
+.rootPlaceArchive {
+  border: none;
+  font-size: 16px;
+  padding: 0 77px 0 40px;
+
+  &:hover {
+    background-color: #fff6d6;
+  }
+}
+
 .icon {
   width: 10px;
   height: 15px;

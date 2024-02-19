@@ -20,10 +20,11 @@ export const CTA = ({ linkText = 'Участвовать', path, place, type, on
     [styles.rootTypeBrandBunner]: type === 'brand-bunner',
     [styles.rootSizeBig]: type === 'brand-bunner' || linkText === 'Оплатить картой',
     [styles.rootTypePay]: type === 'pay',
-    [styles.rootTypeDownload]: type === 'download',
+    [styles.rootTypeDownload]: type === 'download' || type === 'download-archive',
     [styles.rootTypeLearn]: type === 'learn',
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
     [styles.rootSizeMiddle]: linkText === 'Скачать ноты' || linkText === 'Скачать таблицу',
+    [styles.rootPlaceArchive]: type === 'download-archive',
   });
 
   return (

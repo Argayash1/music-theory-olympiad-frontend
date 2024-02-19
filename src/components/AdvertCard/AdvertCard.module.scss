@@ -11,6 +11,10 @@
   flex-direction: column;
 }
 
+.rootBgGrey {
+  background-color: #f2f2f2;
+}
+
 .date {
   @include main-text-font(20, 500, 1, #fff);
   display: inline-block;
@@ -20,6 +24,12 @@
   @include main-text-font(30, 500, 1, #fff);
   margin: 28px 0 18px;
   padding: 0;
+}
+
+.titleTypeArchive {
+  @include main-text-font(20, 600, 1.1, #000);
+  margin: 0;
+  text-align: center;
 }
 
 .text {
@@ -33,4 +43,110 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   min-height: 88px;
+}
+
+.advertList {
+  list-style: none;
+  margin: 63px 0 30.88px 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+  position: relative;
+}
+
+.advertListItem {
+  width: 105px;
+  height: 124px;
+  background-image: url('../../assets/icons/archive-extension-card.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+
+  &:nth-child(2) {
+    .advertListItemSpan {
+      background-color: #ff5e3a;
+    }
+  }
+
+  &:nth-child(3) {
+    position: absolute;
+    bottom: 13px;
+    right: 40px;
+    z-index: 1;
+
+    .advertListItemSpan {
+      display: none;
+    }
+  }
+}
+
+.advertListItemIcon {
+  background-image: url('../../assets/icons/archive-extension-icon.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+}
+
+.advertListItemSpan {
+  @include main-text-font(25, 500, 1, #000);
+
+  width: 80px;
+  height: 52px;
+  background-color: #ffbb4d;
+  display: inline-block;
+  margin: 0 25px 18px 0;
+  padding: 11px 0 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.downLoadBlock {
+  width: 276px;
+  height: 258px;
+  background-color: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 10px;
+}
+
+.downLoadButton {
+  @include main-text-font(20, 500, 1, #000);
+
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  margin: 0;
+  padding: 0 0 0 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    background-image: url('../../assets/icons/adverts-slider-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 6.29px;
+    height: 12px;
+    margin-left: 85px;
+    transform: rotate(90deg);
+  }
+}
+
+.downLoadList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.downLoadListIsOpened {
+  display: block;
 }

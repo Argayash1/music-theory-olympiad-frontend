@@ -1,19 +1,24 @@
 import React from 'react';
 import { menuItems } from '../../utils/menuItems';
 import styles from './MainMenu.module.scss';
+import clsx from 'clsx';
 
-export const MainMenu = () => {
+type MainMenuProps = {
+  type?: string;
+};
+
+export const MainMenu = ({ type }: MainMenuProps) => {
   const menuListItems = menuItems.map((item, index) => (
     <li key={index}>
-      <a href={`#${item.path}`} className={styles.link}>
+      <a href={`#${item.path}`} className={clsx(styles.link, type === 'footer' && styles.linkTypeFooter)}>
         {item.name}
       </a>
     </li>
   ));
 
   return (
-    <nav className={styles.root}>
-      <ul className={styles.list}>{menuListItems}</ul>
+    <nav className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}>
+      <ul className={clsx(styles.list, type === 'footer' && styles.listTypeFooter)}>{menuListItems}</ul>
     </nav>
   );
 };

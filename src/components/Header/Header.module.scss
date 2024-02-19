@@ -2,7 +2,7 @@
 
 .root {
   @include section-flex-container(0, 69, 0, 70);
-
+  display: flex;
   height: 75px;
   border-bottom: 2px solid #d6d6d6;
   justify-content: space-between;
