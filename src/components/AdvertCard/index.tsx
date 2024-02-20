@@ -32,6 +32,7 @@ export const AdvertCard = ({ _id, createdAt, title, content, extensions }: Adver
           ))}
         </ul>
       )}
+
       {!createdAt && (
         <div className={styles.downLoadBlock}>
           <button className={styles.downLoadButton} onClick={() => setIsMenuOpen(!isMenuOpen)}>
