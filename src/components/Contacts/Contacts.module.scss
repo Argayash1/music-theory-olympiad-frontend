@@ -11,17 +11,22 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 18.5px;
+  gap: 16.5px;
+  font-size: 0;
 }
 
 .contactListItem {
-  padding: 0 70px 26.5px;
+  padding-bottom: 26.5px;
   box-sizing: border-box;
   border-bottom: 3px solid #fff;
 
   &:last-child {
     padding-bottom: 0;
     border-bottom: none;
+
+    a:first-of-type {
+      align-items: flex-start;
+    }
   }
 }
 
@@ -37,7 +42,7 @@
 }
 
 .contactLink {
-  @include main-text-font(20, 200, 1.4, #ffbb4d);
+  @include main-text-font(20, 500, 1.4, #ffbb4d);
   margin: 0;
   display: flex;
   align-items: center;
@@ -64,7 +69,8 @@
   background-size: cover;
   width: 18px;
   height: 18px;
-  margin-right: 13px;
+  margin-top: 3px;
+  margin-right: 10px;
 }
 
 .buttonList {
@@ -73,5 +79,6 @@
   flex-direction: column;
   gap: 18px;
   margin: 0;
-  padding: 0 70px;
+  padding: 0;
+  font-size: 0;
 }

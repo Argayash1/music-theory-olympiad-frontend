@@ -2,7 +2,7 @@
 
 .root {
   margin-top: 29px;
-  margin-left: 175px;
+  margin-left: 179px;
 }
 
 .rootTypeFooter {
@@ -10,7 +10,7 @@
 }
 
 .list {
-  @include main-text-font(16, 400, 1.2);
+  @include main-text-font(16, 400, 1.22);
   list-style: none;
   display: flex;
   gap: 22px;
@@ -28,6 +28,7 @@
 .link {
   text-decoration: none;
   color: #000;
+  display: inline-block;
 }
 
 .linkTypeFooter {

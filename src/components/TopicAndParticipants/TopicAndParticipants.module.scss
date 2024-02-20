@@ -6,11 +6,11 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 25.5px;
+  gap: 22.5px;
 }
 
 .listItem {
-  padding: 0 70px 19.5px;
+  padding: 0 0 19.5px;
   border-bottom: 3px solid #fff;
   box-sizing: border-box;
 
@@ -24,4 +24,5 @@
   @include main-text-font(20, 400, 1.4);
   margin: 0;
   padding: 0;
+  max-width: 555px;
 }

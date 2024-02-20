@@ -4,4 +4,27 @@
   @include section-flex-container(0, 70, 0);
   flex-direction: column;
   margin-top: 172px;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ffbb4d;
+    position: absolute;
+    bottom: -73px;
+    left: 549px;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ffbb4d;
+    position: absolute;
+    top: -49px;
+    right: 458px;
+  }
 }

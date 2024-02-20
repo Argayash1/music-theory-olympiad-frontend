@@ -7,10 +7,14 @@ export const LogoContainer = () => {
   return (
     <ul className={styles.root}>
       <li>
-        <img src={usccLogo} alt='Логотип УГК' className={styles.logoUsc} />
+        <a href='https://www.uralconsv.org/' target='_blank' rel='noreferrer'>
+          <img src={usccLogo} alt='Логотип УГК' className={styles.logoUsc} />
+        </a>
       </li>
       <li>
-        <img src={rrcLogo} alt='Логотип РРЦ' className={styles.logoRrc} />
+        <a href='https://rrc-ural.ru/' target='_blank' rel='noreferrer'>
+          <img src={rrcLogo} alt='Логотип РРЦ' className={styles.logoRrc} />
+        </a>
       </li>
     </ul>
   );

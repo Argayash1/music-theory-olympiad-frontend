@@ -34,7 +34,7 @@ export const CTA = ({ linkText = 'Участвовать', path, place, type, on
           {linkText} <div className={styles.icon}></div>
         </a>
       ) : (
-        <a href={path} className={ctaClassName}>
+        <a href={path} className={ctaClassName} target='_blank' rel='noreferrer'>
           {linkText}
         </a>
       )}

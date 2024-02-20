@@ -11,6 +11,29 @@
   grid-template-columns: 767px 377px;
   grid-template-rows: 186px 91px 50px;
   gap: 42px 96px;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ffbb4d;
+    position: absolute;
+    bottom: -34px;
+    right: 295px;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #ffbb4d;
+    position: absolute;
+    top: 29px;
+    right: 9px;
+  }
 }
 
 .pageTitle {

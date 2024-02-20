@@ -1,0 +1,28 @@
+.root {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  width: 276px;
+  height: 208px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-left: 2px solid #d6d6d6;
+  border-right: 2px solid #d6d6d6;
+  border-bottom: 2px solid #d6d6d6;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: -168px;
+  font-size: 0;
+}
+
+.rootIsOpened {
+  display: block;
+
+  li:last-of-type {
+    a {
+      height: 50px;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}

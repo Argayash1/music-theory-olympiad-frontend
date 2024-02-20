@@ -1,0 +1,16 @@
+.root {
+  background-color: #ffbb4d;
+  width: 370px;
+  height: 370px;
+  border-radius: 40px;
+  box-sizing: border-box;
+  padding: 40px 34px 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rootBgGrey {
+  background-color: #f2f2f2;
+  position: relative;
+  padding-bottom: 40px;
+}

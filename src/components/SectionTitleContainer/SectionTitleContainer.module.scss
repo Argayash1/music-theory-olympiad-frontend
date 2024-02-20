@@ -11,7 +11,7 @@
 }
 
 .title {
-  @include main-text-font(40, 500, 1, #ff5e3a);
+  @include main-text-font(40, 500, 0.85, #ff5e3a);
   margin: 0;
   padding: 0;
 }

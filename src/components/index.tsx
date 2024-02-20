@@ -29,4 +29,8 @@ export * from './ArchiveCardList';
 export * from './Results';
 export * from './Jury';
 export * from './JuryMemberCard';
+export * from './DataCard';
+export * from './ArchiveCard';
+export * from './ExtensionCard';
+export * from './DownloadMenu';
 export * from './Footer';

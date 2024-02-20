@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ArchiveCardList.module.scss';
 import { SliderNextButton } from '../SliderNextButton';
 import { archiveCardNames } from '../../utils/archiveCardNames';
-import { AdvertCard } from '../AdvertCard';
+import { ArchiveCard } from '../ArchiveCard';
 
 export const ArchiveCardList = () => {
   return (
@@ -11,7 +11,7 @@ export const ArchiveCardList = () => {
       <ul className={styles.list}>
         {archiveCardNames.map((item, index) => (
           <li key={index}>
-            <AdvertCard title={item.itemName} extensions={item.extensions} />
+            <ArchiveCard title={item.itemName} extensions={item.extensions} />
           </li>
         ))}
       </ul>
