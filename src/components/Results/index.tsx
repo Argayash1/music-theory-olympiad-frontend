@@ -3,7 +3,6 @@ import styles from './Results.module.scss';
 import { SectionTitleContainer } from '../SectionTitleContainer';
 import { prepCardNames } from '../../utils/prepCardNames';
 import { CTA } from '../CTA';
-import { OLYMPIC_RULES_URL } from '../../utils/constants';
 
 export const Results = () => {
   return (
@@ -14,7 +13,7 @@ export const Results = () => {
           {prepCardNames.map((item, index) => (
             <li key={index} className={styles.listItem}>
               <p className={styles.text}>{item}</p>
-              <CTA linkText='Скачать результаты' type='download' path={OLYMPIC_RULES_URL} />
+              <CTA linkText='Скачать результаты' type='download' />
             </li>
           ))}
         </ul>

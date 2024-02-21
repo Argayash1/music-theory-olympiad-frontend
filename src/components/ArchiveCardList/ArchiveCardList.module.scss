@@ -9,4 +9,12 @@
   list-style: none;
   display: flex;
   gap: 20px;
+
+  li:nth-child(2) {
+    article {
+      ul:first-of-type {
+        margin-left: 21px;
+      }
+    }
+  }
 }

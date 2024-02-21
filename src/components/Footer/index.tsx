@@ -28,9 +28,9 @@ export const Footer = () => {
               Шитякова Анастасия Александровна <br />
               вопросы оплаты{' '}
               <a href='mailto: mail@rrc-ural.ru ' className={styles.contactLink}>
-                mail@rrc-ural.ru;
+                mail@rrc-ural.ru
               </a>
-              (343) 372-79-70
+              ; (343) 372-79-70
             </li>
           </ul>
         </div>

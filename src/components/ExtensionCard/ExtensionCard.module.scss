@@ -1,0 +1,37 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  width: 105px;
+  height: 124px;
+  background-image: url('../../assets/icons/archive-extension-card.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.rootCentered {
+  margin: 0 auto;
+}
+
+.rootIcon {
+  background-image: url('../../assets/icons/archive-extension-icon.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+}
+
+.rootSpan {
+  @include main-text-font(25, 500, 0.98);
+
+  width: 80px;
+  height: 52px;
+  background-color: #ffbb4d;
+  display: inline-block;
+  margin: 0 25px 18px 0;
+  padding: 11px 0 0 18px;
+  box-sizing: border-box;
+}

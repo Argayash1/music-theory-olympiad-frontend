@@ -2,21 +2,19 @@
 
 .root {
   list-style: none;
-  margin: 69px 0 44.86px;
+  margin: 62px 0 44.86px;
   padding: 0;
   display: flex;
   gap: 2px;
 }
 
 .button {
-  @include main-text-font(30, 500, 1.06, #d6d6d6);
-  width: 423px;
-  height: 65px;
+  @include main-text-font(30, 500, 1.066, #d6d6d6);
   border: 2px solid #f2f2f2;
   border-radius: 40px 40px 0px 0px;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 16.19px 190.6px 12.85px 166px;
   background-color: #fff;
 }
 

@@ -10,12 +10,10 @@ export enum ButtonTypeEnum {
 type CTAProps = {
   linkText?: string;
   path?: string;
-  place?: string;
   type?: string;
-  onClick?: () => void;
 };
 
-export const CTA = ({ linkText = 'Участвовать', path, place, type, onClick }: CTAProps) => {
+export const CTA = ({ linkText = 'Участвовать', path, type }: CTAProps) => {
   const ctaClassName = clsx(styles.root, {
     [styles.rootTypeBrandBunner]: type === 'brand-bunner',
     [styles.rootSizeBig]: type === 'brand-bunner' || linkText === 'Оплатить картой',
@@ -25,13 +23,15 @@ export const CTA = ({ linkText = 'Участвовать', path, place, type, on
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
     [styles.rootSizeMiddle]: linkText === 'Скачать ноты' || linkText === 'Скачать таблицу',
     [styles.rootPlaceArchive]: type === 'download-archive',
+    [styles.rootInactive]: type === 'download' && !path,
   });
 
   return (
     <>
-      {type === 'download' ? (
+      {type === 'download' || type === 'download-archive' ? (
         <a href={path} className={ctaClassName} download>
-          {linkText} <div className={styles.icon}></div>
+          {linkText}
+          {type === 'download' && <div className={clsx(styles.icon, !path && styles.iconInactive)}></div>}
         </a>
       ) : (
         <a href={path} className={ctaClassName} target='_blank' rel='noreferrer'>

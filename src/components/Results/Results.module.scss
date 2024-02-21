@@ -9,7 +9,7 @@
 }
 
 .container {
-  @include section-flex-container(39.14, 70, 18);
+  @include section-flex-container(39.14, 70, 21);
   display: flex;
   flex-direction: column;
   background-image: url('../../assets/images/results-bacground-image.svg');
@@ -19,7 +19,7 @@
 }
 
 .list {
-  margin: 90px auto 0;
+  margin: 70.86px auto 0;
   padding: 0;
   list-style: none;
   display: grid;
@@ -39,7 +39,7 @@
     background-color: #fff;
     position: absolute;
     top: -6px;
-    left: -106px;
+    left: -128px;
   }
 
   &:nth-child(2)::after {
@@ -50,7 +50,7 @@
     background-color: #fff;
     position: absolute;
     top: -50px;
-    right: -57px;
+    right: -79px;
   }
 
   &:nth-child(3)::before {
@@ -61,7 +61,7 @@
     background-color: #fff;
     position: absolute;
     top: -56px;
-    left: -240px;
+    left: -262px;
   }
 
   &:last-child::after {
@@ -72,7 +72,7 @@
     background-color: #fff;
     position: absolute;
     top: -13px;
-    right: -106px;
+    right: -261px;
   }
 
   &:last-child::before {
@@ -83,12 +83,12 @@
     background-color: #fff;
     position: absolute;
     bottom: -32px;
-    right: -147px;
+    right: -169px;
   }
 }
 
 .text {
-  @include main-text-font(20, 600, 1, #fff);
+  @include main-text-font(20, 600, 0.975, #fff);
   margin: 0 auto 20px;
   padding: 0;
   width: 175px;

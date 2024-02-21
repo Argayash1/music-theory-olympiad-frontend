@@ -14,6 +14,8 @@ export const SectionTitleContainer = ({ text }: SectionTitleContainerProps) => {
       <h2
         className={clsx(
           styles.title,
+          text === 'Материалы для подготовки' && styles.titleTypePrepMaterials,
+          text === 'Архив' && styles.titleTypeArchive,
           text === 'Результаты' && styles.titleTypeResults,
           text === 'Жюри' && styles.titleTypeJury,
         )}

@@ -11,7 +11,9 @@
     border-color: #ff5e3a;
 
     .titleIcon {
-      color: #ff5e3a;
+      path {
+        fill: #ff5e3a;
+      }
     }
   }
 }
@@ -34,14 +36,19 @@
 }
 
 .title {
-  @include main-text-font(30, 500, 1.06);
+  @include main-text-font(30, 500, 1.067);
   margin: 0;
   padding: 0;
 }
 
 .titleIcon {
-  @include main-text-font(40, 500, 1);
-  transition: color 0.3s linear, transform 0.3s linear;
+  @include main-text-font(40, 500, 0.564);
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s linear;
+  path {
+    transition: fill 0.3s linear;
+  }
 }
 
 .titleIconRotated {

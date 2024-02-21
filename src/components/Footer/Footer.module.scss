@@ -7,7 +7,7 @@
 
 .container {
   @include section-flex-container(70, 70, 70);
-  @include main-text-font(20, 400, 1, #fff);
+  @include main-text-font(20, 400, 0.975, #fff);
 }
 
 .navContainer {
@@ -28,7 +28,7 @@
 }
 
 .contactsTitle {
-  margin: 0;
+  margin: 5px 0 0;
   padding: 0;
 }
 
@@ -39,6 +39,8 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 .contactLink {
