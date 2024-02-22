@@ -9,6 +9,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  overflow: hidden;
 
   li:nth-child(2) {
     article {

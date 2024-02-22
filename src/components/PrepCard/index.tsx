@@ -20,10 +20,15 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
   }, [isOpen]);
 
   const prepCardItem = Object.values(prepCardItemData).slice(2) as ItemDataType[];
+  const prepCardItems = prepCardData.map((item, index) => (
+    <li key={index} className={styles.itemListElement}>
+      <PrepCardItem {...item} itemData={prepCardItem[index]} />
+    </li>
+  ));
 
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
-      <button className={styles.button} onClick={onClick}>
+      <button className={styles.button} onClick={onClick} type='button'>
         <h3 className={styles.title}>{title}</h3>
         <svg
           width='22.500000'
@@ -45,13 +50,7 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
           />
         </svg>
       </button>
-      <ul className={clsx(styles.itemList, isOpen && styles.itemListIsOpened)}>
-        {prepCardData.map((item, index) => (
-          <li key={index} className={styles.itemListElement}>
-            <PrepCardItem {...item} itemData={prepCardItem[index]} />
-          </li>
-        ))}
-      </ul>
+      <ul className={clsx(styles.itemList, isOpen && styles.itemListIsOpened)}>{prepCardItems}</ul>
     </article>
   );
 };
