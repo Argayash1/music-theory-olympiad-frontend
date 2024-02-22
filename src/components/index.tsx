@@ -34,3 +34,5 @@ export * from './ArchiveCard';
 export * from './ExtensionCard';
 export * from './DownloadMenu';
 export * from './Footer';
+export * from './PrepMaterialPopup';
+export * from './FullAdvert';
