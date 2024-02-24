@@ -1,7 +1,6 @@
 import React from 'react';
 import { OlympDataCardTitle } from '../../components';
 import styles from './TopicAndParticipants.module.scss';
-import clsx from 'clsx';
 
 export const TopicAndParticipants = () => {
   return (

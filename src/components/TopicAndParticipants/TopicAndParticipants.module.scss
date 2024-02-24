@@ -23,6 +23,6 @@
 .paragraph {
   @include main-text-font(20, 400, 1.4);
   margin: 0;
-  padding: 0;
+  padding: 0 70px;
   max-width: 555px;
 }

@@ -1,20 +1,45 @@
 import React from 'react';
 import styles from './AdvertCardList.module.scss';
-import { AdvertCard, SliderNextButton } from '../../components';
-import { cards } from '../../utils/constants';
+import { AdvertCard, CardSlider } from '../../components';
 
-export const AdvertCardList = () => {
-  const advertCards = cards.map((item) => (
+export type AdvertCardType = {
+  _id: number;
+  createdAt: string;
+  title: string;
+  content: string;
+};
+
+type AdvertCardListProps = {
+  advertCardsItems: AdvertCardType[];
+  onCtaClick: (_id: number) => void;
+};
+
+export const AdvertCardList = ({ advertCardsItems, onCtaClick }: AdvertCardListProps) => {
+  const [switchCount, setSwitchCount] = React.useState<number>(0);
+
+  const advertCards = advertCardsItems.map((item) => (
     <li key={item._id}>
-      <AdvertCard {...item} />
+      <AdvertCard {...item} onCtaClick={onCtaClick} />
     </li>
   ));
 
+  const cardWidth = 370;
+  const cardsGap = 20;
+  const offset = switchCount * -390;
+  const minCardListWidth = 1150;
+  const cardListWidth = cardWidth * advertCardsItems.length + cardsGap * (advertCardsItems.length - 1);
+  const nextButtonDisabled = cardListWidth - Math.abs(offset) <= minCardListWidth;
+
   return (
-    <div className={styles.root}>
-      <SliderNextButton type='left' />
-      <ul className={styles.list}>{advertCards}</ul>
-      <SliderNextButton />
-    </div>
+    <CardSlider
+      onSwitchToPrevSlides={() => setSwitchCount((prev) => prev - 1)}
+      onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
+      switchCount={switchCount}
+      nextButtonDisabled={nextButtonDisabled}
+    >
+      <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
+        {advertCards}
+      </ul>
+    </CardSlider>
   );
 };

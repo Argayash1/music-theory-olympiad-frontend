@@ -9,7 +9,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
-  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 
   li:nth-child(2) {
     article {

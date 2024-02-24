@@ -36,3 +36,5 @@ export * from './DownloadMenu';
 export * from './Footer';
 export * from './PrepMaterialPopup';
 export * from './FullAdvert';
+export * from './CloseButton';
+export * from './CardSlider';
