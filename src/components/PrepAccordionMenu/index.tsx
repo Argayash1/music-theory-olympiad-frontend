@@ -8,13 +8,13 @@ export const PrepAccordionMenu = () => {
 
   const prepCards = prepCardNames.map((item, index) => (
     <li key={index}>
-      <PrepCard isOpen={openItemIndex === index} title={item} onClick={() => handleItemClick(index)} />
+      <PrepCard
+        isOpen={openItemIndex === index}
+        title={item}
+        onClick={() => setOpenItemIndex(openItemIndex === index ? null : index)}
+      />
     </li>
   ));
-
-  const handleItemClick = (index: number) => {
-    setOpenItemIndex(openItemIndex === index ? null : index);
-  };
 
   return <ul className={styles.root}>{prepCards}</ul>;
 };

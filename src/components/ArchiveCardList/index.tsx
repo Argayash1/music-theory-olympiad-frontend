@@ -26,6 +26,7 @@ export const ArchiveCardList = () => {
       onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
       switchCount={switchCount}
       nextButtonDisabled={nextButtonDisabled}
+      type='archive'
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {archiveCards}

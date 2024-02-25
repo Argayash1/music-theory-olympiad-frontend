@@ -21,7 +21,7 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
 
   const prepCardItem = Object.values(prepCardItemData).slice(2) as ItemDataType[];
   const prepCardItems = prepCardData.map((item, index) => (
-    <li key={index} className={styles.itemListElement}>
+    <li key={index} className={clsx(styles.listItem, isOpen && styles.listItemIsOpened)}>
       <PrepCardItem {...item} itemData={prepCardItem[index]} />
     </li>
   ));
@@ -29,7 +29,7 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
       <button className={styles.button} onClick={onClick} type='button'>
-        <h3 className={styles.title}>{title}</h3>
+        {title}
         <svg
           width='22.500000'
           height='22.500000'
@@ -37,9 +37,8 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
           xmlnsXlink='http://www.w3.org/1999/xlink'
-          className={clsx(styles.titleIcon, isOpen && styles.titleIconRotated)}
+          className={clsx(styles.icon, isOpen && styles.iconRotated)}
         >
-          <desc>Created with Pixso.</desc>
           <defs />
           <path
             id='Union (Stroke)'
@@ -50,7 +49,7 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
           />
         </svg>
       </button>
-      <ul className={clsx(styles.itemList, isOpen && styles.itemListIsOpened)}>{prepCardItems}</ul>
+      <ul className={styles.list}>{prepCardItems}</ul>
     </article>
   );
 };

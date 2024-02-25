@@ -5,12 +5,13 @@
   box-sizing: border-box;
   border-radius: 40px;
   height: 80px;
+  overflow: hidden;
   transition: border-color 0.3s linear, height 0.3s linear;
 
   &:hover {
     border-color: #ff5e3a;
 
-    .titleIcon {
+    .icon {
       path {
         fill: #ff5e3a;
       }
@@ -23,6 +24,7 @@
 }
 
 .button {
+  @include main-text-font(30, 500, 1.067);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -35,13 +37,7 @@
   border-radius: 40px;
 }
 
-.title {
-  @include main-text-font(30, 500, 1.067);
-  margin: 0;
-  padding: 0;
-}
-
-.titleIcon {
+.icon {
   @include main-text-font(40, 500, 0.564);
   margin: 0;
   padding: 0;
@@ -52,26 +48,19 @@
   }
 }
 
-.titleIconRotated {
+.iconRotated {
   transform: rotate(-45deg);
 }
 
-.itemList {
+.list {
   list-style: none;
   margin: 0;
   padding: 0 70px;
   display: flex;
   gap: 34px;
-  height: 0;
-  border: 1px solid red;
 }
 
-.itemListIsOpened {
-  height: 443px;
-  transition: height 0.3s linear;
-}
-
-.itemListElement {
+.listItem {
   width: 271px;
   height: 443px;
   border-right: 2px solid #d6d6d6;

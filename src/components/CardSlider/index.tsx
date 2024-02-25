@@ -1,6 +1,7 @@
 import React from 'react';
 import { SliderNextButton } from '../SliderNextButton';
 import styles from './CardSlider.module.scss';
+import clsx from 'clsx';
 
 type CardSliderProps = {
   onSwitchToNextSlides: () => void;
@@ -8,6 +9,7 @@ type CardSliderProps = {
   children: React.ReactNode;
   switchCount: number;
   nextButtonDisabled: boolean;
+  type?: string;
 };
 
 export const CardSlider = ({
@@ -16,16 +18,17 @@ export const CardSlider = ({
   onSwitchToNextSlides,
   switchCount,
   nextButtonDisabled,
+  type,
 }: CardSliderProps) => {
   return (
-    <div className={styles.root}>
+    <div className={clsx(styles.root)}>
       <SliderNextButton
         type='left'
         onClick={onSwitchToPrevSlides}
         switchCount={switchCount}
         nextButtonDisabled={nextButtonDisabled}
       />
-      <div className={styles.wrapper}>{children}</div>
+      <div className={clsx(styles.wrapper, type === 'archive' && styles.wrapperTypeArchive)}>{children}</div>
       <SliderNextButton
         onClick={onSwitchToNextSlides}
         switchCount={switchCount}
