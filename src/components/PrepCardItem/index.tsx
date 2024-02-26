@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './PrepCardItem.module.scss';
 import { CTA, PrepCardItemContent } from '../../components';
-import clsx from 'clsx';
 
 export interface IDictation {
   audioUrl: string;
