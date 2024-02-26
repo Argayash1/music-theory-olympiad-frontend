@@ -27,6 +27,7 @@ export const CTA = ({ linkText = 'Участвовать', path, type, onClick }
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
     [styles.rootSizeMiddle]: linkText === 'Скачать ноты' || linkText === 'Скачать таблицу',
     [styles.rootPlaceArchive]: type === 'download-archive',
+    [styles.rootPlaceResults]: linkText === 'Скачать результаты',
     [styles.rootInactive]: type === 'download' && !path,
   });
 

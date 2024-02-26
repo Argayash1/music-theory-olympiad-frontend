@@ -21,7 +21,7 @@ export const CardSlider = ({
   type,
 }: CardSliderProps) => {
   return (
-    <div className={clsx(styles.root)}>
+    <div className={clsx(styles.root, type === 'archive' && styles.rootTypeArchive)}>
       <SliderNextButton
         type='left'
         onClick={onSwitchToPrevSlides}

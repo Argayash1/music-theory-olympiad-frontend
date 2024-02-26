@@ -8,7 +8,7 @@
   text-align: center;
   padding: 6px 24px;
   margin: 0;
-  background: #ff5e3a;
+  background-color: #ff5e3a;
 }
 
 .rootTypeButton {
@@ -155,6 +155,10 @@
     bottom: 12px;
     right: 75px;
   }
+}
+
+.rootPlaceResults {
+  border: none;
 }
 
 .icon {
