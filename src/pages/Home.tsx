@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Header activeSection={activeSection} />
-      <Main activeSection={activeSection} onSetActiveSection={(sectionId: string) => setActiveSection(sectionId)} />
+      <Main onSetActiveSection={(sectionId: string) => setActiveSection(sectionId)} />
       <Footer />
     </div>
   );

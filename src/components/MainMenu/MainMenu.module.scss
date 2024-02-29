@@ -3,6 +3,7 @@
 .root {
   margin-top: 29px;
   margin-left: 175px;
+  font-size: 0;
 }
 
 .rootTypeFooter {
@@ -12,13 +13,13 @@
 }
 
 .list {
-  @include main-text-font(16, 400, 1.22);
   list-style: none;
   display: flex;
   gap: 22px;
   margin: 0;
   padding: 0;
-  height: 100%;
+  font-size: 0;
+  line-height: 0;
 }
 
 .listTypeFooter {
@@ -29,15 +30,38 @@
 }
 
 .link {
+  @include main-text-font(16, 400, 1.22);
   text-decoration: none;
-  color: #000;
-  display: inline-block;
+  display: flex;
+  transition: color 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &:hover {
+    color: #ff5e3a;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: -28.48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+  }
 }
 
 .linkActive {
   color: #ff5e3a;
-  border-bottom: 2px solid #ff5e3a;
-  padding-bottom: 24.48px;
+
+  &::before {
+    width: 100%;
+    transition: width 0.5s linear;
+  }
 }
 
 .linkTypeFooter {

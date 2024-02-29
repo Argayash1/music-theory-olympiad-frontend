@@ -3,13 +3,12 @@ import styles from './Main.module.scss';
 import { AboutMusOlymp, Adverts, Archive, BrandBunner, Jury, PrepMaterials, Results } from '../../components';
 
 type MainProps = {
-  activeSection: string;
   onSetActiveSection: (sectionId: string) => void;
 };
 
 type Section = HTMLElement | null;
 
-export const Main = ({ activeSection, onSetActiveSection }: MainProps) => {
+export const Main = ({ onSetActiveSection }: MainProps) => {
   const brandBunnerRef = React.useRef<HTMLElement>(null);
   const aboutMusOlympRef = React.useRef<HTMLElement>(null);
   const advertsRef = React.useRef<HTMLElement>(null);
@@ -42,7 +41,7 @@ export const Main = ({ activeSection, onSetActiveSection }: MainProps) => {
           const height = window.innerHeight;
           const id = section.id;
 
-          if (top <= height / 2) {
+          if (top <= height / 4) {
             onSetActiveSection(id);
           }
         }

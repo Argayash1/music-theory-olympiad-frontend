@@ -9,6 +9,10 @@
   padding: 6px 24px;
   margin: 0;
   background-color: #ff5e3a;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .rootTypeButton {
