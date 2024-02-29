@@ -1,15 +1,17 @@
 @import '../../assets/styles/mixins/section-flex-container';
 
 .root {
-  @include section-flex-container(0, 70, 0, 70);
-  display: flex;
   height: 75px;
   border-bottom: 2px solid #d6d6d6;
-  justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #fff;
   z-index: 10;
+  width: 100%;
+}
+
+.container {
+  @include section-flex-container(0, 70, 0, 70);
+  display: flex;
+  justify-content: space-between;
 }

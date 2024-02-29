@@ -4,9 +4,9 @@ import { SectionTitleContainer } from '../SectionTitleContainer';
 import { juryMembersData } from '../../utils/juryMembersData';
 import { JuryMemberCard } from '../JuryMemberCard';
 
-export const Jury = () => {
+export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section className={styles.root} id='jury'>
+    <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
         <SectionTitleContainer text='Жюри' />
         <ul className={styles.list}>
@@ -19,4 +19,4 @@ export const Jury = () => {
       </div>
     </section>
   );
-};
+});

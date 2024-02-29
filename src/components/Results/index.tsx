@@ -4,9 +4,9 @@ import { SectionTitleContainer } from '../SectionTitleContainer';
 import { prepCardNames } from '../../utils/prepCardNames';
 import { CTA } from '../CTA';
 
-export const Results = () => {
+export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section className={styles.root} id='results'>
+    <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
         <SectionTitleContainer text='Результаты' />
         <ul className={styles.list}>
@@ -20,4 +20,4 @@ export const Results = () => {
       </div>
     </section>
   );
-};
+});

@@ -5,12 +5,20 @@ import clsx from 'clsx';
 
 type MainMenuProps = {
   type?: string;
+  activeSection?: string;
 };
 
-export const MainMenu = ({ type }: MainMenuProps) => {
+export const MainMenu = ({ type, activeSection }: MainMenuProps) => {
   const menuListItems = menuItems.map((item, index) => (
     <li key={index}>
-      <a href={`#${item.path}`} className={clsx(styles.link, type === 'footer' && styles.linkTypeFooter)}>
+      <a
+        href={`#${item.path}`}
+        className={clsx(
+          styles.link,
+          activeSection === item.path && styles.linkActive,
+          type === 'footer' && styles.linkTypeFooter,
+        )}
+      >
         {item.name}
       </a>
     </li>

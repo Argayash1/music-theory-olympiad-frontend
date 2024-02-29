@@ -2,9 +2,9 @@ import React from 'react';
 import { CTA, Logo, LogoContainer, MainInfo } from '../../components';
 import styles from './BrandBunner.module.scss';
 
-export const BrandBunner = () => {
+export const BrandBunner = React.forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section className={styles.root}>
+    <section className={styles.root} ref={ref}>
       <LogoContainer />
       <div className={styles.mainContainer}>
         <h1 className={styles.pageTitle}>
@@ -20,4 +20,4 @@ export const BrandBunner = () => {
       </div>
     </section>
   );
-};
+});

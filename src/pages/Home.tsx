@@ -2,10 +2,12 @@ import React from 'react';
 import { Footer, Header, Main } from '../components';
 
 const Home = () => {
+  const [activeSection, setActiveSection] = React.useState<string>('');
+
   return (
     <div>
-      <Header />
-      <Main />
+      <Header activeSection={activeSection} />
+      <Main activeSection={activeSection} onSetActiveSection={(sectionId: string) => setActiveSection(sectionId)} />
       <Footer />
     </div>
   );
