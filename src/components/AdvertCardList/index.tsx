@@ -11,10 +11,11 @@ export type AdvertCardType = {
 
 type AdvertCardListProps = {
   advertCardsItems: AdvertCardType[];
+  cardId: number | null;
   onCtaClick: (_id: number) => void;
 };
 
-export const AdvertCardList = ({ advertCardsItems, onCtaClick }: AdvertCardListProps) => {
+export const AdvertCardList = ({ advertCardsItems, cardId, onCtaClick }: AdvertCardListProps) => {
   const [switchCount, setSwitchCount] = React.useState<number>(0);
 
   const advertCards = advertCardsItems.map((item) => (
@@ -36,6 +37,7 @@ export const AdvertCardList = ({ advertCardsItems, onCtaClick }: AdvertCardListP
       onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
       switchCount={switchCount}
       nextButtonDisabled={nextButtonDisabled}
+      cardId={cardId}
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {advertCards}

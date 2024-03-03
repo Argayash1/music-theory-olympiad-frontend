@@ -6,6 +6,18 @@
   flex-direction: column;
   position: relative;
 
+  &::before {
+    content: '';
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    left: 358px;
+    bottom: -1px;
+    background-image: url('../../assets/icons/brand-bunner-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   &::after {
     content: '';
     display: inline-block;

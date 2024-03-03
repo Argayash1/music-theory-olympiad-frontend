@@ -9,42 +9,42 @@ import clsx from 'clsx';
 
 type FullAdvertProps = {
   onClose: () => void;
-  advertItem: AdvertCardType;
+  advertItem: AdvertCardType | null;
+  cardId: number | null;
 };
 
 const socialIcons = [tgicon, okicon, vkicon, waicon];
 
-export const FullAdvert = ({ onClose, advertItem }: FullAdvertProps) => {
+export const FullAdvert = ({ onClose, advertItem, cardId }: FullAdvertProps) => {
   const [isSocialIconsOpen, setIsSocialIconsOpen] = React.useState<boolean>(false);
 
   return (
-    <article className={styles.root}>
-      <div className={styles.imgContainer}>
-        <div className={styles.imgBackground}>
-          <div className={styles.img}></div>
+    <div className={clsx(styles.root, cardId && styles.rootIsOpened)}>
+      <span className={clsx(styles.loadingText, !advertItem && styles.loadingTextVisible)}>Загрузка...</span>
+      <article className={clsx(styles.rootContainer, advertItem && styles.rootContainerVisible)}>
+        <div className={styles.image}></div>
+        <div className={styles.textContainer}>
+          <span className={styles.date}>{advertItem?.createdAt}</span>
+          <h3 className={styles.title}>{advertItem?.title}</h3>
+          <p className={styles.text}>{advertItem?.content}</p>
+          <div className={styles.shareContainer}>
+            <CTA
+              linkText='Поделиться'
+              type='share'
+              onClick={() => setIsSocialIconsOpen(!isSocialIconsOpen)}
+              isBorderShown={isSocialIconsOpen}
+            />
+            <ul className={clsx(styles.socialIcons, isSocialIconsOpen && styles.socialIconsIsOpened)}>
+              {socialIcons.map((icon, index) => (
+                <li key={index} className={styles.socialIconsItem}>
+                  {<img src={icon} alt='' className={styles.socialIcon} />}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className={styles.textContainer}>
-        <span className={styles.date}>{advertItem.createdAt}</span>
-        <h3 className={styles.title}>{advertItem.title}</h3>
-        <p className={styles.text}>{advertItem.content}</p>
-        <div className={styles.shareContainer}>
-          <CTA
-            linkText='Поделиться'
-            type='share'
-            onClick={() => setIsSocialIconsOpen(!isSocialIconsOpen)}
-            isBorderShown={isSocialIconsOpen}
-          />
-          <ul className={clsx(styles.socialIcons, isSocialIconsOpen && styles.socialIconsIsOpened)}>
-            {socialIcons.map((icon, index) => (
-              <li key={index} className={styles.socialIconsItem}>
-                {<img src={icon} alt='' className={styles.socialIcon} />}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <CloseButton onClick={onClose} place='adverts' />
-    </article>
+        <CloseButton onClick={onClose} place='adverts' />
+      </article>
+    </div>
   );
 };

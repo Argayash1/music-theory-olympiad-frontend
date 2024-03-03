@@ -59,22 +59,6 @@
   line-height: 1.2;
 }
 
-.rootTypeBrandBunner {
-  position: relative;
-
-  &::after {
-    content: '';
-    width: 200px;
-    height: 70px;
-    position: absolute;
-    right: -212px;
-    bottom: -1px;
-    background-image: url('../../assets/icons/brand-bunner-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
 .rootTypeDownload {
   width: 276px;
   height: 50px;
@@ -158,25 +142,16 @@
 
   &:hover {
     .arrowIcon {
-      line {
-        transform: scaleX(2);
-      }
-
-      polyline {
-        transform: translateX(25px);
+      path {
+        transform: translateX(0);
       }
     }
   }
 
   &:active {
     .arrowIcon {
-      line {
-        transform: scaleX(1);
-        transition: none;
-      }
-
-      polyline {
-        transform: translateX(0);
+      path {
+        transform: translateX(-11px);
         transition: none;
       }
     }
@@ -235,17 +210,14 @@
 }
 
 .arrowIcon {
-  width: 40px;
-  height: 15px;
+  width: 25.999756px;
+  height: 14.008301px;
   position: absolute;
-  bottom: -0.5px;
-  right: -28px;
+  top: 2px;
+  right: -13px;
 
-  line {
-    transition: transform 0.1s ease-in-out;
-  }
-
-  polyline {
+  path {
+    transform: translateX(-11px);
     transition: transform 0.1s ease-in-out;
   }
 }

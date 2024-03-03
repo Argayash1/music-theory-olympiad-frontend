@@ -1,7 +1,16 @@
 .root {
   display: flex;
+  visibility: visible;
+  opacity: 1;
   gap: 57px;
   margin-top: 92px;
+  transition: none;
+}
+
+.rootHidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .rootTypeArchive {

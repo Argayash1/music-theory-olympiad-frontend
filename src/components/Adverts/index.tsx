@@ -5,25 +5,24 @@ import { cards } from '../../utils/constants';
 
 export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   const [cardId, setCardId] = React.useState<number | null>(null);
-  const [adverCardItem, setAdverCardItem] = React.useState<AdvertCardType | undefined>(undefined);
+  const [adverCardItem, setAdverCardItem] = React.useState<AdvertCardType | null>(null);
 
   React.useEffect(() => {
     if (cardId) {
       const advertCard = cards.find((card) => card._id === cardId);
-      setAdverCardItem(advertCard);
+      if (advertCard) {
+        setTimeout(() => setAdverCardItem(advertCard), 200);
+      }
     } else {
-      setAdverCardItem(undefined);
+      setTimeout(() => setAdverCardItem(null), 500);
     }
   }, [cardId]);
 
   return (
     <section className={styles.root} id='adverts' ref={ref}>
       <SectionTitleContainer text='Объявления' />
-      {!adverCardItem ? (
-        <AdvertCardList advertCardsItems={cards} onCtaClick={(_id) => setCardId(_id)} />
-      ) : (
-        <FullAdvert onClose={() => setCardId(null)} advertItem={adverCardItem} />
-      )}
+      <AdvertCardList advertCardsItems={cards} onCtaClick={(cardId) => setCardId(cardId)} cardId={cardId} />
+      <FullAdvert onClose={() => setCardId(null)} advertItem={adverCardItem} cardId={cardId} />
     </section>
   );
 });

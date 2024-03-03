@@ -10,6 +10,7 @@ type CardSliderProps = {
   switchCount: number;
   nextButtonDisabled: boolean;
   type?: string;
+  cardId?: number | null;
 };
 
 export const CardSlider = ({
@@ -19,9 +20,10 @@ export const CardSlider = ({
   switchCount,
   nextButtonDisabled,
   type,
+  cardId,
 }: CardSliderProps) => {
   return (
-    <div className={clsx(styles.root, type === 'archive' && styles.rootTypeArchive)}>
+    <div className={clsx(styles.root, type === 'archive' && styles.rootTypeArchive, cardId && styles.rootHidden)}>
       <SliderNextButton
         type='left'
         onClick={onSwitchToPrevSlides}

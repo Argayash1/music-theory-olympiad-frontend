@@ -15,11 +15,12 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
 
   React.useEffect(() => {
     if (isOpen && accordionItemRef.current) {
-      accordionItemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      accordionItemRef.current.scrollIntoView({ block: 'start' });
     }
   }, [isOpen]);
 
   const prepCardItem = Object.values(prepCardItemData).slice(2) as ItemDataType[];
+
   const prepCardItems = prepCardData.map((item, index) => (
     <li key={index} className={clsx(styles.listItem, isOpen && styles.listItemIsOpened)}>
       <PrepCardItem {...item} itemData={prepCardItem[index]} />

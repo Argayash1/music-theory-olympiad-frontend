@@ -7,7 +7,7 @@ type AdvertCardProps = {
   createdAt?: string;
   title: string;
   content?: string;
-  onCtaClick: (_id: number) => void;
+  onCtaClick: (cardId: number) => void;
 };
 
 export const AdvertCard = ({ _id, createdAt, title, content, onCtaClick }: AdvertCardProps) => {

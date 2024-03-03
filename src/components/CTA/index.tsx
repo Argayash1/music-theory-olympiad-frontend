@@ -19,7 +19,6 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
   const ctaClassName = clsx(styles.root, {
     [styles.rootTypeLink]: type !== 'learn' && type !== 'share',
     [styles.rootTypeButton]: type === 'learn' || type === 'share',
-    [styles.rootTypeBrandBunner]: type === 'brand-bunner',
     [styles.rootSizeBig]: type === 'brand-bunner' || linkText === 'Оплатить картой',
     [styles.rootTypePay]: type === 'pay',
     [styles.rootTypeDownload]: type === 'download' || type === 'download-archive',
@@ -39,9 +38,26 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
         <button onClick={onClick} className={ctaClassName}>
           {linkText}
           {type === 'learn' && (
-            <svg className={styles.arrowIcon} viewBox='0 0 62 22' stroke='#fff' stroke-width='4' fill='none'>
-              <line x1='0' y1='11' x2='20' y2='11' />
-              <polyline points='10,1 20,11 10,21' />
+            // <svg className={styles.arrowIcon} viewBox='0 0 62 22' stroke='#fff' stroke-width='4' fill='none'>
+            //   <line x1='0' y1='11' x2='20' y2='11' />
+            //   <polyline points='10,1 20,11 10,21' />
+            // </svg>
+            <svg
+              className={styles.arrowIcon}
+              viewBox='0 0 25.9998 14.0083'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+            >
+              <defs />
+              <path
+                id='Vector 4'
+                d='M18.7144 13.0042L25 7.00415L18.7144 1.00415M1 7.00415L25 7.00415'
+                stroke='#FFFFFF'
+                strokeOpacity='1.000000'
+                strokeWidth='2.000000'
+                strokeLinejoin='round'
+              />
             </svg>
           )}
         </button>
