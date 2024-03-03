@@ -38,3 +38,4 @@ export * from './PrepMaterialPopup';
 export * from './FullAdvert';
 export * from './CloseButton';
 export * from './CardSlider';
+export * from './SharePannel';
