@@ -1,20 +1,5 @@
 @import '../../assets/styles/mixins/main-text-font';
 
-.root {
-  background-color: #ffbb4d;
-  width: 370px;
-  height: 370px;
-  border-radius: 40px;
-  box-sizing: border-box;
-  padding: 40px 34px 48px 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.rootBgGrey {
-  background-color: #f2f2f2;
-}
-
 .date {
   @include main-text-font(20, 500, 1.1, #fff);
   display: inline-block;
@@ -23,13 +8,13 @@
 .title {
   @include main-text-font(30, 500, 0.733, #fff);
   margin: 28px 0 18px;
-  padding: 0;
+  padding: 0 6px 0 0;
 }
 
 .text {
   @include main-text-font(16, 400, 1.37, #fff);
   margin: 0 0 88px 0;
-  padding: 0;
+  padding: 0 6px 0 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;

@@ -11,10 +11,11 @@ type CTAProps = {
   linkText?: string;
   path?: string;
   type?: string;
+  isBorderShown?: boolean;
   onClick?: () => void;
 };
 
-export const CTA = ({ linkText = 'Участвовать', path, type, onClick }: CTAProps) => {
+export const CTA = ({ linkText = 'Участвовать', path, type, isBorderShown, onClick }: CTAProps) => {
   const ctaClassName = clsx(styles.root, {
     [styles.rootTypeLink]: type !== 'learn' && type !== 'share',
     [styles.rootTypeButton]: type === 'learn' || type === 'share',
@@ -29,6 +30,7 @@ export const CTA = ({ linkText = 'Участвовать', path, type, onClick }
     [styles.rootPlaceArchive]: type === 'download-archive',
     [styles.rootPlaceResults]: linkText === 'Скачать результаты',
     [styles.rootInactive]: type === 'download' && !path,
+    [styles.rootBorderShown]: isBorderShown,
   });
 
   return (
@@ -36,11 +38,37 @@ export const CTA = ({ linkText = 'Участвовать', path, type, onClick }
       {onClick ? (
         <button onClick={onClick} className={ctaClassName}>
           {linkText}
+          {type === 'learn' && (
+            <svg className={styles.arrowIcon} viewBox='0 0 62 22' stroke='#fff' stroke-width='4' fill='none'>
+              <line x1='0' y1='11' x2='20' y2='11' />
+              <polyline points='10,1 20,11 10,21' />
+            </svg>
+          )}
         </button>
       ) : type === 'download' || type === 'download-archive' ? (
         <a href={path} className={ctaClassName} download>
           {linkText}
-          {type === 'download' && <div className={clsx(styles.icon, !path && styles.iconInactive)}></div>}
+          {type === 'download' && (
+            <svg
+              className={clsx(styles.icon, !path && styles.iconInactive)}
+              width='12.000000'
+              height='17.000000'
+              viewBox='0 0 12 17'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+            >
+              <defs />
+              <path
+                id='Vector'
+                d='M1 16L11 16M6 1L6 12.6667M10.1667 8.5L6 12.6667L1.83331 8.5'
+                stroke='#FFBB4D'
+                strokeOpacity='1.000000'
+                strokeWidth='2.000000'
+                strokeLinejoin='round'
+              />
+            </svg>
+          )}
         </a>
       ) : (
         <a href={path} className={ctaClassName} target='_blank' rel='noreferrer'>

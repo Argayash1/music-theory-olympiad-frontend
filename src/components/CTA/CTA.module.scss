@@ -9,9 +9,18 @@
   padding: 6px 24px;
   margin: 0;
   background-color: #ff5e3a;
+  transform: scale(1);
+  transition: 0.3s box-shadow ease, transform 0.1s ease 0.1s;
+  z-index: 9;
 
-  &:hover {
-    transform: scale(1.03);
+  &:not(.rootTypeDownload, .rootTypeShare, .rootTypeLearn):hover {
+    box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+  }
+
+  &:not(.rootTypeShare, .rootTypeLearn, .rootTypeDownload):active {
+    transform: scale(0.9375);
+    box-shadow: none;
+    transition: box-shadow 0.1s ease-in-out;
   }
 }
 
@@ -30,6 +39,10 @@
 .rootTypePay {
   background-color: #ffbb4d;
   font-weight: 600;
+
+  &:not(.rootTypeDownload):hover {
+    box-shadow: 0px 0px 20px 0px rgb(255, 187, 77);
+  }
 }
 
 .rootFontWeightMiddle {
@@ -77,19 +90,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+
+  &:not(.rootInactive):active {
+    background-color: #ffbb4d;
+    color: #fff;
+    border-color: #fff;
+
+    .icon {
+      path {
+        stroke: #fff;
+      }
+    }
+  }
 }
 
 .rootTypeShare {
   font-size: 20px;
   font-weight: 500;
   line-height: 0.8;
-  margin: 36px 0 0;
-  padding: 1.06px 0 0 34px;
+  margin: 0;
+  padding: 1.06px 0 0 21px;
   position: relative;
-  width: 210px;
-  height: 34px;
+  width: 188px;
+  height: 43px;
   text-align: left;
   box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  transition: border 0.1s ease-in-out;
+
+  &:hover {
+    border: 1px solid #fff;
+  }
 
   &::after {
     content: '';
@@ -100,9 +133,13 @@
     background-image: url('../../assets/icons/full-adverts-share-icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    top: 8px;
-    right: 34px;
+    top: 9px;
+    right: 22px;
   }
+}
+
+.rootBorderShown {
+  border: 1px solid #fff;
 }
 
 .rootInactive {
@@ -115,16 +152,34 @@
   align-self: end;
   line-height: 0.8;
   font-size: 20px;
+  width: 165px;
+  position: relative;
+  text-align: left;
 
-  &::after {
-    content: '';
-    margin-left: 10px;
-    width: 12px;
-    height: 11px;
-    background-image: url('../../assets/icons/adverts-cta-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    display: inline-block;
+  &:hover {
+    .arrowIcon {
+      line {
+        transform: scaleX(2);
+      }
+
+      polyline {
+        transform: translateX(25px);
+      }
+    }
+  }
+
+  &:active {
+    .arrowIcon {
+      line {
+        transform: scaleX(1);
+        transition: none;
+      }
+
+      polyline {
+        transform: translateX(0);
+        transition: none;
+      }
+    }
   }
 }
 
@@ -166,15 +221,31 @@
 }
 
 .icon {
-  width: 10px;
-  height: 15px;
-  background-image: url('../../assets/icons/about-mus-olymp-download-icon.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   margin-left: 10px;
+
+  path {
+    transition: stroke 0.1s ease-in-out;
+  }
 }
 
 .iconInactive {
-  background-image: url('../../assets/icons/about-mus-olymp-download-icon-inactive.svg');
+  path {
+    stroke: #d6d6d6;
+  }
+}
+
+.arrowIcon {
+  width: 40px;
+  height: 15px;
+  position: absolute;
+  bottom: -0.5px;
+  right: -28px;
+
+  line {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  polyline {
+    transition: transform 0.1s ease-in-out;
+  }
 }
