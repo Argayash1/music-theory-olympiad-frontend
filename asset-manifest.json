@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/music-theory-olympiad-frontend/static/css/main.cf83e0ba.css",
-    "main.js": "/music-theory-olympiad-frontend/static/js/main.4d1c7231.js",
+    "main.css": "/music-theory-olympiad-frontend/static/css/main.d677f852.css",
+    "main.js": "/music-theory-olympiad-frontend/static/js/main.1dd6cf87.js",
     "static/js/787.07ef1cfe.chunk.js": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js",
     "static/media/logo.png": "/music-theory-olympiad-frontend/static/media/logo.8f1fea4857ec11ea2b5e.png",
     "static/media/линии3.png": "/music-theory-olympiad-frontend/static/media/линии3.8588ef80c6e6d2ea61b1.png",
@@ -13,8 +13,11 @@
     "static/media/Onest-Medium.woff2": "/music-theory-olympiad-frontend/static/media/Onest-Medium.8ef5e12ae5976b7e2d4f.woff2",
     "static/media/Onest-SemiBold.woff2": "/music-theory-olympiad-frontend/static/media/Onest-SemiBold.5651fdc8de9674860c8c.woff2",
     "static/media/Onest-Regular.woff2": "/music-theory-olympiad-frontend/static/media/Onest-Regular.f160dbadba4f367f46cf.woff2",
-    "static/media/full-advert-keyboard.svg": "/music-theory-olympiad-frontend/static/media/full-advert-keyboard.aaae971e66a6b3ea0f67.svg",
-    "static/media/brand-bunner-arrow.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-arrow.c27d428fad9b503c71d0.svg",
+    "static/media/full-advert-wa-icon.svg": "/music-theory-olympiad-frontend/static/media/full-advert-wa-icon.9fed96377076563f629efd5321a2751c.svg",
+    "static/media/brand-bunner-arrow.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-arrow.bf5b07f2d09ef914840c.svg",
+    "static/media/full-advert-keyboard-star-image.svg": "/music-theory-olympiad-frontend/static/media/full-advert-keyboard-star-image.b84c90a1189d62626c83.svg",
+    "static/media/full-advert-ok-icon.svg": "/music-theory-olympiad-frontend/static/media/full-advert-ok-icon.2b4c099fd6dc8ef53e6d96ced509feb9.svg",
+    "static/media/full-advert-tg-icon.svg": "/music-theory-olympiad-frontend/static/media/full-advert-tg-icon.9d05abf4140b14b24218d1286b889cf7.svg",
     "static/media/about-mus-olymp-mail-icon.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-mail-icon.cba448d9fc601767a085.svg",
     "static/media/brand-bunner-date-icon.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-date-icon.e0c7d475feeee1af2f005ee7d75d4a69.svg",
     "static/media/about-mus-olymp-arrow.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-arrow.13f579beba3ed54284d0.svg",
@@ -23,24 +26,21 @@
     "index.html": "/music-theory-olympiad-frontend/index.html",
     "static/media/full-adverts-share-icon.svg": "/music-theory-olympiad-frontend/static/media/full-adverts-share-icon.09489cd2aeb728a1e8c9.svg",
     "static/media/about-mus-olymp-tel-icon.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-tel-icon.a5a8d621117b51121d1a.svg",
+    "static/media/full-advert-vk-icon.svg": "/music-theory-olympiad-frontend/static/media/full-advert-vk-icon.a9d37cd80a0847fbe0c143c61e546ac6.svg",
     "static/media/archive-extension-card.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-card.b14dcb004fa1b082b6fa.svg",
     "static/media/prep-materials-play-icon.svg": "/music-theory-olympiad-frontend/static/media/prep-materials-play-icon.55787447bb9a6c2c4cb1.svg",
     "static/media/prep-materials-popup-close-icon.svg": "/music-theory-olympiad-frontend/static/media/prep-materials-popup-close-icon.1ee2da35d7e0cdb890de.svg",
     "static/media/brand-bunner-clock-icon.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow-inactive.svg": "/music-theory-olympiad-frontend/static/media/adverts-slider-arrow-inactive.b3770337194729758063.svg",
     "static/media/adverts-slider-arrow.svg": "/music-theory-olympiad-frontend/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
-    "static/media/adverts-cta-arrow.svg": "/music-theory-olympiad-frontend/static/media/adverts-cta-arrow.a3afa9041e8c61900132.svg",
-    "static/media/full-advert-star-big.svg": "/music-theory-olympiad-frontend/static/media/full-advert-star-big.690d57ba3e08e8b14a32.svg",
-    "static/media/full-advert-star-little.svg": "/music-theory-olympiad-frontend/static/media/full-advert-star-little.fb0efeddcdb2ed9f7d62.svg",
-    "static/media/about-mus-olymp-download-icon-inactive.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-download-icon-inactive.fdec206641483c7b07e8.svg",
     "static/media/about-mus-olymp-download-icon.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-download-icon.f53ef51295c750dcef68.svg",
     "static/media/archive-extension-icon.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.cf83e0ba.css.map": "/music-theory-olympiad-frontend/static/css/main.cf83e0ba.css.map",
-    "main.4d1c7231.js.map": "/music-theory-olympiad-frontend/static/js/main.4d1c7231.js.map",
+    "main.d677f852.css.map": "/music-theory-olympiad-frontend/static/css/main.d677f852.css.map",
+    "main.1dd6cf87.js.map": "/music-theory-olympiad-frontend/static/js/main.1dd6cf87.js.map",
     "787.07ef1cfe.chunk.js.map": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf83e0ba.css",
-    "static/js/main.4d1c7231.js"
+    "static/css/main.d677f852.css",
+    "static/js/main.1dd6cf87.js"
   ]
 }

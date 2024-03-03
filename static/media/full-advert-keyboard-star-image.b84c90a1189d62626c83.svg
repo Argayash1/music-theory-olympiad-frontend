@@ -1,0 +1,19 @@
+<svg width="258" height="258" viewBox="0 0 258 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_356_627" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="18" width="217" height="220">
+<rect width="187" height="191" rx="34" transform="matrix(-0.962586 -0.270977 -0.270977 0.962586 244.76 61.6726)" fill="#FF5E3A"/>
+</mask>
+<g mask="url(#mask0_356_627)">
+<rect width="187" height="191" rx="34" transform="matrix(-0.962586 -0.270977 -0.270977 0.962586 244.76 61.6729)" fill="#FF5E3A"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 211.099 79)" fill="#FFBB4D"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 173.814 88.9905)" fill="#FFBB4D"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 136.53 98.981)" fill="#F2F2F2"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 99.2451 108.971)" fill="#F2F2F2"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 61.9607 118.961)" fill="#F2F2F2"/>
+<rect width="34.8643" height="144.438" transform="matrix(-0.965926 0.258819 0.258819 0.965926 24.6763 128.952)" fill="#F2F2F2"/>
+<rect x="0.707107" y="-1.22474" width="19" height="93" transform="matrix(-0.965926 0.258819 0.258819 0.965926 50.088 177.292)" fill="#FF5E3A" stroke="white" stroke-width="2"/>
+<rect x="0.707107" y="-1.22474" width="18" height="93" transform="matrix(-0.965926 0.258819 0.258819 0.965926 124.464 157.363)" fill="#FF5E3A" stroke="white" stroke-width="2"/>
+<rect x="0.707107" y="-1.22474" width="18" height="93" transform="matrix(-0.965926 0.258819 0.258819 0.965926 198.841 137.434)" fill="#FF5E3A" stroke="white" stroke-width="2"/>
+</g>
+<path d="M120 14L123.581 34.4192L144 38L123.581 41.5808L120 62L116.419 41.5808L96 38L116.419 34.4192L120 14Z" fill="white"/>
+<path d="M76.5 30L82.095 61.905L114 67.5L82.095 73.095L76.5 105L70.905 73.095L39 67.5L70.905 61.905L76.5 30Z" fill="white"/>
+</svg>
