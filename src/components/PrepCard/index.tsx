@@ -15,7 +15,7 @@ export const PrepCard = ({ title, isOpen, onClick }: PrepMaterialCardProps) => {
 
   React.useEffect(() => {
     if (isOpen && accordionItemRef.current) {
-      accordionItemRef.current.scrollIntoView({ block: 'start' });
+      accordionItemRef.current.scrollIntoView({ block: 'center' });
     }
   }, [isOpen]);
 

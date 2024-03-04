@@ -58,7 +58,7 @@
     transform: translateX(-159px);
     z-index: 0;
 
-    .socialIcon {
+    .icon {
       width: 43px;
       height: 43px;
     }
@@ -66,9 +66,6 @@
 }
 
 .icon {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
   width: 42px;
   height: 42px;
   transition: transform 0.3s ease-in-out;

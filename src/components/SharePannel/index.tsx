@@ -15,23 +15,22 @@ export const SharePannel = ({ isOpen, itemTitle }: SharePannelProps) => {
   const currentUrl = window.location.href;
 
   const buttonItems = [
-    { id: 1, icon: tgIcon, link: `https://t.me/share/url?url=${currentUrl}&text=${itemTitle}`, altText: 'Telegram' },
+    { id: 1, icon: tgIcon, link: `https://t.me/share/url?url=${currentUrl}&text=${itemTitle}` },
     {
       id: 3,
       icon: okIcon,
       link: `https://connect.ok.ru/offer?url=${currentUrl}&title=${itemTitle}`,
-      altText: 'Одноклассники',
     },
-    { id: 0, icon: vkIcon, link: `https://vk.com/share.php?url={${currentUrl}}`, altText: 'VK' },
-    { id: 4, icon: waIcon, link: `whatsapp://send?text=${itemTitle}`, altText: 'WhatsApp' },
+    { id: 0, icon: vkIcon, link: `https://vk.com/share.php?url={${currentUrl}}` },
+    { id: 4, icon: waIcon, link: `whatsapp://send?text=${itemTitle}` },
   ];
 
   return (
     <ul className={clsx(styles.root, isOpen && styles.rootIsOpened)}>
       {buttonItems.map((item) => (
         <li key={item.id} className={styles.item}>
-          <a href={item.link} className={styles.link}>
-            <img src={item.icon} alt={item.altText} className={styles.icon} />
+          <a href={item.link}>
+            <div className={styles.icon} style={{ backgroundImage: `url(${item.icon})` }}></div>
           </a>
         </li>
       ))}
