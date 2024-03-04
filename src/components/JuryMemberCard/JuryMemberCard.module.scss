@@ -12,6 +12,12 @@
   object-position: center 25%;
   margin: 0 auto;
   display: block;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.128);
+    box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+  }
 }
 
 .title {

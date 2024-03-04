@@ -76,8 +76,20 @@
   justify-content: center;
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 
+  &:not(.rootInactive, :active):hover {
+    border-color: #ff5e3a;
+    color: #ff5e3a;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    .icon {
+      path {
+        stroke: #ff5e3a;
+      }
+    }
+  }
+
   &:not(.rootInactive):active {
-    background-color: #ffbb4d;
+    background-color: #ff5e3a;
     color: #fff;
     border-color: #fff;
 

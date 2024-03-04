@@ -16,6 +16,12 @@
   margin: 0;
   padding: 16.19px 190.6px 12.85px 166px;
   background-color: #fff;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:not(.buttonActive):hover {
+    border-color: #000;
+    color: #000;
+  }
 }
 
 .buttonActive {

@@ -2,22 +2,23 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: none;
   width: 276px;
-  height: 208px;
+  height: 0;
+  overflow: hidden;
   background-color: #fff;
   box-sizing: border-box;
-  border-left: 2px solid #d6d6d6;
-  border-right: 2px solid #d6d6d6;
-  border-bottom: 2px solid #d6d6d6;
   border-radius: 0 0 10px 10px;
   position: absolute;
-  bottom: -168px;
+  top: 330px;
   font-size: 0;
+  transition: height 0.3s ease-in-out;
 }
 
 .rootIsOpened {
-  display: block;
+  height: 208px;
+  border-left: 2px solid #ff5e3a;
+  border-right: 2px solid #ff5e3a;
+  border-bottom: 2px solid #ff5e3a;
 
   li:last-of-type {
     a {

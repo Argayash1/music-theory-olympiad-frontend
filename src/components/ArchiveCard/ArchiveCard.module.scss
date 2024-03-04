@@ -99,6 +99,11 @@
   border: 2px solid #d6d6d6;
   border-radius: 10px;
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+
+  &:not(.buttonBorderBottomNone):hover {
+    border-color: #ff5e3a;
+  }
 
   &::after {
     content: '';
@@ -111,14 +116,18 @@
     height: 12px;
     margin-left: 85px;
     transform: rotate(90deg);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 }
 
 .buttonBorderBottomNone {
+  border-top-color: #ff5e3a;
+  border-right-color: #ff5e3a;
+  border-left-color: #ff5e3a;
   border-bottom-color: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  transition: none;
 
   &::after {
     transform: rotate(275deg);

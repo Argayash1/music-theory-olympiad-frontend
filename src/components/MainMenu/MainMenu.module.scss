@@ -33,10 +33,10 @@
   @include main-text-font(16, 400, 1.22);
   text-decoration: none;
   display: flex;
-  transition: color 0.3s ease-in-out;
   margin: 0;
   padding: 0;
   position: relative;
+  transition: color 0.3s ease-in-out;
 
   &:not(.linkTypeFooter):hover {
     color: #ff5e3a;
@@ -51,7 +51,7 @@
     bottom: -28.48px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: red;
+    background-color: #ff5e3a;
   }
 }
 
@@ -66,4 +66,8 @@
 
 .linkTypeFooter {
   color: #fff;
+
+  &:hover {
+    color: #ff5e3a;
+  }
 }

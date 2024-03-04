@@ -2,26 +2,34 @@
   width: 18px;
   height: 34px;
   background-color: transparent;
-  background-image: url('../../assets/icons/adverts-slider-arrow.svg');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   border: none;
   margin: 168px 0 0;
   padding: 0;
   display: inline-block;
 
+  svg {
+    path {
+      transition: stroke 0.1s ease-in-out;
+    }
+  }
+
+  &:not(:disabled):hover {
+    svg {
+      path {
+        stroke: #ff5e3a;
+      }
+    }
+  }
+
   &:disabled {
-    background-image: url('../../assets/icons/adverts-slider-arrow-inactive.svg');
-    transform: rotate(180deg);
+    svg {
+      path {
+        stroke: #d6d6d6;
+      }
+    }
   }
 }
 
 .rootTypeLeft {
   transform: rotate(180deg);
-
-  &:disabled {
-    background-image: url('../../assets/icons/adverts-slider-arrow-inactive.svg');
-    transform: rotate(0deg);
-  }
 }
