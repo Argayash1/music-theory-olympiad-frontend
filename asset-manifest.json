@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/music-theory-olympiad-frontend/static/css/main.2df8d447.css",
-    "main.js": "/music-theory-olympiad-frontend/static/js/main.f7c70f54.js",
+    "main.css": "/music-theory-olympiad-frontend/static/css/main.e8f09b7a.css",
+    "main.js": "/music-theory-olympiad-frontend/static/js/main.7669850c.js",
     "static/js/787.07ef1cfe.chunk.js": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js",
-    "static/media/logo.png": "/music-theory-olympiad-frontend/static/media/logo.8f1fea4857ec11ea2b5e.png",
+    "static/media/logo.png": "/music-theory-olympiad-frontend/static/media/logo.3c02b43c75c468c11a16.png",
     "static/media/линии3.png": "/music-theory-olympiad-frontend/static/media/линии3.8588ef80c6e6d2ea61b1.png",
     "static/media/линии2.png": "/music-theory-olympiad-frontend/static/media/линии2.daab4d2f8813c6ab72d9.png",
     "static/media/линии1.png": "/music-theory-olympiad-frontend/static/media/линии1.9fc2ce091528fb074ea8.png",
@@ -35,12 +35,12 @@
     "static/media/adverts-slider-arrow.svg": "/music-theory-olympiad-frontend/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/about-mus-olymp-download-icon.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-download-icon.f53ef51295c750dcef68.svg",
     "static/media/archive-extension-icon.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.2df8d447.css.map": "/music-theory-olympiad-frontend/static/css/main.2df8d447.css.map",
-    "main.f7c70f54.js.map": "/music-theory-olympiad-frontend/static/js/main.f7c70f54.js.map",
+    "main.e8f09b7a.css.map": "/music-theory-olympiad-frontend/static/css/main.e8f09b7a.css.map",
+    "main.7669850c.js.map": "/music-theory-olympiad-frontend/static/js/main.7669850c.js.map",
     "787.07ef1cfe.chunk.js.map": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2df8d447.css",
-    "static/js/main.f7c70f54.js"
+    "static/css/main.e8f09b7a.css",
+    "static/js/main.7669850c.js"
   ]
 }
