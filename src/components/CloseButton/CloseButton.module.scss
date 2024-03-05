@@ -1,11 +1,14 @@
 .root {
   background-color: transparent;
   border: none;
-  width: 22.5px;
-  height: 22.5px;
+  width: 31.82px;
+  height: 31.82px;
   margin: 37px 37.18px 0 0;
   padding: 0;
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 
   svg {
@@ -25,6 +28,9 @@
 
 .rootPlaceAdverts {
   align-self: flex-start;
-  width: 31.82px;
-  height: 31.82px;
+}
+
+.icon {
+  width: 22.5px;
+  height: 22.5px;
 }

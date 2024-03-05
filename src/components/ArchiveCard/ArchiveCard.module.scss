@@ -36,6 +36,10 @@
   }
 }
 
+.listMarginLeft21px {
+  margin-left: 21px;
+}
+
 .listItem {
   width: 105px;
   height: 124px;
@@ -87,23 +91,37 @@
   box-sizing: border-box;
 }
 
+.downloadBlock {
+  border: 2px solid #d6d6d6;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 276px;
+  height: 50px;
+  overflow: hidden;
+  transition: border-color 0.3s ease-in-out, height 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #ff5e3a;
+  }
+}
+
+.downloadBlockIsOpened {
+  height: 258px;
+  border-color: #ff5e3a;
+}
+
 .button {
   @include main-text-font(20, 500, 0.975);
-
-  width: 276px;
+  width: 100%;
   height: 50px;
   background-color: #fff;
   text-align: left;
   margin: 0;
   padding: 0 0 0 40px;
-  border: 2px solid #d6d6d6;
+  border: none;
   border-radius: 10px;
+  box-sizing: border-box;
   cursor: pointer;
-  transition: border-color 0.3s ease-in-out;
-
-  &:not(.buttonBorderBottomNone):hover {
-    border-color: #ff5e3a;
-  }
 
   &::after {
     content: '';
@@ -121,15 +139,7 @@
 }
 
 .buttonBorderBottomNone {
-  border-top-color: #ff5e3a;
-  border-right-color: #ff5e3a;
-  border-left-color: #ff5e3a;
-  border-bottom-color: transparent;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  transition: none;
-
   &::after {
-    transform: rotate(275deg);
+    transform: rotate(272deg);
   }
 }

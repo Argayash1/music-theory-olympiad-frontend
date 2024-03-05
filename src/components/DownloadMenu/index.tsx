@@ -3,7 +3,7 @@ import { prepCardNames } from '../../utils/prepCardNames';
 import clsx from 'clsx';
 import { OLYMPIC_RULES_URL } from '../../utils/constants';
 import styles from './DownloadMenu.module.scss';
-import { CTA } from '../CTA';
+import { CTA } from '../../components';
 
 type DownloadMenuProps = {
   isOpen: boolean;

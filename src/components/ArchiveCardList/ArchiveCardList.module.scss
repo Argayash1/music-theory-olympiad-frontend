@@ -10,12 +10,4 @@
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease-in-out;
-
-  li:nth-child(2) {
-    article {
-      ul:first-of-type {
-        margin-left: 21px;
-      }
-    }
-  }
 }

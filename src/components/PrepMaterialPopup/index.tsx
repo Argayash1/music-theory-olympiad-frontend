@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './PrepMaterialPopup.module.scss';
+import { CloseButton } from '../CloseButton';
 
 type PrepMaterialPopupProps = {
   imageUrl: string;
@@ -19,7 +20,7 @@ export const PrepMaterialPopup = React.forwardRef<HTMLDialogElement, PrepMateria
     <dialog ref={ref} className={styles.root} onClick={closeAllPopupsByClickOnOverlay}>
       <div className={styles.wrapper}>
         <div className={styles.popupContainer}>
-          <button type='button' className={styles.closeButton} onClick={onClose}></button>
+          <CloseButton onClick={onClose} />
           <img src={imageUrl} alt='' className={styles.popupImage} />
         </div>
       </div>

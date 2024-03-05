@@ -38,10 +38,6 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
         <button onClick={onClick} className={ctaClassName}>
           {linkText}
           {type === 'learn' && (
-            // <svg className={styles.arrowIcon} viewBox='0 0 62 22' stroke='#fff' stroke-width='4' fill='none'>
-            //   <line x1='0' y1='11' x2='20' y2='11' />
-            //   <polyline points='10,1 20,11 10,21' />
-            // </svg>
             <svg
               className={styles.arrowIcon}
               viewBox='0 0 25.9998 14.0083'
@@ -64,7 +60,7 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
       ) : type === 'download' || type === 'download-archive' ? (
         <a href={path} className={ctaClassName} download>
           {linkText}
-          {type === 'download' && (
+          {type === 'download' ? (
             <svg
               className={clsx(styles.icon, !path && styles.iconInactive)}
               width='12.000000'
@@ -81,6 +77,16 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
                 stroke='#FFBB4D'
                 strokeOpacity='1.000000'
                 strokeWidth='2.000000'
+                strokeLinejoin='round'
+              />
+            </svg>
+          ) : (
+            <svg className={styles.iconLittle} viewBox='0 0 12 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M1 16H11M6 1V12.6667M6 12.6667L10.1667 8.5M6 12.6667L1.83333 8.5'
+                stroke='#FFBB4D'
+                strokeWidth='2'
+                strokeLinecap='round'
                 strokeLinejoin='round'
               />
             </svg>

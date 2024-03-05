@@ -7,9 +7,10 @@ import clsx from 'clsx';
 type ArchiveCardProps = {
   title: string;
   extensions: string[];
+  itemIndex: number;
 };
 
-export const ArchiveCard = ({ title, extensions }: ArchiveCardProps) => {
+export const ArchiveCard = ({ title, extensions, itemIndex }: ArchiveCardProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
   const extensionsLength = extensions.length;
   const extensionsItems = extensions.map((extension, index) => (
@@ -21,16 +22,18 @@ export const ArchiveCard = ({ title, extensions }: ArchiveCardProps) => {
   return (
     <DataCard type='archive'>
       <h3 className={styles.title}>{title}</h3>
-      <ul className={styles.list}>
+      <ul className={clsx(styles.list, itemIndex === 1 && styles.listMarginLeft21px)}>
         {extensionsLength > 1 ? extensionsItems : <ExtensionCard extension={extensions.join('')} type='single' />}
       </ul>
-      <button
-        className={clsx(styles.button, isMenuOpen && styles.buttonBorderBottomNone)}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        Загрузить
-      </button>
-      <DownloadMenu isOpen={isMenuOpen} />
+      <div className={clsx(styles.downloadBlock, isMenuOpen && styles.downloadBlockIsOpened)}>
+        <button
+          className={clsx(styles.button, isMenuOpen && styles.buttonBorderBottomNone)}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          Загрузить
+        </button>
+        <DownloadMenu isOpen={isMenuOpen} />
+      </div>
     </DataCard>
   );
 };

@@ -9,7 +9,7 @@ export const ArchiveCardList = () => {
 
   const archiveCards = archiveCardNames.map((item, index) => (
     <li key={index}>
-      <ArchiveCard title={item.itemName} extensions={item.extensions} />
+      <ArchiveCard title={item.itemName} extensions={item.extensions} itemIndex={index} />
     </li>
   ));
 

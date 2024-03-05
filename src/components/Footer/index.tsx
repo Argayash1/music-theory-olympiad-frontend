@@ -30,7 +30,10 @@ export const Footer = () => {
               <a href='mailto: mail@rrc-ural.ru ' className={styles.contactLink}>
                 mail@rrc-ural.ru
               </a>
-              ; (343) 372-79-70
+              ;{' '}
+              <a href='tel: +7 (343) 372-79-70' className={styles.contactLink}>
+                (343) 372-79-70
+              </a>
             </li>
           </ul>
         </div>

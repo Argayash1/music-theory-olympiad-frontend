@@ -3,22 +3,9 @@
   margin: 0;
   padding: 0;
   width: 276px;
-  height: 0;
-  overflow: hidden;
-  background-color: #fff;
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
-  position: absolute;
-  top: 330px;
-  font-size: 0;
-  transition: height 0.3s ease-in-out;
-}
-
-.rootIsOpened {
-  height: 208px;
-  border-left: 2px solid #ff5e3a;
-  border-right: 2px solid #ff5e3a;
-  border-bottom: 2px solid #ff5e3a;
+  background-color: #fff;
 
   li:last-of-type {
     a {
