@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/music-theory-olympiad-frontend/static/css/main.887edbf4.css",
-    "main.js": "/music-theory-olympiad-frontend/static/js/main.8bdf8586.js",
+    "main.css": "/music-theory-olympiad-frontend/static/css/main.b3fe2c93.css",
+    "main.js": "/music-theory-olympiad-frontend/static/js/main.333ed47e.js",
     "static/js/787.07ef1cfe.chunk.js": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js",
     "static/media/logo.png": "/music-theory-olympiad-frontend/static/media/logo.3c02b43c75c468c11a16.png",
     "static/media/линии3.png": "/music-theory-olympiad-frontend/static/media/линии3.8588ef80c6e6d2ea61b1.png",
@@ -29,17 +29,15 @@
     "static/media/full-advert-vk-icon.svg": "/music-theory-olympiad-frontend/static/media/full-advert-vk-icon.a9d37cd80a0847fbe0c143c61e546ac6.svg",
     "static/media/archive-extension-card.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-card.b14dcb004fa1b082b6fa.svg",
     "static/media/prep-materials-play-icon.svg": "/music-theory-olympiad-frontend/static/media/prep-materials-play-icon.55787447bb9a6c2c4cb1.svg",
-    "static/media/prep-materials-popup-close-icon.svg": "/music-theory-olympiad-frontend/static/media/prep-materials-popup-close-icon.1ee2da35d7e0cdb890de.svg",
     "static/media/brand-bunner-clock-icon.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/music-theory-olympiad-frontend/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
-    "static/media/about-mus-olymp-download-icon.svg": "/music-theory-olympiad-frontend/static/media/about-mus-olymp-download-icon.f53ef51295c750dcef68.svg",
     "static/media/archive-extension-icon.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.887edbf4.css.map": "/music-theory-olympiad-frontend/static/css/main.887edbf4.css.map",
-    "main.8bdf8586.js.map": "/music-theory-olympiad-frontend/static/js/main.8bdf8586.js.map",
+    "main.b3fe2c93.css.map": "/music-theory-olympiad-frontend/static/css/main.b3fe2c93.css.map",
+    "main.333ed47e.js.map": "/music-theory-olympiad-frontend/static/js/main.333ed47e.js.map",
     "787.07ef1cfe.chunk.js.map": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.887edbf4.css",
-    "static/js/main.8bdf8586.js"
+    "static/css/main.b3fe2c93.css",
+    "static/js/main.333ed47e.js"
   ]
 }
