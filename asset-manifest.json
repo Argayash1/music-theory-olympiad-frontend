@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/music-theory-olympiad-frontend/static/css/main.b3fe2c93.css",
+    "main.css": "/music-theory-olympiad-frontend/static/css/main.1f4bd86c.css",
     "main.js": "/music-theory-olympiad-frontend/static/js/main.333ed47e.js",
     "static/js/787.07ef1cfe.chunk.js": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js",
     "static/media/logo.png": "/music-theory-olympiad-frontend/static/media/logo.3c02b43c75c468c11a16.png",
@@ -32,12 +32,12 @@
     "static/media/brand-bunner-clock-icon.svg": "/music-theory-olympiad-frontend/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/music-theory-olympiad-frontend/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/archive-extension-icon.svg": "/music-theory-olympiad-frontend/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.b3fe2c93.css.map": "/music-theory-olympiad-frontend/static/css/main.b3fe2c93.css.map",
+    "main.1f4bd86c.css.map": "/music-theory-olympiad-frontend/static/css/main.1f4bd86c.css.map",
     "main.333ed47e.js.map": "/music-theory-olympiad-frontend/static/js/main.333ed47e.js.map",
     "787.07ef1cfe.chunk.js.map": "/music-theory-olympiad-frontend/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3fe2c93.css",
+    "static/css/main.1f4bd86c.css",
     "static/js/main.333ed47e.js"
   ]
 }
