@@ -293,6 +293,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
             progress={progress}
             screenWidth={screenWidth}
           />
+          <TimeCounter duration={totalDuration} />
           <VolumelineContainer
             onHover={() => setIsVolumeContainerHovered(true)}
             onDisHover={() => !isChangeVolume.current && setIsVolumeContainerHovered(false)}
@@ -304,20 +305,6 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
             isChangeVolume={isChangeVolume.current}
             isMuted={isMuted}
             screenWidth={screenWidth}
-          />
-          <TimeCounter duration={totalDuration} />
-          <MoreButton onClick={handleOpenMoreMenu} ref={buttonRef} />
-          <MoreMenu
-            onToggleSpeedParams={handleToggleSpeedParams}
-            onDownLoad={handleDownload}
-            isMoreMenuOpen={isMoreMenuOpen}
-            ref={menuRef}
-          />
-          <SpeedParamsMenu
-            isSpeedParamsOpen={isSpeedParamsOpen}
-            onChangePlaybackSpeed={handleChangePlaybackSpeed}
-            onToggleSpeedParams={handleToggleSpeedParams}
-            ref={speedParamsMenuRef}
           />
         </div>
       </div>
