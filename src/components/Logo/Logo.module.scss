@@ -1,7 +1,17 @@
 .root {
+  margin-top: 6px;
+}
+
+.rootTypeBrandBanner {
+  margin-top: 0;
+  grid-row: 1/4;
+  grid-column: 2/3;
+  z-index: 2;
+}
+
+.image {
   width: 77.7px;
   height: 77.7px;
-  margin-top: 6px;
   background-color: #ffbb4d;
   object-fit: cover;
   object-position: left;
@@ -11,17 +21,12 @@
   display: inline-block;
 }
 
-.rootTypeBrandBunner {
+.imageTypeBrandBunner {
   width: 377px;
   height: 383px;
-  grid-row: 1/4;
-  grid-column: 2/3;
   padding: 0;
   background: none;
   border-radius: 0%;
-  margin-top: 0;
-  // object-position: center;
   object-fit: fill;
   object-position: 50% 50%;
-  z-index: 2;
 }

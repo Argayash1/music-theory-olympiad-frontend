@@ -32,7 +32,7 @@ export const Contacts = () => {
           <CTA type='pay' linkText='Оплатить картой' path={PAYMENT_URL} />
         </li>
         <li>
-          <CTA linkText='Положение олимпиады' type='download' path={OLYMPIC_RULES_URL} />
+          <CTA type='download' linkText='Положение олимпиады' path={OLYMPIC_RULES_URL} />
         </li>
       </ul>
     </div>

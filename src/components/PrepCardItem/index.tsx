@@ -29,9 +29,11 @@ type PrepCardItemProps = {
   itemName: string;
   itemButtonText: string;
   itemData: ItemDataType;
+  isPlaying: boolean;
+  onTogglePlay: (audioUrl: string) => void;
 };
 
-export const PrepCardItem = ({ itemName, itemButtonText, itemData }: PrepCardItemProps) => {
+export const PrepCardItem = ({ itemName, itemButtonText, itemData, isPlaying, onTogglePlay }: PrepCardItemProps) => {
   let buttonUrl = '';
 
   if ('scoreUrl' in itemData) {
@@ -43,7 +45,7 @@ export const PrepCardItem = ({ itemName, itemButtonText, itemData }: PrepCardIte
   return (
     <div className={styles.root}>
       <h4 className={styles.title}>{itemName}</h4>
-      <PrepCardItemContent itemData={itemData} />
+      <PrepCardItemContent itemData={itemData} isPlaying={isPlaying} onTogglePlay={onTogglePlay} />
       <CTA linkText={itemButtonText} type='download' path={buttonUrl} />
     </div>
   );

@@ -5,15 +5,27 @@
   font-size: 0;
   display: flex;
   gap: 41.71px;
+  position: relative;
+  z-index: 2;
 }
 
 .logoUsc {
   width: 51.29px;
   height: 73.09px;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.15, 1.162);
+  }
 }
 
 .logoRrc {
   width: 72.54px;
   height: 39.39px;
   margin-top: 16.6px;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.18265, 1.18278);
+  }
 }

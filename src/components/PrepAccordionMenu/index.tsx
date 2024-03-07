@@ -3,7 +3,12 @@ import styles from './PrepAccordionMenu.module.scss';
 import { prepCardNames } from '../../utils/prepCardNames';
 import { PrepCard } from '../../components';
 
-export const PrepAccordionMenu = () => {
+type PrepAccordionMenuProps = {
+  isPlaying: boolean;
+  onTogglePlay: (audioUrl: string) => void;
+};
+
+export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenuProps) => {
   const [openItemIndex, setOpenItemIndex] = React.useState<number | null>(null);
 
   const prepCards = prepCardNames.map((item, index) => (
@@ -12,6 +17,8 @@ export const PrepAccordionMenu = () => {
         isOpen={openItemIndex === index}
         title={item}
         onClick={() => setOpenItemIndex(openItemIndex === index ? null : index)}
+        isPlaying={isPlaying}
+        onTogglePlay={onTogglePlay}
       />
     </li>
   ));

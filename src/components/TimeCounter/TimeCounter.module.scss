@@ -1,0 +1,17 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  width: 47px;
+  height: 22px;
+  @include main-text-font(16, 400, 1.375);
+
+  @media screen and (max-width: 810px) {
+    width: 57px;
+    height: 16px;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 612px) {
+    font-size: 12px;
+  }
+}

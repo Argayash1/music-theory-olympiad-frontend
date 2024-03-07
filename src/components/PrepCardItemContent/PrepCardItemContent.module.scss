@@ -31,7 +31,7 @@
   }
 }
 
-.button {
+.playButton {
   margin: 0 0 8px;
   padding: 0;
   background-color: #ff5e3a;
@@ -42,10 +42,24 @@
   height: 58px;
   border: none;
   border-radius: 50%;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   &:hover {
     box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+  }
+
+  &:active {
+    transform: scale(0.8965);
+    box-shadow: none;
+    background-image: url('../../assets/icons/prep-materials-pause-icon.svg');
+  }
+}
+
+.playButtonTypePause {
+  background-image: url('../../assets/icons/prep-materials-pause-icon.svg');
+
+  &:active {
+    background-image: url('../../assets/icons/prep-materials-play-icon.svg');
   }
 }
 

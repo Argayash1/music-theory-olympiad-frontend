@@ -6,7 +6,7 @@ export const handleChangeSecondsToMinutesAndSeconds = (duration: number) => {
   const minutes = Math.floor(duration / 60);
   const seconds = Math.floor(duration % 60);
 
-  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 };
 
 export const handleFormateDate = (date: string): string => {

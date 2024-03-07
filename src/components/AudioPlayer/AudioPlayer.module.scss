@@ -1,0 +1,61 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 40px 40px 0px 0px;
+  transition: height 0.3s ease-in-out;
+}
+
+.rootIsOpened {
+  height: 120px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20.09px 134.18px 0 140px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15.09px;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorAndTitle {
+  @include main-text-font(20, 500, 1.1);
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.playerContainer {
+  width: 100%;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  position: relative;
+
+  @media screen and (max-width: 810px) {
+    max-width: 533px;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 612px) {
+    max-width: 290px;
+  }
+}

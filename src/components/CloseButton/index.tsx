@@ -3,7 +3,7 @@ import styles from './CloseButton.module.scss';
 import clsx from 'clsx';
 
 type CloseButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   place?: string;
 };
 
@@ -11,7 +11,11 @@ export const CloseButton = ({ onClick, place }: CloseButtonProps) => {
   return (
     <button
       type='button'
-      className={clsx(styles.root, place === 'adverts' && styles.rootPlaceAdverts)}
+      className={clsx(
+        styles.root,
+        place === 'adverts' && styles.rootPlaceAdverts,
+        place === 'audio-player' && styles.rootPlaceAudioPlayer,
+      )}
       onClick={onClick}
     >
       <svg className={styles.icon} viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>

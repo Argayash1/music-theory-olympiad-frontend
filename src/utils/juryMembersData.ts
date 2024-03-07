@@ -1,25 +1,25 @@
 export const juryMembersData = [
   {
     name: 'Городилова Марина Викторовна',
-    about: 'Профессор Уральской государственной консерватории',
+    about: 'профессор кафедры теории музыки УГК, кандидат искусствоведения',
     imageUrl: 'https://i.postimg.cc/508hFj6C/image.jpg',
     link: 'https://www.uralconsv.org/component/k2/item/1974-gmv',
   },
   {
+    name: 'Шелудякова Оксана Евгеньевна',
+    about: 'профессор кафедры теории музыки УГК, доктор искусствоведения',
+    imageUrl: 'https://i.postimg.cc/CKM5NVwm/image.jpg',
+    link: 'https://www.uralconsv.org/component/k2/item/1969-shoe',
+  },
+  {
     name: 'Вялухина Вера Ильинична',
-    about: 'Доцент Уральской государственной консерватории',
+    about: 'зав. кафедрой теории музыки УГК, доцент, кандидат искусствоведения',
     imageUrl: 'https://i.postimg.cc/HxGGxbsm/image.jpg',
     link: 'https://www.uralconsv.org/component/k2/item/1973-vvi',
   },
   {
-    name: 'Мешкова Анна Сергеевна',
-    about: 'Доцент Уральской государственной консерватории',
-    imageUrl: 'https://i.postimg.cc/6q0FYSV6/image.jpg',
-    link: 'https://www.uralconsv.org/component/k2/item/1972-mas',
-  },
-  {
     name: 'Ермаков Александр Алексадрович',
-    about: 'Доцент Уральской государственной консерватории',
+    about: 'доцент кафедры теории музыки УГК, кандидат искусствоведения',
     imageUrl: 'https://i.postimg.cc/ZnZ1PZdD/image.jpg',
     link: 'https://www.uralconsv.org/component/k2/item/1971-eaa',
   },

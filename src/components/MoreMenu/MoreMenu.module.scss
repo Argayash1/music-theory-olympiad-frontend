@@ -1,0 +1,72 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 15px;
+  right: 35px;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: none;
+  border-radius: 6px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rootIsOpened {
+  visibility: visible;
+  opacity: 1;
+  width: 235px;
+  height: 80px;
+  transition: all 0.2s linear;
+}
+
+.listItem:nth-of-type(2) {
+  .more-menu__button {
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+.button {
+  border: none;
+  box-sizing: border-box;
+  padding: 0 0 0 8px;
+  width: 100%;
+  height: 40px;
+  color: #000;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 17.5px */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fafafa;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+
+  @media screen and (max-width: 612px) {
+    line-height: normal;
+  }
+
+  &:hover {
+    background-color: #f8e2a6;
+  }
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
