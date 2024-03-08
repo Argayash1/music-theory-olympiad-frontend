@@ -1,20 +1,21 @@
 import React from 'react';
 import { OlympDataCardTitle } from '../../components';
 import styles from './TopicAndParticipants.module.scss';
+import { useSelector } from 'react-redux';
+import { selectOlympDataItem } from '../../redux/olympData/selectors';
 
 export const TopicAndParticipants = () => {
+  const { topic, participants } = useSelector(selectOlympDataItem);
+
   return (
     <ul className={styles.root}>
       <li className={styles.listItem}>
         <OlympDataCardTitle title='Тематика:' />
-        <p className={styles.paragraph}>«А. Брукнер, Б. Сметана, К. Райнеке: к 200-летию со дня рождения».</p>
+        <p className={styles.paragraph}>{topic}</p>
       </li>
       <li className={styles.listItem}>
         <OlympDataCardTitle title='Участники:' />
-        <p className={styles.paragraph}>
-          Студенты средних профессиональных образовательных организаций в сфере культуры и искусства и учащиеся 9 – 12
-          классов средних специальных музыкальных школ.
-        </p>
+        <p className={styles.paragraph}>{participants}</p>
       </li>
     </ul>
   );

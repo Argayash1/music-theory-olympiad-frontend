@@ -1,17 +1,25 @@
 import React from 'react';
 import { CTA, Logo, LogoContainer, MainInfo } from '../../components';
 import styles from './BrandBunner.module.scss';
+import { useSelector } from 'react-redux';
+import { selectOlympData } from '../../redux/olympData/selectors';
 
 export const BrandBunner = React.forwardRef<HTMLElement>((props, ref) => {
+  const { items, status } = useSelector(selectOlympData);
+
+  if (status === 'loading') {
+    return <>Загрузка...</>;
+  }
+
   return (
     <section className={styles.root} ref={ref}>
       <LogoContainer />
       <div className={styles.mainContainer}>
         <h1 className={styles.pageTitle}>
-          IV Всероссийская <span className={styles.pageTitleSpan}>олимпиада</span> по музыкально-теоретическим предметам
-          им. З. А. Визеля
+          {items[0].olympNumber} Всероссийская <span className={styles.pageTitleSpan}>олимпиада</span> по
+          музыкально-теоретическим предметам им. З. А. Визеля
         </h1>
-        <MainInfo />
+        <MainInfo dates={items[0].dates} registrationDates={items[0].registrationDates} city={items[0].city} />
         <CTA
           path='https://docs.google.com/forms/d/e/1FAIpQLSf9TSakRFx8GSTfv1A53a4aQjkR-CW6NDznfeEhQQ-mgn8VOw/viewform'
           type='brand-bunner'

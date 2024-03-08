@@ -1,15 +1,6 @@
 import React from 'react';
 import styles from './AudioPlayer.module.scss';
-import {
-  PlayButton,
-  TimeCounter,
-  TimelineContainer,
-  VolumelineContainer,
-  MoreButton,
-  MoreMenu,
-  SpeedParamsMenu,
-  CloseButton,
-} from '../../components';
+import { PlayButton, TimeCounter, TimelineContainer, VolumelineContainer, CloseButton } from '../../components';
 import clsx from 'clsx';
 
 type AudioPlayerProps = {
@@ -38,9 +29,6 @@ function isMouseEvent(
 export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: AudioPlayerProps) => {
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const audioLinkRef = React.useRef<HTMLAnchorElement>(null);
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-  const menuRef = React.useRef<HTMLUListElement>(null);
-  const speedParamsMenuRef = React.useRef<HTMLUListElement>(null);
   const isChangeVolume = React.useRef<boolean>(false);
 
   const [isPlayerVisible, setIsPlayerVisible] = React.useState<boolean>(false);
@@ -48,8 +36,6 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   const [totalDuration, setTotalDuration] = React.useState<number>(0);
   const [currentDuration, setCurrentDuration] = React.useState<number>(0);
   const [isVolumeContainerHovered, setIsVolumeContainerHovered] = React.useState<boolean>(false);
-  const [isMoreMenuOpen, setIsMoreMenuOpen] = React.useState<boolean>(false);
-  const [isSpeedParamsOpen, setIsSpeedParamsOpen] = React.useState<boolean>(false);
   const [previousVolume, setPreviousVolume] = React.useState<number>(1);
   const [isMuted, setIsmuted] = React.useState<boolean>(false);
   const [volume, setVolume] = React.useState<number>(100);
@@ -139,29 +125,6 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
     }
   };
 
-  const handleChangePlaybackSpeed = (speed: number) => {
-    const audioPlayer = audioRef.current;
-    if (audioPlayer) {
-      audioPlayer.playbackRate = speed; // Устанавливаем выбранную скорость воспроизведения
-    }
-  };
-
-  const handleOpenMoreMenu = () => {
-    if (isMoreMenuOpen) {
-      setIsMoreMenuOpen(false);
-      setIsSpeedParamsOpen(false);
-      setTimeout(() => setIsMoreMenuOpen(true), 200);
-    } else {
-      setIsSpeedParamsOpen(false);
-      setIsMoreMenuOpen(true);
-    }
-  };
-
-  const handleToggleSpeedParams = () => {
-    setIsSpeedParamsOpen(!isSpeedParamsOpen);
-    setIsMoreMenuOpen(!isMoreMenuOpen);
-  };
-
   const handleTimeUpdate = () => {
     const audioPlayer = audioRef.current;
     if (audioPlayer) {
@@ -247,25 +210,6 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
         audioPlayer.removeEventListener('loadedmetadata', handleLoadedMetadata);
       };
     }
-  }, []);
-
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const _event = event as ButtonClick;
-      if (
-        buttonRef.current &&
-        menuRef.current &&
-        speedParamsMenuRef.current &&
-        !_event.composedPath().includes(buttonRef.current) &&
-        !_event.composedPath().includes(menuRef.current) &&
-        !_event.composedPath().includes(speedParamsMenuRef.current)
-      ) {
-        setIsMoreMenuOpen(false);
-        setIsSpeedParamsOpen(false);
-      }
-    };
-    document.body.addEventListener('click', handleClickOutside);
-    return () => document.body.removeEventListener('click', handleClickOutside);
   }, []);
 
   return (

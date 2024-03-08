@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Main.module.scss';
 import { AboutMusOlymp, Adverts, Archive, BrandBunner, Jury, PrepMaterials, Results } from '../../components';
+import { useAppDispatch } from '../../redux/store';
+import { fetchMusOlympData } from '../../redux/olympData/asyncActions';
 
 type MainProps = {
   onSetActiveSection: (sectionId: string) => void;
@@ -9,6 +11,8 @@ type MainProps = {
 type Section = HTMLElement | null;
 
 export const Main = ({ onSetActiveSection }: MainProps) => {
+  const dispatch = useAppDispatch();
+
   const brandBunnerRef = React.useRef<HTMLElement>(null);
   const aboutMusOlympRef = React.useRef<HTMLElement>(null);
   const advertsRef = React.useRef<HTMLElement>(null);
@@ -18,6 +22,10 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
   const juryRef = React.useRef<HTMLElement>(null);
 
   const sectionsRef = React.useRef<Section[]>([]);
+
+  React.useEffect(() => {
+    dispatch(fetchMusOlympData());
+  }, [dispatch]);
 
   React.useEffect(() => {
     sectionsRef.current = [

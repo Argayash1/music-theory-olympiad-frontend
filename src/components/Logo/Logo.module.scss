@@ -1,5 +1,11 @@
 .root {
   margin-top: 6px;
+
+  &:not(.rootTypeBrandBanner):hover {
+    .image {
+      box-shadow: 0px 0px 20px 0px #ffbb4d;
+    }
+  }
 }
 
 .rootTypeBrandBanner {
@@ -19,6 +25,7 @@
   padding: 5.66px;
   font-size: 0;
   display: inline-block;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .imageTypeBrandBunner {

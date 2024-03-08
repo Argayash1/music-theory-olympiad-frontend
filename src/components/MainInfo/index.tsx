@@ -3,14 +3,17 @@ import styles from './MainInfo.module.scss';
 import dateIcon from '../../assets/images/brand-bunner-date-icon.svg';
 import clockIcon from '../../assets/images/brand-bunner-clock-icon.svg';
 import LocationIcon from '../../assets/images/brand-bunner-location-icon.svg';
+import { OlympData } from '../../redux/olympData/types';
 
-const mainInfoData = [
-  { icon: dateIcon, text: '13–14 апреля 2024 года' },
-  { icon: clockIcon, text: 'Прием заявок до 29 марта 2024 года (включительно)' },
-  { icon: LocationIcon, text: 'г. Екатеринбург' },
-];
+interface MainInfoProps extends Omit<OlympData, '_id' | 'topic' | 'participants' | 'olympNumber'> {}
 
-export const MainInfo = () => {
+export const MainInfo = ({ dates, registrationDates, city }: MainInfoProps) => {
+  const mainInfoData = [
+    { icon: dateIcon, text: dates },
+    { icon: clockIcon, text: registrationDates },
+    { icon: LocationIcon, text: city },
+  ];
+
   return (
     <ul className={styles.root}>
       {mainInfoData.map((item, index) => (

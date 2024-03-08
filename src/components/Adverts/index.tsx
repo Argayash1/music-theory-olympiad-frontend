@@ -1,28 +1,33 @@
 import React from 'react';
 import styles from './Adverts.module.scss';
-import { SectionTitleContainer, AdvertCardList, FullAdvert, AdvertCardType } from '../../components';
-import { cards } from '../../utils/constants';
+import { SectionTitleContainer, AdvertCardList, FullAdvert } from '../../components';
+import { useAppDispatch } from '../../redux/store';
+import { fetchAdvertById, fetchAdverts } from '../../redux/advert/asyncActions';
+import { selectAdvertData } from '../../redux/advert/selectors';
+import { useSelector } from 'react-redux';
+import { clearAdverCardItem, setAdvertId } from '../../redux/advert/slice';
 
 export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
-  const [cardId, setCardId] = React.useState<number | null>(null);
-  const [adverCardItem, setAdverCardItem] = React.useState<AdvertCardType | null>(null);
+  const dispatch = useAppDispatch();
+  const { items, status, advertId, adverCardItem } = useSelector(selectAdvertData);
 
   React.useEffect(() => {
-    if (cardId) {
-      const advertCard = cards.find((card) => card._id === cardId);
-      if (advertCard) {
-        setTimeout(() => setAdverCardItem(advertCard), 200);
-      }
+    dispatch(fetchAdverts());
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    if (advertId) {
+      dispatch(fetchAdvertById(advertId));
     } else {
-      setTimeout(() => setAdverCardItem(null), 500);
+      setTimeout(() => dispatch(clearAdverCardItem()), 500);
     }
-  }, [cardId]);
+  }, [advertId, dispatch]);
 
   return (
     <section className={styles.root} id='adverts' ref={ref}>
       <SectionTitleContainer text='Объявления' />
-      <AdvertCardList advertCardsItems={cards} onCtaClick={(cardId) => setCardId(cardId)} cardId={cardId} />
-      <FullAdvert onClose={() => setCardId(null)} advertItem={adverCardItem} cardId={cardId} />
+      <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} />
+      <FullAdvert onClose={() => dispatch(setAdvertId(null))} advertItem={adverCardItem} cardId={advertId} />
     </section>
   );
 });

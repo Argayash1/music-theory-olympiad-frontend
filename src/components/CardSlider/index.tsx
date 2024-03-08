@@ -2,6 +2,8 @@ import React from 'react';
 import { SliderNextButton } from '../SliderNextButton';
 import styles from './CardSlider.module.scss';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
+import { selectAdvertId } from '../../redux/advert/selectors';
 
 type CardSliderProps = {
   onSwitchToNextSlides: () => void;
@@ -10,7 +12,6 @@ type CardSliderProps = {
   switchCount: number;
   nextButtonDisabled: boolean;
   type?: string;
-  cardId?: number | null;
 };
 
 export const CardSlider = ({
@@ -20,10 +21,11 @@ export const CardSlider = ({
   switchCount,
   nextButtonDisabled,
   type,
-  cardId,
 }: CardSliderProps) => {
+  const advertItem = useSelector(selectAdvertId);
+
   return (
-    <div className={clsx(styles.root, type === 'archive' && styles.rootTypeArchive, cardId && styles.rootHidden)}>
+    <div className={clsx(styles.root, type === 'archive' && styles.rootTypeArchive, advertItem && styles.rootHidden)}>
       <SliderNextButton
         type='left'
         onClick={onSwitchToPrevSlides}
