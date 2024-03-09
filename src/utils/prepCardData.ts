@@ -1,6 +1,6 @@
 import { OLYMPIC_RULES_URL } from './constants';
 
-export const prepCardData = [
+export const prepCardNamesData = [
   { itemName: 'Диктанты', itemButtonText: 'Скачать ноты' },
   { itemName: 'Слуховой анализ', itemButtonText: 'Скачать таблицу' },
   { itemName: 'Гармонизация мелодии', itemButtonText: 'Скачать ноты' },

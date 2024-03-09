@@ -3,8 +3,23 @@ import styles from './Results.module.scss';
 import { SectionTitleContainer } from '../SectionTitleContainer';
 import { prepCardNames } from '../../utils/prepCardNames';
 import { CTA } from '../CTA';
+import { useAppDispatch } from '../../redux/store';
+import { fetchResults } from '../../redux/result/asyncActions';
+import { selectResultData } from '../../redux/result/selectors';
+import { useSelector } from 'react-redux';
 
 export const Results = React.forwardRef<HTMLElement>((props, ref) => {
+  const dispatch = useAppDispatch();
+  const { items, status } = useSelector(selectResultData);
+
+  React.useEffect(() => {
+    dispatch(fetchResults());
+  }, [dispatch]);
+
+  if (status === 'loading') {
+    return <>Загрузка...</>;
+  }
+
   return (
     <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
@@ -13,7 +28,11 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
           {prepCardNames.map((item, index) => (
             <li key={index} className={styles.listItem}>
               <p className={styles.text}>{item}</p>
-              <CTA linkText='Скачать результаты' type='download' />
+              <CTA
+                linkText='Скачать результаты'
+                path={items[index] && items[index].url ? items[index].url : undefined}
+                type='download'
+              />
             </li>
           ))}
         </ul>

@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './PrepCard.module.scss';
 import clsx from 'clsx';
-import { prepCardData, prepCardItemData } from '../../utils/prepCardData';
+import { prepCardNamesData } from '../../utils/prepCardData';
 import { ItemDataType, PrepCardItem } from '../PrepCardItem';
+import { IPrepMaterial } from '../../redux/prepMaterial/types';
 
 type PrepMaterialCardProps = {
+  prepCardData: IPrepMaterial;
   title: string;
   isOpen: boolean;
   isPlaying: boolean;
@@ -12,7 +14,7 @@ type PrepMaterialCardProps = {
   onTogglePlay: (audioUrl: string) => void;
 };
 
-export const PrepCard = ({ title, isOpen, onClick, isPlaying, onTogglePlay }: PrepMaterialCardProps) => {
+export const PrepCard = ({ prepCardData, title, isOpen, onClick, isPlaying, onTogglePlay }: PrepMaterialCardProps) => {
   const accordionItemRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -21,9 +23,9 @@ export const PrepCard = ({ title, isOpen, onClick, isPlaying, onTogglePlay }: Pr
     }
   }, [isOpen]);
 
-  const prepCardItem = Object.values(prepCardItemData).slice(2) as ItemDataType[];
+  const prepCardItem = Object.values(prepCardData).slice(2) as ItemDataType[];
 
-  const prepCardItems = prepCardData.map((item, index) => (
+  const prepCardItems = prepCardNamesData.map((item, index) => (
     <li key={index} className={clsx(styles.listItem, isOpen && styles.listItemIsOpened)}>
       <PrepCardItem {...item} itemData={prepCardItem[index]} isPlaying={isPlaying} onTogglePlay={onTogglePlay} />
     </li>

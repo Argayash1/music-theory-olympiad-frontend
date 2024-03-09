@@ -11,7 +11,11 @@ const initialState: OlympDataSliceState = {
 const olympDataSlice = createSlice({
   name: 'olympData',
   initialState,
-  reducers: {},
+  reducers: {
+    setScreenWidth(state, action: PayloadAction<number>) {
+      state.screenWidth = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMusOlympData.pending, (state) => {
       state.items = [];
@@ -29,5 +33,7 @@ const olympDataSlice = createSlice({
     });
   },
 });
+
+export const { setScreenWidth } = olympDataSlice.actions;
 
 export default olympDataSlice.reducer;

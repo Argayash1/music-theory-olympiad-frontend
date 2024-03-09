@@ -1,8 +1,8 @@
-import { prepCardData } from './prepCardData';
+import { prepCardNamesData } from './prepCardData';
 
 export const archiveCardNames = [
-  { itemName: prepCardData[0].itemName, extensions: ['pdf', 'mp3', ''] },
-  { itemName: prepCardData[1].itemName, extensions: ['pdf', 'mp3'] },
-  { itemName: prepCardData[2].itemName, extensions: ['pdf'] },
-  { itemName: prepCardData[3].itemName, extensions: ['pdf'] },
+  { itemName: prepCardNamesData[0].itemName, extensions: ['pdf', 'mp3', ''] },
+  { itemName: prepCardNamesData[1].itemName, extensions: ['pdf', 'mp3'] },
+  { itemName: prepCardNamesData[2].itemName, extensions: ['pdf'] },
+  { itemName: prepCardNamesData[3].itemName, extensions: ['pdf'] },
 ];

@@ -2,12 +2,15 @@ import React from 'react';
 import styles from './AudioPlayer.module.scss';
 import { PlayButton, TimeCounter, TimelineContainer, VolumelineContainer, CloseButton } from '../../components';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
+import { selectScreenWidth } from '../../redux/olympData/selectors';
 
 type AudioPlayerProps = {
   src: string;
-  screenWidth: number;
   isPlaying: boolean;
   onSetIsPlaying: (isPlaying: boolean) => void;
+  onClearAudioSrc: () => void;
+  onTogglePlay: () => void;
 };
 
 export type ButtonClick = MouseEvent & {
@@ -26,12 +29,14 @@ function isMouseEvent(
   return 'buttons' in event;
 }
 
-export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: AudioPlayerProps) => {
-  const audioRef = React.useRef<HTMLAudioElement>(null);
+export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>((props, ref) => {
+  const { src, isPlaying, onSetIsPlaying, onClearAudioSrc, onTogglePlay } = props;
+
+  const screenWidth = useSelector(selectScreenWidth);
+
   const audioLinkRef = React.useRef<HTMLAnchorElement>(null);
   const isChangeVolume = React.useRef<boolean>(false);
 
-  const [isPlayerVisible, setIsPlayerVisible] = React.useState<boolean>(false);
   const [progress, setProgress] = React.useState<number>(0);
   const [totalDuration, setTotalDuration] = React.useState<number>(0);
   const [currentDuration, setCurrentDuration] = React.useState<number>(0);
@@ -40,6 +45,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   const [isMuted, setIsmuted] = React.useState<boolean>(false);
   const [volume, setVolume] = React.useState<number>(100);
   const [isChangeTime, setIsChangeTime] = React.useState<boolean>(false);
+  const [isAudioLoaded, setIsAudioLoaded] = React.useState<boolean>(false);
 
   const handleDishoverVolumeContainer = () => {
     setIsVolumeContainerHovered(false);
@@ -47,7 +53,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   };
 
   const handleVolumeProgressBarDrag = (event: React.MouseEvent<HTMLDivElement>) => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
 
     if (audioPlayer) {
       if (event.buttons !== 1) {
@@ -70,7 +76,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   };
 
   const handleProgressBarDrag = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
 
     if (audioPlayer) {
       if ((isTouchEvent(event) && event.touches.length !== 1) || (isMouseEvent(event) && event.buttons !== 1)) {
@@ -95,7 +101,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   };
 
   const handleProgressBarDragEnd = () => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
       if (isPlaying) {
         // Если воспроизведение активно, запускаем его
@@ -105,7 +111,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
   };
 
   const handleMuteButtonClick = () => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
       if (audioPlayer.volume === 0) {
         audioPlayer.volume = previousVolume; // Восстановить прежний уровень громкости
@@ -125,8 +131,8 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
     }
   };
 
-  const handleTimeUpdate = () => {
-    const audioPlayer = audioRef.current;
+  const handleTimeUpdate = React.useCallback(() => {
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
       const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
       setProgress(progress);
@@ -135,42 +141,32 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
         onSetIsPlaying(false);
       }
     }
-  };
-
-  const togglePlay = () => {
-    const audioPlayer = audioRef.current;
-    if (audioPlayer) {
-      if (isPlaying) {
-        audioPlayer.pause();
-      } else {
-        audioPlayer.play();
-      }
-      onSetIsPlaying(!isPlaying);
-    }
-  };
+  }, [ref, onSetIsPlaying]);
 
   const handleCloseAudioPlayer = () => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
 
     if (audioPlayer) {
       if (isPlaying) audioPlayer.pause();
     }
 
     onSetIsPlaying(false);
-    setIsPlayerVisible(false);
+    onClearAudioSrc();
+    setIsAudioLoaded(false);
   };
 
   React.useEffect(() => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
 
-    if (isPlaying) {
-      setIsPlayerVisible(true);
-      if (audioPlayer) audioPlayer.play();
+    if (audioPlayer) {
+      if (src && isPlaying && isAudioLoaded) {
+        audioPlayer.play();
+      }
     }
-  }, [isPlaying]);
+  }, [src, isPlaying, ref, isAudioLoaded]);
 
   React.useEffect(() => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
       audioPlayer.addEventListener('timeupdate', handleTimeUpdate);
       audioPlayer.addEventListener('ended', () => {
@@ -184,10 +180,10 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
         });
       };
     }
-  }, []);
+  }, [ref, handleTimeUpdate, onSetIsPlaying]);
 
   React.useEffect(() => {
-    const audioPlayer = audioRef.current;
+    const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
       // Обработчик события timeupdate
       const updateTime = () => {
@@ -200,6 +196,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
       // Получение общей продолжительности трека
       const handleLoadedMetadata = () => {
         setTotalDuration(audioPlayer.duration);
+        setIsAudioLoaded(true);
       };
 
       audioPlayer.addEventListener('loadedmetadata', handleLoadedMetadata);
@@ -210,12 +207,12 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
         audioPlayer.removeEventListener('loadedmetadata', handleLoadedMetadata);
       };
     }
-  }, []);
+  }, [ref]);
 
   return (
-    <div className={clsx(styles.root, isPlayerVisible && styles.rootIsOpened)}>
+    <div className={clsx(styles.root, src && styles.rootIsOpened)}>
       <div className={styles.container}>
-        <audio ref={audioRef} src={src}>
+        <audio ref={ref} src={src} preload='auto'>
           Ваш браузер не поддерживает встроенное аудио. Попробуйте скачать его
           <a href={src} ref={audioLinkRef} download>
             по ссылке
@@ -226,7 +223,7 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
           <CloseButton place='audio-player' onClick={handleCloseAudioPlayer} />
         </div>
         <div className={styles.playerContainer}>
-          <PlayButton onClick={togglePlay} isPlaying={isPlaying} />
+          <PlayButton onClick={onTogglePlay} isPlaying={isPlaying} />
           <TimeCounter duration={currentDuration} />
           <TimelineContainer
             onDrag={handleProgressBarDrag}
@@ -254,4 +251,4 @@ export const AudioPlayer = ({ src, screenWidth, isPlaying, onSetIsPlaying }: Aud
       </div>
     </div>
   );
-};
+});

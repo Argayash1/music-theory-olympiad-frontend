@@ -3,6 +3,7 @@ import styles from './PrepCardItem.module.scss';
 import { CTA, PrepCardItemContent } from '../../components';
 
 export interface IDictation {
+  _id: string;
   audioUrl: string;
   title: string;
   author: string;
