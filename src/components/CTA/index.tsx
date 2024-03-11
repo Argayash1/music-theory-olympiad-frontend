@@ -30,6 +30,7 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
     [styles.rootPlaceResults]: linkText === 'Скачать результаты',
     [styles.rootInactive]: type === 'download' && !path,
     [styles.rootBorderShown]: isBorderShown,
+    [styles.rootPlaceAudioPlayer]: type === 'download' && linkText === 'cкачать',
   });
 
   return (
@@ -62,7 +63,11 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
           {linkText}
           {type === 'download' ? (
             <svg
-              className={clsx(styles.icon, !path && styles.iconInactive)}
+              className={clsx(
+                styles.icon,
+                !path && styles.iconInactive,
+                type === 'download' && linkText === 'cкачать' && styles.iconPlaceAudioPlayer,
+              )}
               width='12.000000'
               height='17.000000'
               viewBox='0 0 12 17'

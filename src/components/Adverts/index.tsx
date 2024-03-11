@@ -9,7 +9,7 @@ import { clearAdverCardItem, setAdvertId } from '../../redux/advert/slice';
 
 export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
-  const { items, status, advertId, adverCardItem } = useSelector(selectAdvertData);
+  const { items, advertId, adverCardItem } = useSelector(selectAdvertData);
 
   React.useEffect(() => {
     dispatch(fetchAdverts());

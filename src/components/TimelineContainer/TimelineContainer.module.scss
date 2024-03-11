@@ -1,10 +1,11 @@
 .root {
-  width: 521px;
+  width: 742px;
   height: 22px;
   display: flex;
-  align-items: center;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
+  padding-top: 6px;
 
   @media screen and (max-width: 810px) {
     width: 334px;
@@ -23,7 +24,6 @@
   width: 100%;
   height: 8px;
   background-color: #f2f2f2;
-  border-radius: 200px;
   transition: all 0.3s linear;
 }
 

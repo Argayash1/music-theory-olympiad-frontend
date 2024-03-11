@@ -5,11 +5,17 @@ import { AudioPlayer } from '../AudioPlayer';
 import { useAppDispatch } from '../../redux/store';
 import { fetchPrepMaterials } from '../../redux/prepMaterial/asyncActions';
 
+interface IAudioData {
+  audioUrl: string;
+  title: string;
+  author: string;
+}
+
 export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
 
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-  const [audioSrc, setAudioSrc] = React.useState<string>('');
+  const [audioData, setAudioData] = React.useState<IAudioData>({ audioUrl: '', title: '', author: '' });
 
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
@@ -17,25 +23,24 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
     dispatch(fetchPrepMaterials());
   }, [dispatch]);
 
-  const handleTogglePlay = (audioUrl: string) => {
-    setAudioSrc(audioUrl);
+  const handleTogglePlay = (audioUrl: string, title: string, author: string) => {
+    console.log(audioUrl !== audioData.audioUrl);
+    // if (audioUrl !== audioSrc) {
+    setAudioData({ audioUrl, title, author });
+    // }
     setIsPlaying(!isPlaying);
-    audioSrc && togglePlay();
-  };
-
-  const handlClearAudioSrc = () => {
-    setAudioSrc('');
+    audioData.audioUrl && audioUrl !== audioData.audioUrl && togglePlay();
   };
 
   const togglePlay = () => {
     const audioPlayer = audioRef.current;
     if (audioPlayer) {
       if (audioPlayer.paused) {
-        audioPlayer.play().catch((error) => console.error('Playback prevented:', error));
+        audioPlayer.play();
       } else {
         audioPlayer.pause();
       }
-      setIsPlaying(!audioPlayer.paused);
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -46,8 +51,10 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
       <AudioPlayer
         isPlaying={isPlaying}
         onSetIsPlaying={(isPlaying) => setIsPlaying(isPlaying)}
-        src={audioSrc}
-        onClearAudioSrc={handlClearAudioSrc}
+        src={audioData.audioUrl}
+        title={audioData.title}
+        author={audioData.author}
+        onClearAudioData={() => setAudioData({ audioUrl: '', title: '', author: '' })}
         ref={audioRef}
         onTogglePlay={togglePlay}
       />

@@ -29,14 +29,11 @@ export const TimelineContainer = ({
 
   const screenWidth1 = window.innerWidth;
 
-  const fullProgressBarWidth =
-    screenWidth1 > 810 ? 521 : screenWidth1 <= 810 && screenWidth1 > 612 ? 334 : screenWidth1 <= 612 ? 91 : 0;
-  const smallProgressBarWidth =
-    screenWidth1 > 810 ? 390 : screenWidth1 <= 810 && screenWidth1 > 612 ? 250 : screenWidth1 <= 612 ? 68 : 0;
-  const maxProgressBarWidth = !isVolumeContainerHovered ? fullProgressBarWidth : smallProgressBarWidth; // Максимальная ширина полосы воспроизведения
+  const maxProgressBarWidth =
+    screenWidth1 > 810 ? 742 : screenWidth1 <= 810 && screenWidth1 > 612 ? 334 : screenWidth1 <= 612 ? 91 : 0; // Максимальная ширина полосы воспроизведения
   const progressBarWidth = progress * (maxProgressBarWidth / 100); // Вычисление ширины полосы воспроизведения с учетом прогресса
   const progressBarStyle = {
-    width: `${progressBarWidth > maxProgressBarWidth ? maxProgressBarWidth : progressBarWidth}px`,
+    width: `${progressBarWidth}px`,
   }; // Стиль с новой шириной
 
   React.useEffect(() => {

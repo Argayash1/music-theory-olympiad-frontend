@@ -31,7 +31,7 @@ type PrepCardItemProps = {
   itemButtonText: string;
   itemData: ItemDataType;
   isPlaying: boolean;
-  onTogglePlay: (audioUrl: string) => void;
+  onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
 export const PrepCardItem = ({ itemName, itemButtonText, itemData, isPlaying, onTogglePlay }: PrepCardItemProps) => {

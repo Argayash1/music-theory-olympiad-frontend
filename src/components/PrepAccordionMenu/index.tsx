@@ -7,7 +7,7 @@ import { selectPrepMaterialsData } from '../../redux/prepMaterial/selectors';
 
 type PrepAccordionMenuProps = {
   isPlaying: boolean;
-  onTogglePlay: (audioUrl: string) => void;
+  onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
 export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenuProps) => {

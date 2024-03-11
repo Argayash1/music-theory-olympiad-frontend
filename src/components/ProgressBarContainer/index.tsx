@@ -7,22 +7,16 @@ type ProgressBarStyleType = {
 };
 
 type ProgressBarContainerProps = {
-  isChangeVolume?: boolean;
   progressBarStyle: ProgressBarStyleType;
   isLineHovered: boolean;
   type?: string;
 };
 
-export const ProgressBarContainer = ({
-  isChangeVolume,
-  progressBarStyle,
-  isLineHovered,
-  type,
-}: ProgressBarContainerProps) => {
+export const ProgressBarContainer = ({ progressBarStyle, isLineHovered, type }: ProgressBarContainerProps) => {
   return (
-    <div className={styles.root}>
+    <div className={clsx(styles.root, type === 'volume' && styles.rootTypeVolume)}>
       <div
-        className={clsx(styles.progressBar, type === 'volume' && !isChangeVolume && styles.progressBarAnimationActive)}
+        className={clsx(styles.progressBar, type === 'volume' && styles.progressBarTypeVolume)}
         style={progressBarStyle}
       ></div>
       <button className={clsx(styles.progressBarButton, isLineHovered && styles.progressBarButtonActive)}></button>

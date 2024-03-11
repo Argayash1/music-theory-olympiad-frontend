@@ -16,25 +16,25 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
     dispatch(fetchResults());
   }, [dispatch]);
 
-  if (status === 'loading') {
-    return <>Загрузка...</>;
-  }
-
   return (
     <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
         <SectionTitleContainer text='Результаты' />
         <ul className={styles.list}>
-          {prepCardNames.map((item, index) => (
-            <li key={index} className={styles.listItem}>
-              <p className={styles.text}>{item}</p>
-              <CTA
-                linkText='Скачать результаты'
-                path={items[index] && items[index].url ? items[index].url : undefined}
-                type='download'
-              />
-            </li>
-          ))}
+          {status === 'loading' ? (
+            <>Загрузка...</>
+          ) : (
+            prepCardNames.map((item, index) => (
+              <li key={index} className={styles.listItem}>
+                <p className={styles.text}>{item}</p>
+                <CTA
+                  linkText='Скачать результаты'
+                  path={items[index] && items[index].url ? items[index].url : undefined}
+                  type='download'
+                />
+              </li>
+            ))
+          )}
         </ul>
       </div>
     </section>

@@ -1,15 +1,17 @@
 import React from 'react';
 import styles from './AudioPlayer.module.scss';
-import { PlayButton, TimeCounter, TimelineContainer, VolumelineContainer, CloseButton } from '../../components';
+import { PlayButton, TimeCounter, TimelineContainer, VolumelineContainer, CloseButton, CTA } from '../../components';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectScreenWidth } from '../../redux/olympData/selectors';
 
 type AudioPlayerProps = {
   src: string;
+  title: string;
+  author: string;
   isPlaying: boolean;
   onSetIsPlaying: (isPlaying: boolean) => void;
-  onClearAudioSrc: () => void;
+  onClearAudioData: () => void;
   onTogglePlay: () => void;
 };
 
@@ -30,7 +32,7 @@ function isMouseEvent(
 }
 
 export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>((props, ref) => {
-  const { src, isPlaying, onSetIsPlaying, onClearAudioSrc, onTogglePlay } = props;
+  const { src, title, author, isPlaying, onSetIsPlaying, onClearAudioData, onTogglePlay } = props;
 
   const screenWidth = useSelector(selectScreenWidth);
 
@@ -124,13 +126,6 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
     }
   };
 
-  const handleDownload = () => {
-    const audioPlayerLink = audioLinkRef.current;
-    if (audioPlayerLink) {
-      audioPlayerLink.click(); // Запускаем скачивание аудиотрека
-    }
-  };
-
   const handleTimeUpdate = React.useCallback(() => {
     const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
     if (audioPlayer) {
@@ -151,7 +146,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
     }
 
     onSetIsPlaying(false);
-    onClearAudioSrc();
+    onClearAudioData();
     setIsAudioLoaded(false);
   };
 
@@ -219,7 +214,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
           </a>
         </audio>
         <div className={styles.textContainer}>
-          <p className={styles.authorAndTitle}>ФИО Название произведения</p>
+          <p className={styles.authorAndTitle}>{`${author} ${title}`}</p>
           <CloseButton place='audio-player' onClick={handleCloseAudioPlayer} />
         </div>
         <div className={styles.playerContainer}>
@@ -234,19 +229,17 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
             progress={progress}
             screenWidth={screenWidth}
           />
-          <TimeCounter duration={totalDuration} />
+          <TimeCounter duration={totalDuration} type='right' />
           <VolumelineContainer
-            onHover={() => setIsVolumeContainerHovered(true)}
-            onDisHover={() => !isChangeVolume.current && setIsVolumeContainerHovered(false)}
             onDisHoverVolumeContainer={handleDishoverVolumeContainer}
             onDrag={handleVolumeProgressBarDrag}
             onMuteButtonClick={handleMuteButtonClick}
             volume={volume}
             isVolumeContainerHovered={isVolumeContainerHovered}
-            isChangeVolume={isChangeVolume.current}
             isMuted={isMuted}
             screenWidth={screenWidth}
           />
+          <CTA linkText='cкачать' type='download' path={src} />
         </div>
       </div>
     </div>

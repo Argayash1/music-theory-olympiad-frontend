@@ -5,10 +5,18 @@
   align-items: center;
 }
 
+.rootTypeVolume {
+  top: 9px;
+  left: 37px;
+}
+
 .progressBar {
   background-color: #d6d6d6;
   height: 8px;
-  border-radius: 200px;
+}
+
+.progressBarTypeVolume {
+  background-color: #000;
 }
 
 .progressBarAnimationActive {

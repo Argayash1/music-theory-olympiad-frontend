@@ -23,11 +23,11 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20.09px 134.18px 0 140px;
+  padding: 20.09px 104.18px 0 140px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 15.09px;
+  gap: 13.09px;
 }
 
 .textContainer {
@@ -37,7 +37,7 @@
 
 .authorAndTitle {
   @include main-text-font(20, 500, 1.1);
-  margin: 10px 0 0;
+  margin: 9.91px 0 0;
   padding: 0;
 }
 
@@ -46,7 +46,7 @@
   height: 22px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;
   box-sizing: border-box;
   position: relative;
 

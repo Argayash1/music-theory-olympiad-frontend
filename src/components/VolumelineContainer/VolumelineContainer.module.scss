@@ -3,25 +3,22 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin-left: 8px;
 }
 
 .wrapper {
   height: 100%;
   display: flex;
-  align-items: center;
-  width: fit-content;
+  gap: 9.75px;
   transition: margin 0.3s linear;
 }
 
-.wrapperHovered {
-  margin-right: 12px;
-}
-
 .volumeline {
-  width: 0;
+  width: 114px;
   height: 8px;
   background-color: #f2f2f2;
   transition: all 0.3s linear;
+  margin-top: 9px;
 }
 
 .volumelineHovered {

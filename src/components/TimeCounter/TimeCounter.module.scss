@@ -1,9 +1,10 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .root {
+  @include main-text-font(16, 400, 1.375);
   width: 47px;
   height: 22px;
-  @include main-text-font(16, 400, 1.375);
+  margin-left: 11px;
 
   @media screen and (max-width: 810px) {
     width: 57px;
@@ -14,4 +15,9 @@
   @media screen and (max-width: 612px) {
     font-size: 12px;
   }
+}
+
+.rootTypeRight {
+  margin-left: 0;
+  width: 46px;
 }

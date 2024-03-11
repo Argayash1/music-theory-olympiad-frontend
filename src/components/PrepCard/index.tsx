@@ -11,7 +11,7 @@ type PrepMaterialCardProps = {
   isOpen: boolean;
   isPlaying: boolean;
   onClick: () => void;
-  onTogglePlay: (audioUrl: string) => void;
+  onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
 export const PrepCard = ({ prepCardData, title, isOpen, onClick, isPlaying, onTogglePlay }: PrepMaterialCardProps) => {

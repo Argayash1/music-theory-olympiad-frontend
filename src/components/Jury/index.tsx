@@ -15,19 +15,20 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
     dispatch(fetchJuryMembers());
   }, [dispatch]);
 
-  if (status === 'loading') {
-    return <>Загрузка...</>;
-  }
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
         <SectionTitleContainer text='Жюри' />
         <ul className={styles.list}>
-          {items.map((item, index) => (
-            <li key={index} className={styles.listItem}>
-              <JuryMemberCard {...item} />
-            </li>
-          ))}
+          {status === 'loading' ? (
+            <>Загрузка...</>
+          ) : (
+            items.map((item, index) => (
+              <li key={index} className={styles.listItem}>
+                <JuryMemberCard {...item} />
+              </li>
+            ))
+          )}
         </ul>
       </div>
     </section>

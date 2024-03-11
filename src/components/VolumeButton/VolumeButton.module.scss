@@ -1,34 +1,47 @@
 .root {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 27px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   margin: 0;
   padding: 0;
+}
 
-  .icon {
-    g path {
+.icon {
+  path {
+    &:first-child {
       transition: fill 0.3s linear;
     }
 
-    &:hover {
-      g path {
-        fill: #fcbe13;
-      }
-    }
+    transition: stroke 0.3s linear;
   }
 
-  .iconMuted {
-    g path {
-      transition: all 0.3s linear;
+  &:hover {
+    path {
+      &:first-child {
+        fill: #ff5e3a;
+      }
+      stroke: #ff5e3a;
+    }
+  }
+}
+
+.iconMuted {
+  path {
+    &:first-child {
+      transition: fill 0.3s linear;
     }
 
-    &:hover {
-      g path {
-        stroke: #fcbe13;
-        fill: #fcbe13;
+    transition: stroke 0.3s linear;
+  }
+
+  &:hover {
+    path {
+      &:first-child {
+        fill: #ff5e3a;
       }
+      stroke: #ff5e3a;
     }
   }
 }

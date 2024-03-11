@@ -10,7 +10,7 @@ import { setActiveItemId } from '../../redux/prepMaterial/slice';
 type DictationsProps = {
   itemData: ItemDataType;
   isPlaying: boolean;
-  onTogglePlay: (audioUrl: string) => void;
+  onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
 export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: DictationsProps) => {
@@ -19,9 +19,9 @@ export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: Dicta
 
   const dialogRef = React.useRef<HTMLDialogElement>(null);
 
-  const handleTogglePlayClick = (itemId: string, audioUrl: string) => {
+  const handleTogglePlayClick = (itemId: string, audioUrl: string, title: string, author: string) => {
     dispatch(setActiveItemId(itemId));
-    onTogglePlay(audioUrl);
+    onTogglePlay(audioUrl, title, author);
   };
 
   const handleSelect = (itemData: ItemDataType) => {
@@ -33,7 +33,7 @@ export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: Dicta
               styles.playButton,
               activeItemId === itemData._id && isPlaying && styles.playButtonTypePause,
             )}
-            onClick={() => handleTogglePlayClick(`${itemData._id}`, itemData.audioUrl)}
+            onClick={() => handleTogglePlayClick(`${itemData._id}`, itemData.audioUrl, itemData.title, itemData.author)}
           ></button>
           <p className={styles.text}>{itemData.author}</p>
           <p className={styles.text}>{itemData.title}</p>
@@ -56,7 +56,7 @@ export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: Dicta
                   styles.playButton,
                   activeItemId === item._id && isPlaying && styles.playButtonTypePause,
                 )}
-                onClick={() => handleTogglePlayClick(item._id, item.audioUrl)}
+                onClick={() => handleTogglePlayClick(item._id, item.audioUrl, item.title, item.author)}
               ></button>
               <p className={styles.text}>{item.author}</p>
               <p className={styles.text}>{item.title}</p>
