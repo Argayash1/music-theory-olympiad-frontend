@@ -3,13 +3,24 @@ import styles from './ArchiveCardList.module.scss';
 import { archiveCardNames } from '../../utils/archiveCardNames';
 import { ArchiveCard } from '../ArchiveCard';
 import { CardSlider } from '../CardSlider';
+import { useSelector } from 'react-redux';
+import { selectArchiveDataItems } from '../../redux/archive/selectors';
 
 export const ArchiveCardList = () => {
+  const items = useSelector(selectArchiveDataItems);
+
+  const archiveCardItems = [items[0].dictations, items[0].soundAnalysis, items[0].harmonization, items[0].solfeggio];
+
   const [switchCount, setSwitchCount] = React.useState<number>(0);
 
   const archiveCards = archiveCardNames.map((item, index) => (
     <li key={index}>
-      <ArchiveCard title={item.itemName} extensions={item.extensions} itemIndex={index} />
+      <ArchiveCard
+        archiveCardData={archiveCardItems[index]}
+        title={item.itemName}
+        extensions={item.extensions}
+        itemIndex={index}
+      />
     </li>
   ));
 

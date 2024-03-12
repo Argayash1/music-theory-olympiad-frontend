@@ -6,6 +6,7 @@ import { useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { selectJuryMemberData } from '../../redux/juryMember/selectors';
 import { fetchJuryMembers } from '../../redux/juryMember/asyncActions';
+import { menuItems } from '../../utils/menuItems';
 
 export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
@@ -18,7 +19,7 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
-        <SectionTitleContainer text='Жюри' />
+        <SectionTitleContainer text={menuItems[5].name} />
         <ul className={styles.list}>
           {status === 'loading' ? (
             <>Загрузка...</>

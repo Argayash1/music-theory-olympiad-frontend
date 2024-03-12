@@ -4,21 +4,27 @@ export enum Status {
   ERROR = 'error',
 }
 
-export interface IArchive {
-  imageUrl: string;
-  surname: string;
-  patronymic: string;
-  name: string;
-  about: string;
+export interface IArchiveObject {
+  _id: string;
   link: string;
+  category: string;
 }
 
-export type JuryMemberItems = {
+interface IArchive {
+  year: string;
+  category: string;
+  dictations: IArchiveObject[];
+  soundAnalysis: IArchiveObject[];
+  harmonization: IArchiveObject[];
+  solfeggio: IArchiveObject[];
+}
+
+export type ArchiveItems = {
   data: IArchive[];
   totalPages: number;
 };
 
-export interface OlympDataSliceState {
+export interface ArchiveSliceState {
   items: IArchive[];
   status: Status;
 }

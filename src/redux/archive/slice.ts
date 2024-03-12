@@ -1,32 +1,32 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { OlympDataSliceState, Status } from './types';
-import { fetchJuryMembers } from './asyncActions';
+import { createSlice } from '@reduxjs/toolkit';
+import { ArchiveSliceState, Status } from './types';
+import { fetchArchives } from './asyncActions';
 
-const initialState: OlympDataSliceState = {
+const initialState: ArchiveSliceState = {
   items: [],
   status: Status.LOADING,
 };
 
-const resultSlice = createSlice({
-  name: 'result',
+const archiveSlice = createSlice({
+  name: 'archive',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchJuryMembers.pending, (state) => {
+    builder.addCase(fetchArchives.pending, (state) => {
       state.items = [];
       state.status = Status.LOADING;
     });
 
-    builder.addCase(fetchJuryMembers.fulfilled, (state, action) => {
+    builder.addCase(fetchArchives.fulfilled, (state, action) => {
       state.items = action.payload.data;
       state.status = Status.SUCCESS;
     });
 
-    builder.addCase(fetchJuryMembers.rejected, (state) => {
+    builder.addCase(fetchArchives.rejected, (state) => {
       state.status = Status.ERROR;
       state.items = [];
     });
   },
 });
 
-export default resultSlice.reducer;
+export default archiveSlice.reducer;

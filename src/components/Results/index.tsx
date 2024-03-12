@@ -7,6 +7,7 @@ import { useAppDispatch } from '../../redux/store';
 import { fetchResults } from '../../redux/result/asyncActions';
 import { selectResultData } from '../../redux/result/selectors';
 import { useSelector } from 'react-redux';
+import { menuItems } from '../../utils/menuItems';
 
 export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
@@ -19,7 +20,7 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
-        <SectionTitleContainer text='Результаты' />
+        <SectionTitleContainer text={menuItems[4].name} />
         <ul className={styles.list}>
           {status === 'loading' ? (
             <>Загрузка...</>

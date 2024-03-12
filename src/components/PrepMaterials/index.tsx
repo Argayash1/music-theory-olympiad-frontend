@@ -4,6 +4,7 @@ import { PrepAccordionMenu, SectionTitleContainer } from '../../components';
 import { AudioPlayer } from '../AudioPlayer';
 import { useAppDispatch } from '../../redux/store';
 import { fetchPrepMaterials } from '../../redux/prepMaterial/asyncActions';
+import { menuItems } from '../../utils/menuItems';
 
 interface IAudioData {
   audioUrl: string;
@@ -46,7 +47,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section className={styles.root} id='prep-materials' ref={ref}>
-      <SectionTitleContainer text='Материалы для подготовки' />
+      <SectionTitleContainer text={menuItems[2].name} />
       <PrepAccordionMenu isPlaying={isPlaying} onTogglePlay={handleTogglePlay} />
       <AudioPlayer
         isPlaying={isPlaying}

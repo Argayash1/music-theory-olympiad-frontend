@@ -9,12 +9,14 @@ type LogoProps = {
 
 export const Logo = ({ place }: LogoProps) => {
   return (
-    <a href='#top' className={clsx(styles.root, place === 'brand-bunner' && styles.rootTypeBrandBanner)}>
-      <img
-        src={logo}
-        alt='Логотип олимпиады'
-        className={clsx(styles.image, place === 'brand-bunner' && styles.imageTypeBrandBunner)}
-      />
-    </a>
+    <>
+      {!place ? (
+        <a href='#top' className={styles.root}>
+          <img src={logo} alt='Логотип олимпиады' className={clsx(styles.image)} />
+        </a>
+      ) : (
+        <img src={logo} alt='Логотип олимпиады' className={clsx(styles.image, styles.imageTypeBrandBunner)} />
+      )}
+    </>
   );
 };

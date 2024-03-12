@@ -1,5 +1,5 @@
 import { RootState } from '../store';
 
-export const selectJuryMemberData = (state: RootState) => state.juryMember;
+export const selectArchiveDataItems = (state: RootState) => state.archive.items;
 
-export const selectJuryMemberStatus = (state: RootState) => state.juryMember.status;
+export const selectArchiveDataStetus = (state: RootState) => state.archive.status;

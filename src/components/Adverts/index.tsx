@@ -6,6 +6,7 @@ import { fetchAdvertById, fetchAdverts } from '../../redux/advert/asyncActions';
 import { selectAdvertData } from '../../redux/advert/selectors';
 import { useSelector } from 'react-redux';
 import { clearAdverCardItem, setAdvertId } from '../../redux/advert/slice';
+import { menuItems } from '../../utils/menuItems';
 
 export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
@@ -25,7 +26,7 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section className={styles.root} id='adverts' ref={ref}>
-      <SectionTitleContainer text='Объявления' />
+      <SectionTitleContainer text={menuItems[1].name} />
       <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} />
       <FullAdvert onClose={() => dispatch(setAdvertId(null))} advertItem={adverCardItem} cardId={advertId} />
     </section>

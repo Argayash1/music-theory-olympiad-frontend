@@ -3,14 +3,16 @@ import { DataCard, ExtensionCard } from '../../components';
 import styles from './ArchiveCard.module.scss';
 import { DownloadMenu } from '../DownloadMenu';
 import clsx from 'clsx';
+import { IArchiveObject } from '../../redux/archive/types';
 
 type ArchiveCardProps = {
+  archiveCardData: IArchiveObject[];
   title: string;
   extensions: string[];
   itemIndex: number;
 };
 
-export const ArchiveCard = ({ title, extensions, itemIndex }: ArchiveCardProps) => {
+export const ArchiveCard = ({ archiveCardData, title, extensions, itemIndex }: ArchiveCardProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
   const extensionsLength = extensions.length;
   const extensionsItems = extensions.map((extension, index) => (
@@ -18,6 +20,8 @@ export const ArchiveCard = ({ title, extensions, itemIndex }: ArchiveCardProps) 
       <ExtensionCard extension={extension} />
     </li>
   ));
+
+  const buttonLinks = archiveCardData.map((item) => item.link);
 
   return (
     <DataCard type='archive'>
@@ -32,7 +36,7 @@ export const ArchiveCard = ({ title, extensions, itemIndex }: ArchiveCardProps) 
         >
           Загрузить
         </button>
-        <DownloadMenu isOpen={isMenuOpen} />
+        <DownloadMenu isOpen={isMenuOpen} buttonLinks={buttonLinks} />
       </div>
     </DataCard>
   );
