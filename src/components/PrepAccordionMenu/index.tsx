@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PrepAccordionMenu.module.scss';
 import { prepCardNames } from '../../utils/prepCardNames';
-import { PrepCard } from '../../components';
+import { PrepCard, PrepCardSkeleton } from '../../components';
 import { useSelector } from 'react-redux';
 import { selectPrepMaterialsData } from '../../redux/prepMaterial/selectors';
 
@@ -14,10 +14,6 @@ export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenu
   const { items, status } = useSelector(selectPrepMaterialsData);
 
   const [openItemIndex, setOpenItemIndex] = React.useState<number | null>(null);
-
-  if (status === 'loading') {
-    return <>Загрузка...</>;
-  }
 
   const prepCards = prepCardNames.map((item, index) => (
     <li key={index}>
@@ -32,5 +28,11 @@ export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenu
     </li>
   ));
 
-  return <ul className={styles.root}>{prepCards}</ul>;
+  const prepCardSkeletons = [...new Array(4)].map((_, index) => (
+    <li>
+      <PrepCardSkeleton />
+    </li>
+  ));
+
+  return <ul className={styles.root}>{status === 'loading' ? prepCardSkeletons : prepCards}</ul>;
 };

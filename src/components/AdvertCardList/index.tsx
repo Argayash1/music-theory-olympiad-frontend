@@ -2,13 +2,15 @@ import React from 'react';
 import styles from './AdvertCardList.module.scss';
 import { AdvertCard, CardSlider } from '../../components';
 import { Advert } from '../../redux/advert/types';
+import { Status } from '../../redux/olympData/types';
 
 type AdvertCardListProps = {
   advertCardsItems: Advert[];
+  status: Status;
   onCtaClick: (_id: string) => void;
 };
 
-export const AdvertCardList = ({ advertCardsItems, onCtaClick }: AdvertCardListProps) => {
+export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertCardListProps) => {
   const [switchCount, setSwitchCount] = React.useState<number>(0);
 
   const advertCards = advertCardsItems.map((item) => (
@@ -30,6 +32,7 @@ export const AdvertCardList = ({ advertCardsItems, onCtaClick }: AdvertCardListP
       onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
       switchCount={switchCount}
       nextButtonDisabled={nextButtonDisabled}
+      status={status}
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {advertCards}

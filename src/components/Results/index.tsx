@@ -8,6 +8,7 @@ import { fetchResults } from '../../redux/result/asyncActions';
 import { selectResultData } from '../../redux/result/selectors';
 import { useSelector } from 'react-redux';
 import { menuItems } from '../../utils/menuItems';
+import { ResultItemSkeleton } from '../ResultItemSkeleton';
 
 export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
@@ -17,26 +18,28 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
     dispatch(fetchResults());
   }, [dispatch]);
 
+  const resultItems = prepCardNames.map((item, index) => (
+    <li key={index} className={styles.listItem}>
+      <p className={styles.text}>{item}</p>
+      <CTA
+        linkText='Скачать результаты'
+        path={items[index] && items[index].url ? items[index].url : undefined}
+        type='download'
+      />
+    </li>
+  ));
+
+  const resultItemsSkeletons = [...new Array(4)].map((_, index) => (
+    <li key={index}>
+      <ResultItemSkeleton />
+    </li>
+  ));
+
   return (
     <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
         <SectionTitleContainer text={menuItems[4].name} />
-        <ul className={styles.list}>
-          {status === 'loading' ? (
-            <>Загрузка...</>
-          ) : (
-            prepCardNames.map((item, index) => (
-              <li key={index} className={styles.listItem}>
-                <p className={styles.text}>{item}</p>
-                <CTA
-                  linkText='Скачать результаты'
-                  path={items[index] && items[index].url ? items[index].url : undefined}
-                  type='download'
-                />
-              </li>
-            ))
-          )}
-        </ul>
+        <ul className={styles.list}>{status === 'loading' ? resultItemsSkeletons : resultItems}</ul>
       </div>
     </section>
   );

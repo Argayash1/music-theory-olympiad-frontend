@@ -11,7 +11,7 @@ export const AboutMusOlymp = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='about-olymp' ref={ref}>
       <SectionTitleContainer text={menuItems[0].name} />
-      {status === 'loading' ? <>Загрузка...</> : <OlympDataCardsContainer />}
+      <OlympDataCardsContainer status={status} />
     </section>
   );
 });

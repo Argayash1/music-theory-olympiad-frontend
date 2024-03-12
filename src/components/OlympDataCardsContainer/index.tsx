@@ -1,20 +1,31 @@
 import React from 'react';
-import { Contacts, OlympDataCard, TopicAndParticipants } from '../../components';
+import { Contacts, OlympDataCard, OlympDataCardsSkeleton, TopicAndParticipants } from '../../components';
 import styles from './OlympDataCardsContainer.module.scss';
+import { Status } from '../../redux/olympData/types';
 
-export const OlympDataCardsContainer = () => {
+type OlympDataCardsContainerProps = {
+  status: Status;
+};
+
+export const OlympDataCardsContainer = ({ status }: OlympDataCardsContainerProps) => {
   return (
     <ul className={styles.root}>
-      <li>
-        <OlympDataCard>
-          <TopicAndParticipants />
-        </OlympDataCard>
-      </li>
-      <li>
-        <OlympDataCard type='contacts'>
-          <Contacts />
-        </OlympDataCard>
-      </li>
+      {status === 'loading' ? (
+        <OlympDataCardsSkeleton />
+      ) : (
+        <>
+          <li>
+            <OlympDataCard>
+              <TopicAndParticipants />
+            </OlympDataCard>
+          </li>
+          <li>
+            <OlympDataCard type='contacts'>
+              <Contacts />
+            </OlympDataCard>
+          </li>
+        </>
+      )}
     </ul>
   );
 };

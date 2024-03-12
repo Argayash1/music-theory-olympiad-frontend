@@ -90,8 +90,8 @@
 }
 
 .text {
-  @include main-text-font(20, 600, 0.975, #fff);
-  margin: 0 auto 20px;
+  @include main-text-font(20, 600, 1, #fff);
+  margin: 0 auto 19px;
   padding: 0;
   width: 175px;
   text-align: center;

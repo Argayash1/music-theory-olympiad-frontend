@@ -10,7 +10,7 @@ import { menuItems } from '../../utils/menuItems';
 
 export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
-  const { items, advertId, adverCardItem } = useSelector(selectAdvertData);
+  const { items, advertId, adverCardItem, status } = useSelector(selectAdvertData);
 
   React.useEffect(() => {
     dispatch(fetchAdverts());
@@ -27,7 +27,7 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='adverts' ref={ref}>
       <SectionTitleContainer text={menuItems[1].name} />
-      <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} />
+      <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} status={status} />
       <FullAdvert onClose={() => dispatch(setAdvertId(null))} advertItem={adverCardItem} cardId={advertId} />
     </section>
   );
