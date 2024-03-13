@@ -3,7 +3,7 @@
 .root {
   @include section-flex-container(0, 70, 0);
   flex-direction: column;
-  margin-top: 94px;
+  margin-top: 144px;
   position: relative;
   z-index: 2;
   scroll-margin: 84px;

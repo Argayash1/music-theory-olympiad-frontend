@@ -1,17 +1,17 @@
 import React from 'react';
-import { BrandBunnerSkeleton, CTA, Logo, LogoContainer, MainInfo } from '../../components';
-import styles from './BrandBunner.module.scss';
+import { BrandBannerSkeleton, CTA, Logo, LogoContainer, MainInfo } from '../../components';
+import styles from './BrandBanner.module.scss';
 import { useSelector } from 'react-redux';
 import { selectOlympData } from '../../redux/olympData/selectors';
 
-export const BrandBunner = React.forwardRef<HTMLElement>((props, ref) => {
+export const BrandBanner = React.forwardRef<HTMLElement>((props, ref) => {
   const { items, status } = useSelector(selectOlympData);
 
   return (
     <section className={styles.root} ref={ref}>
       <LogoContainer />
       {status === 'loading' ? (
-        <BrandBunnerSkeleton />
+        <BrandBannerSkeleton />
       ) : (
         <div className={styles.mainContainer}>
           <h1 className={styles.pageTitle}>

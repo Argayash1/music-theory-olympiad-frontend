@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PrepMaterials.module.scss';
-import { PrepAccordionMenu, SectionTitleContainer } from '../../components';
+import { PrepAccordionMenu, SectionTitle } from '../../components';
 import { AudioPlayer } from '../AudioPlayer';
 import { useAppDispatch } from '../../redux/store';
 import { fetchPrepMaterials } from '../../redux/prepMaterial/asyncActions';
@@ -47,7 +47,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section className={styles.root} id='prep-materials' ref={ref}>
-      <SectionTitleContainer text={menuItems[2].name} />
+      <SectionTitle text={menuItems[2].name} />
       <PrepAccordionMenu isPlaying={isPlaying} onTogglePlay={handleTogglePlay} />
       <AudioPlayer
         isPlaying={isPlaying}

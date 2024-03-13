@@ -26,7 +26,7 @@ export const MainMenu = ({ type, activeSection }: MainMenuProps) => {
 
   return (
     <nav className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}>
-      <ul className={clsx(styles.list, type === 'footer' && styles.listTypeFooter)}>{menuListItems}</ul>
+      <ul className={styles.list}>{menuListItems}</ul>
     </nav>
   );
 };

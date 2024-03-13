@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Adverts.module.scss';
-import { SectionTitleContainer, AdvertCardList, FullAdvert } from '../../components';
+import { SectionTitle, AdvertCardList, FullAdvert } from '../../components';
 import { useAppDispatch } from '../../redux/store';
 import { fetchAdvertById, fetchAdverts } from '../../redux/advert/asyncActions';
 import { selectAdvertData } from '../../redux/advert/selectors';
@@ -26,7 +26,7 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section className={styles.root} id='adverts' ref={ref}>
-      <SectionTitleContainer text={menuItems[1].name} />
+      <SectionTitle text={menuItems[1].name} />
       <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} status={status} />
       <FullAdvert onClose={() => dispatch(setAdvertId(null))} advertItem={adverCardItem} cardId={advertId} />
     </section>

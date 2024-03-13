@@ -12,18 +12,19 @@
 
 .navContainer {
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
 }
 
 .author {
   margin: 0;
   padding: 0;
   width: 263px;
+  line-height: 1.1;
 }
 
 .contactsContainer {
   display: flex;
-  margin-top: 46.86px;
+  margin-top: 60px;
   gap: 42px;
 }
 

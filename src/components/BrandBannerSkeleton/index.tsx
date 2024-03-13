@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-export const BrandBunnerSkeleton = () => (
+export const BrandBannerSkeleton = () => (
   <ContentLoader
     speed={2}
     width={1300}

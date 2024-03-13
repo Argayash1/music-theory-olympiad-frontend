@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import { AboutMusOlymp, Adverts, Archive, BrandBunner, Jury, PrepMaterials, Results } from '../../components';
+import { AboutMusOlymp, Adverts, Archive, BrandBanner, Jury, PrepMaterials, Results } from '../../components';
 import { useAppDispatch } from '../../redux/store';
 import { fetchMusOlympData } from '../../redux/olympData/asyncActions';
 
@@ -13,7 +13,7 @@ type Section = HTMLElement | null;
 export const Main = ({ onSetActiveSection }: MainProps) => {
   const dispatch = useAppDispatch();
 
-  const brandBunnerRef = React.useRef<HTMLElement>(null);
+  const brandBannerRef = React.useRef<HTMLElement>(null);
   const aboutMusOlympRef = React.useRef<HTMLElement>(null);
   const advertsRef = React.useRef<HTMLElement>(null);
   const prepMaterialsRef = React.useRef<HTMLElement>(null);
@@ -29,7 +29,7 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
 
   React.useEffect(() => {
     sectionsRef.current = [
-      brandBunnerRef.current,
+      brandBannerRef.current,
       aboutMusOlympRef.current,
       advertsRef.current,
       prepMaterialsRef.current,
@@ -65,7 +65,7 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
 
   return (
     <main className={styles.root}>
-      <BrandBunner ref={brandBunnerRef} />
+      <BrandBanner ref={brandBannerRef} />
       <AboutMusOlymp ref={aboutMusOlympRef} />
       <Adverts ref={advertsRef} />
       <PrepMaterials ref={prepMaterialsRef} />

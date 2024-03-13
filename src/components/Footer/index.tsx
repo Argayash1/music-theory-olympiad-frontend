@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import { MainMenu } from '../MainMenu';
-import { ScrollToTopButton } from '../ScrollToTopButton';
 
 export const Footer = () => {
   return (
@@ -12,7 +11,6 @@ export const Footer = () => {
             &copy; А. Ростовская, <br /> Я. Зильберман {new Date().getFullYear()}
           </p>
           <MainMenu type='footer' />
-          <ScrollToTopButton type='footer' />
         </div>
         <div className={styles.contactsContainer}>
           <p className={styles.contactsTitle}>Контакты:</p>

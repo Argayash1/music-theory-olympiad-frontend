@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Results.module.scss';
-import { SectionTitleContainer } from '../SectionTitleContainer';
+import { SectionTitle } from '../SectionTitle';
 import { prepCardNames } from '../../utils/prepCardNames';
 import { CTA } from '../CTA';
 import { useAppDispatch } from '../../redux/store';
@@ -38,7 +38,7 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='results' ref={ref}>
       <div className={styles.container}>
-        <SectionTitleContainer text={menuItems[4].name} />
+        <SectionTitle text={menuItems[4].name} />
         <ul className={styles.list}>{status === 'loading' ? resultItemsSkeletons : resultItems}</ul>
       </div>
     </section>

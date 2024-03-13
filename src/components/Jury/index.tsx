@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Jury.module.scss';
-import { SectionTitleContainer } from '../SectionTitleContainer';
+import { SectionTitle } from '../SectionTitle';
 import { JuryMemberCard } from '../JuryMemberCard';
 import { useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
@@ -32,7 +32,7 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
-        <SectionTitleContainer text={menuItems[5].name} />
+        <SectionTitle text={menuItems[5].name} />
         <ul className={styles.list}>{status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}</ul>
       </div>
     </section>
