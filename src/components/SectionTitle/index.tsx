@@ -7,17 +7,5 @@ type SectionTitleProps = {
 };
 
 export const SectionTitle = ({ text }: SectionTitleProps) => {
-  return (
-    <h2
-      className={clsx(
-        styles.title,
-        text === 'Материалы для подготовки' && styles.titleTypePrepMaterials,
-        text === 'Архив' && styles.titleTypeArchive,
-        text === 'Результаты' && styles.titleTypeResults,
-        text === 'Жюри' && styles.titleTypeJury,
-      )}
-    >
-      {text}
-    </h2>
-  );
+  return <h2 className={clsx(styles.title, text === 'Результаты' && styles.titleTypeResults)}>{text}</h2>;
 };
