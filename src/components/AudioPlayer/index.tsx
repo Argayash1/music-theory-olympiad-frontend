@@ -42,17 +42,10 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
   const [progress, setProgress] = React.useState<number>(0);
   const [totalDuration, setTotalDuration] = React.useState<number>(0);
   const [currentDuration, setCurrentDuration] = React.useState<number>(0);
-  const [isVolumeContainerHovered, setIsVolumeContainerHovered] = React.useState<boolean>(false);
   const [previousVolume, setPreviousVolume] = React.useState<number>(1);
   const [isMuted, setIsmuted] = React.useState<boolean>(false);
   const [volume, setVolume] = React.useState<number>(100);
-  const [isChangeTime, setIsChangeTime] = React.useState<boolean>(false);
   const [isAudioLoaded, setIsAudioLoaded] = React.useState<boolean>(false);
-
-  const handleDishoverVolumeContainer = () => {
-    setIsVolumeContainerHovered(false);
-    isChangeVolume.current = false;
-  };
 
   const handleVolumeProgressBarDrag = (event: React.MouseEvent<HTMLDivElement>) => {
     const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
@@ -223,19 +216,14 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
           <TimelineContainer
             onDrag={handleProgressBarDrag}
             onDragEnd={handleProgressBarDragEnd}
-            onToggleChangeTime={() => setIsChangeTime(false)}
-            isVolumeContainerHovered={isVolumeContainerHovered}
-            isChangeTime={isChangeTime}
             progress={progress}
             screenWidth={screenWidth}
           />
           <TimeCounter duration={totalDuration} type='right' />
           <VolumelineContainer
-            onDisHoverVolumeContainer={handleDishoverVolumeContainer}
             onDrag={handleVolumeProgressBarDrag}
             onMuteButtonClick={handleMuteButtonClick}
             volume={volume}
-            isVolumeContainerHovered={isVolumeContainerHovered}
             isMuted={isMuted}
             screenWidth={screenWidth}
           />

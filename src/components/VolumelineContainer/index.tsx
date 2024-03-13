@@ -2,25 +2,19 @@ import React from 'react';
 import { VolumeButton } from '../VolumeButton';
 import styles from './VolumelineContainer.module.scss';
 import { ProgressBarContainer } from '../ProgressBarContainer';
-import { ButtonClick } from '../AudioPlayer';
-import clsx from 'clsx';
 
 type VolumelineContainerProps = {
-  onDisHoverVolumeContainer: () => void;
   onDrag: (event: React.MouseEvent<HTMLDivElement>) => void;
   onMuteButtonClick: () => void;
   volume: number;
-  isVolumeContainerHovered: boolean;
   isMuted: boolean;
   screenWidth: number;
 };
 
 export const VolumelineContainer = ({
-  onDisHoverVolumeContainer,
   onDrag,
   onMuteButtonClick,
   volume,
-  isVolumeContainerHovered,
   isMuted,
   screenWidth,
 }: VolumelineContainerProps) => {
@@ -35,20 +29,13 @@ export const VolumelineContainer = ({
   const volumeProgressBarWidth = volume * (maxVolumeProgressBarWidth / 100); // Вычисление ширины полосы воспроизведения с учетом прогресса
   const volumeProgressBarStyle = { width: `${volumeProgressBarWidth}px` }; // Стиль с новой шириной
 
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const _event = event as ButtonClick;
-      if (volumeRef.current && !_event.composedPath().includes(volumeRef.current)) {
-        setIsVolumeLineHovered(false);
-        onDisHoverVolumeContainer();
-      }
-    };
-    document.body.addEventListener('click', handleClickOutside);
-    return () => document.body.removeEventListener('click', handleClickOutside);
-  }, [onDisHoverVolumeContainer]);
-
   return (
-    <div className={styles.root} ref={volumeRef}>
+    <div
+      className={styles.root}
+      ref={volumeRef}
+      onMouseEnter={() => setIsVolumeLineHovered(true)}
+      onMouseLeave={() => setIsVolumeLineHovered(false)}
+    >
       <div className={styles.wrapper} onMouseMove={onDrag}>
         <VolumeButton onClick={onMuteButtonClick} isMuted={isMuted} />
         <ProgressBarContainer
@@ -56,7 +43,7 @@ export const VolumelineContainer = ({
           isLineHovered={isVolumeLineHovered}
           type='volume'
         />
-        <div className={clsx(styles.volumeline, isVolumeContainerHovered && styles.volumelineHovered)}></div>
+        <div className={styles.volumeline}></div>
       </div>
     </div>
   );

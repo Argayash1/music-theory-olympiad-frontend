@@ -19,7 +19,13 @@ export const ProgressBarContainer = ({ progressBarStyle, isLineHovered, type }: 
         className={clsx(styles.progressBar, type === 'volume' && styles.progressBarTypeVolume)}
         style={progressBarStyle}
       ></div>
-      <button className={clsx(styles.progressBarButton, isLineHovered && styles.progressBarButtonActive)}></button>
+      <button
+        className={clsx(
+          styles.progressBarButton,
+          type === 'volume' && styles.progressBarButtonTypeVolume,
+          isLineHovered && styles.progressBarButtonActive,
+        )}
+      ></button>
     </div>
   );
 };

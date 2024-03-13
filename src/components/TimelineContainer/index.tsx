@@ -1,28 +1,15 @@
 import React from 'react';
 import styles from './TimelineContainer.module.scss';
 import { ProgressBarContainer } from '../ProgressBarContainer';
-import { ButtonClick } from '../AudioPlayer';
-import clsx from 'clsx';
 
 type TimelineContainerProps = {
   onDrag: (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => void;
   onDragEnd: () => void;
-  onToggleChangeTime: () => void;
-  isVolumeContainerHovered: boolean;
-  isChangeTime: boolean;
   progress: number;
   screenWidth: number;
 };
 
-export const TimelineContainer = ({
-  onDrag,
-  onDragEnd,
-  onToggleChangeTime,
-  isVolumeContainerHovered,
-  isChangeTime,
-  progress,
-  screenWidth,
-}: TimelineContainerProps) => {
+export const TimelineContainer = ({ onDrag, onDragEnd, progress, screenWidth }: TimelineContainerProps) => {
   const timeLineRef = React.useRef<HTMLDivElement>(null);
 
   const [isTimelineContainerHovered, setIsTimelineContainerHovered] = React.useState<boolean>(false);
@@ -36,23 +23,11 @@ export const TimelineContainer = ({
     width: `${progressBarWidth}px`,
   }; // Стиль с новой шириной
 
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const _event = event as ButtonClick;
-      if (timeLineRef.current && !_event.composedPath().includes(timeLineRef.current)) {
-        setIsTimelineContainerHovered(false);
-        onToggleChangeTime();
-      }
-    };
-    document.body.addEventListener('click', handleClickOutside);
-    return () => document.body.removeEventListener('click', handleClickOutside);
-  }, [onToggleChangeTime]);
-
   return (
     <div
-      className={clsx(styles.root, isVolumeContainerHovered && styles.rootWidthVolumelineContainerHover)}
+      className={styles.root}
       onMouseEnter={() => setIsTimelineContainerHovered(true)}
-      onMouseLeave={() => !isChangeTime && setIsTimelineContainerHovered(false)}
+      onMouseLeave={() => setIsTimelineContainerHovered(false)}
       onMouseMove={onDrag}
       onTouchMove={onDrag}
       onMouseUp={onDragEnd}
