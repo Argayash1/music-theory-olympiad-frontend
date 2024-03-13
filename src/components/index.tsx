@@ -53,3 +53,4 @@ export * from './JuryCardSkeleton';
 export * from './PrepCardSkeleton';
 export * from './ResultItemSkeleton';
 export * from './OlympDataCardsSkeleton';
+export * from './BrandBunnerSkeleton';
