@@ -10,6 +10,8 @@ type AudioPlayerProps = {
   title: string;
   author: string;
   isPlaying: boolean;
+  isAudioLoaded: boolean;
+  onSetIsAudioLoaded: (isAudioLoaded: boolean) => void;
   onSetIsPlaying: (isPlaying: boolean) => void;
   onClearAudioData: () => void;
   onTogglePlay: () => void;
@@ -32,7 +34,17 @@ function isMouseEvent(
 }
 
 export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>((props, ref) => {
-  const { src, title, author, isPlaying, onSetIsPlaying, onClearAudioData, onTogglePlay } = props;
+  const {
+    src,
+    title,
+    author,
+    isPlaying,
+    isAudioLoaded,
+    onSetIsAudioLoaded,
+    onSetIsPlaying,
+    onClearAudioData,
+    onTogglePlay,
+  } = props;
 
   const screenWidth = useSelector(selectScreenWidth);
 
@@ -45,7 +57,6 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
   const [previousVolume, setPreviousVolume] = React.useState<number>(1);
   const [isMuted, setIsmuted] = React.useState<boolean>(false);
   const [volume, setVolume] = React.useState<number>(100);
-  const [isAudioLoaded, setIsAudioLoaded] = React.useState<boolean>(false);
 
   const handleVolumeProgressBarDrag = (event: React.MouseEvent<HTMLDivElement>) => {
     const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
@@ -140,7 +151,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
 
     onSetIsPlaying(false);
     onClearAudioData();
-    setIsAudioLoaded(false);
+    onSetIsAudioLoaded(false);
   };
 
   React.useEffect(() => {
@@ -151,7 +162,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
         audioPlayer.play();
       }
     }
-  }, [src, isPlaying, ref, isAudioLoaded]);
+  }, [src, ref, isAudioLoaded, isPlaying]);
 
   React.useEffect(() => {
     const audioPlayer = (ref as React.RefObject<HTMLAudioElement>).current;
@@ -184,7 +195,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
       // Получение общей продолжительности трека
       const handleLoadedMetadata = () => {
         setTotalDuration(audioPlayer.duration);
-        setIsAudioLoaded(true);
+        onSetIsAudioLoaded(true);
       };
 
       audioPlayer.addEventListener('loadedmetadata', handleLoadedMetadata);
@@ -195,7 +206,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
         audioPlayer.removeEventListener('loadedmetadata', handleLoadedMetadata);
       };
     }
-  }, [ref]);
+  }, [ref, onSetIsAudioLoaded]);
 
   return (
     <div className={clsx(styles.root, src && styles.rootIsOpened)}>
@@ -211,7 +222,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
           <CloseButton place='audio-player' onClick={handleCloseAudioPlayer} />
         </div>
         <div className={styles.playerContainer}>
-          <PlayButton onClick={onTogglePlay} isPlaying={isPlaying} />
+          <PlayButton onClick={onTogglePlay} />
           <TimeCounter duration={currentDuration} />
           <TimelineContainer
             onDrag={handleProgressBarDrag}

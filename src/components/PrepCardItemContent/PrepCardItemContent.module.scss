@@ -48,7 +48,7 @@
     box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
   }
 
-  &:active {
+  &:not([disabled]):active {
     transform: scale(0.8965);
     box-shadow: none;
     background-image: url('../../assets/icons/prep-materials-pause-icon.svg');
@@ -58,7 +58,7 @@
 .playButtonTypePause {
   background-image: url('../../assets/icons/prep-materials-pause-icon.svg');
 
-  &:active {
+  &:not([disabled]):active {
     background-image: url('../../assets/icons/prep-materials-play-icon.svg');
   }
 }

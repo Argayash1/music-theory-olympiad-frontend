@@ -6,11 +6,10 @@ import { useSelector } from 'react-redux';
 import { selectPrepMaterialsData } from '../../redux/prepMaterial/selectors';
 
 type PrepAccordionMenuProps = {
-  isPlaying: boolean;
   onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
-export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenuProps) => {
+export const PrepAccordionMenu = ({ onTogglePlay }: PrepAccordionMenuProps) => {
   const { items, status } = useSelector(selectPrepMaterialsData);
 
   const [openItemIndex, setOpenItemIndex] = React.useState<number | null>(null);
@@ -21,7 +20,6 @@ export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenu
         isOpen={openItemIndex === index}
         title={item}
         onClick={() => setOpenItemIndex(openItemIndex === index ? null : index)}
-        isPlaying={isPlaying}
         onTogglePlay={onTogglePlay}
         prepCardData={items[index]}
       />
@@ -29,7 +27,7 @@ export const PrepAccordionMenu = ({ isPlaying, onTogglePlay }: PrepAccordionMenu
   ));
 
   const prepCardSkeletons = [...new Array(4)].map((_, index) => (
-    <li>
+    <li key={index}>
       <PrepCardSkeleton />
     </li>
   ));

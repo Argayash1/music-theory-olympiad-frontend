@@ -4,14 +4,11 @@ import styles from './ScrollToTopButton.module.scss';
 import clsx from 'clsx';
 
 type ScrollToTopButtonProps = {
-  type?: string;
+  activeSection: string;
 };
 
-export const ScrollToTopButton = ({ type }: ScrollToTopButtonProps) => {
+export const ScrollToTopButton = ({ activeSection }: ScrollToTopButtonProps) => {
   return (
-    <button
-      className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}
-      onClick={handleScrollToTop}
-    ></button>
+    <button className={clsx(styles.root, activeSection && styles.rootVisible)} onClick={handleScrollToTop}></button>
   );
 };

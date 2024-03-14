@@ -24,7 +24,7 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   ));
 
   const juriMemberCardSkeletons = [...new Array(4)].map((_, index) => (
-    <li>
+    <li key={index}>
       <JuryCardSkeleton />
     </li>
   ));

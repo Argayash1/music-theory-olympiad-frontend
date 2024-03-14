@@ -14,7 +14,7 @@ export const Header = ({ activeSection }: HeaderProps) => {
         <Logo />
         <MainMenu activeSection={activeSection} />
         <HeaderButtons />
-        <ScrollToTopButton />
+        <ScrollToTopButton activeSection={activeSection} />
       </div>
     </header>
   );

@@ -6,16 +6,17 @@ import { PrepMaterialPopup } from '../PrepMaterialPopup';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectActiveItemId } from '../../redux/prepMaterial/selectors';
 import { setActiveItemId } from '../../redux/prepMaterial/slice';
+import { selectAudioData } from '../../redux/audio/selectors';
 
 type DictationsProps = {
   itemData: ItemDataType;
-  isPlaying: boolean;
   onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
-export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: DictationsProps) => {
+export const PrepCardItemContent = ({ itemData, onTogglePlay }: DictationsProps) => {
   const dispatch = useDispatch();
   const activeItemId = useSelector(selectActiveItemId);
+  const { isPlaying, isAudioLoaded } = useSelector(selectAudioData);
 
   const dialogRef = React.useRef<HTMLDialogElement>(null);
 
@@ -34,6 +35,7 @@ export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: Dicta
               activeItemId === itemData._id && isPlaying && styles.playButtonTypePause,
             )}
             onClick={() => handleTogglePlayClick(`${itemData._id}`, itemData.audioUrl, itemData.title, itemData.author)}
+            disabled={!isAudioLoaded}
           ></button>
           <p className={styles.text}>{itemData.author}</p>
           <p className={styles.text}>{itemData.title}</p>
@@ -57,6 +59,7 @@ export const PrepCardItemContent = ({ itemData, isPlaying, onTogglePlay }: Dicta
                   activeItemId === item._id && isPlaying && styles.playButtonTypePause,
                 )}
                 onClick={() => handleTogglePlayClick(item._id, item.audioUrl, item.title, item.author)}
+                disabled={!isAudioLoaded}
               ></button>
               <p className={styles.text}>{item.author}</p>
               <p className={styles.text}>{item.title}</p>

@@ -9,12 +9,11 @@ type PrepMaterialCardProps = {
   prepCardData: IPrepMaterial;
   title: string;
   isOpen: boolean;
-  isPlaying: boolean;
   onClick: () => void;
   onTogglePlay: (audioUrl: string, title: string, author: string) => void;
 };
 
-export const PrepCard = ({ prepCardData, title, isOpen, onClick, isPlaying, onTogglePlay }: PrepMaterialCardProps) => {
+export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }: PrepMaterialCardProps) => {
   const accordionItemRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -27,7 +26,7 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, isPlaying, onTo
 
   const prepCardItems = prepCardNamesData.map((item, index) => (
     <li key={index} className={clsx(styles.listItem, isOpen && styles.listItemIsOpened)}>
-      <PrepCardItem {...item} itemData={prepCardItem[index]} isPlaying={isPlaying} onTogglePlay={onTogglePlay} />
+      <PrepCardItem {...item} itemData={prepCardItem[index]} onTogglePlay={onTogglePlay} />
     </li>
   ));
 

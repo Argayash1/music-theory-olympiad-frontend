@@ -5,18 +5,13 @@ import { AudioPlayer } from '../AudioPlayer';
 import { useAppDispatch } from '../../redux/store';
 import { fetchPrepMaterials } from '../../redux/prepMaterial/asyncActions';
 import { menuItems } from '../../utils/menuItems';
-
-interface IAudioData {
-  audioUrl: string;
-  title: string;
-  author: string;
-}
+import { selectAudioData } from '../../redux/audio/selectors';
+import { useSelector } from 'react-redux';
+import { setAudioItem, setIsAudioLoaded, setIsPlaying } from '../../redux/audio/slice';
 
 export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
-
-  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-  const [audioData, setAudioData] = React.useState<IAudioData>({ audioUrl: '', title: '', author: '' });
+  const { audioItem, isPlaying, isAudioLoaded } = useSelector(selectAudioData);
 
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
@@ -25,39 +20,45 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
   }, [dispatch]);
 
   const handleTogglePlay = (audioUrl: string, title: string, author: string) => {
-    console.log(audioUrl !== audioData.audioUrl);
-    // if (audioUrl !== audioSrc) {
-    setAudioData({ audioUrl, title, author });
-    // }
-    setIsPlaying(!isPlaying);
-    audioData.audioUrl && audioUrl !== audioData.audioUrl && togglePlay();
+    if (audioUrl !== audioItem.audioUrl) {
+      const audioPlayer = audioRef.current;
+      if (audioPlayer) {
+        audioPlayer.pause();
+        dispatch(setIsPlaying(true));
+        dispatch(setIsAudioLoaded(false));
+        dispatch(setAudioItem({ audioUrl, title, author }));
+      }
+    }
+    audioItem.audioUrl && togglePlay(audioUrl !== audioItem.audioUrl ? 'prep' : '');
   };
 
-  const togglePlay = () => {
+  const togglePlay = (place?: string) => {
     const audioPlayer = audioRef.current;
     if (audioPlayer) {
-      if (audioPlayer.paused) {
-        audioPlayer.play();
-      } else {
+      if (isPlaying) {
         audioPlayer.pause();
+      } else {
+        audioPlayer.play();
       }
-      setIsPlaying(!isPlaying);
+      !place && dispatch(setIsPlaying(!isPlaying)) && console.log('Аргумент не передан, setIsPlaying сработало!');
     }
   };
 
   return (
     <section className={styles.root} id='prep-materials' ref={ref}>
       <SectionTitle text={menuItems[2].name} />
-      <PrepAccordionMenu isPlaying={isPlaying} onTogglePlay={handleTogglePlay} />
+      <PrepAccordionMenu onTogglePlay={handleTogglePlay} />
       <AudioPlayer
         isPlaying={isPlaying}
-        onSetIsPlaying={(isPlaying) => setIsPlaying(isPlaying)}
-        src={audioData.audioUrl}
-        title={audioData.title}
-        author={audioData.author}
-        onClearAudioData={() => setAudioData({ audioUrl: '', title: '', author: '' })}
+        onSetIsPlaying={(isPlaying) => dispatch(setIsPlaying(isPlaying))}
+        src={audioItem.audioUrl}
+        title={audioItem.title}
+        author={audioItem.author}
+        onClearAudioData={() => dispatch(setAudioItem({ audioUrl: '', title: '', author: '' }))}
         ref={audioRef}
         onTogglePlay={togglePlay}
+        isAudioLoaded={isAudioLoaded}
+        onSetIsAudioLoaded={(isAudioLoaded) => dispatch(setIsAudioLoaded(isAudioLoaded))}
       />
     </section>
   );
