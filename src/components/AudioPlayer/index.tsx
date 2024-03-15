@@ -48,9 +48,6 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
 
   const screenWidth = useSelector(selectScreenWidth);
 
-  const audioLinkRef = React.useRef<HTMLAnchorElement>(null);
-  const isChangeVolume = React.useRef<boolean>(false);
-
   const [progress, setProgress] = React.useState<number>(0);
   const [totalDuration, setTotalDuration] = React.useState<number>(0);
   const [currentDuration, setCurrentDuration] = React.useState<number>(0);
@@ -65,8 +62,6 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
       if (event.buttons !== 1) {
         return;
       }
-
-      isChangeVolume.current = true;
 
       const volumelineContainer = event.currentTarget;
       const volumelineContainerRect = volumelineContainer.getBoundingClientRect();
@@ -213,7 +208,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
       <div className={styles.container}>
         <audio ref={ref} src={src} preload='auto'>
           Ваш браузер не поддерживает встроенное аудио. Попробуйте скачать его
-          <a href={src} ref={audioLinkRef} download>
+          <a href={src} download>
             по ссылке
           </a>
         </audio>

@@ -10,8 +10,6 @@ type TimelineContainerProps = {
 };
 
 export const TimelineContainer = ({ onDrag, onDragEnd, progress, screenWidth }: TimelineContainerProps) => {
-  const timeLineRef = React.useRef<HTMLDivElement>(null);
-
   const [isTimelineContainerHovered, setIsTimelineContainerHovered] = React.useState<boolean>(false);
 
   const screenWidth1 = window.innerWidth;
@@ -31,7 +29,6 @@ export const TimelineContainer = ({ onDrag, onDragEnd, progress, screenWidth }: 
       onMouseMove={onDrag}
       onTouchMove={onDrag}
       onMouseUp={onDragEnd}
-      ref={timeLineRef}
     >
       <ProgressBarContainer progressBarStyle={progressBarStyle} isLineHovered={isTimelineContainerHovered} />
       <div className={styles.timeline}></div>

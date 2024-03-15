@@ -18,9 +18,7 @@ export const VolumelineContainer = ({
   isMuted,
   screenWidth,
 }: VolumelineContainerProps) => {
-  const volumeRef = React.useRef<HTMLDivElement>(null);
-
-  const [isVolumeLineHovered, setIsVolumeLineHovered] = React.useState<boolean>(false);
+  const [isVolumeLineContainerHovered, setIsVolumeLineContainerHovered] = React.useState<boolean>(false);
 
   const screenWidth1 = window.innerWidth;
 
@@ -30,17 +28,17 @@ export const VolumelineContainer = ({
   const volumeProgressBarStyle = { width: `${volumeProgressBarWidth}px` }; // Стиль с новой шириной
 
   return (
-    <div
-      className={styles.root}
-      ref={volumeRef}
-      onMouseEnter={() => setIsVolumeLineHovered(true)}
-      onMouseLeave={() => setIsVolumeLineHovered(false)}
-    >
-      <div className={styles.wrapper} onMouseMove={onDrag}>
-        <VolumeButton onClick={onMuteButtonClick} isMuted={isMuted} />
+    <div className={styles.root}>
+      <div
+        className={styles.wrapper}
+        onMouseMove={onDrag}
+        onMouseEnter={() => setIsVolumeLineContainerHovered(true)}
+        onMouseLeave={() => setIsVolumeLineContainerHovered(false)}
+      >
+        <VolumeButton onClick={onMuteButtonClick} isMuted={isMuted} volume={volume} />
         <ProgressBarContainer
           progressBarStyle={volumeProgressBarStyle}
-          isLineHovered={isVolumeLineHovered}
+          isLineHovered={isVolumeLineContainerHovered}
           type='volume'
         />
         <div className={styles.volumeline}></div>

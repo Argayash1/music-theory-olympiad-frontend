@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './ArchiveTabs.module.scss';
-import { archiveTabNames } from '../../utils/archiveTabNames';
 import clsx from 'clsx';
 
 type TabsProps = {
   value: number;
   onChangeTab: (index: number) => void;
 };
+
+const archiveTabNames = [2023, 2022, 2021];
 
 export const ArchiveTabs = ({ value, onChangeTab }: TabsProps) => {
   return (

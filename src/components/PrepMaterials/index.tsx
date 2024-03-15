@@ -40,7 +40,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
       } else {
         audioPlayer.play();
       }
-      !place && dispatch(setIsPlaying(!isPlaying)) && console.log('Аргумент не передан, setIsPlaying сработало!');
+      !place && dispatch(setIsPlaying(!isPlaying));
     }
   };
 
