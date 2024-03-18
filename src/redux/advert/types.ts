@@ -9,6 +9,8 @@ export interface Advert {
   createdAt: string;
   title: string;
   content: string;
+  linkText?: string;
+  linkUrl?: string;
 }
 
 export type AdvertsItems = {

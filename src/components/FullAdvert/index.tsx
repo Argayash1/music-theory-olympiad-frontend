@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './FullAdvert.module.scss';
-import { CTA, CloseButton, SharePannel } from '../../components';
+import { CTA, CloseButton, SharePannel, TextWithCustomLink } from '../../components';
 import clsx from 'clsx';
 import { Advert } from '../../redux/advert/types';
 import { handleFormateDate } from '../../utils/utils';
@@ -22,7 +22,16 @@ export const FullAdvert = ({ onClose, advertItem, cardId }: FullAdvertProps) => 
         <div className={styles.textContainer}>
           <span className={styles.date}>{advertItem && handleFormateDate(advertItem.createdAt)}</span>
           <h3 className={styles.title}>{advertItem?.title}</h3>
-          <p className={styles.text}>{advertItem?.content}</p>
+          {advertItem?.linkText && advertItem.linkUrl ? (
+            <TextWithCustomLink
+              text={advertItem?.content}
+              linkText={advertItem?.linkText}
+              linkUrl={advertItem.linkUrl}
+              place='full-advert'
+            />
+          ) : (
+            <p className={styles.text}>{advertItem?.content}</p>
+          )}
           <div className={styles.shareContainer}>
             <CTA
               linkText='Поделиться'

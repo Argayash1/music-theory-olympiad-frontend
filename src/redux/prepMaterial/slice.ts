@@ -23,7 +23,7 @@ const prepMaterialSlice = createSlice({
     });
 
     builder.addCase(fetchPrepMaterials.fulfilled, (state, action) => {
-      state.items = action.payload.data;
+      state.items = action.payload.data.reverse();
       state.status = Status.SUCCESS;
     });
 

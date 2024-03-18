@@ -28,7 +28,7 @@ const advertSlice = createSlice({
     });
 
     builder.addCase(fetchAdverts.fulfilled, (state, action) => {
-      state.items = action.payload.data;
+      state.items = action.payload.data.reverse();
       state.status = Status.SUCCESS;
     });
 

@@ -1,0 +1,27 @@
+@import '../../assets/styles/mixins/main-text-font';
+
+.root {
+  @include main-text-font(16, 400, 1.37, #fff);
+  margin: 0 0 48px 0;
+  padding: 0 6px 0 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  min-height: 88px;
+  max-width: 290px;
+}
+
+.rootTypeFullAdvert {
+  line-height: 1.375;
+  max-width: 640px;
+  margin-bottom: 0;
+  margin-left: 29px;
+  padding-right: 0;
+  min-height: 132px;
+}
+
+.link {
+  color: #fff;
+}
