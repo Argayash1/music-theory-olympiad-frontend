@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4683f0a0.css",
-    "main.js": "/static/js/main.c0a85222.js",
+    "main.css": "/static/css/main.35852a2b.css",
+    "main.js": "/static/js/main.a8797044.js",
     "static/js/787.07ef1cfe.chunk.js": "/static/js/787.07ef1cfe.chunk.js",
     "static/media/logo.png": "/static/media/logo.3c02b43c75c468c11a16.png",
     "static/media/линии3.png": "/static/media/линии3.8588ef80c6e6d2ea61b1.png",
@@ -29,18 +29,16 @@
     "index.html": "/index.html",
     "static/media/full-advert-vk-icon.svg": "/static/media/full-advert-vk-icon.a9d37cd80a0847fbe0c143c61e546ac6.svg",
     "static/media/archive-extension-card.svg": "/static/media/archive-extension-card.b14dcb004fa1b082b6fa.svg",
-    "static/media/more-menu-speed-icon.svg": "/static/media/more-menu-speed-icon.6d0180260f53a62bf35dc9e6a40ba661.svg",
     "static/media/prep-materials-play-icon.svg": "/static/media/prep-materials-play-icon.55787447bb9a6c2c4cb1.svg",
     "static/media/brand-bunner-clock-icon.svg": "/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/archive-extension-icon.svg": "/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "static/media/more-menu-download-icon.svg": "/static/media/more-menu-download-icon.d1c47bd0f921091e781dee98778001f4.svg",
-    "main.4683f0a0.css.map": "/static/css/main.4683f0a0.css.map",
-    "main.c0a85222.js.map": "/static/js/main.c0a85222.js.map",
+    "main.35852a2b.css.map": "/static/css/main.35852a2b.css.map",
+    "main.a8797044.js.map": "/static/js/main.a8797044.js.map",
     "787.07ef1cfe.chunk.js.map": "/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4683f0a0.css",
-    "static/js/main.c0a85222.js"
+    "static/css/main.35852a2b.css",
+    "static/js/main.a8797044.js"
   ]
 }
