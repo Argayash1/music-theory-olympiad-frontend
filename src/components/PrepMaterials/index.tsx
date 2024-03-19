@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './PrepMaterials.module.scss';
-import { PrepAccordionMenu, SectionTitle } from '../../components';
-import { AudioPlayer } from '../AudioPlayer';
+import { PrepAccordionMenu, SectionTitle, AudioPlayer } from '../../components';
 import { useAppDispatch } from '../../redux/store';
 import { fetchPrepMaterials } from '../../redux/prepMaterial/asyncActions';
 import { menuItems } from '../../utils/menuItems';
@@ -32,7 +31,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
     audioItem.audioUrl && togglePlay(audioUrl !== audioItem.audioUrl ? 'prep' : '');
   };
 
-  const togglePlay = (place?: string) => {
+  const togglePlay = (place: string) => {
     const audioPlayer = audioRef.current;
     if (audioPlayer) {
       if (isPlaying) {
@@ -56,7 +55,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
         author={audioItem.author}
         onClearAudioData={() => dispatch(setAudioItem({ audioUrl: '', title: '', author: '' }))}
         ref={audioRef}
-        onTogglePlay={togglePlay}
+        onTogglePlay={() => togglePlay('')}
         isAudioLoaded={isAudioLoaded}
         onSetIsAudioLoaded={(isAudioLoaded) => dispatch(setIsAudioLoaded(isAudioLoaded))}
       />

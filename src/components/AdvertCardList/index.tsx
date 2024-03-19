@@ -33,6 +33,7 @@ export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertC
       switchCount={switchCount}
       nextButtonDisabled={nextButtonDisabled}
       status={status}
+      type='adverts'
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {advertCards}

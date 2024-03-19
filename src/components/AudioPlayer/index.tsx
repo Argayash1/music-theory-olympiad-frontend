@@ -14,7 +14,7 @@ type AudioPlayerProps = {
   onSetIsAudioLoaded: (isAudioLoaded: boolean) => void;
   onSetIsPlaying: (isPlaying: boolean) => void;
   onClearAudioData: () => void;
-  onTogglePlay: () => void;
+  onTogglePlay: (argument: string) => void;
 };
 
 export type ButtonClick = MouseEvent & {

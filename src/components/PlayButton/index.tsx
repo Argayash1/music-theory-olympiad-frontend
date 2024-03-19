@@ -4,14 +4,14 @@ import { selectAudioData } from '../../redux/audio/selectors';
 import { useSelector } from 'react-redux';
 
 type PlayButtonProps = {
-  onClick: () => void;
+  onClick: (argument: string) => void;
 };
 
 export const PlayButton = ({ onClick }: PlayButtonProps) => {
   const { isPlaying, isAudioLoaded } = useSelector(selectAudioData);
 
   return (
-    <button className={styles.root} onClick={onClick} disabled={!isAudioLoaded}>
+    <button className={styles.root} onClick={() => onClick('')} disabled={!isAudioLoaded}>
       {!isPlaying ? (
         <svg className={styles.playIcon} viewBox='0 0 18 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path

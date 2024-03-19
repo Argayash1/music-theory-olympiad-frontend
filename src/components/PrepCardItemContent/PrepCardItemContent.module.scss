@@ -20,6 +20,7 @@
 .scoreImage {
   width: 240px;
   height: 321px;
+  object-fit: contain;
   border-radius: 24px;
   border: 2px solid #d6d6d6;
   box-sizing: border-box;
