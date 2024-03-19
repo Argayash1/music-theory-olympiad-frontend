@@ -22,7 +22,7 @@ export const PrepMaterials = React.forwardRef<HTMLElement>((props, ref) => {
     if (audioUrl !== audioItem.audioUrl) {
       const audioPlayer = audioRef.current;
       if (audioPlayer) {
-        audioPlayer.pause();
+        isPlaying && audioPlayer.pause();
         dispatch(setIsPlaying(true));
         dispatch(setIsAudioLoaded(false));
         dispatch(setAudioItem({ audioUrl, title, author }));

@@ -146,7 +146,6 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
 
     onSetIsPlaying(false);
     onClearAudioData();
-    onSetIsAudioLoaded(false);
   };
 
   React.useEffect(() => {
