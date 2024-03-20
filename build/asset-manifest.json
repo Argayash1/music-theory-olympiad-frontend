@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.35852a2b.css",
+    "main.css": "/static/css/main.b86f8c54.css",
     "main.js": "/static/js/main.9baf2fc0.js",
     "static/js/787.07ef1cfe.chunk.js": "/static/js/787.07ef1cfe.chunk.js",
     "static/media/logo.png": "/static/media/logo.3c02b43c75c468c11a16.png",
@@ -33,12 +33,12 @@
     "static/media/brand-bunner-clock-icon.svg": "/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/archive-extension-icon.svg": "/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.35852a2b.css.map": "/static/css/main.35852a2b.css.map",
+    "main.b86f8c54.css.map": "/static/css/main.b86f8c54.css.map",
     "main.9baf2fc0.js.map": "/static/js/main.9baf2fc0.js.map",
     "787.07ef1cfe.chunk.js.map": "/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35852a2b.css",
+    "static/css/main.b86f8c54.css",
     "static/js/main.9baf2fc0.js"
   ]
 }
