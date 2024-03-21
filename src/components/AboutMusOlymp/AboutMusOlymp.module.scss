@@ -2,7 +2,6 @@
 
 .root {
   @include section-flex-container(0, 70, 0);
-  flex-direction: column;
   margin-top: 222px;
   position: relative;
   scroll-margin: 105px;

@@ -67,11 +67,11 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
     <main className={styles.root}>
       <BrandBanner ref={brandBannerRef} />
       <AboutMusOlymp ref={aboutMusOlympRef} />
-      <Adverts ref={advertsRef} />
-      <PrepMaterials ref={prepMaterialsRef} />
-      <Archive ref={archiveRef} />
-      <Results ref={resultsRef} />
-      <Jury ref={juryRef} />
+      {/* <Adverts ref={advertsRef} /> */}
+      {/* <PrepMaterials ref={prepMaterialsRef} /> */}
+      {/* <Archive ref={archiveRef} /> */}
+      {/* <Results ref={resultsRef} /> */}
+      {/* <Jury ref={juryRef} /> */}
     </main>
   );
 };

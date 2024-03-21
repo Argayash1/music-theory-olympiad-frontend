@@ -33,8 +33,8 @@ const Home = () => {
   return (
     <div>
       <Header activeSection={activeSection} />
-      {/* <Main onSetActiveSection={(sectionId: string) => setActiveSection(sectionId)} />
-      <Footer /> */}
+      <Main onSetActiveSection={(sectionId: string) => setActiveSection(sectionId)} />
+      {/* <Footer /> */}
     </div>
   );
 };
