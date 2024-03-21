@@ -4,6 +4,10 @@
   margin-top: 29px;
   margin-left: 175px;
   font-size: 0;
+
+  @media screen and (max-width: 1400px) {
+    margin-left: 15px;
+  }
 }
 
 .rootTypeFooter {
