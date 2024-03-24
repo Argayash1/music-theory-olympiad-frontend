@@ -13,6 +13,10 @@
   flex-direction: column;
   gap: 16.5px;
   font-size: 0;
+
+  @media screen and (max-width: 1439px) {
+    gap: 45px;
+  }
 }
 
 .contactListItem {
@@ -30,7 +34,10 @@
   }
 
   @media screen and (max-width: 1439px) {
-    border-bottom: none;
+    &:first-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
 }
 

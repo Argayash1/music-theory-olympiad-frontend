@@ -7,6 +7,10 @@
   display: flex;
   flex-direction: column;
   gap: 22.5px;
+
+  @media screen and (max-width: 1439px) {
+    gap: 45px;
+  }
 }
 
 .listItem {
@@ -20,7 +24,14 @@
   }
 
   @media screen and (max-width: 1439px) {
-    border-bottom: none;
+    &:first-child {
+      border-bottom: none;
+      padding-bottom: 0;
+
+      .paragraph {
+        max-width: 348px;
+      }
+    }
   }
 }
 

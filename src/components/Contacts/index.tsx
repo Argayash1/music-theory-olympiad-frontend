@@ -7,7 +7,7 @@ import { OLYMPIC_RULES_URL, PAYMENT_URL } from '../../utils/constants';
 export const Contacts = () => {
   return (
     <div className={styles.root}>
-      <OlympDataCardTitle title='Контакты' />
+      <OlympDataCardTitle title='Контакты:' />
       <ul className={styles.contactList}>
         <li className={styles.contactListItem}>
           <h4 className={styles.contactTitle}>Мешкова Анна Сергеевна</h4>

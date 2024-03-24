@@ -7,6 +7,10 @@
   padding: 40px 34px 48px 40px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1439px) {
+    width: 485px;
+  }
 }
 
 .rootBgGrey {

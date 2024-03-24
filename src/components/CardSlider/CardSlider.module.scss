@@ -5,6 +5,18 @@
   gap: 57px;
   margin-top: 92px;
   transition: none;
+
+  @media screen and (max-width: 1457px) {
+    gap: 48.5px;
+  }
+
+  @media screen and (max-width: 1439px) {
+    gap: 57px;
+  }
+
+  @media screen and (max-width: 1297px) {
+    gap: 48.5px;
+  }
 }
 
 .rootHidden {
@@ -17,13 +29,27 @@
   margin-top: 44.86px;
 }
 
+.rootTypePrepMaterials {
+  gap: 54px;
+  margin: 27px auto 0;
+  max-width: 1002px;
+}
+
 .wrapper {
   max-width: 1150px;
   overflow: hidden;
+
+  @media screen and (max-width: 1439px) {
+    max-width: 990px;
+  }
 }
 
 .wrapperTypeArchive {
   height: 538px;
+}
+
+.wrapperTypePrepMaterials {
+  max-width: 857px;
 }
 
 .list {

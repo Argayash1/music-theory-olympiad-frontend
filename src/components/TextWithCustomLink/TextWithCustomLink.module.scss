@@ -3,7 +3,7 @@
 .root {
   @include main-text-font(16, 400, 1.37, #fff);
   margin: 0 0 48px 0;
-  padding: 0 6px 0 0;
+  padding: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -11,6 +11,10 @@
   -webkit-line-clamp: 4;
   min-height: 88px;
   max-width: 290px;
+
+  @media screen and (max-width: 1439px) {
+    max-width: 405px;
+  }
 }
 
 .rootTypeFullAdvert {

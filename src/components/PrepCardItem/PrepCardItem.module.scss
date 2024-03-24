@@ -3,9 +3,21 @@
 .root {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
   height: 100%;
+  // width: 269px;
 }
+
+// .rootTypeSecond {
+//   width: 274px;
+// }
+
+// .rootTypeThird {
+//   width: 271px;
+// }
+
+// .rootTypeLast {
+//   width: 240px;
+// }
 
 .title {
   @include main-text-font(20, 500, 1.1);

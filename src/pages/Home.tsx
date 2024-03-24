@@ -12,6 +12,8 @@ const Home = () => {
       dispatch(setScreenWidth(window.innerWidth));
     };
 
+    handleResize();
+
     let timeoutId: NodeJS.Timeout;
 
     const delayedHandleResize = () => {

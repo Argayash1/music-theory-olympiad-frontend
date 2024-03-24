@@ -4,6 +4,9 @@ import clsx from 'clsx';
 import { prepCardNamesData } from '../../utils/prepCardData';
 import { ItemDataType, PrepCardItem } from '../PrepCardItem';
 import { IPrepMaterial } from '../../redux/prepMaterial/types';
+import { useSelector } from 'react-redux';
+import { selectScreenWidth } from '../../redux/olympData/selectors';
+import { CardSlider } from '../CardSlider';
 
 type PrepMaterialCardProps = {
   prepCardData: IPrepMaterial;
@@ -14,6 +17,10 @@ type PrepMaterialCardProps = {
 };
 
 export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }: PrepMaterialCardProps) => {
+  const screenWidth = useSelector(selectScreenWidth);
+
+  const [switchCount, setSwitchCount] = React.useState<number>(0);
+
   const accordionItemRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -25,10 +32,13 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
   const prepCardItem = Object.values(prepCardData).slice(2) as ItemDataType[];
 
   const prepCardItems = prepCardNamesData.map((item, index) => (
-    <li key={index} className={clsx(styles.listItem, isOpen && styles.listItemIsOpened)}>
+    <li key={index} className={styles.listItem}>
       <PrepCardItem {...item} itemData={prepCardItem[index]} onTogglePlay={onTogglePlay} />
     </li>
   ));
+
+  const offset = switchCount * -305;
+  const nextButtonDisabled = switchCount === 1;
 
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
@@ -53,7 +63,38 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
           />
         </svg>
       </button>
-      <ul className={styles.list}>{prepCardItems}</ul>
+      {screenWidth >= 1440 ? (
+        <ul className={styles.list}>{prepCardItems}</ul>
+      ) : (
+        <CardSlider
+          onSwitchToPrevSlides={() => setSwitchCount((prev) => prev - 1)}
+          onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
+          switchCount={switchCount}
+          nextButtonDisabled={nextButtonDisabled}
+          type='prep-materials'
+        >
+          {/* <ul className={styles.list}>
+            <li className={styles.listItem}>
+              <div style={{ width: '240px', marginRight: '31px' }}></div>
+            </li>
+            <li className={styles.listItem}>
+              {' '}
+              <div style={{ width: '271px' }}></div>
+            </li>
+            <li className={styles.listItem}>
+              {' '}
+              <div style={{ width: '271px' }}></div>
+            </li>
+            <li className={styles.listItem}>
+              {' '}
+              <div style={{ width: '271px' }}></div>
+            </li>
+          </ul> */}
+          <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
+            {prepCardItems}
+          </ul>
+        </CardSlider>
+      )}
     </article>
   );
 };

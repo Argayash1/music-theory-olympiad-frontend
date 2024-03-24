@@ -40,6 +40,7 @@ export const CardSlider = ({
         styles.root,
         type === 'archive' && styles.rootTypeArchive,
         type === 'adverts' && advertItem && styles.rootHidden,
+        type === 'prep-materials' && styles.rootTypePrepMaterials,
       )}
     >
       <SliderNextButton
@@ -48,7 +49,13 @@ export const CardSlider = ({
         switchCount={switchCount}
         nextButtonDisabled={nextButtonDisabled}
       />
-      <div className={clsx(styles.wrapper, type === 'archive' && styles.wrapperTypeArchive)}>
+      <div
+        className={clsx(
+          styles.wrapper,
+          type === 'archive' && styles.wrapperTypeArchive,
+          type === 'prep-materials' && styles.wrapperTypePrepMaterials,
+        )}
+      >
         {status === 'loading' ? <ul className={styles.list}>{cardSkeletons}</ul> : children}
       </div>
       <SliderNextButton
