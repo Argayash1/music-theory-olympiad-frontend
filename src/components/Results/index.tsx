@@ -19,7 +19,7 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
   }, [dispatch]);
 
   const resultItems = prepCardNames.map((item, index) => (
-    <li key={index} className={styles.listItem}>
+    <li key={index}>
       <p className={styles.text}>{item}</p>
       <CTA
         linkText='Скачать результаты'

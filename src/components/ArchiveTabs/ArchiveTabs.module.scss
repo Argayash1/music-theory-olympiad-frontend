@@ -22,6 +22,11 @@
     border-color: #000;
     color: #000;
   }
+
+  @media screen and (max-width: 1439px) {
+    padding-right: 153.6px;
+    padding-left: 151px;
+  }
 }
 
 .buttonActive {

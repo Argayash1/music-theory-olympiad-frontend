@@ -41,6 +41,7 @@ export const CardSlider = ({
         type === 'archive' && styles.rootTypeArchive,
         type === 'adverts' && advertItem && styles.rootHidden,
         type === 'prep-materials' && styles.rootTypePrepMaterials,
+        type === 'jury' && styles.rootTypeJury,
       )}
     >
       <SliderNextButton
@@ -54,6 +55,7 @@ export const CardSlider = ({
           styles.wrapper,
           type === 'archive' && styles.wrapperTypeArchive,
           type === 'prep-materials' && styles.wrapperTypePrepMaterials,
+          type === 'jury' && styles.wrapperTypeJury,
         )}
       >
         {status === 'loading' ? <ul className={styles.list}>{cardSkeletons}</ul> : children}

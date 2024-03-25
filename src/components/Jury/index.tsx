@@ -8,10 +8,15 @@ import { selectJuryMemberData } from '../../redux/juryMember/selectors';
 import { fetchJuryMembers } from '../../redux/juryMember/asyncActions';
 import { menuItems } from '../../utils/menuItems';
 import { JuryCardSkeleton } from '../JuryCardSkeleton';
+import { selectScreenWidth } from '../../redux/olympData/selectors';
+import { CardSlider } from '../CardSlider';
 
 export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectJuryMemberData);
+  const screenWidth = useSelector(selectScreenWidth);
+
+  const [switchCount, setSwitchCount] = React.useState<number>(0);
 
   React.useEffect(() => {
     dispatch(fetchJuryMembers());
@@ -29,11 +34,29 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
     </li>
   ));
 
+  const offset = switchCount * -325;
+  const nextButtonDisabled = screenWidth <= 1439 ? switchCount === 1 : switchCount === 2;
+
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
         <SectionTitle text={menuItems[5].name} />
-        <ul className={styles.list}>{status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}</ul>
+        {screenWidth >= 1369 ? (
+          <ul className={styles.list}>{status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}</ul>
+        ) : (
+          <CardSlider
+            onSwitchToPrevSlides={() => setSwitchCount((prev) => prev - 1)}
+            onSwitchToNextSlides={() => setSwitchCount((prev) => prev + 1)}
+            switchCount={switchCount}
+            nextButtonDisabled={nextButtonDisabled}
+            status={status}
+            type='jury'
+          >
+            <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
+              {status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}
+            </ul>
+          </CardSlider>
+        )}
       </div>
     </section>
   );

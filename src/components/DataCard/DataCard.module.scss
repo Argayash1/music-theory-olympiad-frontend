@@ -18,4 +18,8 @@
   position: relative;
   padding: 40.14px 47px 40px;
   display: block;
+
+  @media screen and (max-width: 1439px) {
+    width: 370px;
+  }
 }

@@ -73,23 +73,6 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
           nextButtonDisabled={nextButtonDisabled}
           type='prep-materials'
         >
-          {/* <ul className={styles.list}>
-            <li className={styles.listItem}>
-              <div style={{ width: '240px', marginRight: '31px' }}></div>
-            </li>
-            <li className={styles.listItem}>
-              {' '}
-              <div style={{ width: '271px' }}></div>
-            </li>
-            <li className={styles.listItem}>
-              {' '}
-              <div style={{ width: '271px' }}></div>
-            </li>
-            <li className={styles.listItem}>
-              {' '}
-              <div style={{ width: '271px' }}></div>
-            </li>
-          </ul> */}
           <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
             {prepCardItems}
           </ul>

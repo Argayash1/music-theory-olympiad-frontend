@@ -6,7 +6,7 @@
   margin-top: 92px;
   transition: none;
 
-  @media screen and (max-width: 1457px) {
+  @media screen and (max-width: 1456px) {
     gap: 48.5px;
   }
 
@@ -14,7 +14,7 @@
     gap: 57px;
   }
 
-  @media screen and (max-width: 1297px) {
+  @media screen and (max-width: 1296px) {
     gap: 48.5px;
   }
 }
@@ -27,12 +27,32 @@
 
 .rootTypeArchive {
   margin-top: 44.86px;
+
+  @media screen and (max-width: 1439px) {
+    gap: 162px;
+  }
+
+  @media screen and (max-width: 1296px) {
+    gap: 153.5px;
+  }
 }
 
 .rootTypePrepMaterials {
-  gap: 54px;
-  margin: 27px auto 0;
+  gap: 34px;
+  margin: 0 auto;
   max-width: 1002px;
+}
+
+.rootTypeJury {
+  width: 1138px;
+  gap: 102px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (max-width: 1294px) {
+    gap: 93.5px;
+  }
 }
 
 .wrapper {
@@ -46,10 +66,22 @@
 
 .wrapperTypeArchive {
   height: 538px;
+
+  @media screen and (max-width: 1439px) {
+    max-width: 760px;
+    margin-right: 20px;
+  }
 }
 
 .wrapperTypePrepMaterials {
   max-width: 857px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.wrapperTypeJury {
+  max-width: 897px;
+  margin-right: 1px;
 }
 
 .list {

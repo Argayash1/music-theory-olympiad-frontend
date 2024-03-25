@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './MainInfo.module.scss';
-import dateIcon from '../../assets/images/brand-bunner-date-icon.svg';
-import clockIcon from '../../assets/images/brand-bunner-clock-icon.svg';
-import LocationIcon from '../../assets/images/brand-bunner-location-icon.svg';
+import dateIcon from '../../assets/icons/brand-bunner-date-icon.svg';
+import clockIcon from '../../assets/icons/brand-bunner-clock-icon.svg';
+import LocationIcon from '../../assets/icons/brand-bunner-location-icon.svg';
 import { OlympData } from '../../redux/olympData/types';
 
 interface MainInfoProps extends Omit<OlympData, '_id' | 'topic' | 'participants' | 'olympNumber'> {}

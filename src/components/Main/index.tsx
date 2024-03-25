@@ -69,9 +69,9 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
       <AboutMusOlymp ref={aboutMusOlympRef} />
       <Adverts ref={advertsRef} />
       <PrepMaterials ref={prepMaterialsRef} />
-      {/* <Archive ref={archiveRef} /> */}
-      {/* <Results ref={resultsRef} /> */}
-      {/* <Jury ref={juryRef} /> */}
+      <Archive ref={archiveRef} />
+      <Results ref={resultsRef} />
+      <Jury ref={juryRef} />
     </main>
   );
 };

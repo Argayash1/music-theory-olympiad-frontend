@@ -21,4 +21,10 @@
   display: flex;
   gap: 48px;
   align-self: center;
+  width: 1212px;
+  transition: transform 0.5s ease-in-out;
+
+  @media screen and (max-width: 1412px) {
+    margin-left: auto;
+  }
 }

@@ -27,7 +27,6 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
     [styles.rootFontWeightMiddle]: linkText === 'Оплатить картой',
     [styles.rootSizeMiddle]: linkText === 'Скачать ноты' || linkText === 'Скачать таблицу',
     [styles.rootPlaceArchive]: type === 'download-archive',
-    [styles.rootPlaceResults]: linkText === 'Скачать результаты',
     [styles.rootInactive]: type === 'download' && !path,
     [styles.rootBorderShown]: isBorderShown,
     [styles.rootPlaceAudioPlayer]: type === 'download' && linkText === 'cкачать',
