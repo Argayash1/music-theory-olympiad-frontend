@@ -28,7 +28,7 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
     <section className={styles.root} id='announcements' ref={ref}>
       <SectionTitle text={menuItems[1].name} />
       <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} status={status} />
-      <FullAdvert onClose={() => dispatch(setAdvertId(null))} advertItem={adverCardItem} cardId={advertId} />
+      <FullAdvert advertItem={adverCardItem} cardId={advertId} />
     </section>
   );
 });

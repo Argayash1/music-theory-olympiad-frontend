@@ -44,12 +44,7 @@ export const CardSlider = ({
         type === 'jury' && styles.rootTypeJury,
       )}
     >
-      <SliderNextButton
-        type='left'
-        onClick={onSwitchToPrevSlides}
-        switchCount={switchCount}
-        nextButtonDisabled={nextButtonDisabled}
-      />
+      <SliderNextButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type={type} />
       <div
         className={clsx(
           styles.wrapper,
@@ -64,6 +59,7 @@ export const CardSlider = ({
         onClick={onSwitchToNextSlides}
         switchCount={switchCount}
         nextButtonDisabled={nextButtonDisabled}
+        type={type}
       />
     </div>
   );

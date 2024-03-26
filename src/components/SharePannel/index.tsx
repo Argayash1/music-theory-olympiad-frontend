@@ -9,9 +9,10 @@ import clsx from 'clsx';
 type SharePannelProps = {
   isOpen: boolean;
   itemTitle: string | undefined;
+  onClose: () => void;
 };
 
-export const SharePannel = ({ isOpen, itemTitle }: SharePannelProps) => {
+export const SharePannel = ({ isOpen, itemTitle, onClose }: SharePannelProps) => {
   const currentUrl = window.location.href;
 
   const buttonItems = [
@@ -21,7 +22,7 @@ export const SharePannel = ({ isOpen, itemTitle }: SharePannelProps) => {
       icon: okIcon,
       link: `https://connect.ok.ru/offer?url=${currentUrl}&title=${itemTitle}`,
     },
-    { id: 0, icon: vkIcon, link: `https://vk.com/share.php?url={${currentUrl}}` },
+    { id: 0, icon: vkIcon, link: `https://vk.com/share.php?url=${currentUrl}` },
     { id: 4, icon: waIcon, link: `whatsapp://send?text=${itemTitle}` },
   ];
 
@@ -29,7 +30,7 @@ export const SharePannel = ({ isOpen, itemTitle }: SharePannelProps) => {
     <ul className={clsx(styles.root, isOpen && styles.rootIsOpened)}>
       {buttonItems.map((item) => (
         <li key={item.id} className={styles.item}>
-          <a href={item.link}>
+          <a href={item.link} target='_blank' rel='noreferrer' onClick={onClose}>
             <div className={styles.icon} style={{ backgroundImage: `url(${item.icon})` }}></div>
           </a>
         </li>

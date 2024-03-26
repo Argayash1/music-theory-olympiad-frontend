@@ -15,11 +15,9 @@ export const TimelineContainer = ({ onDrag, onDragEnd, progress, screenWidth }: 
   const screenWidth1 = window.innerWidth;
 
   const maxProgressBarWidth =
-    screenWidth1 > 810 ? 742 : screenWidth1 <= 810 && screenWidth1 > 612 ? 334 : screenWidth1 <= 612 ? 91 : 0; // Максимальная ширина полосы воспроизведения
+    screenWidth1 > 1439 ? 742 : screenWidth1 <= 1439 && screenWidth1 > 810 ? 582 : screenWidth1 <= 612 ? 91 : 0; // Максимальная ширина полосы воспроизведения
   const progressBarWidth = progress * (maxProgressBarWidth / 100); // Вычисление ширины полосы воспроизведения с учетом прогресса
-  const progressBarStyle = {
-    width: `${progressBarWidth}px`,
-  }; // Стиль с новой шириной
+  const progressBarStyle = { width: `${progressBarWidth}px` }; // Стиль с новой шириной
 
   return (
     <div

@@ -28,6 +28,10 @@
     position: absolute;
     background-color: #ffbb4d;
     bottom: -73px;
-    left: 549px;
+    left: 38.1%;
+
+    @media screen and (max-width: 1439px) {
+      left: 36.64%;
+    }
   }
 }

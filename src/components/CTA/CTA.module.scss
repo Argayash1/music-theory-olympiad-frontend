@@ -4,14 +4,11 @@
   @include main-text-font(16, 400, 1.25, #fff);
 
   display: inline-block;
-  text-decoration: none;
-  text-align: center;
   padding: 6px 24px;
   margin: 0;
   background-color: #ff5e3a;
   transform: scale(1);
   transition: 0.3s box-shadow ease, transform 0.1s ease 0.1s;
-  z-index: 9;
 
   &:not(.rootTypeDownload, .rootTypeShare, .rootTypeLearn):hover {
     box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
@@ -108,7 +105,7 @@
   margin: 0;
   padding: 1.06px 0 0 21px;
   position: relative;
-  width: 188px;
+  width: 186px;
   height: 43px;
   text-align: left;
   box-sizing: border-box;
@@ -129,8 +126,8 @@
     background-image: url('../../assets/icons/full-adverts-share-icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    top: 9px;
-    right: 22px;
+    top: 11px;
+    right: 21px;
   }
 }
 

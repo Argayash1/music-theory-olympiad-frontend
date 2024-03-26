@@ -4,15 +4,23 @@ import { CTA, CloseButton, SharePannel, TextWithCustomLink } from '../../compone
 import clsx from 'clsx';
 import { Advert } from '../../redux/advert/types';
 import { handleFormateDate } from '../../utils/utils';
+import { useDispatch } from 'react-redux';
+import { setAdvertId } from '../../redux/advert/slice';
 
 type FullAdvertProps = {
-  onClose: () => void;
   advertItem: Advert | null;
   cardId: string | null;
 };
 
-export const FullAdvert = ({ onClose, advertItem, cardId }: FullAdvertProps) => {
+export const FullAdvert = ({ advertItem, cardId }: FullAdvertProps) => {
+  const dispatch = useDispatch();
+
   const [isSocialIconsOpen, setIsSocialIconsOpen] = React.useState<boolean>(false);
+
+  const handleCloseFullAdvert = () => {
+    dispatch(setAdvertId(null));
+    setIsSocialIconsOpen(false);
+  };
 
   return (
     <div className={clsx(styles.root, cardId && styles.rootIsOpened)}>
@@ -39,10 +47,14 @@ export const FullAdvert = ({ onClose, advertItem, cardId }: FullAdvertProps) => 
               onClick={() => setIsSocialIconsOpen(!isSocialIconsOpen)}
               isBorderShown={isSocialIconsOpen}
             />
-            <SharePannel isOpen={isSocialIconsOpen} itemTitle={advertItem?.title} />
+            <SharePannel
+              isOpen={isSocialIconsOpen}
+              itemTitle={advertItem?.title}
+              onClose={() => setIsSocialIconsOpen(false)}
+            />
           </div>
         </div>
-        <CloseButton onClick={onClose} place='adverts' />
+        <CloseButton onClick={handleCloseFullAdvert} place='adverts' />
       </article>
     </div>
   );

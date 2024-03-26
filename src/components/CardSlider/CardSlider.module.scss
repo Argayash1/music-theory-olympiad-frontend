@@ -6,15 +6,15 @@
   margin-top: 92px;
   transition: none;
 
-  @media screen and (max-width: 1456px) {
+  @media screen and (max-width: 1456px) and (hover: hover) {
     gap: 48.5px;
   }
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1439px) and (hover: hover) {
     gap: 57px;
   }
 
-  @media screen and (max-width: 1296px) {
+  @media screen and (max-width: 1296px) and (hover: hover) {
     gap: 48.5px;
   }
 }
@@ -32,7 +32,7 @@
     gap: 162px;
   }
 
-  @media screen and (max-width: 1296px) {
+  @media screen and (max-width: 1296px) and (hover: hover) {
     gap: 153.5px;
   }
 }
@@ -50,7 +50,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (max-width: 1294px) {
+  @media screen and (max-width: 1294px) and (hover: hover) {
     gap: 93.5px;
   }
 }

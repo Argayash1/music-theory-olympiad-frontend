@@ -4,6 +4,10 @@
   align-items: center;
   position: relative;
   margin-left: 8px;
+
+  @media screen and (max-width: 1439px) {
+    margin-left: 10px;
+  }
 }
 
 .wrapper {
@@ -19,16 +23,4 @@
   background-color: #f2f2f2;
   transition: all 0.3s linear;
   margin-top: 9px;
-}
-
-.volumelineHovered {
-  width: 110px;
-
-  @media screen and (max-width: 810px) {
-    width: 70.5px;
-  }
-
-  @media screen and (max-width: 612px) {
-    width: 19.2px;
-  }
 }

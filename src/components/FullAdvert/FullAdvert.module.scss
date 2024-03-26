@@ -40,6 +40,8 @@
   border-radius: 40px;
   display: none;
   justify-content: space-between;
+  padding: 37px 37.18px 38px 40px;
+  box-sizing: border-box;
 }
 
 .rootContainerVisible {
@@ -53,12 +55,16 @@
   width: 258px;
   height: 258px;
   align-self: center;
-  margin-left: 40px;
 }
 
 .textContainer {
-  margin-top: 40px;
+  margin-top: 3px;
   margin-right: 51px;
+
+  @media screen and (max-width: 1439px) {
+    margin-right: 0;
+    margin-left: 13px;
+  }
 }
 
 .date {
@@ -68,9 +74,10 @@
 }
 
 .title {
-  @include main-text-font(30, 500, 0.733, #fff);
-  margin: 28px 0 18px 29px;
+  @include main-text-font(30, 500, 1.066, #fff);
+  margin: 15px 0 8px 29px;
   padding: 0;
+  min-height: 64px;
 }
 
 .text {
@@ -78,91 +85,15 @@
   max-width: 640px;
   margin: 0 0 0 29px;
   padding: 0;
-  min-height: 132px;
+  min-height: 88px;
+
+  @media screen and (max-width: 1439px) {
+    max-width: 541px;
+  }
 }
 
 .shareContainer {
   display: flex;
-  margin: 33px 0 0 11px;
+  margin: 13px 0 0 11px;
   padding: 0;
-}
-
-.socialIcons {
-  display: flex;
-  list-style: none;
-  margin: 0 0 0 12px;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
-  gap: 10px;
-  width: 0;
-}
-
-.socialIconsIsOpened {
-  width: 200px;
-
-  .socialIconsItem {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0.1s ease-in-out 0.5s, opacity 0.1s ease-in-out 0.5s;
-
-    &:nth-child(2) {
-      transform: translateX(0);
-      transition: visibility 0.1s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
-    }
-
-    &:nth-child(3) {
-      transform: translateX(0);
-      transition: visibility 0.1s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
-    }
-
-    &:nth-child(4) {
-      transform: translateX(0);
-      transition: visibility 0.1s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
-    }
-  }
-}
-
-.socialIconsItem {
-  visibility: hidden;
-  opacity: 0;
-  z-index: 1;
-
-  &:nth-child(2) {
-    transform: translateX(-53px);
-    z-index: 0;
-
-    .socialIcon {
-      width: 43px;
-      height: 43px;
-    }
-  }
-
-  &:nth-child(3) {
-    transform: translateX(-106px);
-    z-index: 0;
-  }
-
-  &:nth-child(4) {
-    transform: translateX(-159px);
-    z-index: 0;
-
-    .socialIcon {
-      width: 43px;
-      height: 43px;
-    }
-  }
-}
-
-.socialIcon {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  width: 42px;
-  height: 42px;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.119);
-  }
 }
