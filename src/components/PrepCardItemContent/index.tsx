@@ -77,7 +77,12 @@ export const PrepCardItemContent = ({ itemData, onTogglePlay }: DictationsProps)
             onClick={() => dialogRef.current?.showModal()}
             aria-controls='dialog-id'
           />
-          <PrepMaterialPopup ref={dialogRef} imageUrl={itemData.imageUrl} onClose={() => dialogRef.current?.close()} />
+          <PrepMaterialPopup
+            ref={dialogRef}
+            imageUrl={itemData.imageUrl}
+            type='score'
+            onClose={() => dialogRef.current?.close()}
+          />
         </div>
       );
     }

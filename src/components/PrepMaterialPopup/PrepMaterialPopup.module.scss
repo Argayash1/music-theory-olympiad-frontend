@@ -40,9 +40,13 @@
 }
 
 .popupImage {
-  width: 490px;
-  height: 633px;
+  width: 560px;
+  height: 704px;
   object-fit: contain;
   align-self: center;
-  margin: 0 auto;
+}
+
+.popupImageTypeScore {
+  width: 800px;
+  height: 635px;
 }
