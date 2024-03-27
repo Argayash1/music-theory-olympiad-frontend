@@ -28,6 +28,10 @@
   margin: 0 auto;
   background-color: #fff;
   border-radius: 40px;
+
+  @media screen and (max-width: 1439px) {
+    width: 1140px;
+  }
 }
 
 .popupContainer {
@@ -37,6 +41,10 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
+  @media screen and (max-width: 1439px) {
+    width: 1140px;
+  }
 }
 
 .popupImage {

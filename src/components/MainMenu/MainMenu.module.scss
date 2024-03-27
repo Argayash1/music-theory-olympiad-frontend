@@ -8,6 +8,14 @@
   @media screen and (max-width: 1400px) {
     margin-left: 15px;
   }
+
+  @media screen and (max-width: 1242px) {
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 1220px) {
+    display: none;
+  }
 }
 
 .rootTypeFooter {
