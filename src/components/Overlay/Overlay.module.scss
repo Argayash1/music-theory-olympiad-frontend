@@ -1,0 +1,22 @@
+.root {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.rootIsOpened {
+  visibility: visible;
+  opacity: 1;
+}

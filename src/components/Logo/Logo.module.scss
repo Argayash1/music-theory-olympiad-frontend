@@ -33,4 +33,10 @@
   grid-row: 1/4;
   grid-column: 2/3;
   z-index: 2;
+
+  @media screen and (max-width: 1193px) {
+    width: 277px;
+    height: 282px;
+    grid-row: 2/4;
+  }
 }

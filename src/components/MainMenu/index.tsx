@@ -6,9 +6,10 @@ import clsx from 'clsx';
 type MainMenuProps = {
   type?: string;
   activeSection?: string;
+  isOpen?: boolean;
 };
 
-export const MainMenu = ({ type, activeSection }: MainMenuProps) => {
+export const MainMenu = ({ type, activeSection, isOpen }: MainMenuProps) => {
   const menuListItems = menuItems.map((item, index) => (
     <li key={index}>
       <a
@@ -17,6 +18,8 @@ export const MainMenu = ({ type, activeSection }: MainMenuProps) => {
           styles.link,
           activeSection === item.path && styles.linkActive,
           type === 'footer' && styles.linkTypeFooter,
+          type === 'burger' && styles.linkTypeBurger,
+          type === 'burger' && activeSection === item.path && styles.linkTypeBurgerActive,
         )}
       >
         {item.name}
@@ -25,8 +28,15 @@ export const MainMenu = ({ type, activeSection }: MainMenuProps) => {
   ));
 
   return (
-    <nav className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}>
-      <ul className={styles.list}>{menuListItems}</ul>
+    <nav
+      className={clsx(
+        styles.root,
+        type === 'footer' && styles.rootTypeFooter,
+        type === 'burger' && styles.rootTypeBurger,
+        isOpen && styles.rootIsOpened,
+      )}
+    >
+      <ul className={clsx(styles.list, type === 'burger' && styles.listTypeBurger)}>{menuListItems}</ul>
     </nav>
   );
 };

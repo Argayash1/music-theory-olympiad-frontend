@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './PrepAccordionMenu.module.scss';
 import { prepCardNames } from '../../utils/prepCardNames';
-import { CardSlider, PrepCard, PrepCardSkeleton } from '../../components';
+import { PrepCard, PrepCardSkeleton } from '../../components';
 import { useSelector } from 'react-redux';
 import { selectPrepMaterialsData } from '../../redux/prepMaterial/selectors';
-import { selectScreenWidth } from '../../redux/olympData/selectors';
 
 type PrepAccordionMenuProps = {
   onTogglePlay: (audioUrl: string, title: string, author: string) => void;
