@@ -4,7 +4,7 @@
   @include main-text-font(16, 400, 1.25, #fff);
 
   display: inline-block;
-  padding: 6px 24px;
+  padding: 6px 24.2px;
   margin: 0;
   background-color: #ff5e3a;
   transform: scale(1);
@@ -54,6 +54,10 @@
   border-radius: 24px;
   font-size: 20px;
   line-height: 0.975;
+
+  @media screen and (max-width: 944px) {
+    margin-top: 27px;
+  }
 }
 
 .rootTypeDownload {

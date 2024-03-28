@@ -8,10 +8,22 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media screen and (max-width: 944px) {
+    margin-top: 27px;
+  }
 }
 
 .listItem {
   display: flex;
+
+  &:nth-child(2) {
+    .text {
+      @media screen and (max-width: 944px) {
+        max-width: 85%;
+      }
+    }
+  }
 
   &:nth-child(3) {
     .icon {
@@ -26,4 +38,9 @@
   margin-right: 13px;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
 }

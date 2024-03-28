@@ -19,7 +19,7 @@ export const MainInfo = ({ dates, registrationDates, city }: MainInfoProps) => {
       {mainInfoData.map((item, index) => (
         <li key={index} className={styles.listItem}>
           <div style={{ backgroundImage: `url(${item.icon})` }} className={styles.icon}></div>
-          {item.text}
+          <p className={styles.text}>{item.text}</p>
         </li>
       ))}
     </ul>

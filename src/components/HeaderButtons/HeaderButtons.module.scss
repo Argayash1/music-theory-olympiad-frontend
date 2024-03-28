@@ -5,6 +5,10 @@
   padding: 0;
   gap: 22px;
   font-size: 0;
+
+  @media screen and (max-width: 1133px) {
+    margin-top: 22px;
+  }
 }
 
 .listItem:last-child {
@@ -12,5 +16,7 @@
 
   @media screen and (max-width: 1133px) {
     display: block;
+    margin-top: 3px;
+    margin-left: 5px;
   }
 }
