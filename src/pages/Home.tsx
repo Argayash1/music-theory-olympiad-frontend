@@ -9,7 +9,7 @@ const Home = () => {
 
   React.useEffect(() => {
     const handleResize = () => {
-      dispatch(setScreenWidth(window.innerWidth));
+      dispatch(setScreenWidth(window.screen.width));
     };
 
     handleResize();
