@@ -56,3 +56,4 @@ export * from './TextWithCustomLink';
 export * from './BurgerButton';
 export * from './Overlay';
 export * from './BurgerMenu';
+export * from './ContactsButtonList';

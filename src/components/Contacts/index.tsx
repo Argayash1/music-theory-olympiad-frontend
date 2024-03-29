@@ -1,5 +1,5 @@
 import React from 'react';
-import { CTA, OlympDataCardTitle } from '../../components';
+import { CTA, ContactsButtonList, OlympDataCardTitle } from '../../components';
 import styles from './Contacts.module.scss';
 import clsx from 'clsx';
 import { OLYMPIC_RULES_URL, PAYMENT_URL } from '../../utils/constants';
@@ -25,16 +25,10 @@ export const Contacts = () => {
           <a href='mailto: mail@rrc-ural.ru' className={styles.contactLink}>
             <div className={styles.contactMailIcon}></div>mail@rrc-ural.ru
           </a>
+          <ContactsButtonList type='list-item' />
         </li>
       </ul>
-      <ul className={styles.buttonList}>
-        <li>
-          <CTA type='pay' linkText='Оплатить картой' path={PAYMENT_URL} />
-        </li>
-        <li>
-          <CTA type='download' linkText='Положение олимпиады' path={OLYMPIC_RULES_URL} />
-        </li>
-      </ul>
+      <ContactsButtonList />
     </div>
   );
 };

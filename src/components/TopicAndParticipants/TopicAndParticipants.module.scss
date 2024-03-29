@@ -33,6 +33,14 @@
       }
     }
   }
+
+  @media screen and (max-width: 1189px) {
+    &:first-child {
+      .paragraph {
+        max-width: 503px;
+      }
+    }
+  }
 }
 
 .paragraph {

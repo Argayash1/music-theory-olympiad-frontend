@@ -34,4 +34,9 @@
       left: 36.64%;
     }
   }
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }

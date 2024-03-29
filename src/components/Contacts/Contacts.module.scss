@@ -31,6 +31,15 @@
     a:first-of-type {
       align-items: flex-start;
     }
+
+    @media screen and (max-width: 1189px) {
+      display: grid;
+      grid-template-columns: 348px 276px;
+
+      .contactTitle {
+        max-width: 348px;
+      }
+    }
   }
 
   @media screen and (max-width: 1439px) {
@@ -85,14 +94,4 @@
   height: 18px;
   margin-top: 3px;
   margin-right: 10px;
-}
-
-.buttonList {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 0;
-  padding: 0 70px;
-  font-size: 0;
 }

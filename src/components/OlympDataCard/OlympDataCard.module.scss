@@ -9,6 +9,11 @@
   @media screen and (max-width: 1439px) {
     width: 560px;
   }
+
+  @media screen and (max-width: 1189px) {
+    width: 718px;
+    height: 405px;
+  }
 }
 
 .rootTypeContacts {
@@ -16,5 +21,10 @@
 
   @media screen and (max-width: 1439px) {
     width: 560px;
+  }
+
+  @media screen and (max-width: 1189px) {
+    width: 718px;
+    height: 481px;
   }
 }
