@@ -32,21 +32,20 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
   const prepCardItem = Object.values(prepCardData).slice(2) as ItemDataType[];
 
   const prepCardItems = prepCardNamesData.map((item, index) => (
-    <li key={index} className={styles.listItem}>
+    <li key={index} className={styles.cardListItem}>
       <PrepCardItem {...item} itemData={prepCardItem[index]} onTogglePlay={onTogglePlay} />
     </li>
   ));
 
-  const offset = switchCount * -305;
-  const nextButtonDisabled = switchCount === 1;
+  const offset = screenWidth > 1031 ? switchCount * -305 : switchCount === 2 ? switchCount * -327 : switchCount * -331;
+  const nextButtonDisabled = screenWidth > 1031 ? switchCount === 1 : switchCount === 2;
+  const showcardListWithoutSlider = screenWidth >= 1347 || (screenWidth <= 1279 && screenWidth > 1245);
 
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
       <button className={styles.button} onClick={onClick} type='button'>
         {title}
         <svg
-          width='22.500000'
-          height='22.500000'
           viewBox='0 0 22.5 22.5'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
@@ -63,8 +62,8 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
           />
         </svg>
       </button>
-      {screenWidth >= 1440 ? (
-        <ul className={styles.list}>{prepCardItems}</ul>
+      {showcardListWithoutSlider ? (
+        <ul className={styles.cardList}>{prepCardItems}</ul>
       ) : (
         <CardSlider
           onSwitchToPrevSlides={() => setSwitchCount((prev) => prev - 1)}
@@ -73,7 +72,7 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
           nextButtonDisabled={nextButtonDisabled}
           type='prep-materials'
         >
-          <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
+          <ul className={styles.cardList} style={{ transform: `translateX(${offset}px)` }}>
             {prepCardItems}
           </ul>
         </CardSlider>

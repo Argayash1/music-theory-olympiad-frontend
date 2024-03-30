@@ -43,7 +43,8 @@
 }
 
 .icon {
-  @include main-text-font(40, 500, 0.564);
+  width: 22.5px;
+  height: 22.5px;
   margin: 0;
   padding: 0;
   transition: transform 0.3s linear;
@@ -57,7 +58,7 @@
   transform: rotate(-45deg);
 }
 
-.list {
+.cardList {
   list-style: none;
   margin: 16px auto 0;
   padding: 0;
@@ -66,12 +67,28 @@
   width: 1162px;
   transition: transform 0.5s ease-in-out;
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1346px) {
     margin-top: 3px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 1279px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 1245px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 1031px) {
+    gap: 48px;
   }
 }
 
-.listItem {
+.cardListItem {
   height: 441px;
   border-right: 2px solid #d6d6d6;
   box-sizing: border-box;
@@ -88,5 +105,9 @@
   &:last-child {
     border-right: none;
     min-width: 240px;
+  }
+
+  @media screen and (max-width: 1031px) {
+    min-width: 290px;
   }
 }

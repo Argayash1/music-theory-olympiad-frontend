@@ -14,8 +14,22 @@
     gap: 57px;
   }
 
+  @media screen and (max-width: 1439px) {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   @media screen and (max-width: 1296px) and (hover: hover) {
     gap: 48.5px;
+  }
+
+  @media screen and (max-width: 1189px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (max-width: 1049px) {
+    max-width: 710px;
   }
 }
 
@@ -41,6 +55,15 @@
   gap: 34px;
   margin: 0 auto;
   max-width: 1002px;
+
+  @media screen and (max-width: 1085px) {
+    max-width: 948px;
+    gap: 7px;
+  }
+
+  @media screen and (max-width: 1031px) {
+    max-width: 668px;
+  }
 }
 
 .rootTypeJury {
@@ -62,6 +85,14 @@
   @media screen and (max-width: 1439px) {
     max-width: 990px;
   }
+
+  @media screen and (max-width: 1189px) {
+    max-width: 890px;
+  }
+
+  @media screen and (max-width: 1049px) {
+    max-width: 560px;
+  }
 }
 
 .wrapperTypeArchive {
@@ -74,9 +105,12 @@
 }
 
 .wrapperTypePrepMaterials {
-  max-width: 857px;
-  padding-right: 20px;
+  max-width: 855px;
   padding-left: 20px;
+
+  @media screen and (max-width: 1031px) {
+    max-width: 578px;
+  }
 }
 
 .wrapperTypeJury {

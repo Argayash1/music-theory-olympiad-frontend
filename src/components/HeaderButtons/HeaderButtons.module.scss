@@ -11,7 +11,12 @@
   }
 }
 
-.listItem:last-child {
+.rootTypeBurger {
+  flex-direction: column;
+  margin-top: 27px;
+}
+
+.listItem:nth-child(3) {
   display: none;
 
   @media screen and (max-width: 1133px) {

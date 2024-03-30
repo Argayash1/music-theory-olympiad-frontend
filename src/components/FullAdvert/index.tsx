@@ -30,6 +30,7 @@ export const FullAdvert = ({ advertItem, cardId }: FullAdvertProps) => {
         <div className={styles.textContainer}>
           <span className={styles.date}>{advertItem && handleFormateDate(advertItem.createdAt)}</span>
           <h3 className={styles.title}>{advertItem?.title}</h3>
+
           {advertItem?.linkText && advertItem.linkUrl ? (
             <TextWithCustomLink
               text={advertItem?.content}
@@ -40,6 +41,7 @@ export const FullAdvert = ({ advertItem, cardId }: FullAdvertProps) => {
           ) : (
             <p className={styles.text}>{advertItem?.content}</p>
           )}
+
           <div className={styles.shareContainer}>
             <CTA
               linkText='Поделиться'

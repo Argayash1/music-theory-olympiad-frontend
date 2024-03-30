@@ -41,10 +41,10 @@ export const BrandBanner = React.forwardRef<HTMLElement>((props, ref) => {
             type='brand-bunner'
           />
           <Logo place='brand-bunner' />
-          <div
+          {/* <div
             className={styles.backgroundImage}
             style={{ width: `${backgroundWidth}px`, left: `-${backgroundLeftOffset}px` }}
-          ></div>
+          ></div> */}
         </div>
       )}
     </section>

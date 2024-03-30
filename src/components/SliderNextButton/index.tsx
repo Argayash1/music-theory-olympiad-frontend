@@ -16,6 +16,7 @@ export const SliderNextButton = ({ type, onClick, switchCount, nextButtonDisable
         styles.root,
         nextButtonDisabled === undefined && styles.rootTypeLeft,
         type === 'jury' && styles.rootTypeJury,
+        type === 'prep-materials' && styles.rootTypePrepMaterials,
       )}
       onClick={onClick}
       disabled={nextButtonDisabled === undefined ? switchCount === 0 : nextButtonDisabled}

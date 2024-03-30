@@ -29,6 +29,6 @@
 ## Ссылки
 
 - [Макет в Figma](https://www.figma.com/file/ekDfxOpvREGF7v4PNtiSYh/%D0%BE%D0%BB%D0%B8%D0%BC%D0%BF%D0%B8%D0%B0%D0%B4%D0%B0?type=design&node-id=0%3A1&mode=design&t=FAKnpFbbFsL5aWw0-1)
-- [Деплой на github-pages](https://argayash1.github.io/music-theory-olympiad-frontend/)
+- [Деплой](https://олимпиадавизеля.рф)
 
 ## Желаю увлекательного изучения!

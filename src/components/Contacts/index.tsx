@@ -1,8 +1,7 @@
 import React from 'react';
-import { CTA, ContactsButtonList, OlympDataCardTitle } from '../../components';
+import { ContactsButtonList, OlympDataCardTitle } from '../../components';
 import styles from './Contacts.module.scss';
 import clsx from 'clsx';
-import { OLYMPIC_RULES_URL, PAYMENT_URL } from '../../utils/constants';
 
 export const Contacts = () => {
   return (

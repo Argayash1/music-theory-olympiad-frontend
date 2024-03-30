@@ -2,6 +2,7 @@ import React from 'react';
 import { menuItems } from '../../utils/menuItems';
 import styles from './MainMenu.module.scss';
 import clsx from 'clsx';
+import { HeaderButtons } from '../HeaderButtons';
 
 type MainMenuProps = {
   type?: string;
@@ -28,15 +29,19 @@ export const MainMenu = ({ type, activeSection, isOpen }: MainMenuProps) => {
   ));
 
   return (
-    <nav
-      className={clsx(
-        styles.root,
-        type === 'footer' && styles.rootTypeFooter,
-        type === 'burger' && styles.rootTypeBurger,
-        isOpen && styles.rootIsOpened,
+    <>
+      {type === 'burger' ? (
+        <aside className={clsx(styles.root, styles.rootTypeBurger, isOpen && styles.rootIsOpened)}>
+          <nav>
+            <ul className={clsx(styles.list, styles.listTypeBurger)}>{menuListItems}</ul>
+          </nav>
+          <HeaderButtons />
+        </aside>
+      ) : (
+        <nav className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}>
+          <ul className={styles.list}>{menuListItems}</ul>
+        </nav>
       )}
-    >
-      <ul className={clsx(styles.list, type === 'burger' && styles.listTypeBurger)}>{menuListItems}</ul>
-    </nav>
+    </>
   );
 };
