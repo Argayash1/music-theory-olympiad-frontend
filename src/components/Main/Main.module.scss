@@ -2,6 +2,34 @@
   margin-top: 175px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 1440px;
+    height: 928px;
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('../../assets/images/brand-banner-background.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    @media screen and (max-width: 1440px) {
+      left: initial;
+      right: 0;
+      transform: translateX(0);
+    }
+
+    @media screen and (max-width: 1359px) {
+      right: initial;
+      left: -80.5px;
+    }
+  }
 
   @media screen and (max-width: 944px) {
     margin-top: 120px;

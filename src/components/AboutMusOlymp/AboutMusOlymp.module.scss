@@ -5,6 +5,7 @@
   margin-top: 222px;
   position: relative;
   scroll-margin: 105px;
+  z-index: 2;
 
   &::before {
     content: '';

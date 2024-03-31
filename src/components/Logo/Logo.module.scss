@@ -30,9 +30,9 @@
   border-radius: 0%;
   object-fit: fill;
   object-position: 50% 50%;
-  z-index: 2;
   grid-row: 1/4;
   grid-column: 2/3;
+  z-index: 2;
 
   @media screen and (max-width: 1193px) {
     width: 277px;
