@@ -2,18 +2,15 @@
 
 .root {
   margin-top: 29px;
-  margin-left: 175px;
+  margin-right: 27px;
+  margin-left: auto;
   font-size: 0;
 
-  @media screen and (max-width: 1400px) {
-    margin-left: 15px;
+  @media screen and (max-width: 1168px) {
+    margin-right: auto;
   }
 
-  @media screen and (max-width: 1153px) {
-    margin-left: 0;
-  }
-
-  @media screen and (max-width: 1133px) {
+  @media screen and (max-width: 1134px) {
     display: none;
   }
 }
@@ -37,7 +34,7 @@
   border: 2px solid #d6d6d6;
   transition: right 0.3s linear;
 
-  @media screen and (max-width: 1133px) {
+  @media screen and (max-width: 1134px) {
     display: block;
   }
 }

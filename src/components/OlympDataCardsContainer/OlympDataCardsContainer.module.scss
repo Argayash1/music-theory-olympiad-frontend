@@ -6,15 +6,32 @@
   gap: 20px;
   position: relative;
   z-index: 3;
+  width: 100%;
 
-  @media screen and (max-width: 1439px) {
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  // @media screen and (max-width: 1439px) {
+  //   max-width: 1140px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 
   @media screen and (max-width: 1189px) {
     max-width: 718px;
     flex-direction: column;
+  }
+}
+
+.listItem {
+  width: 750px;
+
+  &:last-child {
+    width: 530px;
+
+    @media screen and (max-width: 1439px) {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 1439px) {
+    width: 50%;
   }
 }

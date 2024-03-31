@@ -6,6 +6,16 @@
   padding: 0;
   display: flex;
   gap: 2px;
+  width: 100%;
+
+  @media screen and (max-width: 1279px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.listItem {
+  width: 33.24%;
 }
 
 .button {
@@ -14,18 +24,17 @@
   border-radius: 40px 40px 0px 0px;
   box-sizing: border-box;
   margin: 0;
-  padding: 16.19px 190.6px 12.85px 166px;
+  width: 100%;
+  height: 65px;
+  padding-left: 164.4px;
+  padding-top: 6px;
+  text-align: left;
   background-color: #fff;
   transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
   &:not(.buttonActive):hover {
     border-color: #000;
     color: #000;
-  }
-
-  @media screen and (max-width: 1439px) {
-    padding-right: 153.6px;
-    padding-left: 151px;
   }
 }
 

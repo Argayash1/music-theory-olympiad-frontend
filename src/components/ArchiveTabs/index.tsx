@@ -13,7 +13,7 @@ export const ArchiveTabs = ({ value, onChangeTab }: TabsProps) => {
   return (
     <ul className={styles.root}>
       {archiveTabNames.map((item, index) => (
-        <li key={index}>
+        <li key={index} className={styles.listItem}>
           <button
             className={clsx(styles.button, value === index && styles.buttonActive)}
             onClick={() => onChangeTab(index)}

@@ -14,12 +14,12 @@ export const OlympDataCardsContainer = ({ status }: OlympDataCardsContainerProps
         <OlympDataCardsSkeleton />
       ) : (
         <>
-          <li>
+          <li className={styles.listItem}>
             <OlympDataCard>
               <TopicAndParticipants />
             </OlympDataCard>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <OlympDataCard type='contacts'>
               <Contacts />
             </OlympDataCard>
