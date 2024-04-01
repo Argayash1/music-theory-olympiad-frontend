@@ -24,6 +24,10 @@
     gap: 48.5px;
   }
 
+  @media screen and (max-width: 1279px) and (hover: hover) {
+    gap: 57px;
+  }
+
   @media screen and (max-width: 1189px) {
     max-width: 1000px;
   }
@@ -43,11 +47,26 @@
   margin-top: 44.86px;
 
   @media screen and (max-width: 1439px) {
-    gap: 162px;
+    gap: 14.21%;
   }
 
   @media screen and (max-width: 1296px) and (hover: hover) {
-    gap: 153.5px;
+    gap: 13.464%;
+  }
+
+  @media screen and (max-width: 1279px) and (hover: hover) {
+    gap: 14.21%;
+  }
+
+  @media screen and (max-width: 1189px) {
+    max-width: 1108px;
+    gap: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 1157px) {
+    max-width: 738px;
   }
 }
 
@@ -101,6 +120,14 @@
   @media screen and (max-width: 1439px) {
     max-width: 760px;
     margin-right: 20px;
+  }
+
+  @media screen and (max-width: 1189px) {
+    margin-right: 12px;
+  }
+
+  @media screen and (max-width: 1157px) {
+    max-width: 370px;
   }
 }
 

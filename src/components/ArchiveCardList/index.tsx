@@ -29,7 +29,12 @@ export const ArchiveCardList = () => {
   ));
 
   const offset = switchCount * -390;
-  const nextButtonDisabled = screenWidth > 1439 ? switchCount === 1 : switchCount === 2;
+  const nextButtonDisabled =
+    screenWidth > 1439
+      ? switchCount === 1
+      : screenWidth <= 1439 && screenWidth > 1157
+      ? switchCount === 2
+      : switchCount === 3;
 
   return (
     <CardSlider

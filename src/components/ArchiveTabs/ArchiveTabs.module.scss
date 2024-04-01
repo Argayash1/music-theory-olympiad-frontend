@@ -16,6 +16,34 @@
 
 .listItem {
   width: 33.24%;
+
+  &:nth-child(2) {
+    .button {
+      padding-left: 38.195%;
+
+      @media screen and (max-width: 1296px) {
+        padding-left: 39.88%;
+      }
+
+      @media screen and (max-width: 986px) {
+        padding-left: 34.46%;
+      }
+    }
+  }
+
+  &:last-child {
+    .button {
+      padding-left: 39.121%;
+
+      @media screen and (max-width: 1296px) {
+        padding-left: 40.75%;
+      }
+
+      @media screen and (max-width: 986px) {
+        padding-left: 35.715%;
+      }
+    }
+  }
 }
 
 .button {
@@ -26,7 +54,8 @@
   margin: 0;
   width: 100%;
   height: 65px;
-  padding-left: 164.4px;
+  padding-left: 37.964%;
+  padding-right: 0;
   padding-top: 6px;
   text-align: left;
   background-color: #fff;
@@ -35,6 +64,14 @@
   &:not(.buttonActive):hover {
     border-color: #000;
     color: #000;
+  }
+
+  @media screen and (max-width: 1296px) {
+    padding-left: 39.88%;
+  }
+
+  @media screen and (max-width: 986px) {
+    padding-left: 34.04%;
   }
 }
 

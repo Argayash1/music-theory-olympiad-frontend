@@ -20,7 +20,7 @@ export const OlympDataCardsContainer = ({ status }: OlympDataCardsContainerProps
             </OlympDataCard>
           </li>
           <li className={styles.listItem}>
-            <OlympDataCard type='contacts'>
+            <OlympDataCard>
               <Contacts />
             </OlympDataCard>
           </li>

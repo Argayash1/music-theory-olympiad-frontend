@@ -32,12 +32,15 @@
       align-items: flex-start;
     }
 
-    @media screen and (max-width: 1189px) {
+    @media screen and (max-width: 1129px) {
       display: grid;
-      grid-template-columns: 348px 276px;
+      grid-template-columns: 372px 276px;
+      grid-template-rows: 57.75px 41.75px 32px 28px;
+      max-width: 648px;
 
       .contactTitle {
         max-width: 348px;
+        margin-bottom: 2px;
       }
     }
   }

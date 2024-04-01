@@ -7,20 +7,20 @@
   padding: 0 70px;
   font-size: 0;
 
-  @media screen and (max-width: 1189px) {
+  @media screen and (max-width: 1129px) {
     display: none;
   }
 }
 
 .rootTypeListItem {
-  margin-top: 40px;
+  margin-top: 13px;
   display: none;
   grid-column: 2/3;
   grid-row: 1/5;
   max-width: 276px;
   padding: 0;
 
-  @media screen and (max-width: 1189px) {
+  @media screen and (max-width: 1129px) {
     display: flex;
   }
 }

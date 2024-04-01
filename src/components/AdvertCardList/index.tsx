@@ -23,12 +23,14 @@ export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertC
     </li>
   ));
 
-  const cardWidth = 370;
-  const cardsGap = 20;
-  const offset = screenWidtrh > 1439 ? switchCount * -390 : switchCount * -505;
-  const minCardListWidth = screenWidtrh > 1439 ? 1150 : 990;
-  const cardListWidth = cardWidth * advertCardsItems.length + cardsGap * (advertCardsItems.length - 1);
-  const nextButtonDisabled = cardListWidth - Math.abs(offset) <= minCardListWidth;
+  const offset =
+    screenWidtrh > 1439 ? switchCount * -390 : screenWidtrh <= 1189 ? switchCount * -290 : switchCount * -505;
+  const nextButtonDisabled =
+    screenWidtrh > 1439 || (screenWidtrh <= 1189 && screenWidtrh > 1049)
+      ? advertCardsItems.length - switchCount <= 3
+      : screenWidtrh <= 1049
+      ? advertCardsItems.length - switchCount <= 2
+      : advertCardsItems.length - switchCount <= 2;
 
   return (
     <CardSlider
