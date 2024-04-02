@@ -12,6 +12,11 @@
 .container {
   @include section-flex-container(70, 70, 0);
   flex-direction: column;
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .list {
@@ -26,5 +31,9 @@
 
   @media screen and (max-width: 1412px) {
     margin-left: auto;
+  }
+
+  @media screen and (max-width: 871px) {
+    gap: 8px;
   }
 }

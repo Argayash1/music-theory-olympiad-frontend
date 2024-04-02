@@ -8,6 +8,11 @@
 .container {
   @include section-flex-container(70, 70, 70);
   @include main-text-font(20, 400, 0.975, #fff);
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .navContainer {

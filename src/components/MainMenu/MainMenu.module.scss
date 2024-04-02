@@ -18,6 +18,14 @@
 .rootTypeFooter {
   margin-top: 0;
   margin-left: 0;
+
+  @media screen and (max-width: 1134px) {
+    display: block;
+  }
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
 }
 
 .rootTypeBurger {

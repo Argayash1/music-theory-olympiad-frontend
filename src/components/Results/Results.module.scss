@@ -35,6 +35,11 @@
       transform: translateX(-49.65%);
     }
   }
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .list {
@@ -46,9 +51,12 @@
   gap: 70px;
   font-size: 0;
 
-  @media screen and (max-width: 1296px) {
-    margin-left: 264px;
-    margin-right: 0;
+  @media screen and (max-width: 1299px) {
+    margin-left: 23.158%;
+  }
+
+  @media screen and (max-width: 1279px) {
+    margin-left: auto;
   }
 }
 

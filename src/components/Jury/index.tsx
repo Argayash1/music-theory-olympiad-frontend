@@ -34,8 +34,8 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
     </li>
   ));
 
-  const offset = switchCount * -325;
-  const nextButtonDisabled = screenWidth <= 1439 ? switchCount === 1 : switchCount === 2;
+  const offset = screenWidth > 871 ? switchCount * -325 : switchCount * -275;
+  const nextButtonDisabled = screenWidth > 1171 ? switchCount === 1 : switchCount === 2;
 
   return (
     <section className={styles.root} id='jury' ref={ref}>
