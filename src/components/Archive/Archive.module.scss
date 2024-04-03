@@ -19,6 +19,14 @@
     bottom: -42px;
     left: 0px;
     z-index: -1;
+
+    @media screen and (max-width: 1129px) {
+      width: 133.334%;
+      height: 129.72%;
+      bottom: 21px;
+      left: initial;
+      right: -129px;
+    }
   }
 
   @media screen and (max-width: 1279px) {

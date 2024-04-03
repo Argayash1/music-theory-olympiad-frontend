@@ -3,10 +3,18 @@
 .root {
   height: 771px;
   background-color: #fff6d6;
+  background-image: url('../../assets/images/jury-background-image.svg');
+  background-size: cover;
+  background-position: center;
   margin-top: -64px;
   padding-top: 64px;
   box-sizing: border-box;
   scroll-margin: -64px;
+
+  @media screen and (max-width: 1296px) {
+    background-size: auto;
+    background-position: -80px 0;
+  }
 }
 
 .container {

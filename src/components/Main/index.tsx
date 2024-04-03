@@ -66,8 +66,10 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
   return (
     <main className={styles.root}>
       <BrandBanner ref={brandBannerRef} />
-      <AboutMusOlymp ref={aboutMusOlympRef} />
-      <Adverts ref={advertsRef} />
+      <section className={styles.wrapper}>
+        <AboutMusOlymp ref={aboutMusOlympRef} />
+        <Adverts ref={advertsRef} />
+      </section>
       <PrepMaterials ref={prepMaterialsRef} />
       <Archive ref={archiveRef} />
       <Results ref={resultsRef} />

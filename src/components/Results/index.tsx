@@ -40,6 +40,7 @@ export const Results = React.forwardRef<HTMLElement>((props, ref) => {
       <div className={styles.container}>
         <SectionTitle text={menuItems[4].name} />
         <ul className={styles.list}>{status === 'loading' ? resultItemsSkeletons : resultItems}</ul>
+        <div className={styles.square}></div>
       </div>
     </section>
   );
