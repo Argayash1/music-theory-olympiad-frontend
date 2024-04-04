@@ -17,12 +17,26 @@
   display: none;
 }
 
-.listItem:nth-child(3) {
-  display: none;
+.listItem {
+  &:first-child {
+    @media screen and (max-width: 481px) {
+      display: none;
+    }
+  }
 
-  @media screen and (max-width: 1134px) {
-    display: block;
-    margin-top: 3px;
-    margin-left: 5px;
+  &:nth-child(2) {
+    @media screen and (max-width: 481px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(3) {
+    display: none;
+
+    @media screen and (max-width: 1134px) {
+      display: block;
+      margin-top: 3px;
+      margin-left: 5px;
+    }
   }
 }

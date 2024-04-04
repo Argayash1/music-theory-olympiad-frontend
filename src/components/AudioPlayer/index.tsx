@@ -226,6 +226,7 @@ export const AudioPlayer = React.forwardRef<HTMLAudioElement, AudioPlayerProps>(
           />
           <TimeCounter duration={totalDuration} type='right' />
           <VolumelineContainer
+            /*@ts-ignore */
             onDrag={handleVolumeProgressBarDrag}
             onMuteButtonClick={handleMuteButtonClick}
             volume={volume}

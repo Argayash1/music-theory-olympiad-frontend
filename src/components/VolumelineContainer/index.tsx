@@ -4,7 +4,7 @@ import styles from './VolumelineContainer.module.scss';
 import { ProgressBarContainer } from '../ProgressBarContainer';
 
 type VolumelineContainerProps = {
-  onDrag: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onDrag: (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => void;
   onMuteButtonClick: () => void;
   volume: number;
   isMuted: boolean;
@@ -32,6 +32,7 @@ export const VolumelineContainer = ({
       <div
         className={styles.wrapper}
         onMouseMove={onDrag}
+        onTouchMove={onDrag}
         onMouseEnter={() => setIsVolumeLineContainerHovered(true)}
         onMouseLeave={() => setIsVolumeLineContainerHovered(false)}
       >
