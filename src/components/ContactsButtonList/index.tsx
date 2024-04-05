@@ -10,7 +10,13 @@ type ContactsButtonListProps = {
 
 export const ContactsButtonList = ({ type }: ContactsButtonListProps) => {
   return (
-    <ul className={clsx(styles.root, type === 'list-item' && styles.rootTypeListItem)}>
+    <ul
+      className={clsx(
+        styles.root,
+        type === 'list-item' && styles.rootTypeListItem,
+        type === 'about-olymp' && styles.rootTypeAboutOlymp,
+      )}
+    >
       <li>
         <CTA type='pay' linkText='Оплатить картой' path={PAYMENT_URL} />
       </li>

@@ -34,13 +34,49 @@
 
     @media screen and (max-width: 1129px) {
       display: grid;
-      grid-template-columns: 372px 276px;
+      grid-template-columns: minmax(191px, 1fr) 276px;
       grid-template-rows: 57.75px 41.75px 32px 28px;
       max-width: 648px;
+      margin-right: 70px;
 
       .contactTitle {
-        max-width: 348px;
+        max-width: 278px;
         margin-bottom: 2px;
+        padding-right: 0;
+      }
+
+      .contactSubtitle {
+        padding-right: 0;
+      }
+
+      .contactLink {
+        padding-right: 0;
+      }
+    }
+
+    @media screen and (max-width: 673px) {
+      margin-right: 25px;
+
+      .contactTitle {
+        max-width: 233px;
+      }
+    }
+
+    @media screen and (max-width: 583px) {
+      grid-template-rows: 44px 26px 26px 22px;
+
+      .contactTitle {
+        margin-bottom: 0;
+        height: fit-content;
+      }
+    }
+
+    @media screen and (max-width: 551px) {
+      display: block;
+      margin-right: 0;
+
+      .contactTitle {
+        max-width: 100%;
       }
     }
   }
@@ -58,12 +94,33 @@
   margin: 0;
   padding: 0 70px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media screen and (max-width: 583px) {
+    font-size: 16px;
+    line-height: 1.375;
+  }
 }
 
 .contactSubtitle {
   @include main-text-font(20, 400, 1.4);
   padding: 0 70px;
   margin: 0 0 14px;
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media screen and (max-width: 583px) {
+    font-size: 16px;
+    line-height: 1.375;
+    margin-bottom: 4px;
+  }
 }
 
 .contactLink {
@@ -72,6 +129,16 @@
   padding: 0 70px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 0;
+  }
+
+  @media screen and (max-width: 583px) {
+    font-size: 16px;
+    line-height: 1.375;
+  }
 }
 
 .contactLinkWithMarginBottom {

@@ -13,7 +13,7 @@
 }
 
 .rootTypeListItem {
-  margin-top: 13px;
+  margin-top: 40px;
   display: none;
   grid-column: 2/3;
   grid-row: 1/5;
@@ -21,6 +21,24 @@
   padding: 0;
 
   @media screen and (max-width: 1129px) {
+    display: flex;
+  }
+
+  @media screen and (max-width: 583px) {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 551px) {
+    display: none;
+  }
+}
+
+.rootTypeAboutOlymp {
+  padding: 0;
+  margin: 20px auto 0;
+  width: fit-content;
+
+  @media screen and (max-width: 551px) {
     display: flex;
   }
 }

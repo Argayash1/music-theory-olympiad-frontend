@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 
   @media screen and (max-width: 944px) {
     margin-top: 120px;
@@ -16,23 +16,23 @@
   margin: 0 auto;
   width: 100%;
 
-  &::after {
-    content: '';
-    width: 100%;
-    height: 1256px;
-    background-image: url('../../assets/images/about-olymp-background.svg');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    bottom: -204px;
-    left: 0;
-    z-index: 1;
+  // &::after {
+  //   content: '';
+  //   width: 100%;
+  //   height: 1256px;
+  //   background-image: url('../../assets/images/about-olymp-background.svg');
+  //   background-size: cover;
+  //   background-position: center;
+  //   position: absolute;
+  //   bottom: -204px;
+  //   left: 0;
+  //   z-index: 1;
 
-    @media screen and (max-width: 1129px) {
-      width: 1024px;
-      height: 893px;
-      bottom: 27px;
-      left: -190px;
-    }
-  }
+  //   @media screen and (max-width: 1129px) {
+  //     width: 1024px;
+  //     height: 893px;
+  //     bottom: 27px;
+  //     left: -190px;
+  //   }
+  // }
 }

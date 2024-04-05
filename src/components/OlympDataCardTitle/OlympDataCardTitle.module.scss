@@ -5,4 +5,14 @@
   margin: 0 0 18px;
   padding: 0 70px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media screen and (max-width: 583px) {
+    font-size: 20px;
+    line-height: 1.1;
+  }
 }

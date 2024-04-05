@@ -1,22 +1,16 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .root {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
-}
-
-.rootTypeJury {
-  flex-direction: column-reverse;
-}
-
-.title {
   @include main-text-font(40, 500, 0.85, #ff5e3a);
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 667px) {
+    font-size: 30px;
+    line-height: 1.1335;
+  }
 }
 
-.titleTypeResults {
+.rootTypeResults {
   color: #fff;
 }

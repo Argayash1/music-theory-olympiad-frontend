@@ -5,4 +5,9 @@
   border-radius: 40px;
   padding: 70px 0 53px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 583px) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
 }

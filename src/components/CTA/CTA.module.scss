@@ -56,7 +56,9 @@
   line-height: 0.975;
 
   @media screen and (max-width: 944px) {
-    margin-top: 27px;
+    &:not(.rootTypePay) {
+      margin-top: 27px;
+    }
   }
 
   @media screen and (max-width: 667px) {

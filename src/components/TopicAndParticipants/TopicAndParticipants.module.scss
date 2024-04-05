@@ -41,6 +41,14 @@
       }
     }
   }
+
+  @media screen and (max-width: 583px) {
+    &:first-child {
+      .paragraph {
+        max-width: 403px;
+      }
+    }
+  }
 }
 
 .paragraph {
@@ -48,4 +56,14 @@
   margin: 0;
   padding: 0 70px;
   max-width: 555px;
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @media screen and (max-width: 583px) {
+    font-size: 16px;
+    line-height: 1.375;
+  }
 }
