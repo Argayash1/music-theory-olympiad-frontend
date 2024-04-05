@@ -3,13 +3,8 @@
 .root {
   @include main-text-font(30, 500, 0.73);
   margin: 0 0 18px;
-  padding: 0 70px;
+  padding: 0;
   box-sizing: border-box;
-
-  @media screen and (max-width: 673px) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
 
   @media screen and (max-width: 583px) {
     font-size: 20px;

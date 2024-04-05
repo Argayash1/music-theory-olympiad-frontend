@@ -3,11 +3,35 @@
   height: 100%;
   background-color: #fff6d6;
   border-radius: 40px;
-  padding: 70px 0 53px;
+  padding: 70px 70px 53px;
   box-sizing: border-box;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 184px;
+
+    @media screen and (max-width: 1296px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 673px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 
   @media screen and (max-width: 583px) {
     padding-top: 45px;
     padding-bottom: 45px;
   }
+}
+
+.rootTypeContacts::after {
+  top: 233px;
 }

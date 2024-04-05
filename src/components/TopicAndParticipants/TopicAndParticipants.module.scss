@@ -6,28 +6,14 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 22.5px;
-
-  @media screen and (max-width: 1439px) {
-    gap: 45px;
-  }
+  gap: 45px;
 }
 
 .listItem {
-  padding: 0 0 19.5px;
-  border-bottom: 3px solid #fff;
-  box-sizing: border-box;
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
+  padding: 0;
 
   @media screen and (max-width: 1439px) {
     &:first-child {
-      border-bottom: none;
-      padding-bottom: 0;
-
       .paragraph {
         max-width: 348px;
       }
@@ -54,13 +40,8 @@
 .paragraph {
   @include main-text-font(20, 400, 1.4);
   margin: 0;
-  padding: 0 70px;
+  padding: 0;
   max-width: 555px;
-
-  @media screen and (max-width: 673px) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
 
   @media screen and (max-width: 583px) {
     font-size: 16px;

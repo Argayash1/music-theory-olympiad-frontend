@@ -11,19 +11,11 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16.5px;
+  gap: 45px;
   font-size: 0;
-
-  @media screen and (max-width: 1439px) {
-    gap: 45px;
-  }
 }
 
 .contactListItem {
-  padding-bottom: 26.5px;
-  box-sizing: border-box;
-  border-bottom: 3px solid #fff;
-
   &:last-child {
     padding-bottom: 0;
     border-bottom: none;
@@ -37,7 +29,6 @@
       grid-template-columns: minmax(191px, 1fr) 276px;
       grid-template-rows: 57.75px 41.75px 32px 28px;
       max-width: 648px;
-      margin-right: 70px;
 
       .contactTitle {
         max-width: 278px;
@@ -55,8 +46,6 @@
     }
 
     @media screen and (max-width: 673px) {
-      margin-right: 25px;
-
       .contactTitle {
         max-width: 233px;
       }
@@ -92,13 +81,8 @@
 .contactTitle {
   @include main-text-font(20, 600, 1.4);
   margin: 0;
-  padding: 0 70px;
+  padding: 0;
   box-sizing: border-box;
-
-  @media screen and (max-width: 673px) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
 
   @media screen and (max-width: 583px) {
     font-size: 16px;
@@ -108,13 +92,8 @@
 
 .contactSubtitle {
   @include main-text-font(20, 400, 1.4);
-  padding: 0 70px;
+  padding: 0;
   margin: 0 0 14px;
-
-  @media screen and (max-width: 673px) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
 
   @media screen and (max-width: 583px) {
     font-size: 16px;
@@ -126,14 +105,9 @@
 .contactLink {
   @include main-text-font(20, 500, 1.4, #ffbb4d);
   margin: 0;
-  padding: 0 70px;
+  padding: 0;
   display: flex;
   align-items: center;
-
-  @media screen and (max-width: 673px) {
-    padding-left: 25px;
-    padding-right: 0;
-  }
 
   @media screen and (max-width: 583px) {
     font-size: 16px;
