@@ -15,6 +15,10 @@
   flex-direction: column;
   margin-top: 27px;
   display: none;
+
+  @media screen and (max-width: 481px) {
+    display: flex;
+  }
 }
 
 .listItem {
@@ -37,6 +41,24 @@
       display: block;
       margin-top: 3px;
       margin-left: 5px;
+    }
+
+    @media screen and (max-width: 481px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.listItemTypeBurger {
+  &:first-child {
+    @media screen and (max-width: 481px) {
+      display: block;
+    }
+  }
+
+  &:nth-child(2) {
+    @media screen and (max-width: 481px) {
+      display: block;
     }
   }
 }

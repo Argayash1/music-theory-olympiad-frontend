@@ -12,10 +12,10 @@ type HeaderButtonsProps = {
 export const HeaderButtons = ({ isBurgerMenuOpen, onToggleBurgerMenu }: HeaderButtonsProps) => {
   return (
     <ul className={clsx(styles.root, isBurgerMenuOpen === undefined && styles.rootTypeBurger)}>
-      <li className={styles.listItem}>
+      <li className={clsx(styles.listItem, isBurgerMenuOpen === undefined && styles.listItemTypeBurger)}>
         <CTA path={PARTICIPATION_URL} />
       </li>
-      <li className={styles.listItem}>
+      <li className={clsx(styles.listItem, isBurgerMenuOpen === undefined && styles.listItemTypeBurger)}>
         <CTA linkText='Оплата' path={PAYMENT_URL} type='pay' />
       </li>
       {isBurgerMenuOpen !== undefined && (

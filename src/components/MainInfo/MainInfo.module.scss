@@ -12,6 +12,12 @@
   @media screen and (max-width: 944px) {
     margin-top: 27px;
   }
+
+  @media screen and (max-width: 667px) {
+    font-size: 16px;
+    line-height: 1.375;
+    margin-top: 0;
+  }
 }
 
 .listItem {
@@ -21,6 +27,10 @@
     .text {
       @media screen and (max-width: 944px) {
         max-width: 85%;
+      }
+
+      @media screen and (max-width: 667px) {
+        max-width: 205px;
       }
     }
   }

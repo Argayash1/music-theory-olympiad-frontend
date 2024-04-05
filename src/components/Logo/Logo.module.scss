@@ -42,4 +42,20 @@
   @media screen and (max-width: 944px) {
     grid-row: 2/4;
   }
+
+  @media screen and (max-width: 667px) {
+    width: 180px;
+    height: 181px;
+    margin-right: 64px;
+  }
+
+  @media screen and (max-width: 573px) {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 506px) {
+    margin-left: auto;
+    margin-top: 70px;
+  }
 }
