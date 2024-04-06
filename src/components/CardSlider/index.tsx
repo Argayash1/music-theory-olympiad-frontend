@@ -55,12 +55,16 @@ export const CardSlider = ({
       >
         {status === 'loading' ? <ul className={styles.list}>{cardSkeletons}</ul> : children}
       </div>
-      <SliderNextButton
-        onClick={onSwitchToNextSlides}
-        switchCount={switchCount}
-        nextButtonDisabled={nextButtonDisabled}
-        type={type}
-      />
+      <div className={clsx(styles.buttons, type === 'prep-materials' && styles.buttonsTypePrepMaterials)}>
+        <SliderNextButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type='bottom' place={type} />
+        <SliderNextButton
+          onClick={onSwitchToNextSlides}
+          switchCount={switchCount}
+          nextButtonDisabled={nextButtonDisabled}
+          type={type}
+          place={type}
+        />
+      </div>
     </div>
   );
 };

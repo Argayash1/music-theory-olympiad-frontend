@@ -40,6 +40,24 @@
   padding: 0 37.5px 0 68px;
   background-color: transparent;
   border-radius: 40px;
+
+  @media screen and (max-width: 667px) {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  @media screen and (max-width: 590px) {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+}
+
+.buttonText {
+  text-align: left;
+
+  @media screen and (max-width: 440px) {
+    max-width: 175px;
+  }
 }
 
 .icon {
@@ -96,18 +114,34 @@
 
   &:nth-child(2) {
     min-width: 276px;
+
+    @media screen and (max-width: 590px) {
+      min-width: 256px;
+    }
   }
 
   &:nth-child(3) {
     min-width: 273px;
+
+    @media screen and (max-width: 590px) {
+      min-width: 253px;
+    }
   }
 
   &:last-child {
     border-right: none;
     min-width: 240px;
+
+    @media screen and (max-width: 590px) {
+      min-width: 220px;
+    }
   }
 
   @media screen and (max-width: 1031px) {
     min-width: 290px;
+  }
+
+  @media screen and (max-width: 590px) {
+    min-width: 270px;
   }
 }

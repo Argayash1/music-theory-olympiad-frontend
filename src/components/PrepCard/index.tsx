@@ -37,14 +37,32 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
     </li>
   ));
 
-  const offset = screenWidth > 1031 ? switchCount * -305 : switchCount === 2 ? switchCount * -327 : switchCount * -331;
-  const nextButtonDisabled = screenWidth > 1031 ? switchCount === 1 : switchCount === 2;
+  const offset =
+    screenWidth > 1031
+      ? switchCount * -305
+      : switchCount === 2 && screenWidth > 590
+      ? switchCount * -327
+      : switchCount === 2 && screenWidth <= 590
+      ? switchCount * -311
+      : switchCount === 3 && screenWidth <= 590
+      ? switchCount * -308
+      : screenWidth <= 590
+      ? switchCount * -318
+      : switchCount * -331;
+
+  const nextButtonDisabled =
+    screenWidth > 1031
+      ? switchCount === 1
+      : screenWidth <= 1031 && screenWidth > 727
+      ? switchCount === 2
+      : switchCount === 3;
+
   const showcardListWithoutSlider = screenWidth >= 1347 || (screenWidth <= 1279 && screenWidth > 1245);
 
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
       <button className={styles.button} onClick={onClick} type='button'>
-        {title}
+        <span className={styles.buttonText}>{title}</span>
         <svg
           viewBox='0 0 22.5 22.5'
           fill='none'

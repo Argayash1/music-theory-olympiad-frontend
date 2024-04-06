@@ -30,6 +30,11 @@
   &:hover {
     border-color: #ff5e3a;
   }
+
+  @media screen and (max-width: 590px) {
+    width: 220px;
+    margin-left: 10px;
+  }
 }
 
 .playButton {
@@ -83,5 +88,10 @@
 
   &:hover {
     border-color: #ff5e3a;
+  }
+
+  @media screen and (max-width: 590px) {
+    width: 220px;
+    margin-left: 10px;
   }
 }

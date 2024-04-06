@@ -4,12 +4,13 @@ import clsx from 'clsx';
 
 type SliderNextButtonProps = {
   type?: string;
+  place?: string;
   switchCount: number;
   onClick?: () => void;
   nextButtonDisabled?: boolean;
 };
 
-export const SliderNextButton = ({ type, onClick, switchCount, nextButtonDisabled }: SliderNextButtonProps) => {
+export const SliderNextButton = ({ type, place, onClick, switchCount, nextButtonDisabled }: SliderNextButtonProps) => {
   return (
     <button
       className={clsx(
@@ -17,6 +18,8 @@ export const SliderNextButton = ({ type, onClick, switchCount, nextButtonDisable
         nextButtonDisabled === undefined && styles.rootTypeLeft,
         type === 'jury' && styles.rootTypeJury,
         type === 'prep-materials' && styles.rootTypePrepMaterials,
+        type === 'bottom' && styles.rootTypeBottom,
+        place === 'prep-materials' && styles.rootPlacePrepMaterials,
       )}
       onClick={onClick}
       disabled={nextButtonDisabled === undefined ? switchCount === 0 : nextButtonDisabled}

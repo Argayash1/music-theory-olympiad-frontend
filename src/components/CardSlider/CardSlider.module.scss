@@ -35,6 +35,19 @@
   @media screen and (max-width: 1049px) {
     max-width: 710px;
   }
+
+  @media screen and (max-width: 759px) {
+    gap: 0;
+  }
+
+  @media screen and (max-width: 667px) {
+    max-width: 420px;
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+  }
 }
 
 .rootHidden {
@@ -74,6 +87,7 @@
   gap: 32px;
   margin: 0 auto;
   max-width: 1002px;
+  position: relative;
 
   @media screen and (max-width: 1085px) {
     max-width: 948px;
@@ -82,6 +96,21 @@
 
   @media screen and (max-width: 1031px) {
     max-width: 668px;
+  }
+
+  @media screen and (max-width: 741px) {
+    gap: 0;
+    max-width: 654px;
+  }
+
+  @media screen and (max-width: 727px) {
+    max-width: 438px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media screen and (max-width: 397px) {
+    flex-direction: column;
   }
 }
 
@@ -134,6 +163,14 @@
   @media screen and (max-width: 1049px) {
     max-width: 560px;
   }
+
+  @media screen and (max-width: 759px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 667px) {
+    max-width: 270px;
+  }
 }
 
 .wrapperTypeArchive {
@@ -163,6 +200,14 @@
     max-width: 578px;
     padding-left: 20px;
   }
+
+  @media screen and (max-width: 727px) {
+    max-width: 248px;
+  }
+
+  @media screen and (max-width: 590px) {
+    max-width: 240px;
+  }
 }
 
 .wrapperTypeJury {
@@ -184,4 +229,21 @@
   list-style: none;
   display: flex;
   gap: 20px;
+}
+
+.buttons {
+  @media screen and (max-width: 375px) {
+    &:not(.buttonsTypePrepMaterials) {
+      margin-top: 18px;
+      margin-left: auto;
+    }
+  }
+}
+
+.buttonsTypePrepMaterials {
+  @media screen and (max-width: 397px) {
+    position: absolute;
+    top: -19px;
+    right: 34px;
+  }
 }

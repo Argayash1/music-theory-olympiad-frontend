@@ -3,6 +3,11 @@
 .date {
   @include main-text-font(20, 500, 1.1, #fff);
   display: inline-block;
+
+  @media screen and (max-width: 1049px) {
+    font-size: 16px;
+    line-height: 1.375;
+  }
 }
 
 .title {
@@ -15,6 +20,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 64px;
+
+  @media screen and (max-width: 1049px) {
+    font-size: 20px;
+    line-height: 1.1;
+    min-height: 50px;
+    margin-bottom: 20px;
+  }
 }
 
 .text {
@@ -28,4 +40,9 @@
   -webkit-line-clamp: 4;
   min-height: 88px;
   max-width: 290px;
+
+  @media screen and (max-width: 1049px) {
+    font-size: 12px;
+    line-height: 1.33;
+  }
 }

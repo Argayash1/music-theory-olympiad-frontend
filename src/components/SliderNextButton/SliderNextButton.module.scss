@@ -28,6 +28,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 375px) {
+    margin-top: 0;
+  }
 }
 
 .rootTypeJury {
@@ -37,9 +41,33 @@
 .rootTypePrepMaterials {
   margin-top: 204px;
   margin-left: 20px;
+
+  @media screen and (max-width: 397px) {
+    display: none;
+  }
 }
 
 .rootTypeLeft {
   transform: rotate(180deg);
   margin-left: 0;
+
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
+}
+
+.rootTypeBottom {
+  display: none;
+  margin-right: 20px;
+
+  @media screen and (max-width: 375px) {
+    display: inline-block;
+  }
+}
+
+.rootPlacePrepMaterials {
+  @media screen and (max-width: 397px) {
+    display: inline-block;
+    margin-top: 0;
+  }
 }

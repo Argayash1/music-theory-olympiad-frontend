@@ -13,6 +13,10 @@
   flex-direction: column;
   gap: 45px;
   font-size: 0;
+
+  @media screen and (max-width: 1129px) {
+    margin-bottom: 0;
+  }
 }
 
 .contactListItem {
@@ -33,15 +37,6 @@
       .contactTitle {
         max-width: 278px;
         margin-bottom: 2px;
-        padding-right: 0;
-      }
-
-      .contactSubtitle {
-        padding-right: 0;
-      }
-
-      .contactLink {
-        padding-right: 0;
       }
     }
 
@@ -67,13 +62,6 @@
       .contactTitle {
         max-width: 100%;
       }
-    }
-  }
-
-  @media screen and (max-width: 1439px) {
-    &:first-of-type {
-      border-bottom: none;
-      padding-bottom: 0;
     }
   }
 }
