@@ -1,7 +1,6 @@
 import React from 'react';
-import { DataCard, ExtensionCard } from '../../components';
+import { DataCard, ExtensionCard, DownloadMenu } from '../../components';
 import styles from './ArchiveCard.module.scss';
-import { DownloadMenu } from '../DownloadMenu';
 import clsx from 'clsx';
 import { IArchiveObject } from '../../redux/archive/types';
 

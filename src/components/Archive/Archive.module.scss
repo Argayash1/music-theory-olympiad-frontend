@@ -8,26 +8,26 @@
   scroll-margin: 105px;
   position: relative;
 
-  &::after {
-    content: '';
-    width: 100%;
-    height: 1370px;
-    background-image: url('../../assets/images/линии3.png');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    bottom: -42px;
-    left: 0px;
-    z-index: -1;
+  // &::after {
+  //   content: '';
+  //   width: 100%;
+  //   height: 1370px;
+  //   background-image: url('../../assets/images/линии3.png');
+  //   background-size: cover;
+  //   background-position: center;
+  //   position: absolute;
+  //   bottom: -42px;
+  //   left: 0px;
+  //   z-index: -1;
 
-    @media screen and (max-width: 1129px) {
-      width: 133.334%;
-      height: 129.72%;
-      bottom: 21px;
-      left: initial;
-      right: -129px;
-    }
-  }
+  //   @media screen and (max-width: 1129px) {
+  //     width: 133.334%;
+  //     height: 129.72%;
+  //     bottom: 21px;
+  //     left: initial;
+  //     right: -129px;
+  //   }
+  // }
 
   @media screen and (max-width: 1279px) {
     padding-left: 25px;

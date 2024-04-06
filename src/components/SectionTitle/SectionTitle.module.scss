@@ -13,4 +13,8 @@
 
 .rootTypeResults {
   color: #fff;
+
+  @media screen and (max-width: 671px) {
+    margin-left: 3px;
+  }
 }

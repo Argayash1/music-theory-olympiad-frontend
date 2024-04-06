@@ -13,4 +13,8 @@
       border-radius: 0 0 10px 10px;
     }
   }
+
+  @media screen and (max-width: 667px) {
+    width: 246px;
+  }
 }

@@ -81,6 +81,10 @@
   @media screen and (max-width: 1157px) {
     max-width: 718px;
   }
+
+  @media screen and (max-width: 767px) {
+    gap: 0;
+  }
 }
 
 .rootTypePrepMaterials {
@@ -189,6 +193,15 @@
     max-width: 370px;
     margin-left: 12px;
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 667px) {
+    max-width: 270px;
   }
 }
 

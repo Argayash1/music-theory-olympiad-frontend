@@ -34,6 +34,12 @@
       display: none;
     }
   }
+
+  @media screen and (max-width: 667px) {
+    margin-top: 34.25px;
+    margin-left: 18.5px;
+    gap: 21.68px;
+  }
 }
 
 .listMarginLeft21px {
@@ -102,6 +108,10 @@
 
   &:hover {
     border-color: #ff5e3a;
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 246px;
   }
 }
 

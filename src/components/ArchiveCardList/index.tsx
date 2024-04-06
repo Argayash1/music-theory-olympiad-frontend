@@ -28,7 +28,8 @@ export const ArchiveCardList = () => {
     </li>
   ));
 
-  const offset = switchCount * -390;
+  const offset = screenWidth > 667 ? switchCount * -390 : switchCount * -290;
+
   const nextButtonDisabled =
     screenWidth > 1439
       ? switchCount === 1

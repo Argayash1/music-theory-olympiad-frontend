@@ -10,6 +10,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media screen and (max-width: 667px) {
+    width: 72.26px;
+    height: 89.61px;
+  }
 }
 
 .rootCentered {
@@ -34,4 +39,15 @@
   margin: 0 25px 18px 0;
   padding: 11px 0 0 18px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 667px) {
+    width: 57.81px;
+    height: 37.58px;
+    font-size: 18.07px;
+    line-height: 0.9867;
+    padding: 0;
+    text-align: center;
+    margin-right: 18.07px;
+    margin-bottom: 13.01px;
+  }
 }
