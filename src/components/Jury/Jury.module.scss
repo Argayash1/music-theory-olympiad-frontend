@@ -44,4 +44,27 @@
   @media screen and (max-width: 871px) {
     gap: 8px;
   }
+
+  @media screen and (max-width: 667px) {
+    margin-top: 39px;
+  }
+
+  @media screen and (max-width: 647px) {
+    gap: 20px;
+    max-width: 564px;
+    margin-right: auto;
+
+    li:nth-child(3) {
+      div {
+        h3 {
+          width: 93%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 377px) {
+    max-width: 272px;
+    flex-wrap: wrap;
+  }
 }

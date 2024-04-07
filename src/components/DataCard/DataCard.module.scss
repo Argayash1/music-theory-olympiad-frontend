@@ -9,11 +9,23 @@
   flex-direction: column;
 
   @media screen and (max-width: 1439px) {
-    width: 485px;
+    &:not(.rootBgGrey) {
+      width: 485px;
+    }
   }
 
   @media screen and (max-width: 1189px) {
-    width: 270px;
+    &:not(.rootBgGrey) {
+      width: 270px;
+    }
+  }
+
+  @media screen and (max-width: 1049px) {
+    &:not(.rootBgGrey) {
+      padding-right: 25px;
+      padding-bottom: 40px;
+      padding-left: 25px;
+    }
   }
 
   @media screen and (max-width: 667px) {
@@ -39,5 +51,6 @@
     padding-top: 40px;
     padding-left: 12px;
     padding-right: 12px;
+    border-radius: 20px;
   }
 }

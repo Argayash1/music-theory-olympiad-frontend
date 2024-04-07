@@ -73,7 +73,7 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
       <PrepMaterials ref={prepMaterialsRef} />
       <Archive ref={archiveRef} />
       <Results ref={resultsRef} />
-      {/* <Jury ref={juryRef} /> */}
+      <Jury ref={juryRef} />
     </main>
   );
 };

@@ -14,6 +14,11 @@
 
   @media screen and (max-width: 667px) {
     margin-bottom: 20px;
+    gap: 23.96px;
+  }
+
+  @media screen and (max-width: 326px) {
+    margin-left: 3px;
   }
 }
 
@@ -25,6 +30,11 @@
   &:hover {
     transform: scale(1.15, 1.162);
   }
+
+  @media screen and (max-width: 667px) {
+    width: 29.47px;
+    height: 42px;
+  }
 }
 
 .logoRrc {
@@ -35,5 +45,11 @@
 
   &:hover {
     transform: scale(1.18265, 1.18278);
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 41.68px;
+    height: 22.64px;
+    margin-top: 9.54px;
   }
 }

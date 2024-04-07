@@ -34,14 +34,21 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
     </li>
   ));
 
-  const offset = screenWidth > 871 ? switchCount * -325 : switchCount * -275;
-  const nextButtonDisabled = screenWidth > 1171 ? switchCount === 1 : switchCount === 2;
+  const offset =
+    screenWidth > 871
+      ? switchCount * -325
+      : screenWidth <= 871 && screenWidth > 647
+      ? switchCount * -275
+      : switchCount * -146;
+
+  const nextButtonDisabled =
+    screenWidth > 1171 || (screenWidth <= 613 && screenWidth > 523) ? switchCount === 1 : switchCount === 2;
 
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
         <SectionTitle text={menuItems[5].name} />
-        {screenWidth >= 1369 ? (
+        {screenWidth >= 1369 || (screenWidth <= 647 && screenWidth > 613) || screenWidth <= 377 ? (
           <ul className={styles.list}>{status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}</ul>
         ) : (
           <CardSlider

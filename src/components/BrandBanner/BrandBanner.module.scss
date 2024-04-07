@@ -95,6 +95,11 @@
     padding-left: 25px;
     padding-right: 25px;
   }
+
+  @media screen and (max-width: 326px) {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
 }
 
 .mainContainer {
@@ -179,6 +184,14 @@
   @media screen and (max-width: 451px) {
     width: 270px;
   }
+
+  @media screen and (max-width: 326px) {
+    margin-left: 3px;
+  }
+}
+
+.nonBreaking {
+  // white-space: nowrap;
 }
 
 .pageTitleSpan {

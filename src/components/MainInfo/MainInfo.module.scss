@@ -17,6 +17,11 @@
     font-size: 16px;
     line-height: 1.375;
     margin-top: 0;
+    gap: 4px;
+  }
+
+  @media screen and (max-width: 326px) {
+    margin-left: 3px;
   }
 }
 
@@ -33,21 +38,52 @@
         max-width: 205px;
       }
     }
+
+    .icon {
+      width: 20px;
+
+      @media screen and (max-width: 667px) {
+        width: 14px;
+        margin-right: 12px;
+        margin-top: 4px;
+      }
+    }
   }
 
   &:nth-child(3) {
     .icon {
-      height: 25px;
+      width: 17px;
+      height: 23px;
+      margin-right: 17px;
+
+      @media screen and (max-width: 667px) {
+        width: 11.9px;
+        height: 16.1px;
+        margin-right: 13.4px;
+        margin-top: 2px;
+      }
+    }
+
+    @media screen and (max-width: 667px) {
+      margin-top: 2px;
     }
   }
 }
 
 .icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 13px;
+  width: 18px;
+  height: 20px;
+  margin-right: 16px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 667px) {
+    width: 12.6px;
+    height: 14px;
+    margin-right: 12.7px;
+    margin-top: 3px;
+  }
 }
 
 .text {

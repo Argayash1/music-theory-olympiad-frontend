@@ -15,7 +15,7 @@ export const BrandBanner = React.forwardRef<HTMLElement>((props, ref) => {
       ) : (
         <div className={styles.mainContainer}>
           <h1 className={styles.pageTitle}>
-            {items[0].olympNumber}&nbsp;Всероссийская <span className={styles.pageTitleSpan}>олимпиада</span> по
+            {items[0].olympNumber} Всероссийская <span className={styles.pageTitleSpan}>олимпиада</span> по
             музыкально-теоретическим предметам им.&nbsp;З.&nbsp;А.&nbsp;Визеля
           </h1>
           <MainInfo dates={items[0].dates} registrationDates={items[0].registrationDates} city={items[0].city} />

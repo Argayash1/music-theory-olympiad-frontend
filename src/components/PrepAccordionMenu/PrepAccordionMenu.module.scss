@@ -7,6 +7,12 @@
   gap: 20px;
 
   @media screen and (max-width: 667px) {
-    margin-top: 66px;
+    margin-top: 50px;
+    gap: 14px;
+
+    li:nth-child(3),
+    li:nth-child(4) {
+      margin-top: 6px;
+    }
   }
 }

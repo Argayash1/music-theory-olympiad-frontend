@@ -18,6 +18,12 @@
   @media screen and (max-width: 667px) {
     margin-top: 20px;
   }
+
+  @media screen and (max-width: 326px) {
+    padding-left: 3px;
+    padding-right: 3px;
+    box-sizing: border-box;
+  }
 }
 
 .listItem {

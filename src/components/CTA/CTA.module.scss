@@ -62,7 +62,9 @@
   }
 
   @media screen and (max-width: 667px) {
-    margin-top: 0;
+    &:not(.rootTypePay) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -176,6 +178,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 1049px) {
+    margin-right: 9px;
+  }
 }
 
 .rootSizeMiddle {
@@ -233,7 +239,7 @@
   width: 25.999756px;
   height: 14.008301px;
   position: absolute;
-  top: 2px;
+  top: 1px;
   right: -13px;
 
   path {

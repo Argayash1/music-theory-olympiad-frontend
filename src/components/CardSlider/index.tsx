@@ -1,11 +1,10 @@
 import React from 'react';
-import { SliderNextButton } from '../SliderNextButton';
 import styles from './CardSlider.module.scss';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectAdvertId } from '../../redux/advert/selectors';
 import { Status } from '../../redux/olympData/types';
-import { SliderCardSkeleton } from '../SliderCardSkeleton';
+import { SliderButton, SliderCardSkeleton } from '../../components';
 
 type CardSliderProps = {
   onSwitchToNextSlides: () => void;
@@ -44,7 +43,7 @@ export const CardSlider = ({
         type === 'jury' && styles.rootTypeJury,
       )}
     >
-      <SliderNextButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type={type} />
+      <SliderButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type={type} />
       <div
         className={clsx(
           styles.wrapper,
@@ -55,9 +54,15 @@ export const CardSlider = ({
       >
         {status === 'loading' ? <ul className={styles.list}>{cardSkeletons}</ul> : children}
       </div>
-      <div className={clsx(styles.buttons, type === 'prep-materials' && styles.buttonsTypePrepMaterials)}>
-        <SliderNextButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type='bottom' place={type} />
-        <SliderNextButton
+      <div
+        className={clsx(
+          styles.buttons,
+          type === 'prep-materials' && styles.buttonsTypePrepMaterials,
+          type === 'archive' && styles.buttonsTypeArchive,
+        )}
+      >
+        <SliderButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type='bottom' place={type} />
+        <SliderButton
           onClick={onSwitchToNextSlides}
           switchCount={switchCount}
           nextButtonDisabled={nextButtonDisabled}

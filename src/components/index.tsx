@@ -17,7 +17,7 @@ export * from './Contacts';
 export * from './Adverts';
 export * from './AdvertCard';
 export * from './AdvertCardList';
-export * from './SliderNextButton';
+export * from './SliderButton';
 export * from './PrepMaterials';
 export * from './PrepAccordionMenu';
 export * from './PrepCard';
