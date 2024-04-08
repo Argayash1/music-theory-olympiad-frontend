@@ -21,6 +21,10 @@
     span {
       background-color: #ff5e3a;
       padding: 12px 0 0 13px;
+
+      @media screen and (max-width: 667px) {
+        padding: 8.67px 0 0 9.39px;
+      }
     }
   }
 
@@ -30,20 +34,30 @@
     right: 10px;
     z-index: 1;
 
-    .span {
+    span {
       display: none;
+    }
+
+    @media screen and (max-width: 667px) {
+      bottom: 9.39px;
+      right: 30px;
     }
   }
 
   @media screen and (max-width: 667px) {
     margin-top: 34.25px;
-    margin-left: 18.5px;
+    margin-bottom: 25.14px;
+    margin-left: 34.12px;
     gap: 21.68px;
   }
 }
 
 .listMarginLeft21px {
   margin-left: 21px;
+
+  @media screen and (max-width: 667px) {
+    margin-left: 44.14px;
+  }
 }
 
 .listItem {
@@ -145,6 +159,15 @@
     margin-left: 85px;
     transform: rotate(90deg);
     transition: transform 0.3s ease-in-out;
+
+    @media screen and (max-width: 667px) {
+      margin-left: 88px;
+    }
+  }
+
+  @media screen and (max-width: 667px) {
+    padding-left: 23px;
+    padding-bottom: 5px;
   }
 }
 

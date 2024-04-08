@@ -227,6 +227,7 @@
 
   @media screen and (max-width: 667px) {
     max-width: 270px;
+    z-index: 0;
   }
 }
 
@@ -312,6 +313,7 @@
     position: absolute;
     top: 301px;
     right: 0;
+    z-index: 1;
   }
 }
 

@@ -6,6 +6,7 @@
   background-image: url('../../assets/icons/archive-extension-card.svg');
   background-repeat: no-repeat;
   background-position: right center;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,6 +20,10 @@
 
 .rootCentered {
   margin: 0 auto;
+
+  @media screen and (max-width: 667px) {
+    margin-left: 54px;
+  }
 }
 
 .rootIcon {
@@ -27,6 +32,11 @@
   background-color: transparent;
   width: 26px;
   height: 26px;
+
+  @media screen and (max-width: 667px) {
+    width: 18.79px;
+    height: 18.79px;
+  }
 }
 
 .rootSpan {
@@ -45,8 +55,7 @@
     height: 37.58px;
     font-size: 18.07px;
     line-height: 0.9867;
-    padding: 0;
-    text-align: center;
+    padding: 7.95px 0 0 13.01px;
     margin-right: 18.07px;
     margin-bottom: 13.01px;
   }

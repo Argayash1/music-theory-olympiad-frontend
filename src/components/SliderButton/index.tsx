@@ -20,6 +20,7 @@ export const SliderButton = ({ type, place, onClick, switchCount, nextButtonDisa
         type === 'prep-materials' && styles.rootTypePrepMaterials,
         type === 'bottom' && styles.rootTypeBottom,
         place === 'prep-materials' && styles.rootPlacePrepMaterials,
+        place === 'archive' && styles.rootPlaceArchive,
         place === 'archive-tabs' && styles.rootPlaceArchiveTabs,
       )}
       onClick={onClick}

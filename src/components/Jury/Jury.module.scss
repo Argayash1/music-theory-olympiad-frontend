@@ -15,6 +15,11 @@
     background-size: auto;
     background-position: -80px 0;
   }
+
+  @media screen and (max-width: 377px) {
+    padding-bottom: 90px;
+    height: auto;
+  }
 }
 
 .container {
@@ -68,7 +73,7 @@
   }
 
   @media screen and (max-width: 377px) {
-    max-width: 272px;
+    max-width: 270px;
     flex-wrap: wrap;
   }
 }
