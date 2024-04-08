@@ -5,8 +5,9 @@
   padding: 0;
   font-size: 0;
 
-  @media screen and (max-width: 397px) {
+  @media screen and (max-width: 590px) {
     margin-left: 10px;
+    margin-top: 35px;
   }
 }
 
@@ -20,7 +21,7 @@
   flex-direction: column;
   gap: 35px;
 
-  @media screen and (max-width: 397px) {
+  @media screen and (max-width: 590px) {
     margin-left: 10px;
   }
 }
@@ -41,7 +42,7 @@
 
   @media screen and (max-width: 590px) {
     width: 220px;
-    margin-left: 10px;
+    height: 318px;
   }
 }
 
@@ -100,6 +101,5 @@
 
   @media screen and (max-width: 590px) {
     width: 220px;
-    margin-left: 10px;
   }
 }

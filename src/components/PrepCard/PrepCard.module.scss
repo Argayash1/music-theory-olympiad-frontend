@@ -26,6 +26,10 @@
   @media screen and (max-width: 1439px) {
     height: 596px;
   }
+
+  @media screen and (max-width: 590px) {
+    height: 592px;
+  }
 }
 
 .button {
@@ -143,5 +147,6 @@
 
   @media screen and (max-width: 590px) {
     min-width: 270px;
+    height: 465px;
   }
 }
