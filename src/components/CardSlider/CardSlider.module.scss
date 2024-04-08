@@ -46,7 +46,9 @@
   }
 
   @media screen and (max-width: 375px) {
-    flex-direction: column;
+    &:not(.rootTypeArchiveTabs) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -163,6 +165,18 @@
   }
 }
 
+.rootTypeArchiveTabs {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: #000;
+  border-radius: 40px 40px 0px 0px;
+  box-sizing: border-box;
+  padding-top: 18.17px;
+  padding-left: 34px;
+  padding-right: 36px;
+  height: 65px;
+}
+
 .wrapper {
   max-width: 1150px;
   overflow: hidden;
@@ -264,6 +278,10 @@
   }
 }
 
+.wrapperTypeArchiveTabs {
+  max-width: 71.41px;
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -292,7 +310,16 @@
 .buttonsTypeArchive {
   @media screen and (max-width: 375px) {
     position: absolute;
-    top: 288px;
+    top: 301px;
     right: 0;
+  }
+}
+
+.buttonsTypeArchiveTabs {
+  @media screen and (max-width: 375px) {
+    &:not(.buttonsTypePrepMaterials) {
+      margin-top: 0;
+      margin-left: initial;
+    }
   }
 }

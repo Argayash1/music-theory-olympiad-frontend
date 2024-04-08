@@ -25,6 +25,10 @@
     padding-left: 25px;
     padding-right: 25px;
   }
+
+  @media screen and (max-width: 667px) {
+    padding-top: 90px;
+  }
 }
 
 .list {

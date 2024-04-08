@@ -19,6 +19,16 @@
   }
 }
 
+.rootPlaceSlider {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+  transition: transform 0.5s ease-in-out;
+  gap: 4px;
+}
+
 .listItem {
   width: 33.24%;
 
@@ -52,7 +62,7 @@
 }
 
 .button {
-  @include main-text-font(30, 500, 1.066, #d6d6d6);
+  @include main-text-font(30, 500, 1.067, #d6d6d6);
   border: 2px solid #f2f2f2;
   border-radius: 40px 40px 0px 0px;
   box-sizing: border-box;
@@ -83,4 +93,10 @@
 .buttonActive {
   background-color: #000;
   color: #fff;
+}
+
+.year {
+  @include main-text-font(30, 500, 1.067, #d6d6d6);
+  display: inline-block;
+  width: 71.41px;
 }

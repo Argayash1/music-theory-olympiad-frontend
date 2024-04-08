@@ -41,15 +41,22 @@ export const CardSlider = ({
         type === 'adverts' && advertItem && styles.rootHidden,
         type === 'prep-materials' && styles.rootTypePrepMaterials,
         type === 'jury' && styles.rootTypeJury,
+        type === 'archive-tabs' && styles.rootTypeArchiveTabs,
       )}
     >
-      <SliderButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type={type} />
+      <SliderButton
+        onClick={onSwitchToPrevSlides}
+        switchCount={switchCount}
+        type={type}
+        place={type === 'archive-tabs' ? type : undefined}
+      />
       <div
         className={clsx(
           styles.wrapper,
           type === 'archive' && styles.wrapperTypeArchive,
           type === 'prep-materials' && styles.wrapperTypePrepMaterials,
           type === 'jury' && styles.wrapperTypeJury,
+          type === 'archive-tabs' && styles.wrapperTypeArchiveTabs,
         )}
       >
         {status === 'loading' ? <ul className={styles.list}>{cardSkeletons}</ul> : children}
@@ -59,6 +66,7 @@ export const CardSlider = ({
           styles.buttons,
           type === 'prep-materials' && styles.buttonsTypePrepMaterials,
           type === 'archive' && styles.buttonsTypeArchive,
+          type === 'archive-tabs' && styles.buttonsTypeArchiveTabs,
         )}
       >
         <SliderButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type='bottom' place={type} />

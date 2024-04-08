@@ -20,6 +20,7 @@ export const SliderButton = ({ type, place, onClick, switchCount, nextButtonDisa
         type === 'prep-materials' && styles.rootTypePrepMaterials,
         type === 'bottom' && styles.rootTypeBottom,
         place === 'prep-materials' && styles.rootPlacePrepMaterials,
+        place === 'archive-tabs' && styles.rootPlaceArchiveTabs,
       )}
       onClick={onClick}
       disabled={nextButtonDisabled === undefined ? switchCount === 0 : nextButtonDisabled}

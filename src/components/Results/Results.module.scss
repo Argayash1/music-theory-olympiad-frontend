@@ -9,8 +9,13 @@
   margin-top: -24px;
   scroll-margin: 35px;
 
+  @media screen and (max-width: 667px) {
+    margin-top: -147px;
+  }
+
   @media screen and (max-width: 605px) {
     height: 804px;
+    border-radius: 20px;
   }
 }
 
@@ -82,6 +87,7 @@
   @media screen and (max-width: 671px) {
     padding-left: 22px;
     padding-right: 22px;
+    padding-top: 40px;
   }
 }
 

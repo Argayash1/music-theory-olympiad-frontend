@@ -54,7 +54,9 @@
   margin-left: 0;
 
   @media screen and (max-width: 375px) {
-    display: none;
+    &:not(.rootPlaceArchiveTabs) {
+      display: none;
+    }
   }
 }
 
@@ -63,7 +65,9 @@
   margin-right: 20px;
 
   @media screen and (max-width: 375px) {
-    display: inline-block;
+    &:not(.rootPlaceArchiveTabs) {
+      display: inline-block;
+    }
   }
 }
 
@@ -74,5 +78,15 @@
     margin-right: 0;
     width: 12px;
     height: 22px;
+  }
+}
+
+.rootPlaceArchiveTabs {
+  margin-top: 3.83px;
+
+  svg {
+    path {
+      stroke: #fff;
+    }
   }
 }
