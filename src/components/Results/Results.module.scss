@@ -27,57 +27,57 @@
   position: relative;
   overflow: hidden;
 
-  // &::before {
-  //   content: '';
-  //   width: 1440px;
-  //   height: 100%;
-  //   background-image: url('../../assets/images/results-bacground-image-big.svg');
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   background-size: contain;
-  //   position: absolute;
-  //   top: 2px;
-  //   left: 0;
+  &::before {
+    content: '';
+    width: 1440px;
+    height: 100%;
+    background-image: url('../../assets/images/results-bacground-image-big.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 2px;
+    left: 0;
 
-  //   @media screen and (max-width: 1439px) {
-  //     left: 50%;
-  //     transform: translateX(-49.65%);
-  //   }
+    @media screen and (max-width: 1439px) {
+      left: 50%;
+      transform: translateX(-49.65%);
+    }
 
-  //   @media screen and (max-width: 1200px) {
-  //     width: 1280px;
-  //   }
+    @media screen and (max-width: 1200px) {
+      width: 1280px;
+    }
 
-  //   @media screen and (max-width: 1065px) {
-  //     background-image: url('../../assets/images/results-bacground-image-small.svg');
-  //     background-position: left;
-  //     width: 768px;
-  //     height: 370px;
-  //     left: 0;
-  //     top: 144px;
-  //     transform: translateX(0);
-  //     clip-path: inset(0 50% 0 0);
-  //   }
-  // }
+    @media screen and (max-width: 1065px) {
+      background-image: url('../../assets/images/results-bacground-image-small.svg');
+      background-position: left;
+      width: 768px;
+      height: 370px;
+      left: 0;
+      top: 144px;
+      transform: translateX(0);
+      clip-path: inset(0 50% 0 0);
+    }
+  }
 
-  // &::after {
-  //   content: '';
-  //   background-image: url('../../assets/images/results-bacground-image-small.svg');
-  //   background-repeat: no-repeat;
-  //   background-position: left;
-  //   background-size: contain;
-  //   width: 768px;
-  //   height: 370px;
-  //   position: absolute;
-  //   right: 0;
-  //   top: 144px;
-  //   clip-path: inset(0 0 0 50%);
-  //   display: none;
+  &::after {
+    content: '';
+    background-image: url('../../assets/images/results-bacground-image-small.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 768px;
+    height: 370px;
+    position: absolute;
+    right: 0;
+    top: 144px;
+    clip-path: inset(0 0 0 50%);
+    display: none;
 
-  //   @media screen and (max-width: 1065px) {
-  //     display: block;
-  //   }
-  // }
+    @media screen and (max-width: 1065px) {
+      display: block;
+    }
+  }
 
   @media screen and (max-width: 1279px) {
     padding-left: 25px;

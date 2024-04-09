@@ -7,6 +7,6 @@ export const PARTICIPATION_URL =
 export const OLYMPIC_RULES_URL =
   'https://www.dropbox.com/scl/fi/jh6ezbmaueatlz2xhs5qa/_IV_.pdf?rlkey=xzg9tdjh0ojo70wh0vbtvfjsk&dl=1';
 
-export const mainApi = 'http://localhost:3001';
+export const localApi = 'http://localhost:3001';
 
-// export const mainApi = 'https://xn--80aagghlcaexjdxr3w.xn--p1ai/api';
+export const mainApi = 'https://xn--80aagghlcaexjdxr3w.xn--p1ai/api';
