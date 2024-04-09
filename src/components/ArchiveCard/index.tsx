@@ -37,7 +37,7 @@ export const ArchiveCard = ({ archiveCardData, title, extensions, itemIndex }: A
       </ul>
       <div className={clsx(styles.downloadBlock, isOpen && styles.downloadBlockIsOpened)}>
         <button
-          className={clsx(styles.button, isMenuOpen && styles.buttonBorderBottomNone)}
+          className={clsx(styles.button, isOpen && styles.buttonBorderBottomNone)}
           onClick={() => dispatch(setIsMenuOpen(itemIndex))}
         >
           Загрузить

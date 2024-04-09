@@ -39,7 +39,7 @@ export const MainMenu = ({ type, activeSection, isOpen }: MainMenuProps) => {
         </aside>
       ) : (
         <nav className={clsx(styles.root, type === 'footer' && styles.rootTypeFooter)}>
-          <ul className={styles.list}>{menuListItems}</ul>
+          <ul className={clsx(styles.list, type === 'footer' && styles.listTypeFooter)}>{menuListItems}</ul>
         </nav>
       )}
     </>
