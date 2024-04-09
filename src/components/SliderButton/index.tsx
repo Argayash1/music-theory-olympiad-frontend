@@ -3,14 +3,22 @@ import styles from './SliderButton.module.scss';
 import clsx from 'clsx';
 
 type SliderNextButtonProps = {
+  switchCount: number;
+  onClick: () => void;
   type?: string;
   place?: string;
-  switchCount: number;
-  onClick?: () => void;
   nextButtonDisabled?: boolean;
+  isMenuOpen?: boolean;
 };
 
-export const SliderButton = ({ type, place, onClick, switchCount, nextButtonDisabled }: SliderNextButtonProps) => {
+export const SliderButton = ({
+  type,
+  place,
+  onClick,
+  switchCount,
+  nextButtonDisabled,
+  isMenuOpen,
+}: SliderNextButtonProps) => {
   return (
     <button
       className={clsx(
@@ -22,6 +30,7 @@ export const SliderButton = ({ type, place, onClick, switchCount, nextButtonDisa
         place === 'prep-materials' && styles.rootPlacePrepMaterials,
         place === 'archive' && styles.rootPlaceArchive,
         place === 'archive-tabs' && styles.rootPlaceArchiveTabs,
+        isMenuOpen && styles.rootTypeBackLayer,
       )}
       onClick={onClick}
       disabled={nextButtonDisabled === undefined ? switchCount === 0 : nextButtonDisabled}

@@ -1,16 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ArchiveSliceState, Status } from './types';
 import { fetchArchives } from './asyncActions';
 
 const initialState: ArchiveSliceState = {
   items: [],
   status: Status.LOADING,
+  isMenuOpen: [],
 };
 
 const archiveSlice = createSlice({
   name: 'archive',
   initialState,
-  reducers: {},
+  reducers: {
+    setIsMenuOpen(state, action: PayloadAction<number>) {
+      const isOpen = state.isMenuOpen.some((item) => item === action.payload);
+      state.isMenuOpen = isOpen
+        ? state.isMenuOpen.filter((item) => item !== action.payload)
+        : [...state.isMenuOpen, action.payload];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchArchives.pending, (state) => {
       state.items = [];
@@ -28,5 +36,7 @@ const archiveSlice = createSlice({
     });
   },
 });
+
+export const { setIsMenuOpen } = archiveSlice.actions;
 
 export default archiveSlice.reducer;

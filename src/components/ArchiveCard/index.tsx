@@ -3,6 +3,9 @@ import { DataCard, ExtensionCard, DownloadMenu } from '../../components';
 import styles from './ArchiveCard.module.scss';
 import clsx from 'clsx';
 import { IArchiveObject } from '../../redux/archive/types';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectArchiveIsMenuOpenData } from '../../redux/archive/selectors';
+import { setIsMenuOpen } from '../../redux/archive/slice';
 
 type ArchiveCardProps = {
   archiveCardData: IArchiveObject[];
@@ -12,13 +15,17 @@ type ArchiveCardProps = {
 };
 
 export const ArchiveCard = ({ archiveCardData, title, extensions, itemIndex }: ArchiveCardProps) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector(selectArchiveIsMenuOpenData);
+
   const extensionsLength = extensions.length;
   const extensionsItems = extensions.map((extension, index) => (
     <li key={index}>
       <ExtensionCard extension={extension} />
     </li>
   ));
+
+  const isOpen = isMenuOpen.some((item) => item === itemIndex);
 
   const buttonLinks = archiveCardData.map((item) => item.link);
 
@@ -28,14 +35,14 @@ export const ArchiveCard = ({ archiveCardData, title, extensions, itemIndex }: A
       <ul className={clsx(styles.list, itemIndex === 1 && styles.listMarginLeft21px)}>
         {extensionsLength > 1 ? extensionsItems : <ExtensionCard extension={extensions.join('')} type='single' />}
       </ul>
-      <div className={clsx(styles.downloadBlock, isMenuOpen && styles.downloadBlockIsOpened)}>
+      <div className={clsx(styles.downloadBlock, isOpen && styles.downloadBlockIsOpened)}>
         <button
           className={clsx(styles.button, isMenuOpen && styles.buttonBorderBottomNone)}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => dispatch(setIsMenuOpen(itemIndex))}
         >
           Загрузить
         </button>
-        <DownloadMenu isOpen={isMenuOpen} buttonLinks={buttonLinks} />
+        <DownloadMenu buttonLinks={buttonLinks} />
       </div>
     </DataCard>
   );

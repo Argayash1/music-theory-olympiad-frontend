@@ -7,7 +7,7 @@ import { selectArchiveData } from '../../redux/archive/selectors';
 import { selectScreenWidth } from '../../redux/olympData/selectors';
 
 export const ArchiveCardList = () => {
-  const { items, status } = useSelector(selectArchiveData);
+  const { items, status, isMenuOpen } = useSelector(selectArchiveData);
   const screenWidth = useSelector(selectScreenWidth);
 
   const [switchCount, setSwitchCount] = React.useState<number>(0);
@@ -45,6 +45,7 @@ export const ArchiveCardList = () => {
       nextButtonDisabled={nextButtonDisabled}
       status={status}
       type='archive'
+      isMenuOpen={isMenuOpen.some((item) => item === switchCount)}
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {archiveCards}

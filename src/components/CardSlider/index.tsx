@@ -14,6 +14,7 @@ type CardSliderProps = {
   nextButtonDisabled: boolean;
   status?: Status;
   type?: string;
+  isMenuOpen?: boolean;
 };
 
 export const CardSlider = ({
@@ -24,6 +25,7 @@ export const CardSlider = ({
   nextButtonDisabled,
   status,
   type,
+  isMenuOpen,
 }: CardSliderProps) => {
   const advertItem = useSelector(selectAdvertId);
 
@@ -48,7 +50,8 @@ export const CardSlider = ({
         onClick={onSwitchToPrevSlides}
         switchCount={switchCount}
         type={type}
-        place={type === 'archive-tabs' ? type : undefined}
+        place={type === 'archive-tabs' || type === 'archive' ? type : undefined}
+        isMenuOpen={isMenuOpen}
       />
       <div
         className={clsx(

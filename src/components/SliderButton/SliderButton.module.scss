@@ -6,6 +6,7 @@
   margin: 166px 0 0;
   padding: 0;
   display: inline-block;
+  transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
   svg {
     path {
@@ -54,8 +55,15 @@
   margin-left: 0;
 
   @media screen and (max-width: 375px) {
-    &:not(.rootPlaceArchiveTabs) {
+    &:not(.rootPlaceArchiveTabs, .rootPlaceArchive) {
       display: none;
+    }
+
+    &:not(.rootTypeBottom, .rootPlaceArchiveTabs) {
+      position: absolute;
+      top: 319px;
+      right: 25px;
+      z-index: 1;
     }
   }
 }
@@ -65,7 +73,7 @@
   margin-right: 20px;
 
   @media screen and (max-width: 375px) {
-    &:not(.rootPlaceArchiveTabs) {
+    &:not(.rootPlaceArchiveTabs, .rootPlaceArchive) {
       display: inline-block;
     }
   }
@@ -92,6 +100,16 @@
   svg {
     path {
       stroke: #fff;
+    }
+  }
+}
+
+.rootTypeBackLayer {
+  @media screen and (max-width: 375px) {
+    &:not(.rootTypeBottom, .rootPlaceArchiveTabs) {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
     }
   }
 }

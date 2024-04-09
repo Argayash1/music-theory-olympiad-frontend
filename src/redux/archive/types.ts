@@ -27,4 +27,5 @@ export type ArchiveItems = {
 export interface ArchiveSliceState {
   items: IArchive[];
   status: Status;
+  isMenuOpen: number[];
 }

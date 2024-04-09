@@ -6,12 +6,11 @@ import { CTA } from '../../components';
 
 type DownloadMenuProps = {
   buttonLinks: string[];
-  isOpen: boolean;
 };
 
-export const DownloadMenu = ({ buttonLinks, isOpen }: DownloadMenuProps) => {
+export const DownloadMenu = ({ buttonLinks }: DownloadMenuProps) => {
   return (
-    <ul className={clsx(styles.root, isOpen && styles.rootIsOpened)}>
+    <ul className={styles.root}>
       {prepCardNames.map((prepCardName, index) => (
         <li key={index}>
           <CTA linkText={prepCardName} type='download-archive' path={buttonLinks[index]} />
