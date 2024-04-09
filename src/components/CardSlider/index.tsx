@@ -51,7 +51,6 @@ export const CardSlider = ({
         switchCount={switchCount}
         type={type}
         place={type === 'archive-tabs' || type === 'archive' ? type : undefined}
-        isMenuOpen={isMenuOpen}
       />
       <div
         className={clsx(
@@ -72,7 +71,13 @@ export const CardSlider = ({
           type === 'archive-tabs' && styles.buttonsTypeArchiveTabs,
         )}
       >
-        <SliderButton onClick={onSwitchToPrevSlides} switchCount={switchCount} type='bottom' place={type} />
+        <SliderButton
+          onClick={onSwitchToPrevSlides}
+          switchCount={switchCount}
+          type='bottom'
+          place={type}
+          isMenuOpen={isMenuOpen}
+        />
         <SliderButton
           onClick={onSwitchToNextSlides}
           switchCount={switchCount}
