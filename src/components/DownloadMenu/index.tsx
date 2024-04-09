@@ -1,6 +1,5 @@
 import React from 'react';
 import { prepCardNames } from '../../utils/prepCardNames';
-import clsx from 'clsx';
 import styles from './DownloadMenu.module.scss';
 import { CTA } from '../../components';
 

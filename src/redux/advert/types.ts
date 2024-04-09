@@ -4,13 +4,17 @@ export enum Status {
   ERROR = 'error',
 }
 
+export interface LinkData {
+  linkText: string;
+  linkUrl: string;
+}
+
 export interface Advert {
   _id: string;
   createdAt: string;
   title: string;
   content: string;
-  linkText?: string;
-  linkUrl?: string;
+  links: LinkData[];
 }
 
 export type AdvertsItems = {

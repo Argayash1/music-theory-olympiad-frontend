@@ -34,10 +34,19 @@
   margin-left: 29px;
   padding-right: 0;
   min-height: 132px;
+  display: block;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: initial;
 
   @media screen and (max-width: 1439px) {
     max-width: 541px;
   }
+}
+
+.text {
+  margin: 10px 0 0;
+  padding: 0;
 }
 
 .link {

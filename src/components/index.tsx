@@ -52,7 +52,7 @@ export * from './PrepCardSkeleton';
 export * from './ResultItemSkeleton';
 export * from './OlympDataCardsSkeleton';
 export * from './BrandBannerSkeleton';
-export * from './TextWithCustomLink';
+export * from './TextWithCustomLinks';
 export * from './BurgerButton';
 export * from './Overlay';
 export * from './BurgerMenu';

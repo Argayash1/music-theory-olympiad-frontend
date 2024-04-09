@@ -2,13 +2,13 @@
 
 .root {
   width: 1150px;
-  height: 370px;
+  min-height: 370px;
   display: flex;
   flex-direction: column;
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  bottom: 0;
+  top: 126px;
   left: 145px;
   transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
 
