@@ -3,18 +3,10 @@
 .root {
   height: 771px;
   background-color: #fff6d6;
-  background-image: url('../../assets/images/jury-background-image.svg');
-  background-size: cover;
-  background-position: center 0;
   margin-top: -64px;
   padding-top: 64px;
   box-sizing: border-box;
   scroll-margin: -64px;
-
-  @media screen and (max-width: 1296px) {
-    background-size: auto;
-    background-position: -80px 0;
-  }
 
   @media screen and (max-width: 377px) {
     padding-bottom: 90px;
@@ -24,7 +16,15 @@
 
 .container {
   @include section-flex-container(70, 70, 0);
-  flex-direction: column;
+  background-image: url('../../assets/images/jury-background-image.svg');
+  background-size: cover;
+  background-position: center -65px;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 1296px) {
+    background-size: auto;
+    background-position: -80px -67px;
+  }
 
   @media screen and (max-width: 1279px) {
     padding-left: 25px;
@@ -33,6 +33,13 @@
 
   @media screen and (max-width: 667px) {
     padding-top: 90px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 377px) {
+    background-size: 608px 363px;
+    background-position: 50% -45px;
   }
 }
 
