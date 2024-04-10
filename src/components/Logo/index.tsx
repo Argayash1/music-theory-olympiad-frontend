@@ -15,7 +15,9 @@ export const Logo = ({ place }: LogoProps) => {
           <img src={logo} alt='Логотип олимпиады' className={styles.image} />
         </a>
       ) : (
-        <img src={logo} alt='Логотип олимпиады' className={clsx(styles.image, styles.imageTypeBrandBunner)} />
+        <div className={clsx(styles.root, styles.rootTypeBrandBanner)}>
+          <img src={logo} alt='Логотип олимпиады' className={clsx(styles.image, styles.imageTypeBrandBunner)} />
+        </div>
       )}
     </>
   );

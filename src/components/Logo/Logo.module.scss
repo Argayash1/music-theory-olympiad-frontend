@@ -1,10 +1,61 @@
 .root {
   margin-top: 6px;
 
-  &:hover {
+  &:not(.rootTypeBrandBanner):hover {
     .image {
       box-shadow: 0px 0px 20px 0px #ffbb4d;
     }
+  }
+}
+
+.rootTypeBrandBanner {
+  grid-row: 1/4;
+  grid-column: 2/3;
+  margin-left: auto;
+  margin-top: 0;
+  position: relative;
+  font-size: 0;
+
+  &::after {
+    content: '';
+    width: 1440px;
+    height: 928px;
+    position: absolute;
+    top: -111px;
+    left: -213px;
+    transform: translateX(-50%);
+    background-image: url('../../assets/images/brand-banner-background.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @media screen and (max-width: 1193px) {
+      width: 1024px;
+      height: 660px;
+      top: -73px;
+      left: -144px;
+    }
+
+    @media screen and (max-width: 667px) {
+      width: 864.19px;
+      height: 557px;
+      top: -166px;
+      left: 90px;
+      background-image: url('../../assets/images/brand-banner-background-image-small.svg');
+    }
+  }
+
+  @media screen and (max-width: 944px) {
+    grid-row: 2/4;
+  }
+
+  @media screen and (max-width: 667px) {
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 566px) {
+    margin-top: 70px;
   }
 }
 
@@ -25,13 +76,10 @@
   width: 377px;
   height: 383px;
   padding: 0;
-  margin-left: auto;
   background-color: transparent;
   border-radius: 0%;
   object-fit: fill;
   object-position: 50% 50%;
-  grid-row: 1/4;
-  grid-column: 2/3;
   z-index: 2;
 
   @media screen and (max-width: 1193px) {
@@ -39,23 +87,8 @@
     height: 282px;
   }
 
-  @media screen and (max-width: 944px) {
-    grid-row: 2/4;
-  }
-
   @media screen and (max-width: 667px) {
     width: 180px;
     height: 181px;
-    margin-right: 64px;
-  }
-
-  @media screen and (max-width: 573px) {
-    margin-right: auto;
-    margin-left: 0;
-  }
-
-  @media screen and (max-width: 506px) {
-    margin-left: auto;
-    margin-top: 70px;
   }
 }

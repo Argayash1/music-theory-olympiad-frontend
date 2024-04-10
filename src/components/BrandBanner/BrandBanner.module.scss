@@ -17,6 +17,7 @@
     background-image: url('../../assets/icons/brand-banner-arrow.svg');
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 3;
 
     @media screen and (max-width: 944px) {
       width: 127.16px;
@@ -31,63 +32,7 @@
     }
   }
 
-  &::after {
-    content: '';
-    width: 1440px;
-    height: 928px;
-    position: absolute;
-    top: -17px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url('../../assets/images/brand-banner-background.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-
-    @media screen and (max-width: 1440px) {
-      left: initial;
-      right: 0;
-      transform: translateX(0);
-    }
-
-    @media screen and (max-width: 1359px) {
-      right: initial;
-      left: -80.5px;
-    }
-
-    @media screen and (max-width: 1296px) and (hover: hover) {
-      left: -97.5px;
-    }
-
-    @media screen and (max-width: 1279px) {
-      left: -125.5px;
-    }
-
-    @media screen and (max-width: 1209px) {
-      left: initial;
-      right: -105px;
-    }
-
-    @media screen and (max-width: 1193px) {
-      width: 1024px;
-      height: 660px;
-      right: initial;
-      left: 88px;
-      top: 20px;
-    }
-
-    @media screen and (max-width: 1044px) {
-      left: initial;
-      right: -67px;
-    }
-
-    @media screen and (max-width: 944px) {
-      top: 192px;
-    }
-  }
-
-  @media screen and (max-width: 1359px) {
+  @media screen and (max-width: 1379px) {
     padding-right: 50px;
   }
 
@@ -104,47 +49,28 @@
 
 .mainContainer {
   display: grid;
-  grid-template-columns: 767px minmax(377px, 1fr);
+  grid-template-columns: minmax(276px, 767px) minmax(277px, 1fr);
   grid-template-rows: 186px 91px 50px;
   row-gap: 42px;
-  max-width: calc(100% - 60px);
-  position: relative;
+  max-width: 1240px;
   z-index: 1;
 
-  @media screen and (max-width: 1359px) {
-    max-width: 1160px;
-  }
-
-  @media screen and (max-width: 1296px) and (hover: hover) {
-    max-width: 1144px;
-  }
-
-  @media screen and (max-width: 1279px) and (hover: hover) {
-    max-width: 1160px;
-  }
-
   @media screen and (max-width: 1193px) {
-    grid-template-columns: 618px minmax(277px, 377px);
     grid-template-rows: 156px 91px 50px;
     max-width: 995px;
   }
 
   @media screen and (max-width: 944px) {
-    grid-template-columns: minmax(302px, 1fr) 277px;
     grid-template-rows: 135px 140px 127px;
-    gap: 15px 139px;
-  }
-
-  @media screen and (max-width: 767px) {
-    grid-template-columns: minmax(276px, 1fr) minmax(180px, 1fr);
-    column-gap: 0;
+    row-gap: 15px;
   }
 
   @media screen and (max-width: 667px) {
+    grid-template-columns: minmax(276px, 1fr) minmax(180px, 1fr);
     grid-template-rows: 96.89px 113px 50px;
   }
 
-  @media screen and (max-width: 506px) {
+  @media screen and (max-width: 566px) {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -174,7 +100,6 @@
     font-size: 30px;
     line-height: 1.06;
     max-width: 472px;
-    width: 100%;
   }
 
   @media screen and (max-width: 506px) {
