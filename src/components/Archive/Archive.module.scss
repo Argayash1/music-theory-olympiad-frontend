@@ -27,6 +27,18 @@
       left: initial;
       right: -129px;
     }
+
+    @media screen and (max-width: 767px) {
+      width: 1024px;
+      height: 974px;
+    }
+
+    @media screen and (max-width: 667px) {
+      width: 628px;
+      height: 597.95px;
+      bottom: 319px;
+      right: -84px;
+    }
   }
 
   @media screen and (max-width: 1279px) {
