@@ -14,11 +14,11 @@
     position: absolute;
     background-color: #ffbb4d;
     bottom: -73px;
-    left: 38.1%;
+    left: 549px;
     z-index: 2;
 
-    @media screen and (max-width: 1439px) {
-      left: 36.64%;
+    @media screen and (max-width: 1296px) {
+      left: 469px;
     }
 
     @media screen and (max-width: 1129px) {
@@ -26,6 +26,17 @@
       height: 16px;
       left: 201px;
       bottom: -65px;
+    }
+
+    @media screen and (max-width: 551px) {
+      width: 11px;
+      height: 11px;
+      left: 280px;
+      bottom: -26px;
+    }
+
+    @media screen and (max-width: 375px) {
+      left: 242px;
     }
   }
 

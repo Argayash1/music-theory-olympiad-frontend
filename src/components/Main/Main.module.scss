@@ -18,7 +18,7 @@
 
   &::after {
     content: '';
-    width: 100%;
+    width: 1440px;
     height: 1256px;
     background-image: url('../../assets/images/about-olymp-background.svg');
     background-size: cover;
@@ -28,11 +28,27 @@
     left: 0;
     z-index: 1;
 
+    @media screen and (max-width: 1296px) {
+      left: -80px;
+    }
+
     @media screen and (max-width: 1129px) {
       width: 1024px;
       height: 893px;
       bottom: 27px;
       left: -190px;
+    }
+
+    @media screen and (max-width: 667px) {
+      bottom: -93px;
+      left: -190px;
+    }
+
+    @media screen and (max-width: 551px) {
+      width: 628px;
+      height: 547.66px;
+      bottom: 299px;
+      left: -30px;
     }
   }
 }
