@@ -26,6 +26,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 
   &::before {
     content: '';
@@ -49,7 +50,7 @@
     }
 
     @media screen and (max-width: 1065px) {
-      background-image: url('../../assets/images/results-bacground-image-small.svg');
+      background-image: url('../../assets/images/results-bacground-image-medium.svg');
       background-position: left;
       width: 768px;
       height: 370px;
@@ -58,11 +59,17 @@
       transform: translateX(0);
       clip-path: inset(0 50% 0 0);
     }
+
+    @media screen and (max-width: 667px) {
+      top: 249px;
+      background-image: url('../../assets/images/results-bacground-image-small.svg');
+      width: 320px;
+    }
   }
 
   &::after {
     content: '';
-    background-image: url('../../assets/images/results-bacground-image-small.svg');
+    background-image: url('../../assets/images/results-bacground-image-medium.svg');
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -77,16 +84,20 @@
     @media screen and (max-width: 1065px) {
       display: block;
     }
+
+    @media screen and (max-width: 667px) {
+      top: 249px;
+      background-image: url('../../assets/images/results-bacground-image-small.svg');
+      width: 320px;
+    }
   }
 
   @media screen and (max-width: 1279px) {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  @media screen and (max-width: 671px) {
     padding-left: 22px;
     padding-right: 22px;
+  }
+
+  @media screen and (max-width: 667px) {
     padding-top: 40px;
   }
 }
@@ -96,9 +107,12 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 276px);
-  gap: 70px;
+  grid-template-columns: 276px minmax(276px, 1fr);
+  row-gap: 70px;
   font-size: 0;
+  max-width: 622px;
+  width: 100%;
+  justify-items: right;
 
   @media screen and (max-width: 1299px) {
     margin-left: 23.158%;
@@ -106,13 +120,6 @@
 
   @media screen and (max-width: 1279px) {
     margin-left: auto;
-  }
-
-  @media screen and (max-width: 665px) {
-    width: 100%;
-    grid-template-columns: 276px minmax(276px, 1fr);
-    column-gap: 0;
-    justify-items: right;
   }
 
   @media screen and (max-width: 605px) {
