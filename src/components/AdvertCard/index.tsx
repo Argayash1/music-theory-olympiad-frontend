@@ -18,7 +18,7 @@ export const AdvertCard = ({ _id, createdAt, title, content, links, onCtaClick }
     <DataCard>
       <span className={styles.date}>{handleFormateDate(createdAt)}</span>
       <h3 className={styles.title}>{title}</h3>
-      {links ? <TextWithCustomLinks text={content} links={links} /> : <p className={styles.text}>{content}</p>}
+      <TextWithCustomLinks text={content} links={links} />
       <CTA linkText='Узнать больше' type='learn' onClick={() => onCtaClick(_id)} />
     </DataCard>
   );

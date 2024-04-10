@@ -3,7 +3,7 @@
 .root {
   @include main-text-font(16, 400, 1.37, #fff);
   margin: 0 0 48px 0;
-  padding: 0;
+  padding: 0 6px 0 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -17,13 +17,16 @@
   }
 
   @media screen and (max-width: 1049px) {
-    font-size: 12px;
-    line-height: 1.33;
     margin-bottom: 66px;
+    padding-right: 0;
   }
 
   @media screen and (max-width: 667px) {
-    margin-bottom: 42px;
+    margin-bottom: 34px;
+    font-size: 12px;
+    line-height: 1.33;
+    -webkit-line-clamp: 6;
+    min-height: 96px;
   }
 }
 
