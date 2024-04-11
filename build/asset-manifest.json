@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a251fa3.css",
+    "main.css": "/static/css/main.a8a358e4.css",
     "main.js": "/static/js/main.b429fda3.js",
     "static/js/787.07ef1cfe.chunk.js": "/static/js/787.07ef1cfe.chunk.js",
     "static/media/jury-background-image.svg": "/static/media/jury-background-image.dce41f5bfda068f42e67.svg",
@@ -37,12 +37,12 @@
     "static/media/brand-bunner-clock-icon.svg": "/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/archive-extension-icon.svg": "/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.9a251fa3.css.map": "/static/css/main.9a251fa3.css.map",
+    "main.a8a358e4.css.map": "/static/css/main.a8a358e4.css.map",
     "main.b429fda3.js.map": "/static/js/main.b429fda3.js.map",
     "787.07ef1cfe.chunk.js.map": "/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a251fa3.css",
+    "static/css/main.a8a358e4.css",
     "static/js/main.b429fda3.js"
   ]
 }
