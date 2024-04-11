@@ -55,7 +55,7 @@
     width: 100%;
   }
 
-  @media screen and (max-width: 1102px) {
+  @media screen and (max-width: 667px) {
     height: 445px;
   }
 }
@@ -74,6 +74,14 @@
   height: 704px;
   object-fit: contain;
   align-self: center;
+
+  @media screen and (max-width: 1279px) {
+    height: calc(100% - 68px);
+  }
+
+  @media screen and (max-width: 610px) {
+    width: 100%;
+  }
 }
 
 .popupImageTypeScore {
