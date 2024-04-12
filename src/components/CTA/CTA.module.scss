@@ -163,9 +163,11 @@
   text-align: left;
 
   &:hover {
-    .arrowIcon {
-      path {
-        transform: translateX(0);
+    @media screen and (hover: hover) {
+      .arrowIcon {
+        path {
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -181,6 +183,21 @@
 
   @media screen and (max-width: 1049px) {
     margin-right: 9px;
+  }
+}
+
+.rootTypeCollapse {
+  width: 114px;
+
+  .arrowIcon {
+    transform: rotate(-90deg);
+    top: initial;
+    bottom: 7.5px;
+
+    path {
+      transform: translateX(-11px);
+      transition: none;
+    }
   }
 }
 

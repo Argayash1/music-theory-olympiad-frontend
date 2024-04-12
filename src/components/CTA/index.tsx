@@ -12,10 +12,11 @@ type CTAProps = {
   path?: string;
   type?: string;
   isBorderShown?: boolean;
+  isCTATypeCollapse?: boolean;
   onClick?: () => void;
 };
 
-export const CTA = ({ linkText = 'Участвовать', path, type, isBorderShown, onClick }: CTAProps) => {
+export const CTA = ({ linkText = 'Участвовать', path, type, isBorderShown, isCTATypeCollapse, onClick }: CTAProps) => {
   const ctaClassName = clsx(styles.root, {
     [styles.rootTypeLink]: type !== 'learn' && type !== 'share',
     [styles.rootTypeButton]: type === 'learn' || type === 'share',
@@ -30,6 +31,7 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
     [styles.rootInactive]: type === 'download' && !path,
     [styles.rootBorderShown]: isBorderShown,
     [styles.rootPlaceAudioPlayer]: type === 'download' && linkText === 'cкачать',
+    [styles.rootTypeCollapse]: isCTATypeCollapse,
   });
 
   return (

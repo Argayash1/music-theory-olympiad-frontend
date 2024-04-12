@@ -95,6 +95,14 @@
       stroke: #fff;
     }
   }
+
+  &:disabled {
+    svg {
+      path {
+        stroke: #000;
+      }
+    }
+  }
 }
 
 .rootTypeBackLayer {

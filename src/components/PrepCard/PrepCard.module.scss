@@ -130,6 +130,14 @@
     @media screen and (max-width: 590px) {
       min-width: 253px;
     }
+
+    @media screen and (max-width: 397px) {
+      h4 {
+        max-width: 183px;
+        padding-bottom: 6px;
+        border: none;
+      }
+    }
   }
 
   &:last-child {

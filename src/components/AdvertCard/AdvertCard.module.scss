@@ -29,6 +29,13 @@
   }
 }
 
+.titleTypeFullText {
+  display: block;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: initial;
+}
+
 .text {
   @include main-text-font(16, 400, 1.37, #fff);
   margin: 0 0 48px 0;

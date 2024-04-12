@@ -12,6 +12,19 @@
   padding: 0 0 5px;
   width: 240px;
   border-bottom: 2px solid #d6d6d6;
+  position: relative;
+
+  &::before {
+    @media screen and (max-width: 397px) {
+      content: '';
+      width: 220px;
+      height: 2px;
+      background-color: #d6d6d6;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+  }
 
   @media screen and (max-width: 590px) {
     font-size: 16px;

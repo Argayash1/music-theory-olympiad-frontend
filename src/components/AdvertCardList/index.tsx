@@ -9,27 +9,27 @@ import { useSelector } from 'react-redux';
 type AdvertCardListProps = {
   advertCardsItems: Advert[];
   status: Status;
-  onCtaClick: (_id: string) => void;
+  onCtaClick: (_id: string | null) => void;
 };
 
 export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertCardListProps) => {
-  const screenWidtrh = useSelector(selectScreenWidth);
+  const screenWidth = useSelector(selectScreenWidth);
 
   const [switchCount, setSwitchCount] = React.useState<number>(0);
 
-  const advertCards = advertCardsItems.map((item) => (
+  const advertCards = advertCardsItems.map((item, index) => (
     <li key={item._id}>
-      <AdvertCard {...item} onCtaClick={onCtaClick} />
+      <AdvertCard {...item} onCtaClick={onCtaClick} isCardOnScreen={index === switchCount} />
     </li>
   ));
 
   const offset =
-    screenWidtrh > 1439 ? switchCount * -390 : screenWidtrh <= 1189 ? switchCount * -290 : switchCount * -505;
+    screenWidth > 1439 ? switchCount * -390 : screenWidth <= 1189 ? switchCount * -290 : switchCount * -505;
 
   const nextButtonDisabled =
-    screenWidtrh > 1439 || (screenWidtrh <= 1189 && screenWidtrh > 1049)
+    screenWidth > 1439 || (screenWidth <= 1189 && screenWidth > 1049)
       ? advertCardsItems.length - switchCount <= 3
-      : screenWidtrh <= 1049 && screenWidtrh > 667
+      : screenWidth <= 1049 && screenWidth > 667
       ? advertCardsItems.length - switchCount <= 2
       : advertCardsItems.length - switchCount <= 1;
 
@@ -41,6 +41,7 @@ export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertC
       nextButtonDisabled={nextButtonDisabled}
       status={status}
       type='adverts'
+      screenWidth={screenWidth}
     >
       <ul className={styles.list} style={{ transform: `translateX(${offset}px)` }}>
         {advertCards}

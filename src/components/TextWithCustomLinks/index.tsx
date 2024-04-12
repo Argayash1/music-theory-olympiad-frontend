@@ -7,9 +7,10 @@ type TextWithCustomLinkProps = {
   text: string;
   links: LinkData[];
   place?: string;
+  isShowFullText?: boolean;
 };
 
-export const TextWithCustomLinks = ({ text, links, place }: TextWithCustomLinkProps) => {
+export const TextWithCustomLinks = ({ text, links, place, isShowFullText }: TextWithCustomLinkProps) => {
   const linkMapping = new Map<string, string>();
   links.forEach(({ linkText, linkUrl }) => {
     linkMapping.set(linkText.toLowerCase(), linkUrl);
@@ -19,7 +20,13 @@ export const TextWithCustomLinks = ({ text, links, place }: TextWithCustomLinkPr
   const paragraphs = text.split('\n');
 
   return (
-    <div className={clsx(styles.root, place === 'full-advert' && styles.rootTypeFullAdvert)}>
+    <div
+      className={clsx(
+        styles.root,
+        place === 'full-advert' && styles.rootTypeFullAdvert,
+        place !== 'full-advert' && isShowFullText && styles.rootTypeFullText,
+      )}
+    >
       {paragraphs.map((paragraph, pIndex) => (
         <p key={pIndex} className={styles.text}>
           {paragraph.split(regex).map((part, index) => {

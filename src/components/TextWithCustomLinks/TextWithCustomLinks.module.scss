@@ -47,6 +47,13 @@
   }
 }
 
+.rootTypeFullText {
+  display: block;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: initial;
+}
+
 .text {
   margin: 10px 0 0;
   padding: 0;

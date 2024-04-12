@@ -5,8 +5,15 @@ import clsx from 'clsx';
 type DataCardProps = {
   type?: string;
   children: React.ReactNode;
+  isCardExpanded?: boolean;
 };
 
-export const DataCard = ({ type, children }: DataCardProps) => {
-  return <article className={clsx(styles.root, type === 'archive' && styles.rootBgGrey)}>{children}</article>;
+export const DataCard = ({ type, children, isCardExpanded }: DataCardProps) => {
+  return (
+    <article
+      className={clsx(styles.root, type === 'archive' && styles.rootBgGrey, isCardExpanded && styles.rootTypeFullText)}
+    >
+      {children}
+    </article>
+  );
 };

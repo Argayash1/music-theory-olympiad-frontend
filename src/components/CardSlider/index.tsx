@@ -15,6 +15,7 @@ type CardSliderProps = {
   status?: Status;
   type?: string;
   isMenuOpen?: boolean;
+  screenWidth?: number;
 };
 
 export const CardSlider = ({
@@ -26,6 +27,7 @@ export const CardSlider = ({
   status,
   type,
   isMenuOpen,
+  screenWidth,
 }: CardSliderProps) => {
   const advertItem = useSelector(selectAdvertId);
 
@@ -40,7 +42,7 @@ export const CardSlider = ({
       className={clsx(
         styles.root,
         type === 'archive' && styles.rootTypeArchive,
-        type === 'adverts' && advertItem && styles.rootHidden,
+        type === 'adverts' && advertItem && screenWidth && screenWidth > 375 && styles.rootHidden,
         type === 'prep-materials' && styles.rootTypePrepMaterials,
         type === 'jury' && styles.rootTypeJury,
         type === 'archive-tabs' && styles.rootTypeArchiveTabs,
