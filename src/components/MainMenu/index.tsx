@@ -8,9 +8,10 @@ type MainMenuProps = {
   type?: string;
   activeSection?: string;
   isOpen?: boolean;
+  onClose?: () => void;
 };
 
-export const MainMenu = ({ type, activeSection, isOpen }: MainMenuProps) => {
+export const MainMenu = ({ type, activeSection, isOpen, onClose }: MainMenuProps) => {
   const menuListItems = menuItems.map((item, index) => (
     <li key={index}>
       <a
@@ -22,6 +23,7 @@ export const MainMenu = ({ type, activeSection, isOpen }: MainMenuProps) => {
           type === 'burger' && styles.linkTypeBurger,
           type === 'burger' && activeSection === item.path && styles.linkTypeBurgerActive,
         )}
+        onClick={onClose}
       >
         {item.name}
       </a>

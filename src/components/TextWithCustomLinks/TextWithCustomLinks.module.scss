@@ -32,9 +32,9 @@
 
 .rootTypeFullAdvert {
   line-height: 1.375;
-  max-width: 640px;
+  max-width: 761px;
   margin-bottom: 0;
-  margin-left: 29px;
+  margin-left: 17px;
   padding-right: 0;
   min-height: 132px;
   display: block;
@@ -42,8 +42,8 @@
   text-overflow: clip;
   -webkit-line-clamp: initial;
 
-  @media screen and (max-width: 1439px) {
-    max-width: 541px;
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
   }
 }
 

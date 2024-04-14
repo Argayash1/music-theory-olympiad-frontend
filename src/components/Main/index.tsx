@@ -43,6 +43,7 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
     const handleScroll = () => {
       sectionsRef.current?.forEach((sectionRef) => {
         const section = sectionRef;
+
         if (section) {
           const rect = section.getBoundingClientRect();
           const top = rect.top;
@@ -66,10 +67,8 @@ export const Main = ({ onSetActiveSection }: MainProps) => {
   return (
     <main className={styles.root}>
       <BrandBanner ref={brandBannerRef} />
-      <section className={styles.wrapper}>
-        <AboutMusOlymp ref={aboutMusOlympRef} />
-        <Adverts ref={advertsRef} />
-      </section>
+      <AboutMusOlymp ref={aboutMusOlympRef} />
+      <Adverts ref={advertsRef} />
       <PrepMaterials ref={prepMaterialsRef} />
       <Archive ref={archiveRef} />
       <Results ref={resultsRef} />

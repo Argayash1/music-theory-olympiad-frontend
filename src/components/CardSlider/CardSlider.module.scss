@@ -1,43 +1,19 @@
 .root {
   display: flex;
-  visibility: visible;
-  opacity: 1;
-  gap: 57px;
   margin-top: 92px;
-  transition: none;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media screen and (max-width: 1456px) and (hover: hover) {
-    gap: 48.5px;
-  }
-
-  @media screen and (max-width: 1439px) and (hover: hover) {
-    gap: 57px;
-  }
-
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1383px) {
     max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
-  @media screen and (max-width: 1296px) and (hover: hover) {
-    gap: 48.5px;
-  }
-
-  @media screen and (max-width: 1279px) and (hover: hover) {
-    gap: 57px;
-  }
-
-  @media screen and (max-width: 1189px) {
+  @media screen and (max-width: 1115px) {
     max-width: 1000px;
   }
 
-  @media screen and (max-width: 1049px) {
+  @media screen and (max-width: 975px) {
     max-width: 710px;
-  }
-
-  @media screen and (max-width: 759px) {
-    gap: 0;
   }
 
   @media screen and (max-width: 667px) {
@@ -50,12 +26,6 @@
       flex-direction: column;
     }
   }
-}
-
-.rootHidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
 }
 
 .rootTypeArchive {
@@ -180,21 +150,18 @@
 .wrapper {
   max-width: 1150px;
   overflow: hidden;
+  margin: 0 auto;
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1383px) {
     max-width: 990px;
   }
 
-  @media screen and (max-width: 1189px) {
-    max-width: 890px;
+  @media screen and (max-width: 1115px) {
+    max-width: 850px;
   }
 
-  @media screen and (max-width: 1049px) {
+  @media screen and (max-width: 975px) {
     max-width: 560px;
-  }
-
-  @media screen and (max-width: 759px) {
-    margin: 0 auto;
   }
 
   @media screen and (max-width: 667px) {

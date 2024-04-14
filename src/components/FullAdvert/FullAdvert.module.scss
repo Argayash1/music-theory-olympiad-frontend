@@ -1,53 +1,13 @@
 @import '../../assets/styles/mixins/main-text-font';
 
 .root {
-  width: 1150px;
+  width: 100%;
   min-height: 370px;
-  display: flex;
-  flex-direction: column;
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 126px;
-  left: 145px;
-  transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  margin: 92px auto 0;
 
-  @media screen and (max-width: 1439px) {
-    width: 990px;
+  @media screen and (max-width: 667px) {
+    margin-top: 50px;
   }
-
-  @media screen and (max-width: 1279px) {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media screen and (max-width: 1189px) {
-    width: 850px;
-  }
-
-  @media screen and (max-width: 1049px) {
-    width: 718px;
-  }
-
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
-}
-
-.rootIsOpened {
-  visibility: visible;
-  opacity: 1;
-  transition: none;
-}
-
-.loadingText {
-  margin: auto;
-  display: none;
-  @include main-text-font(20, 500, 1.1);
-}
-
-.loadingTextVisible {
-  display: inline-block;
 }
 
 .rootContainer {
@@ -55,14 +15,23 @@
   height: 100%;
   background-color: #ffbb4d;
   border-radius: 40px;
-  display: none;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 258px minmax(200px, 887px) 31.82px;
   padding: 37px 37.18px 38px 40px;
   box-sizing: border-box;
-}
+  font-size: 0;
 
-.rootContainerVisible {
-  display: flex;
+  @media screen and (max-width: 1279px) {
+    padding-left: 25px;
+  }
+
+  @media screen and (max-width: 1193px) {
+    grid-template-columns: 180px minmax(200px, 887px) 31.82px;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: minmax(200px, 887px) 31.82px;
+  }
 }
 
 .image {
@@ -72,45 +41,69 @@
   width: 258px;
   height: 258px;
   align-self: center;
+
+  @media screen and (max-width: 1193px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .textContainer {
   margin-top: 3px;
-  margin-right: 51px;
+  margin-right: 82px;
+  margin-left: 44px;
 
-  @media screen and (max-width: 1439px) {
-    margin-right: 0;
-    margin-left: 13px;
+  @media screen and (max-width: 1296px) {
+    margin-right: 21px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    margin-left: 7px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
   }
 }
 
 .date {
   @include main-text-font(20, 500, 1.1, #fff);
-  margin-left: 29px;
+  margin-left: 17px;
   display: inline-block;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+  }
 }
 
 .title {
   @include main-text-font(30, 500, 1.066, #fff);
-  margin: 15px 0 8px 29px;
+  margin: 15px 0 8px 17px;
   padding: 0;
   min-height: 64px;
-}
 
-.text {
-  @include main-text-font(16, 400, 1.375, #fff);
-  max-width: 640px;
-  margin: 0 0 0 29px;
-  padding: 0;
-  min-height: 88px;
+  @media screen and (max-width: 1193px) {
+    font-size: 20px;
+    line-height: 1.1;
+    min-height: 44px;
+  }
 
-  @media screen and (max-width: 1439px) {
-    max-width: 541px;
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
   }
 }
 
 .shareContainer {
   display: flex;
-  margin: 13px 0 0 11px;
+  margin: 13px 0 0 0;
   padding: 0;
+
+  @media screen and (max-width: 767px) {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
 }

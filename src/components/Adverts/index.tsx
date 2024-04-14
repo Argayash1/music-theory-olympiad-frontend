@@ -19,7 +19,7 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   }, [dispatch]);
 
   React.useEffect(() => {
-    if (advertId && screenWidth > 375) {
+    if (advertId && screenWidth > 509) {
       dispatch(fetchAdvertById(advertId));
     } else {
       setTimeout(() => dispatch(clearAdverCardItem()), 500);
@@ -29,8 +29,15 @@ export const Adverts = React.forwardRef<HTMLElement>((props, ref) => {
   return (
     <section className={styles.root} id='announcements' ref={ref}>
       <SectionTitle text={menuItems[1].name} />
-      <AdvertCardList advertCardsItems={items} onCtaClick={(cardId) => dispatch(setAdvertId(cardId))} status={status} />
-      <FullAdvert advertItem={adverCardItem} cardId={advertId} />
+      {advertId && screenWidth > 509 ? (
+        <FullAdvert advertItem={adverCardItem} status={status} />
+      ) : (
+        <AdvertCardList
+          advertCardsItems={items}
+          onCtaClick={(cardId) => dispatch(setAdvertId(cardId))}
+          status={status}
+        />
+      )}
     </section>
   );
 });

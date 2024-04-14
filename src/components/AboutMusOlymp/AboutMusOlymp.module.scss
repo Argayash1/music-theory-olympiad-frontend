@@ -7,6 +7,45 @@
   scroll-margin: 105px;
   z-index: 2;
 
+  &::before {
+    content: '';
+    width: 1440px;
+    height: 1256px;
+    background-image: url('../../assets/images/about-olymp-background.svg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: -844px;
+    left: 0;
+    z-index: 0;
+
+    @media screen and (max-width: 1296px) {
+      left: -80px;
+    }
+
+    @media screen and (max-width: 1129px) {
+      width: 1024px;
+      height: 893px;
+      bottom: -613px;
+      left: -190px;
+    }
+
+    @media screen and (max-width: 667px) {
+      left: -190px;
+    }
+
+    @media screen and (max-width: 551px) {
+      width: 628px;
+      height: 547.66px;
+      bottom: -220px;
+      left: -30px;
+    }
+
+    @media screen and (max-width: 375px) {
+      bottom: -263px;
+    }
+  }
+
   &::after {
     content: '';
     width: 22px;

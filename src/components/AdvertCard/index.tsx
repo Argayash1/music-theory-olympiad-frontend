@@ -8,7 +8,7 @@ import { selectScreenWidth } from '../../redux/olympData/selectors';
 import { selectAdvertId } from '../../redux/advert/selectors';
 import clsx from 'clsx';
 
-type AdvertCardProps = {
+export type AdvertCardProps = {
   _id: string;
   createdAt: string;
   title: string;
@@ -22,7 +22,7 @@ export const AdvertCard = ({ _id, createdAt, title, content, links, isCardOnScre
   const screenWidth = useSelector(selectScreenWidth);
   const advertId = useSelector(selectAdvertId);
 
-  const isCardExpanded = Boolean(screenWidth <= 375 && advertId === _id && isCardOnScreen);
+  const isCardExpanded = Boolean(screenWidth <= 509 && advertId === _id && isCardOnScreen);
 
   return (
     <DataCard isCardExpanded={isCardExpanded}>

@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './CardSlider.module.scss';
 import clsx from 'clsx';
-import { useSelector } from 'react-redux';
-import { selectAdvertId } from '../../redux/advert/selectors';
 import { Status } from '../../redux/olympData/types';
 import { SliderButton, SliderCardSkeleton } from '../../components';
 
@@ -27,10 +25,7 @@ export const CardSlider = ({
   status,
   type,
   isMenuOpen,
-  screenWidth,
 }: CardSliderProps) => {
-  const advertItem = useSelector(selectAdvertId);
-
   const cardSkeletons = [...new Array(3)].map((item, index) => (
     <li key={index}>
       <SliderCardSkeleton />
@@ -42,7 +37,6 @@ export const CardSlider = ({
       className={clsx(
         styles.root,
         type === 'archive' && styles.rootTypeArchive,
-        type === 'adverts' && advertItem && screenWidth && screenWidth > 375 && styles.rootHidden,
         type === 'prep-materials' && styles.rootTypePrepMaterials,
         type === 'jury' && styles.rootTypeJury,
         type === 'archive-tabs' && styles.rootTypeArchiveTabs,

@@ -52,6 +52,7 @@ export * from './PrepCardSkeleton';
 export * from './ResultItemSkeleton';
 export * from './OlympDataCardsSkeleton';
 export * from './BrandBannerSkeleton';
+export * from './FullAdvertSkeleton';
 export * from './TextWithCustomLinks';
 export * from './BurgerButton';
 export * from './Overlay';
