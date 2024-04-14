@@ -163,9 +163,11 @@
   text-align: left;
 
   @media (hover: hover) {
-    .arrowIcon {
-      path {
-        transform: translateX(0);
+    &:hover {
+      .arrowIcon {
+        path {
+          transform: translateX(0);
+        }
       }
     }
   }
