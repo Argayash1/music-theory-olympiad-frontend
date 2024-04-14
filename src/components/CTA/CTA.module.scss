@@ -162,12 +162,10 @@
   position: relative;
   text-align: left;
 
-  &:hover {
-    @media screen and (hover: hover) {
-      .arrowIcon {
-        path {
-          transform: translateX(0);
-        }
+  @media (hover: hover) {
+    .arrowIcon {
+      path {
+        transform: translateX(0);
       }
     }
   }
