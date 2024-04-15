@@ -1,15 +1,12 @@
 import React from 'react';
 import styles from './Jury.module.scss';
-import { SectionTitle } from '../SectionTitle';
-import { JuryMemberCard } from '../JuryMemberCard';
+import { SectionTitle, JuryMemberCard, JuryCardSkeleton, CardSlider } from '../../components';
 import { useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { selectJuryMemberData } from '../../redux/juryMember/selectors';
 import { fetchJuryMembers } from '../../redux/juryMember/asyncActions';
 import { menuItems } from '../../utils/menuItems';
-import { JuryCardSkeleton } from '../JuryCardSkeleton';
 import { selectScreenWidth } from '../../redux/olympData/selectors';
-import { CardSlider } from '../CardSlider';
 
 export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   const dispatch = useAppDispatch();
@@ -44,11 +41,14 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   const nextButtonDisabled =
     screenWidth > 1171 || (screenWidth <= 613 && screenWidth > 523) ? switchCount === 1 : switchCount === 2;
 
+  const showCardListWithoutSlider =
+    screenWidth >= 1369 || (screenWidth <= 647 && screenWidth > 613) || screenWidth <= 377;
+
   return (
     <section className={styles.root} id='jury' ref={ref}>
       <div className={styles.container}>
         <SectionTitle text={menuItems[5].name} />
-        {screenWidth >= 1369 || (screenWidth <= 647 && screenWidth > 613) || screenWidth <= 377 ? (
+        {showCardListWithoutSlider ? (
           <ul className={styles.list}>{status === 'loading' ? juriMemberCardSkeletons : juriMemberCards}</ul>
         ) : (
           <CardSlider

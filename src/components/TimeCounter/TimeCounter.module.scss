@@ -7,18 +7,23 @@
   margin-left: 11px;
   margin-top: 5px;
 
-  @media screen and (max-width: 810px) {
-    width: 57px;
+  @media screen and (max-width: 667px) {
+    font-size: 8px;
+    line-height: 2;
+    width: 24px;
     height: 16px;
-    font-size: 12px;
-  }
-
-  @media screen and (max-width: 612px) {
-    font-size: 12px;
+    margin-left: 0;
+    margin-bottom: 12px;
   }
 }
 
 .rootTypeRight {
   margin-left: 0;
   width: 46px;
+
+  @media screen and (max-width: 667px) {
+    width: 23px;
+    height: 18px;
+    margin-bottom: 11px;
+  }
 }

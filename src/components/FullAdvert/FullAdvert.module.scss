@@ -101,9 +101,10 @@
   display: flex;
   margin: 13px 0 0 0;
   padding: 0;
+  grid-row: 2/3;
+  grid-column: 2/3;
 
   @media screen and (max-width: 767px) {
-    grid-row: 2/3;
     grid-column: 1/3;
   }
 }

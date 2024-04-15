@@ -9,12 +9,14 @@
   transition: border-color 0.3s linear, height 0.3s linear;
   background-color: #fff;
 
-  &:hover {
-    border-color: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      border-color: #ff5e3a;
 
-    .icon {
-      path {
-        fill: #ff5e3a;
+      .icon {
+        path {
+          fill: #ff5e3a;
+        }
       }
     }
   }

@@ -1,9 +1,11 @@
 .root {
   margin-top: 6px;
 
-  &:not(.rootTypeBrandBanner):hover {
-    .image {
-      box-shadow: 0px 0px 20px 0px #ffbb4d;
+  @media (hover: hover) {
+    &:not(.rootTypeBrandBanner):hover {
+      .image {
+        box-shadow: 0px 0px 20px 0px #ffbb4d;
+      }
     }
   }
 }

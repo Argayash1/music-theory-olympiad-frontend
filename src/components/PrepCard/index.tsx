@@ -57,7 +57,7 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
       ? switchCount === 2
       : switchCount === 3;
 
-  const showcardListWithoutSlider = screenWidth >= 1347 || (screenWidth <= 1279 && screenWidth > 1245);
+  const showCardListWithoutSlider = screenWidth >= 1347 || (screenWidth <= 1279 && screenWidth > 1245);
 
   return (
     <article className={clsx(styles.root, isOpen && styles.rootIsOpened)} ref={accordionItemRef}>
@@ -80,7 +80,7 @@ export const PrepCard = ({ prepCardData, title, isOpen, onClick, onTogglePlay }:
           />
         </svg>
       </button>
-      {showcardListWithoutSlider ? (
+      {showCardListWithoutSlider ? (
         <ul className={styles.cardList}>{prepCardItems}</ul>
       ) : (
         <CardSlider

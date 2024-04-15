@@ -11,8 +11,13 @@
     width: 582px;
   }
 
-  @media screen and (max-width: 612px) {
-    width: 91px;
+  @media screen and (max-width: 1164px) {
+    width: 210px;
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 99px;
+    padding-top: 6.88px;
   }
 }
 
@@ -25,6 +30,10 @@
   height: 8px;
   background-color: #f2f2f2;
   transition: all 0.3s linear;
+
+  @media screen and (max-width: 667px) {
+    height: 2px;
+  }
 }
 
 .timeLineTypeVolume {

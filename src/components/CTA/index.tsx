@@ -61,7 +61,11 @@ export const CTA = ({ linkText = 'Участвовать', path, type, isBorderS
         </button>
       ) : type === 'download' || type === 'download-archive' ? (
         <a href={path} className={ctaClassName} download>
-          {linkText}
+          {type === 'download' && linkText === 'cкачать' ? (
+            <span className={styles.linkText}>{linkText}</span>
+          ) : (
+            linkText
+          )}
           {type === 'download' ? (
             <svg
               className={clsx(

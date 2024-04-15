@@ -10,8 +10,10 @@
   transform: scale(1);
   transition: 0.3s box-shadow ease, transform 0.1s ease 0.1s;
 
-  &:not(.rootTypeDownload, .rootTypeShare, .rootTypeLearn):hover {
-    box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+  @media (hover: hover) {
+    &:not(.rootTypeDownload, .rootTypeShare, .rootTypeLearn):hover {
+      box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+    }
   }
 
   &:not(.rootTypeShare, .rootTypeLearn, .rootTypeDownload):active {
@@ -37,8 +39,10 @@
   background-color: #ffbb4d;
   font-weight: 600;
 
-  &:not(.rootTypeDownload):hover {
-    box-shadow: 0px 0px 20px 0px rgb(255, 187, 77);
+  @media (hover: hover) {
+    &:not(.rootTypeDownload):hover {
+      box-shadow: 0px 0px 20px 0px rgb(255, 187, 77);
+    }
   }
 }
 
@@ -85,14 +89,16 @@
   justify-content: center;
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 
-  &:not(.rootInactive, :active):hover {
-    border-color: #ff5e3a;
-    color: #ff5e3a;
-    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  @media (hover: hover) {
+    &:not(.rootInactive, :active):hover {
+      border-color: #ff5e3a;
+      color: #ff5e3a;
+      transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
-    .icon {
-      path {
-        stroke: #ff5e3a;
+      .icon {
+        path {
+          stroke: #ff5e3a;
+        }
       }
     }
   }
@@ -125,8 +131,10 @@
   border-radius: 25px;
   transition: border 0.1s ease-in-out;
 
-  &:hover {
-    border: 1px solid #fff;
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid #fff;
+    }
   }
 
   &::after {
@@ -216,14 +224,21 @@
   text-align: left;
   position: relative;
 
-  &:hover {
-    background-color: #fff6d6;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #fff6d6;
 
-    .iconLittle {
-      path {
-        stroke: #ff5e3a;
+      .iconLittle {
+        path {
+          stroke: #ff5e3a;
+        }
       }
     }
+  }
+
+  @media screen and (max-width: 667px) {
+    padding-left: 25px;
+    padding-right: 62px;
   }
 }
 
@@ -236,6 +251,24 @@
   color: #000;
   border: none;
   padding: 2px 0 0;
+
+  @media screen and (max-width: 792px) {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    margin-left: 7px;
+    margin-top: 1px;
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    border-radius: 3.43px;
+  }
 }
 
 .icon {
@@ -243,6 +276,12 @@
 
   path {
     transition: stroke 0.1s ease-in-out;
+  }
+}
+
+.linkText {
+  @media screen and (max-width: 792px) {
+    display: none;
   }
 }
 
@@ -274,6 +313,11 @@
   path {
     transition: stroke 0.3s ease-in-out;
   }
+
+  @media screen and (max-width: 667px) {
+    transform: translateX(-2.5px);
+    margin-top: 12px;
+  }
 }
 
 .iconPlaceAudioPlayer {
@@ -284,5 +328,15 @@
   path {
     stroke: #000;
     transition: stroke 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 792px) {
+    margin-left: 0;
+    margin-bottom: 1px;
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 5.71px;
+    height: 8.57px;
   }
 }

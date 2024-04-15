@@ -6,6 +6,11 @@
   cursor: pointer;
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 667px) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .icon {
@@ -17,12 +22,14 @@
     transition: stroke 0.3s linear;
   }
 
-  &:hover {
-    path {
-      &:first-child {
-        fill: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      path {
+        &:first-child {
+          fill: #ff5e3a;
+        }
+        stroke: #ff5e3a;
       }
-      stroke: #ff5e3a;
     }
   }
 }
@@ -36,12 +43,14 @@
     transition: stroke 0.3s linear;
   }
 
-  &:hover {
-    path {
-      &:first-child {
-        fill: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      path {
+        &:first-child {
+          fill: #ff5e3a;
+        }
+        stroke: #ff5e3a;
       }
-      stroke: #ff5e3a;
     }
   }
 }

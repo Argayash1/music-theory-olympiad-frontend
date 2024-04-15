@@ -14,10 +14,12 @@
     }
   }
 
-  &:not(:disabled):hover {
-    svg {
-      path {
-        stroke: #ff5e3a;
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      svg {
+        path {
+          stroke: #ff5e3a;
+        }
       }
     }
   }

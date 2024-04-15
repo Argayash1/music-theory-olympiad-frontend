@@ -8,11 +8,20 @@
 .rootTypeVolume {
   top: 9px;
   left: 37px;
+
+  @media screen and (max-width: 667px) {
+    top: 7px;
+    left: 22px;
+  }
 }
 
 .progressBar {
   background-color: #d6d6d6;
   height: 8px;
+
+  @media screen and (max-width: 667px) {
+    height: 2px;
+  }
 }
 
 .progressBarTypeVolume {
@@ -35,6 +44,11 @@
   margin: 0;
   padding: 0;
   transition: visibility 0.2s linear, opacity 0.2s linear;
+
+  @media screen and (max-width: 667px) {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .progressBarButtonActive {

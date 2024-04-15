@@ -14,10 +14,19 @@
   box-sizing: border-box;
   border-radius: 40px 40px 0px 0px;
   transition: height 0.3s ease-in-out;
+
+  @media screen and (max-width: 667px) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 .rootIsOpened {
   height: 120px;
+
+  @media screen and (max-width: 667px) {
+    height: 101px;
+  }
 }
 
 .container {
@@ -29,6 +38,21 @@
   display: flex;
   flex-direction: column;
   gap: 13.09px;
+
+  @media screen and (max-width: 1252px) {
+    padding-left: 95px;
+    padding-right: 62.18px;
+  }
+
+  @media screen and (max-width: 742px) {
+    padding-top: 7px;
+    padding-left: 25px;
+    padding-right: 18.18px;
+  }
+
+  @media screen and (max-width: 667px) {
+    gap: 4.13px;
+  }
 }
 
 .textContainer {
@@ -40,6 +64,12 @@
   @include main-text-font(20, 500, 1.1);
   margin: 9.91px 0 0;
   padding: 0;
+
+  @media screen and (max-width: 667px) {
+    font-size: 12px;
+    line-height: 1.333;
+    margin-top: 29px;
+  }
 }
 
 .playerContainer {
@@ -51,12 +81,7 @@
   box-sizing: border-box;
   position: relative;
 
-  @media screen and (max-width: 810px) {
-    max-width: 533px;
-    height: 40px;
-  }
-
-  @media screen and (max-width: 612px) {
-    max-width: 290px;
+  @media screen and (max-width: 667px) {
+    gap: 4px;
   }
 }

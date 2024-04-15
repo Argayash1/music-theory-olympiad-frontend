@@ -17,10 +17,12 @@
     }
   }
 
-  &:hover {
-    svg {
-      path {
-        fill: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      svg {
+        path {
+          fill: #ff5e3a;
+        }
       }
     }
   }
@@ -34,6 +36,10 @@
 .rootPlaceAudioPlayer {
   margin-top: 0;
   margin-right: 0;
+
+  @media screen and (max-width: 667px) {
+    margin-bottom: 13px;
+  }
 }
 
 .icon {

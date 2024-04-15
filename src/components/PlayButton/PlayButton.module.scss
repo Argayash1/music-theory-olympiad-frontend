@@ -9,6 +9,13 @@
   margin: 5.54px 0 0;
   cursor: pointer;
   display: flex;
+
+  @media screen and (max-width: 667px) {
+    width: 12px;
+    height: 13.89px;
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
 }
 
 .playIcon {
@@ -19,10 +26,17 @@
     transition: fill 0.3s linear;
   }
 
-  &:hover {
-    path {
-      fill: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      path {
+        fill: #ff5e3a;
+      }
     }
+  }
+
+  @media screen and (max-width: 667px) {
+    width: 12px;
+    height: 13.89px;
   }
 }
 
@@ -33,9 +47,15 @@
     transition: fill 0.3s linear;
   }
 
-  &:hover {
-    rect {
-      fill: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      rect {
+        fill: #ff5e3a;
+      }
     }
+  }
+
+  @media screen and (max-width: 667px) {
+    padding: 1px;
   }
 }

@@ -22,8 +22,7 @@ export const VolumelineContainer = ({
 
   const screenWidth1 = window.innerWidth;
 
-  const maxVolumeProgressBarWidth =
-    screenWidth1 > 810 ? 114 : screenWidth1 <= 810 && screenWidth1 > 612 ? 70.5 : screenWidth1 <= 612 ? 19.2 : 0;
+  const maxVolumeProgressBarWidth = screenWidth1 > 667 ? 114 : 44;
   const volumeProgressBarWidth = volume * (maxVolumeProgressBarWidth / 100); // Вычисление ширины полосы воспроизведения с учетом прогресса
   const volumeProgressBarStyle = { width: `${volumeProgressBarWidth}px` }; // Стиль с новой шириной
 

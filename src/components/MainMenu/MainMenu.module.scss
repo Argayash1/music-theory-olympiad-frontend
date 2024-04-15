@@ -149,8 +149,10 @@
   position: relative;
   transition: color 0.3s ease-in-out;
 
-  &:not(.linkTypeFooter):hover {
-    color: #ff5e3a;
+  @media (hover: hover) {
+    &:not(.linkTypeFooter):hover {
+      color: #ff5e3a;
+    }
   }
 
   &::before {
@@ -178,8 +180,10 @@
 .linkTypeFooter {
   color: #fff;
 
-  &:hover {
-    color: #ff5e3a;
+  @media (hover: hover) {
+    &:hover {
+      color: #ff5e3a;
+    }
   }
 }
 
