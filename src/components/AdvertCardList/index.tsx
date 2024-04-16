@@ -27,9 +27,9 @@ export const AdvertCardList = ({ advertCardsItems, status, onCtaClick }: AdvertC
     screenWidth > 1439 ? switchCount * -390 : screenWidth <= 1189 ? switchCount * -290 : switchCount * -505;
 
   const nextButtonDisabled =
-    screenWidth > 1439 || (screenWidth <= 1189 && screenWidth > 1049)
+    screenWidth > 1383 || (screenWidth <= 1115 && screenWidth > 975)
       ? advertCardsItems.length - switchCount <= 3
-      : screenWidth <= 1049 && screenWidth > 667
+      : screenWidth <= 975 && screenWidth > 667
       ? advertCardsItems.length - switchCount <= 2
       : advertCardsItems.length - switchCount <= 1;
 

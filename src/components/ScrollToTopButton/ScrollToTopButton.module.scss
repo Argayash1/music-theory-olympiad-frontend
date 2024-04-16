@@ -12,15 +12,18 @@
   margin: 0;
   padding: 0;
   transform: scale(1);
-  transition: box-shadow 0.3s ease, transform 0.1s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease, transform 0.1s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    bottom 0.3s ease-in-out;
   position: fixed;
   right: 15px;
   bottom: 15px;
   visibility: hidden;
   opacity: 0;
 
-  &:hover {
-    box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0px 0px 20px 0px rgb(255, 94, 58);
+    }
   }
 
   &:active {
@@ -28,9 +31,21 @@
     box-shadow: none;
     transition: box-shadow 0.1s ease-in-out;
   }
+
+  @media screen and (max-width: 1175px) {
+    transform: scale(0.8);
+    right: 5px;
+    bottom: 5px;
+  }
 }
 
 .rootVisible {
   visibility: visible;
   opacity: 1;
+}
+
+.rootTypePlayerOpen {
+  @media screen and (max-width: 360px) {
+    bottom: 112px;
+  }
 }

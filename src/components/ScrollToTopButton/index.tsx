@@ -5,10 +5,14 @@ import clsx from 'clsx';
 
 type ScrollToTopButtonProps = {
   activeSection: string;
+  isPlayerOpen: boolean;
 };
 
-export const ScrollToTopButton = ({ activeSection }: ScrollToTopButtonProps) => {
+export const ScrollToTopButton = ({ activeSection, isPlayerOpen }: ScrollToTopButtonProps) => {
   return (
-    <button className={clsx(styles.root, activeSection && styles.rootVisible)} onClick={handleScrollToTop}></button>
+    <button
+      className={clsx(styles.root, activeSection && styles.rootVisible, isPlayerOpen && styles.rootTypePlayerOpen)}
+      onClick={handleScrollToTop}
+    ></button>
   );
 };
