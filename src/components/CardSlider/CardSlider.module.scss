@@ -4,16 +4,20 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 1383px) {
+  @media screen and (max-width: 1365px) {
     max-width: 1140px;
   }
 
   @media screen and (max-width: 1115px) {
-    max-width: 1000px;
+    &:not(.rootTypeArchive) {
+      max-width: 1000px;
+    }
   }
 
   @media screen and (max-width: 975px) {
-    max-width: 710px;
+    &:not(.rootTypeArchive) {
+      max-width: 710px;
+    }
   }
 
   @media screen and (max-width: 667px) {
@@ -31,35 +35,12 @@
 .rootTypeArchive {
   margin-top: 44.86px;
 
-  @media screen and (max-width: 1439px) {
-    gap: 14.21%;
-  }
-
-  @media screen and (max-width: 1296px) and (hover: hover) {
-    gap: 13.464%;
-  }
-
-  @media screen and (max-width: 1279px) and (hover: hover) {
-    gap: 14.21%;
-  }
-
-  @media screen and (max-width: 1189px) {
-    max-width: 1108px;
-    gap: 150px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media screen and (max-width: 1157px) {
+  @media screen and (max-width: 905px) {
     max-width: 718px;
   }
 
-  @media screen and (max-width: 767px) {
-    gap: 0;
-    position: relative;
-  }
-
   @media screen and (max-width: 667px) {
+    position: relative;
     margin-top: 0;
   }
 }
@@ -152,7 +133,7 @@
   overflow: hidden;
   margin: 0 auto;
 
-  @media screen and (max-width: 1383px) {
+  @media screen and (max-width: 1365px) {
     max-width: 990px;
   }
 
@@ -172,28 +153,20 @@
 .wrapperTypeArchive {
   height: 538px;
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1365px) {
     max-width: 760px;
-    margin-right: 20px;
+    padding-right: 20px;
   }
 
-  @media screen and (max-width: 1189px) {
-    margin-right: 12px;
-  }
-
-  @media screen and (max-width: 1157px) {
+  @media screen and (max-width: 905px) {
+    padding-right: 0;
+    padding-left: 12px;
     max-width: 370px;
-    margin-left: 12px;
-    margin-right: 0;
-  }
-
-  @media screen and (max-width: 767px) {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media screen and (max-width: 667px) {
     max-width: 270px;
+    padding-left: 0;
     z-index: 0;
   }
 }

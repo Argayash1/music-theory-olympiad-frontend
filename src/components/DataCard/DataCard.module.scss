@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 1383px) {
+  @media screen and (max-width: 1365px) {
     &:not(.rootBgGrey) {
       width: 485px;
     }
@@ -40,10 +40,6 @@
   position: relative;
   padding: 40.14px 47px 40px;
   display: block;
-
-  @media screen and (max-width: 1439px) {
-    width: 370px;
-  }
 
   @media screen and (max-width: 667px) {
     width: 270px;
