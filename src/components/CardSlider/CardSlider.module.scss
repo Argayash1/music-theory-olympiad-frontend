@@ -9,13 +9,13 @@
   }
 
   @media screen and (max-width: 1115px) {
-    &:not(.rootTypeArchive) {
+    &:not(.rootTypeArchive, .rootTypeJury) {
       max-width: 1000px;
     }
   }
 
   @media screen and (max-width: 975px) {
-    &:not(.rootTypeArchive) {
+    &:not(.rootTypeArchive, .rootTypeJury) {
       max-width: 710px;
     }
   }
@@ -79,40 +79,13 @@
 }
 
 .rootTypeJury {
-  width: 1138px;
-  gap: 102px;
+  max-width: 1138px;
   margin-top: 0;
-  margin-right: auto;
-  margin-left: auto;
+  padding-right: 2px;
 
-  @media screen and (max-width: 1294px) and (hover: hover) {
-    gap: 93.5px;
-  }
-
-  @media screen and (max-width: 1279px) and (hover: hover) {
-    gap: 102px;
-  }
-
-  @media screen and (max-width: 1189px) {
-    max-width: 1122px;
-    width: 100%;
-  }
-
-  @media screen and (max-width: 1171px) {
-    max-width: 822px;
-  }
-
-  @media screen and (max-width: 871px) {
-    max-width: 782px;
-  }
-
-  @media screen and (max-width: 831px) {
-    max-width: 718px;
-    gap: 70px;
-  }
-
-  @media screen and (max-width: 767px) {
-    gap: 0;
+  @media screen and (max-width: 1015px) {
+    max-width: 823px;
+    padding-right: 0;
   }
 }
 
@@ -195,19 +168,15 @@
 
 .wrapperTypeJury {
   max-width: 897px;
-  margin-right: 1px;
+  padding-right: 1px;
 
-  @media screen and (max-width: 1171px) {
+  @media screen and (max-width: 1015px) {
     max-width: 582px;
   }
 
-  @media screen and (max-width: 871px) {
+  @media screen and (max-width: 808px) {
     max-width: 542px;
-  }
-
-  @media screen and (max-width: 767px) {
-    margin-left: auto;
-    margin-right: auto;
+    padding-right: 0;
   }
 
   @media screen and (max-width: 613px) {

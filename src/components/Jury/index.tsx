@@ -20,7 +20,7 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
   }, [dispatch]);
 
   const juriMemberCards = items.map((item, index) => (
-    <li key={index} className={styles.listItem}>
+    <li key={index}>
       <JuryMemberCard {...item} />
     </li>
   ));
@@ -42,7 +42,7 @@ export const Jury = React.forwardRef<HTMLElement>((props, ref) => {
     screenWidth > 1171 || (screenWidth <= 613 && screenWidth > 523) ? switchCount === 1 : switchCount === 2;
 
   const showCardListWithoutSlider =
-    screenWidth >= 1369 || (screenWidth <= 647 && screenWidth > 613) || screenWidth <= 377;
+    screenWidth >= 1352 || (screenWidth <= 647 && screenWidth > 613) || screenWidth <= 377;
 
   return (
     <section className={styles.root} id='jury' ref={ref}>
