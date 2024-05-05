@@ -46,35 +46,33 @@
 }
 
 .rootTypePrepMaterials {
-  gap: 32px;
   margin: 0 auto;
   max-width: 1002px;
   position: relative;
+  // padding-left: 14.5px;
+  // padding-right: 14.5px;
+  padding-left: 58.5px;
+  padding-right: 58.5px;
 
-  @media screen and (max-width: 1085px) {
-    max-width: 948px;
-    gap: 7px;
+  @media screen and (max-width: 1028px) {
+    &:not(.rootTypeArchive, .rootTypeJury) {
+      max-width: 768px;
+    }
   }
 
-  @media screen and (max-width: 1031px) {
-    max-width: 668px;
+  @media screen and (max-width: 753px) {
+    &:not(.rootTypeArchive, .rootTypeJury) {
+      max-width: 438px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
-  @media screen and (max-width: 741px) {
-    gap: 0;
-    max-width: 654px;
-  }
-
-  @media screen and (max-width: 727px) {
-    max-width: 438px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  @media screen and (max-width: 397px) {
-    flex-direction: column;
-    padding-left: 0;
-    padding-right: 0;
+  @media screen and (max-width: 406px) {
+    &:not(.rootTypeArchive, .rootTypeJury) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -148,12 +146,12 @@
   max-width: 857px;
   padding-left: 22px;
 
-  @media screen and (max-width: 1031px) {
+  @media screen and (max-width: 1028px) {
     max-width: 578px;
     padding-left: 20px;
   }
 
-  @media screen and (max-width: 727px) {
+  @media screen and (max-width: 753px) {
     max-width: 248px;
   }
 
@@ -161,7 +159,7 @@
     max-width: 240px;
   }
 
-  @media screen and (max-width: 397px) {
+  @media screen and (max-width: 406px) {
     padding-left: 0;
   }
 }
@@ -210,7 +208,7 @@
 }
 
 .buttonsTypePrepMaterials {
-  @media screen and (max-width: 397px) {
+  @media screen and (max-width: 406px) {
     position: absolute;
     top: 3px;
     right: 22px;
