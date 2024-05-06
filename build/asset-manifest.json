@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.df822d58.css",
-    "main.js": "/static/js/main.bfede114.js",
+    "main.css": "/static/css/main.9e189075.css",
+    "main.js": "/static/js/main.f4a61c34.js",
     "static/js/787.07ef1cfe.chunk.js": "/static/js/787.07ef1cfe.chunk.js",
     "static/media/jury-background-image.svg": "/static/media/jury-background-image.dce41f5bfda068f42e67.svg",
     "static/media/logo.png": "/static/media/logo.3c02b43c75c468c11a16.png",
@@ -37,12 +37,12 @@
     "static/media/brand-bunner-clock-icon.svg": "/static/media/brand-bunner-clock-icon.6227b7bb3f1cd092bb4d8f8a7bc4f3da.svg",
     "static/media/adverts-slider-arrow.svg": "/static/media/adverts-slider-arrow.219d8da8e83271e961a6.svg",
     "static/media/archive-extension-icon.svg": "/static/media/archive-extension-icon.9803f84f3e6e50b815c6.svg",
-    "main.df822d58.css.map": "/static/css/main.df822d58.css.map",
-    "main.bfede114.js.map": "/static/js/main.bfede114.js.map",
+    "main.9e189075.css.map": "/static/css/main.9e189075.css.map",
+    "main.f4a61c34.js.map": "/static/js/main.f4a61c34.js.map",
     "787.07ef1cfe.chunk.js.map": "/static/js/787.07ef1cfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df822d58.css",
-    "static/js/main.bfede114.js"
+    "static/css/main.9e189075.css",
+    "static/js/main.f4a61c34.js"
   ]
 }
