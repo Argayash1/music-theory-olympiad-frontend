@@ -46,23 +46,26 @@
 }
 
 .rootTypePrepMaterials {
-  margin: 0 auto;
-  max-width: 1002px;
+  margin-top: 0;
   position: relative;
-  // padding-left: 14.5px;
-  // padding-right: 14.5px;
-  padding-left: 58.5px;
-  padding-right: 58.5px;
+  padding-left: 67px;
+  padding-right: 67px;
 
-  @media screen and (max-width: 1028px) {
+  @media screen and (max-width: 1189px) {
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 1002px;
+  }
+
+  @media screen and (max-width: 1032px) {
     &:not(.rootTypeArchive, .rootTypeJury) {
-      max-width: 768px;
+      max-width: 796px;
     }
   }
 
-  @media screen and (max-width: 753px) {
+  @media screen and (max-width: 751px) {
     &:not(.rootTypeArchive, .rootTypeJury) {
-      max-width: 438px;
+      max-width: 490.5px;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -146,12 +149,12 @@
   max-width: 857px;
   padding-left: 22px;
 
-  @media screen and (max-width: 1028px) {
+  @media screen and (max-width: 1032px) {
     max-width: 578px;
     padding-left: 20px;
   }
 
-  @media screen and (max-width: 753px) {
+  @media screen and (max-width: 751px) {
     max-width: 248px;
   }
 
