@@ -16,7 +16,7 @@
 
 .container {
   @include section-flex-container(70, 70, 0);
-  background-image: url('../../assets/images/jury-background-image.svg');
+  background-image: url('../../assets/backgrounds/jury-background-image.svg');
   background-size: cover;
   background-position: center -65px;
   background-repeat: no-repeat;
