@@ -2,7 +2,7 @@ export const PAYMENT_URL =
   'https://rrc-ural.ru/konkursy/item/1412-iv-vserossijskaya-olimpiada-po-muzykalno-teoreticheskim-predmetam-im-z-a-vizelya';
 
 export const PARTICIPATION_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSf9TSakRFx8GSTfv1A53a4aQjkR-CW6NDznfeEhQQ-mgn8VOw/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSfbX-xrItKG3L9cfa3JpLCLGCAwTKoMjQ_IntquLxvCmDB7QQ/viewform';
 
 export const OLYMPIC_RULES_URL =
   'https://www.dropbox.com/scl/fi/jh6ezbmaueatlz2xhs5qa/_IV_.pdf?rlkey=xzg9tdjh0ojo70wh0vbtvfjsk&dl=1';
