@@ -5,7 +5,7 @@ export const PARTICIPATION_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfbX-xrItKG3L9cfa3JpLCLGCAwTKoMjQ_IntquLxvCmDB7QQ/viewform';
 
 export const OLYMPIC_RULES_URL =
-  'https://www.dropbox.com/scl/fi/jh6ezbmaueatlz2xhs5qa/_IV_.pdf?rlkey=xzg9tdjh0ojo70wh0vbtvfjsk&dl=1';
+  'https://www.dropbox.com/scl/fi/88yrc3u6wv4bx0h23n5en/V.pdf?rlkey=sbrmzo1snv8iusknzppvau9fl&st=g18lqsej&dl=1';
 
 export const localApi = 'http://localhost:3001';
 
