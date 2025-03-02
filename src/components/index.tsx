@@ -58,3 +58,8 @@ export * from './BurgerButton';
 export * from './Overlay';
 export * from './BurgerMenu';
 export * from './ContactsButtonList';
+export * from './LoginPage';
+export * from './Dashboard';
+export * from './NewsList';
+export * from './NewsEdit';
+export * from './NewsCreate';
