@@ -1,6 +1,6 @@
 import React from 'react';
 import { Admin, Resource, defaultTheme } from 'react-admin';
-import { Dashboard, NewsList, NewsEdit, NewsCreate, LoginPage } from '../components';
+import { Dashboard, AdvertList, AdvertEdit, AdvertCreate, LoginPage } from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
 import amber from '@mui/material/colors/amber';
@@ -35,12 +35,12 @@ const AdminPannel = () => {
       darkTheme={darkTheme}
     >
       <Resource
-        name='news'
-        list={NewsList}
-        options={{ label: 'Новости' }}
+        name='adverts'
+        list={AdvertList}
+        options={{ label: 'Объявления' }}
         icon={menuIcons[0]}
-        edit={NewsEdit}
-        create={NewsCreate}
+        edit={AdvertEdit}
+        create={AdvertCreate}
         recordRepresentation={(record) => `${record.title}`}
       />
       {/* <Resource

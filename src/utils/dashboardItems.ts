@@ -12,13 +12,10 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 export const menuIcons = [NewspaperIcon, UserIcon, AccountTreeIcon, MusicNoteIcon, HeadsetIcon, VideoStableIcon, ReportIcon, ArticleIcon, HistoryIcon]
 
 export const dashboardItems = [
-    { name: 'Новости', path: '/admin/news', icon: menuIcons[0] },
-    { name: 'Состав', path: '/admin/members', icon: menuIcons[1] },
-    { name: 'Проекты', path: '/admin/projects', icon: menuIcons[2] },
-    { name: 'Ноты', path: '/admin/scores', icon: menuIcons[3] },
-    { name: 'Aудиозаписи', path: '/admin/audios', icon: menuIcons[4] },
-    { name: 'Видеозаписи', path: '/admin/videos', icon: menuIcons[5] },
-    { name: 'Отчёты', path: '/admin/reports', icon: menuIcons[6] },
-    { name: 'Статьи', path: '/admin/articles', icon: menuIcons[7] },
-    { name: 'Наша история', path: '/admin/ourHistory', icon: menuIcons[8] }
+    { name: 'Об олимпиаде', path: '/admin/aboutMusOlymp', icon: menuIcons[5] },
+    { name: 'Объявления', path: '/admin/adverts', icon: menuIcons[0] },
+    { name: 'Материалы для подготовки', path: '/admin/prepMaterials', icon: menuIcons[1] },
+    { name: 'Архив', path: '/admin/archive', icon: menuIcons[2] },
+    { name: 'Результты', path: '/admin/scores', icon: menuIcons[3] },
+    { name: 'Жюри', path: '/admin/audios', icon: menuIcons[4] },
 ]

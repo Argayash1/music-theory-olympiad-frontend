@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import styles from './App.module.scss';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import AdminPannel from './pages/AdminPannel';
+
+const AdminPannel = lazy(() => import('./pages/AdminPannel'));
 
 function App() {
   return (
@@ -10,7 +11,14 @@ function App() {
       <div className={styles.content}>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/admin' element={<AdminPannel />} />
+          <Route
+            path='/admin/*'
+            element={
+              <Suspense fallback={<div>Загрузка...</div>}>
+                <AdminPannel />{' '}
+              </Suspense>
+            }
+          />
         </Routes>
       </div>
     </div>

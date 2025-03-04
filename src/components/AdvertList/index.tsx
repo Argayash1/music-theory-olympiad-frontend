@@ -3,7 +3,6 @@ import {
   List,
   Datagrid,
   TextField,
-  ImageField,
   DateField,
   EditButton,
   TextInput,
@@ -19,7 +18,7 @@ const newsFilters = [
   <TextInput label='Дата создания' source='createdAt' />,
 ];
 
-export const NewsList = () => (
+export const AdvertList = () => (
   <List
     filters={newsFilters}
     actions={
@@ -31,13 +30,12 @@ export const NewsList = () => (
   >
     <Datagrid rowClick='edit'>
       <TextField source='title' label='Заголовок' />
-      <TextField source='newsText' label='Текст' />
-      <ImageField source='imageUrl' label='Ссылка на изображение' />
+      <TextField source='content' label='Текст' />
       <DateField source='createdAt' label='Дата создания' />
       <EditButton label='' />
-      <BulkResetViewsButton resource='news' resourceName='новость' />
+      <BulkResetViewsButton resource='adverts' resourceName='объявление' />
     </Datagrid>
   </List>
 );
 
-export default NewsList;
+export default AdvertList;

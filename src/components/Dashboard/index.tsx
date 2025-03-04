@@ -5,7 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import { Title } from 'react-admin';
 import styles from './Dashboard.module.scss';
 import { dashboardItems } from '../../utils/dashboardItems';
-import { Logo } from '../Logo';
 import { contentAdresses } from '../../utils/contentAddresses';
 
 export const Dashboard = () => {
@@ -29,9 +28,8 @@ export const Dashboard = () => {
     <Card>
       <Title title='Главная' />
       <CardContent>
-        <Logo place='admin' />
         <h1 className={styles.title}>
-          Добро пожаловать в административную панель сайта Олимпиады по теоретически предметам имени З. А. Визеля!
+          Добро пожаловать в административную панель сайта Олимпиады по теоретическим предметам имени З. А. Визеля!
         </h1>
         <nav>
           <ul className={styles.navList}>{dashboardListItems}</ul>
