@@ -33,7 +33,7 @@ export const FullAdvert = ({ advertItem, status }: FullAdvertProps) => {
           <div className={styles.textContainer}>
             <span className={styles.date}>{advertItem && handleFormateDate(advertItem.createdAt)}</span>
             <h3 className={styles.title}>{advertItem?.title}</h3>
-            <TextWithCustomLinks text={advertItem?.content || ''} links={advertItem?.links || []} place='full-advert' />
+            <TextWithCustomLinks text={advertItem?.content || ''} place='full-advert' />
           </div>
           <CloseButton onClick={handleCloseFullAdvert} place='adverts' />
           <div className={styles.shareContainer}>

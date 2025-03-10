@@ -1,7 +1,7 @@
 import { Create, SimpleForm, TextInput, required, useNotify, useRedirect } from 'react-admin';
 import { CustomToolbar } from '../CustomToolbar';
 
-export const AdvertCreate = (props: any) => {
+export const PrepMaterialCreate = (props: any) => {
   const notify = useNotify();
   const redirect = useRedirect();
 

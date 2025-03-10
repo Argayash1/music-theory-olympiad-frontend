@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './AdvertCard.module.scss';
 import { CTA, DataCard, TextWithCustomLinks } from '../../components';
 import { handleFormateDate } from '../../utils/utils';
-import { LinkData } from '../../redux/advert/types';
 import { useSelector } from 'react-redux';
 import { selectScreenWidth } from '../../redux/olympData/selectors';
 import { selectAdvertId } from '../../redux/advert/selectors';
@@ -13,12 +12,11 @@ export type AdvertCardProps = {
   createdAt: string;
   title: string;
   content: string;
-  links: LinkData[];
   isCardOnScreen: boolean;
   onCtaClick: (cardId: string | null) => void;
 };
 
-export const AdvertCard = ({ _id, createdAt, title, content, links, isCardOnScreen, onCtaClick }: AdvertCardProps) => {
+export const AdvertCard = ({ _id, createdAt, title, content, isCardOnScreen, onCtaClick }: AdvertCardProps) => {
   const screenWidth = useSelector(selectScreenWidth);
   const advertId = useSelector(selectAdvertId);
 
@@ -28,7 +26,7 @@ export const AdvertCard = ({ _id, createdAt, title, content, links, isCardOnScre
     <DataCard isCardExpanded={isCardExpanded}>
       <span className={styles.date}>{handleFormateDate(createdAt)}</span>
       <h3 className={clsx(styles.title, isCardExpanded && styles.titleTypeFullText)}>{title}</h3>
-      <TextWithCustomLinks text={content} links={links} isShowFullText={isCardExpanded} />
+      <TextWithCustomLinks text={content} isShowFullText={isCardExpanded} />
       <CTA
         linkText={isCardExpanded ? 'Свернуть' : 'Узнать больше'}
         type='learn'

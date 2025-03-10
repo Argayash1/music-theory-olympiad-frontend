@@ -63,3 +63,6 @@ export * from './Dashboard';
 export * from './AdvertList';
 export * from './AdvertEdit';
 export * from './AdvertCreate';
+export * from './PrepMaterialList';
+export * from './PrepMaterialEdit';
+export * from './PrepMaterialCreate';

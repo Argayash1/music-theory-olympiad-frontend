@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Advert } from '../redux/advert/types';
+import { Advert, LinkData } from '../redux/advert/types';
 import { mainApi } from '../utils/constants';
 
 const responseErrorMessage = 'Ответ сервера не содержит данных или не содержит свойства "data"';
@@ -88,6 +88,12 @@ const dataProvider = {
     for (const key in data) {
       if (key === 'id' || key === '_id' || key === 'createdAt') {
         delete data[key];
+      }
+      if (key === 'links') {
+        data[key] = data[key].map((linkItem: LinkData) => {
+          delete linkItem._id;
+          return linkItem;
+        });
       }
     }
 

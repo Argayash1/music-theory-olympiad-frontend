@@ -1,6 +1,15 @@
 import React from 'react';
 import { Admin, Resource, defaultTheme } from 'react-admin';
-import { Dashboard, AdvertList, AdvertEdit, AdvertCreate, LoginPage } from '../components';
+import {
+  Dashboard,
+  AdvertList,
+  AdvertEdit,
+  AdvertCreate,
+  LoginPage,
+  PrepMaterialList,
+  PrepMaterialEdit,
+  PrepMaterialCreate,
+} from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
 import amber from '@mui/material/colors/amber';
@@ -43,16 +52,16 @@ const AdminPannel = () => {
         create={AdvertCreate}
         recordRepresentation={(record) => `${record.title}`}
       />
-      {/* <Resource
-        name='members'
-        list={MembersList}
-        options={{ label: 'Состав' }}
+      <Resource
+        name='prepMaterials'
+        list={PrepMaterialList}
+        options={{ label: 'Материалы для подготовки' }}
         icon={menuIcons[1]}
-        edit={MembersEdit}
-        create={MemberCreate}
+        edit={PrepMaterialEdit}
+        create={PrepMaterialCreate}
         recordRepresentation={(record) => `${record.surname} ${record.name} ${record.patronymic}`}
       />
-      <Resource
+      {/* <Resource
         name='projects'
         list={ProjectsList}
         options={{ label: 'Проекты' }}
@@ -60,8 +69,8 @@ const AdminPannel = () => {
         edit={ProjectsEdit}
         create={ProjectCreate}
         recordRepresentation={(record) => `${record.title}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='scores'
         list={ScoresList}
         options={{ label: 'Ноты' }}
@@ -69,8 +78,8 @@ const AdminPannel = () => {
         edit={ScoresEdit}
         create={ScoreCreate}
         recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='audios'
         list={AudiosList}
         options={{ label: 'Аудиозаписи' }}
@@ -78,8 +87,8 @@ const AdminPannel = () => {
         edit={AudiosEdit}
         create={AudioCreate}
         recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='videos'
         list={VideosList}
         options={{ label: 'Видеозаписи' }}
@@ -87,8 +96,8 @@ const AdminPannel = () => {
         edit={VideosEdit}
         create={VideoCreate}
         recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='reports'
         list={ReportsList}
         options={{ label: 'Отчёты' }}
@@ -96,8 +105,8 @@ const AdminPannel = () => {
         edit={ReportsEdit}
         create={ReportCreate}
         recordRepresentation={(record) => `${record.year}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='articles'
         list={ArticlesList}
         options={{ label: 'СМИ о нас' }}
@@ -105,8 +114,8 @@ const AdminPannel = () => {
         edit={ArticlesEdit}
         create={ArticleCreate}
         recordRepresentation={(record) => `${record.title}`}
-      />
-      <Resource
+      /> */}
+      {/* <Resource
         name='ourHistory'
         list={OurHistoryList}
         options={{ label: 'Наша история' }}

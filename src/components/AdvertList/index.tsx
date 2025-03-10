@@ -9,6 +9,9 @@ import {
   TopToolbar,
   CreateButton,
   FilterButton,
+  ArrayField,
+  ChipField,
+  SingleFieldList,
 } from 'react-admin';
 import { BulkResetViewsButton } from '../BulkResetViewsButton';
 

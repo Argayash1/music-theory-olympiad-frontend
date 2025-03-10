@@ -7,6 +7,7 @@ export enum Status {
 export interface LinkData {
   linkText: string;
   linkUrl: string;
+  _id?: string;
 }
 
 export interface Advert {

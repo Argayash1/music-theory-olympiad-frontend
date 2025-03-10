@@ -1,8 +1,7 @@
 import { Edit, PrevNextButtons, required, SimpleForm, TextInput, TopToolbar } from 'react-admin';
 import { CustomToolbar } from '../CustomToolbar';
-import { RichTextInput } from 'ra-input-rich-text';
 
-export const AdvertEdit = (props: any) => (
+export const PrepMaterialEdit = (props: any) => (
   <Edit
     {...props}
     actions={
@@ -14,7 +13,7 @@ export const AdvertEdit = (props: any) => (
     <SimpleForm toolbar={<CustomToolbar />}>
       <TextInput source='id' label='ID' disabled fullWidth />
       <TextInput source='title' label='Заголовок' validate={[required()]} fullWidth />
-      <RichTextInput source='content' label='Текст' validate={[required()]} fullWidth />
+      <TextInput source='content' label='Текст' validate={[required()]} multiline fullWidth />
     </SimpleForm>
   </Edit>
 );

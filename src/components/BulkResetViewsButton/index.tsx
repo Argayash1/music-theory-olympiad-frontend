@@ -30,7 +30,7 @@ export const BulkResetViewsButton = ({ resource, resourceName }: IBulkResetViews
         isOpen={open}
         loading={isLoading}
         title={`Удалить ${resourceName} ${
-          record && (resource === 'news' || resource === 'projects' || resource === 'articles')
+          record && (resource === 'adverts' || resource === 'projects' || resource === 'articles')
             ? record.title
             : resource === 'members'
             ? record.surname + ' ' + record.name + ' ' + record.patronymic
