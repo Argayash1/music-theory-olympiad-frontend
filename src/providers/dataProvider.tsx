@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Advert, LinkData } from '../redux/advert/types';
 import { mainApi } from '../utils/constants';
+import { IDictation } from '../redux/prepMaterial/types';
 
 const responseErrorMessage = 'Ответ сервера не содержит данных или не содержит свойства "data"';
 export const dataProviderErrorMessage = 'Ошибка в дата-провайдере:';
@@ -95,7 +96,18 @@ const dataProvider = {
           return linkItem;
         });
       }
+      if (key === 'dictations' || key === 'soundAnalysis' || key === 'harmonization' || key === 'solfeggio') {
+        delete data[key]._id;
+      }
+      if (key === 'dictations') {
+        data[key].data = data[key].data.map((dictatonItem: IDictation) => {
+          delete dictatonItem._id;
+          return dictatonItem;
+        });
+      }
     }
+
+    console.log(data);
 
     try {
       const { data: response } = await axios.patch(`${mainApi}/${resource}/${params.id}`, data);

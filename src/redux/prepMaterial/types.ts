@@ -4,10 +4,11 @@ export enum Status {
   ERROR = 'error',
 }
 
-interface IDictation {
+export interface IDictation {
   audioUrl: string;
   title: string;
   author: string;
+  _id?: string;
 }
 
 interface ISoundAnalysis extends IDictation {
