@@ -2,15 +2,24 @@ import * as React from 'react';
 import {
   List,
   Datagrid,
-  TextField,
-  DateField,
-  EditButton,
   TextInput,
   TopToolbar,
-  CreateButton,
   FilterButton,
+  ShowButton,
+  FunctionField,
+  EditButton,
 } from 'react-admin';
-import { BulkResetViewsButton } from '../BulkResetViewsButton';
+
+interface PrepMaterialRecord {
+  category: string;
+}
+
+const categoryNames: Record<string, string> = {
+  '4': 'Музыковеды (старшая группа)',
+  '3': 'Музыковеды (младшая группа)',
+  '2': 'Исполнители (старшая группа)',
+  '1': 'Исполнители (младшая группа)',
+};
 
 export const PrepMaterialList = () => (
   <List
@@ -18,18 +27,17 @@ export const PrepMaterialList = () => (
     actions={
       <TopToolbar>
         <FilterButton />
-        <CreateButton label='Создать' />
       </TopToolbar>
     }
   >
-    <Datagrid rowClick='edit'>
-      <TextField source='category' label='Категория' />
-      <TextField source='dictations' label='Диктанты' />
-      <TextField source='soundAnalysis' label='Слуховой анализ' />
-      <TextField source='harmonization' label='Гармонизация мелодии' />
-      <TextField source='solfeggio' label='Сольфеджирование' />
-      <EditButton label='' />
-      <BulkResetViewsButton resource='prepMaterials' resourceName='материал для подготовки' />
+    <Datagrid rowClick='show'>
+      <FunctionField<PrepMaterialRecord>
+        label='Категория'
+        source='category'
+        render={(record) => categoryNames[record.category] || 'Неизвестная категория'}
+      />
+      <ShowButton label='Показать' />
+      <EditButton label='Редактировать' />
     </Datagrid>
   </List>
 );

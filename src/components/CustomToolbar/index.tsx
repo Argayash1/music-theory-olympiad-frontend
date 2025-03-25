@@ -1,9 +1,9 @@
 import { Toolbar, SaveButton, DeleteButton } from 'react-admin';
 import styles from './CustomToolbar.module.scss';
 
-export const CustomToolbar = () => (
+export const CustomToolbar = ({ showDeleteButton = true }) => (
   <Toolbar className={styles.root}>
     <SaveButton label='Сохранить' />
-    <DeleteButton label='Удалить' />
+    {showDeleteButton && <DeleteButton label='Удалить' />}
   </Toolbar>
 );

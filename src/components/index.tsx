@@ -64,5 +64,6 @@ export * from './AdvertList';
 export * from './AdvertEdit';
 export * from './AdvertCreate';
 export * from './PrepMaterialList';
+export * from './PrepMaterialShow';
 export * from './PrepMaterialEdit';
 export * from './PrepMaterialCreate';

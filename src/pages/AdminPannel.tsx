@@ -7,8 +7,9 @@ import {
   AdvertCreate,
   LoginPage,
   PrepMaterialList,
-  PrepMaterialEdit,
   PrepMaterialCreate,
+  PrepMaterialEdit,
+  PrepMaterialShow,
 } from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
@@ -27,6 +28,13 @@ const lightTheme = {
   },
 };
 const darkTheme = { ...defaultTheme, palette: { mode: 'dark' } };
+
+const categoryNames: Record<string, string> = {
+  '4': 'Музыковеды (старшая группа)',
+  '3': 'Музыковеды (младшая группа)',
+  '2': 'Исполнители (старшая группа)',
+  '1': 'Исполнители (младшая группа)',
+};
 
 const AdminPannel = () => {
   useTitle('Административная панель');
@@ -57,9 +65,10 @@ const AdminPannel = () => {
         list={PrepMaterialList}
         options={{ label: 'Материалы для подготовки' }}
         icon={menuIcons[1]}
+        show={PrepMaterialShow}
         edit={PrepMaterialEdit}
         create={PrepMaterialCreate}
-        recordRepresentation={(record) => `${record.surname} ${record.name} ${record.patronymic}`}
+        recordRepresentation={(record) => `${categoryNames[record.category]}`}
       />
       {/* <Resource
         name='projects'

@@ -9,17 +9,26 @@ import {
   TopToolbar,
   CreateButton,
   FilterButton,
-  ArrayField,
-  ChipField,
-  SingleFieldList,
+  FunctionField,
 } from 'react-admin';
 import { BulkResetViewsButton } from '../BulkResetViewsButton';
+import styles from './AdvertList.module.scss';
+
+interface AdvertRecord {
+  content: string;
+}
 
 const newsFilters = [
   <TextInput label='Заголовок' source='title' />,
   <TextInput label='Текст' source='newsText' />,
   <TextInput label='Дата создания' source='createdAt' />,
 ];
+
+const HtmlField = ({ record }: any) => (
+  <div className={styles.root}>
+    <div className='html-content' dangerouslySetInnerHTML={{ __html: record.content }} />
+  </div>
+);
 
 export const AdvertList = () => (
   <List
@@ -33,7 +42,7 @@ export const AdvertList = () => (
   >
     <Datagrid rowClick='edit'>
       <TextField source='title' label='Заголовок' />
-      <TextField source='content' label='Текст' />
+      <FunctionField<AdvertRecord> source='content' label='Текст' render={(record) => <HtmlField record={record} />} />
       <DateField source='createdAt' label='Дата создания' />
       <EditButton label='' />
       <BulkResetViewsButton resource='adverts' resourceName='объявление' />
