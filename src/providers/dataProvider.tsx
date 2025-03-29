@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Advert, LinkData } from '../redux/advert/types';
-import { mainApi, localApi } from '../utils/constants';
+import { mainApi } from '../utils/constants';
 import { IDictation } from '../redux/prepMaterial/types';
 
 const responseErrorMessage = 'Ответ сервера не содержит данных или не содержит свойства "data"';
