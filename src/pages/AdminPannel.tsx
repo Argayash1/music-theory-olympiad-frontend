@@ -58,6 +58,14 @@ const AdminPannel = () => {
       darkTheme={darkTheme}
     >
       <Resource
+        name='musOlympData'
+        list={AboutOlympList}
+        options={{ label: 'Об олимпиаде' }}
+        icon={menuIcons[2]}
+        edit={AboutOlympEdit}
+        recordRepresentation={(record) => `${record.title}`}
+      />
+      <Resource
         name='adverts'
         list={AdvertList}
         options={{ label: 'Объявления' }}
@@ -77,14 +85,6 @@ const AdminPannel = () => {
         recordRepresentation={(record) => `${categoryNames[record.category]}`}
       />
       <Resource
-        name='musOlympData'
-        list={AboutOlympList}
-        options={{ label: 'Об олимпиаде' }}
-        icon={menuIcons[2]}
-        edit={AboutOlympEdit}
-        recordRepresentation={(record) => `${record.title}`}
-      />
-      <Resource
         name='results'
         list={ResultList}
         options={{ label: 'Результаты' }}
@@ -100,15 +100,6 @@ const AdminPannel = () => {
         edit={JuryMemberEdit}
         recordRepresentation={(record) => `${record.surname} ${record.name} ${record.patronymic}`}
       />
-      {/* <Resource
-        name='videos'
-        list={VideosList}
-        options={{ label: 'Видеозаписи' }}
-        icon={menuIcons[5]}
-        edit={VideosEdit}
-        create={VideoCreate}
-        recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      /> */}
     </Admin>
   );
 };
