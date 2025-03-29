@@ -10,6 +10,8 @@ import {
   PrepMaterialCreate,
   PrepMaterialEdit,
   PrepMaterialShow,
+  AboutOlympList,
+  AboutOlympEdit,
 } from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
@@ -70,15 +72,14 @@ const AdminPannel = () => {
         create={PrepMaterialCreate}
         recordRepresentation={(record) => `${categoryNames[record.category]}`}
       />
-      {/* <Resource
-        name='projects'
-        list={ProjectsList}
-        options={{ label: 'Проекты' }}
+      <Resource
+        name='musOlympData'
+        list={AboutOlympList}
+        options={{ label: 'Об олимпиаде' }}
         icon={menuIcons[2]}
-        edit={ProjectsEdit}
-        create={ProjectCreate}
+        edit={AboutOlympEdit}
         recordRepresentation={(record) => `${record.title}`}
-      /> */}
+      />
       {/* <Resource
         name='scores'
         list={ScoresList}

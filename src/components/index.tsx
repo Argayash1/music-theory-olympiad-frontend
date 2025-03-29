@@ -67,3 +67,5 @@ export * from './PrepMaterialList';
 export * from './PrepMaterialShow';
 export * from './PrepMaterialEdit';
 export * from './PrepMaterialCreate';
+export * from './AboutOlympList';
+export * from './AboutOlympEdit';

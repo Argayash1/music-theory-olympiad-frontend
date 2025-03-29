@@ -42,14 +42,14 @@ const dataProvider = {
   },
 
   getOne: async (resource: string, params: any) => {
-    const itemId = resource !== 'ourHistory' ? `/${params.id}` : '';
+    const itemId = resource !== 'musOlympData' ? `/${params.id}` : '';
 
     try {
       const { data: response } = await axios.get(`${mainApi}/${resource}${itemId}`);
 
       if (response && response.data) {
         const adaptedData =
-          resource !== 'ourHistory'
+          resource !== 'musOlympData'
             ? { id: response.data._id, ...response.data }
             : { id: response.data[0]._id, ...response.data[0] };
 
@@ -106,8 +106,6 @@ const dataProvider = {
         });
       }
     }
-
-    console.log(data);
 
     try {
       const { data: response } = await axios.patch(`${mainApi}/${resource}/${params.id}`, data);
