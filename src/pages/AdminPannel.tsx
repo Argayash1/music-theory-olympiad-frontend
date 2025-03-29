@@ -12,6 +12,8 @@ import {
   PrepMaterialShow,
   AboutOlympList,
   AboutOlympEdit,
+  ResultList,
+  ResultEdit,
 } from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
@@ -80,15 +82,14 @@ const AdminPannel = () => {
         edit={AboutOlympEdit}
         recordRepresentation={(record) => `${record.title}`}
       />
-      {/* <Resource
-        name='scores'
-        list={ScoresList}
-        options={{ label: 'Ноты' }}
+      <Resource
+        name='results'
+        list={ResultList}
+        options={{ label: 'Результаты' }}
         icon={menuIcons[3]}
-        edit={ScoresEdit}
-        create={ScoreCreate}
-        recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      /> */}
+        edit={ResultEdit}
+        recordRepresentation={(record) => `${categoryNames[record.category]}`}
+      />
       {/* <Resource
         name='audios'
         list={AudiosList}

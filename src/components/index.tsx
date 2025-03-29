@@ -69,3 +69,5 @@ export * from './PrepMaterialEdit';
 export * from './PrepMaterialCreate';
 export * from './AboutOlympList';
 export * from './AboutOlympEdit';
+export * from './ResultList';
+export * from './ResultEdit';
