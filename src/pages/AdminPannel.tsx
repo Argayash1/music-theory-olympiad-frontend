@@ -14,6 +14,8 @@ import {
   AboutOlympEdit,
   ResultList,
   ResultEdit,
+  JuryMemberList,
+  JuryMemberEdit,
 } from '../components';
 import dataProvider from '../providers/dataProvider';
 import indigo from '@mui/material/colors/indigo';
@@ -90,15 +92,14 @@ const AdminPannel = () => {
         edit={ResultEdit}
         recordRepresentation={(record) => `${categoryNames[record.category]}`}
       />
-      {/* <Resource
-        name='audios'
-        list={AudiosList}
-        options={{ label: 'Аудиозаписи' }}
+      <Resource
+        name='juryMembers'
+        list={JuryMemberList}
+        options={{ label: 'Жюри' }}
         icon={menuIcons[4]}
-        edit={AudiosEdit}
-        create={AudioCreate}
-        recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      /> */}
+        edit={JuryMemberEdit}
+        recordRepresentation={(record) => `${record.surname} ${record.name} ${record.patronymic}`}
+      />
       {/* <Resource
         name='videos'
         list={VideosList}
@@ -107,33 +108,6 @@ const AdminPannel = () => {
         edit={VideosEdit}
         create={VideoCreate}
         recordRepresentation={(record) => `${record.composer} ${record.title}`}
-      /> */}
-      {/* <Resource
-        name='reports'
-        list={ReportsList}
-        options={{ label: 'Отчёты' }}
-        icon={menuIcons[6]}
-        edit={ReportsEdit}
-        create={ReportCreate}
-        recordRepresentation={(record) => `${record.year}`}
-      /> */}
-      {/* <Resource
-        name='articles'
-        list={ArticlesList}
-        options={{ label: 'СМИ о нас' }}
-        icon={menuIcons[7]}
-        edit={ArticlesEdit}
-        create={ArticleCreate}
-        recordRepresentation={(record) => `${record.title}`}
-      /> */}
-      {/* <Resource
-        name='ourHistory'
-        list={OurHistoryList}
-        options={{ label: 'Наша история' }}
-        icon={menuIcons[8]}
-        edit={OurHistoryEdit}
-        create={OurHistoryCreate}
-        recordRepresentation={() => 'Текст'}
       /> */}
     </Admin>
   );

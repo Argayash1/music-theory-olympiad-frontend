@@ -18,7 +18,7 @@ interface AdvertRecord {
   content: string;
 }
 
-const newsFilters = [
+const advertsFilters = [
   <TextInput label='Заголовок' source='title' />,
   <TextInput label='Текст' source='newsText' />,
   <TextInput label='Дата создания' source='createdAt' />,
@@ -32,7 +32,7 @@ const HtmlField = ({ record }: any) => (
 
 export const AdvertList = () => (
   <List
-    filters={newsFilters}
+    filters={advertsFilters}
     actions={
       <TopToolbar>
         <FilterButton />

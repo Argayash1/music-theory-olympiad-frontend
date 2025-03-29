@@ -71,3 +71,5 @@ export * from './AboutOlympList';
 export * from './AboutOlympEdit';
 export * from './ResultList';
 export * from './ResultEdit';
+export * from './JuryMemberList';
+export * from './JuryMemberEdit';
